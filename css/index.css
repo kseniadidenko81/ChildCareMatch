@@ -98,8 +98,8 @@ header .nav-link:hover::after {
 /* Navbar */
 .navbar-toggler {
   position: relative;
-  width: 43px;
-  height: 43px;
+  width: 55px;
+  height: 39px;
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -123,7 +123,7 @@ header .nav-link:hover::after {
   opacity: 0;
 }
 .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 .navbar-toggler:focus {
