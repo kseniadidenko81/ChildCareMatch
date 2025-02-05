@@ -80,13 +80,8 @@ header .nav-link:hover::after {
   left: 0;
 }
 
-.logo-wrapp {
-  font-size: 16px;
-  opacity: 0.9;
-}
-
 .logo {
-  width: 64px;
+  width: 154px;
 }
 
 @media screen and (max-width: 580px) {
