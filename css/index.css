@@ -9,6 +9,11 @@ a,
   color: #6750f9 !important;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -80,8 +85,13 @@ header .nav-link:hover::after {
   left: 0;
 }
 
+.logo-wrapp {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
 .logo {
-  width: 154px;
+  width: 152px;
 }
 
 @media screen and (max-width: 580px) {
@@ -194,3 +204,29 @@ input:-moz-autofill {
   padding: 0 10px;
 }
 /* End Form */
+
+/* Search bar */
+.search-container {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group .form-control {
+  border-right: none;
+}
+
+.input-group .btn {
+  border-left: none;
+}
+
+.search-btn-input {
+  min-width: 48px;
+  border-radius: 0 8px 8px 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: rgb(103, 80, 249, 0.3);
+}
