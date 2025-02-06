@@ -245,14 +245,11 @@
         var wrapper = poster.closest(".js-videoWrapper");
         var iframe = wrapper.find(".js-videoIframe")[0];
 
-        // Активируем видео и скрываем кнопку
         wrapper.addClass("videoWrapperActive");
 
-        // Загружаем видео и сразу запускаем с панелью управления
         var src = $(iframe).data("src");
         $(iframe).attr("src", src);
 
-        // Включаем взаимодействие с iframe
         $(iframe).css("pointer-events", "auto");
       });
     </script>
