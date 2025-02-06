@@ -92,7 +92,7 @@
 .list-item-content-name {
   font-weight: bold;
   line-height: 140px;
-  margin-left: 130px;
+  margin-left: 120px;
   padding-top: 0;
   transition: padding-top 0.2s linear, margin-left 0.2s linear;
   text-transform: uppercase;
