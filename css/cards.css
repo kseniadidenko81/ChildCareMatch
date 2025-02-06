@@ -92,10 +92,17 @@
 .list-item-content-name {
   font-weight: bold;
   line-height: 140px;
-  margin-left: 120px;
+  margin-left: 130px;
   padding-top: 0;
   transition: padding-top 0.2s linear, margin-left 0.2s linear;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+  .list-item-content-name {
+    margin-left: 120px;
+    font-size: 14px;
+  }
 }
 
 .list-item.active {
