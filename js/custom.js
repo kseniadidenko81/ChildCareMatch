@@ -1,5 +1,4 @@
-// Show/Hide/Change Password
-
+// SHOW/HIDE/CHANGE PASSWORD
 let passwordField = document.getElementById("password");
 let togglePassword = document.querySelector(".toggle-password");
 let forgotPassword = document.getElementById("forgotPassword");
@@ -81,3 +80,29 @@ document.getElementById("loginButton").addEventListener("click", function () {
     })
     .catch((error) => console.error("Error:", error));
 });
+
+// SEARCH LOCATION
+function searchDayCare() {
+  let location = document.getElementById("locationInput").value;
+  let resultText = document.getElementById("searchResult");
+
+  if (location.trim() === "") {
+    resultText.innerHTML =
+      "<span class='text-danger'>Please enter a valid location.</span>";
+    return;
+  }
+
+  resultText.innerHTML = `🔎 Searching for day care centers in <strong>${location}</strong>...`;
+
+  setTimeout(() => {
+    resultText.innerHTML = `✅ Found several day care centers in <strong>${location}</strong>!`;
+  }, 2000);
+}
+
+document
+  .getElementById("locationInput")
+  .addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      searchDayCare();
+    }
+  });
