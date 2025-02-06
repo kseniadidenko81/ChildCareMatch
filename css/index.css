@@ -236,3 +236,142 @@ input:-moz-autofill {
   box-shadow: none;
   border-color: rgb(103, 80, 249, 0.3);
 }
+
+/* VIDEO */
+.video_wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 56.25%;
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 991px) {
+  .video_wrapper_full {
+    padding-top: 380px;
+  }
+}
+
+.videoIframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.videoPoster {
+  background-image: url("https://img.youtube.com/vi/G4cJ4wviwS8/maxresdefault.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+
+  filter: brightness(85%);
+  transition: filter 0.3s ease, background-color 0.3s ease;
+}
+
+.videoPoster:hover {
+  cursor: pointer;
+  filter: brightness(95%);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.videoPoster:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-58%, -50%);
+  width: 56px;
+  height: 56px;
+  border: 3px solid rgb(255, 255, 255, 0.85);
+  border-radius: 100%;
+  transition: border-color 300ms;
+}
+
+.videoPoster:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0;
+  border-left: 20px solid rgb(255, 255, 255, 0.85);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  transition: border-color 300ms;
+}
+
+@media screen and (min-width: 768px) {
+  .videoPoster:before {
+    width: 68px;
+    height: 68px;
+  }
+
+  .videoPoster:after {
+    border-left: 32px solid rgb(255, 255, 255, 0.85);
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
+}
+
+.videoPoster:hover:before,
+.videoPoster:focus:before {
+  border-color: rgb(255, 255, 255, 1);
+}
+
+.videoPoster:hover:after,
+.videoPoster:focus:after {
+  border-left-color: rgb(255, 255, 255, 1);
+}
+
+.videoWrapperActive .videoPoster {
+  opacity: 0;
+  height: 0;
+  transition-delay: 0s, 800ms;
+}
+.videoWrapperActive .videoPoster {
+  display: none;
+}
+
+/* Text Video */
+.match-text p {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+}
+
+.match-text .letter {
+  color: #6750f9;
+  font-weight: bold;
+  font-size: 26px;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+.title-letter {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-contact {
+    width: auto !important;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .btn-contact {
+    margin-left: 0 !important;
+  }
+}
