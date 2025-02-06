@@ -1,0 +1,130 @@
+/* CARD Blocks */
+
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .list-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.list-container-bottom {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .list-container-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .list-container-bottom {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.list-item {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.2);
+  display: inline-block;
+  max-height: 140px;
+  overflow: hidden;
+  transition: max-height 0.2s linear;
+  width: 100%;
+}
+
+.list-item-title {
+  color: #fff;
+  background-color: rgb(103, 80, 249, 0.8);
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0px 0px 5px 1px #ccc;
+  height: 140px;
+  line-height: 140px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s linear, width 0.1s linear 0.1s, margin 0.1s linear 0.1s;
+  width: 100px;
+}
+
+@media screen and (min-width: 991px) {
+  .board .list-item-title,
+  .board .list-item-content-name {
+    height: 305px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .board .list-item-content-name {
+    justify-content: flex-start;
+  }
+}
+
+.list-item-title-text {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.list-item-title-text i {
+  font-size: 24px;
+  transform: rotate(90deg);
+  transition: transform 0.1s linear;
+}
+
+.list-item:hover .list-item-title-text i {
+  transform: rotate(90deg) translateY(-5px);
+}
+
+.list-container-bottom .list-item:hover .list-item-title-text i {
+  transform: rotate(90deg) translateY(0);
+}
+
+.list-item-content-name {
+  font-weight: bold;
+  line-height: 140px;
+  margin-left: 130px;
+  padding-top: 0;
+  transition: padding-top 0.2s linear, margin-left 0.2s linear;
+  text-transform: uppercase;
+}
+
+.list-item.active {
+  max-height: 400px;
+  transition: max-height 0.2s linear 0.1s;
+}
+
+.list-item.active .list-item-title {
+  border-radius: 50%;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: 20px;
+  position: absolute;
+  transition: all 0.2s linear 0.1s, width 0.1s linear, margin 0.1s linear;
+  width: 50px;
+}
+
+.list-item.active .list-item-title-text {
+  font-size: 10px;
+  line-height: 50px;
+  opacity: 0;
+}
+
+.list-item.active .list-item-content-name {
+  margin-left: 30px;
+  padding-top: 10px;
+  transition: margin-left 0.2s linear, width 0.1s linear;
+}
+
+.board .list-item {
+  max-height: none;
+}
