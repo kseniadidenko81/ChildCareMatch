@@ -44,6 +44,10 @@ img {
   border-color: rgb(103, 80, 249, 0.9) !important;
 }
 
+.btn:focus-visible {
+  box-shadow: none;
+}
+
 .btn-primary {
   background-color: #6750f9 !important;
   border-color: #6750f9 !important;
@@ -68,6 +72,10 @@ img {
 }
 
 /* Nav */
+.nav-link:focus-visible {
+  box-shadow: none;
+}
+
 header .nav-link {
   text-decoration: none;
   color: #6750f9;
