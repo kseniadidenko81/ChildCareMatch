@@ -363,18 +363,29 @@ input:-moz-autofill {
 }
 
 /* Text Video */
-.match-text p {
+dl.match-text {
   display: flex;
-  align-items: flex-start;
-  margin: 8px 0;
+  flex-wrap: wrap;
 }
 
-.match-text .letter {
+.match-text dd {
+  padding: 8px 0;
+}
+
+.match-text dt {
+  width: 25px;
   color: #6750f9;
   font-weight: bold;
   font-size: 26px;
+  position: relative;
+  top: -2px;
   margin-right: 10px;
-  margin-top: -10px;
+  text-align: center;
+}
+
+.match-text dd {
+  width: calc(100% - 35px);
+  margin: 0;
 }
 
 .title-letter {
