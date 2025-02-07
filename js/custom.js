@@ -1,3 +1,36 @@
+// AUTO HEIGHT Navbar fixed menu
+const navbarCollapse = document.getElementById("navbarsExample07");
+const navbar = document.querySelector(".navbar");
+const content = document.querySelector(".content");
+
+function adjustContentMargin() {
+  const navbarHeight = navbar.getBoundingClientRect().height;
+  const collapseHeight = navbarCollapse.scrollHeight;
+
+  let offset = 0;
+
+  if (window.innerWidth <= 480) {
+    offset = 80;
+  } else if (window.innerWidth <= 990) {
+    offset = 60;
+  } else {
+    offset = 0;
+  }
+
+  if (navbarCollapse.classList.contains("show")) {
+    content.style.marginTop = `${navbarHeight + collapseHeight - offset}px`;
+  } else {
+    content.style.marginTop = `${navbarHeight}px`;
+  }
+}
+
+navbarCollapse.addEventListener("shown.bs.collapse", adjustContentMargin);
+navbarCollapse.addEventListener("hidden.bs.collapse", adjustContentMargin);
+
+window.addEventListener("resize", adjustContentMargin);
+
+adjustContentMargin();
+
 // SHOW/HIDE/CHANGE PASSWORD
 let passwordField = document.getElementById("password");
 let togglePassword = document.querySelector(".toggle-password");
