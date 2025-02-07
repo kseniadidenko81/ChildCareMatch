@@ -37,7 +37,8 @@ img {
   color: #6750f9 !important;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   color: #fff !important;
   background-color: rgb(103, 80, 249, 0.9) !important;
   border-color: rgb(103, 80, 249, 0.9) !important;
@@ -85,7 +86,8 @@ header .nav-link::after {
   transform: translateX(0%);
 }
 
-header .nav-link:hover::after {
+header .nav-link:hover::after,
+header .nav-link:focus::after {
   width: 100%;
   left: 0;
 }
@@ -158,7 +160,8 @@ footer .nav-item:last-child {
   border-right: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
   color: rgb(103, 80, 249, 1) !important;
 }
 /* End Footer */
@@ -286,7 +289,8 @@ input:-moz-autofill {
   transition: filter 0.3s ease, background-color 0.3s ease;
 }
 
-.videoPoster:hover {
+.videoPoster:hover,
+.videoPoster:focus {
   cursor: pointer;
   filter: brightness(95%);
   background-color: rgba(255, 255, 255, 0.1);
