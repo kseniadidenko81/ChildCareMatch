@@ -72,10 +72,6 @@ img {
 }
 
 /* Nav */
-.navbar .container {
-  padding: 0;
-}
-
 .nav-link:focus-visible {
   box-shadow: none;
 }
@@ -119,6 +115,19 @@ header .nav-link:focus::after {
   }
 }
 
+.navbar .container {
+  padding: 0 15px;
+}
+
+.navbar.fixed-top {
+  background: #fff;
+}
+
+main.content {
+  margin-top: 80px;
+  transition: margin-top 0.3s ease-in-out;
+}
+
 /* Navbar */
 .navbar-toggler {
   position: relative;
@@ -152,6 +161,11 @@ header .nav-link:focus::after {
 
 .navbar-toggler:focus {
   box-shadow: none;
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .navbar-collapse.show {
