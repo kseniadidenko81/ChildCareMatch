@@ -31,6 +31,17 @@ window.addEventListener("resize", adjustContentMargin);
 
 adjustContentMargin();
 
+// ADD Navbar Scrolled shadow
+const navbarShadow = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbarShadow.classList.add("scrolled");
+  } else {
+    navbarShadow.classList.remove("scrolled");
+  }
+});
+
 // SHOW/HIDE/CHANGE PASSWORD
 let passwordField = document.getElementById("password");
 let togglePassword = document.querySelector(".toggle-password");
