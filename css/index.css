@@ -115,6 +115,16 @@ header .nav-link:focus::after {
   }
 }
 
+main.content {
+  margin-top: 80px;
+  transition: margin-top 0.3s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
 .navbar .container {
   padding: 0 15px;
 }
@@ -123,12 +133,6 @@ header .nav-link:focus::after {
   background: #fff;
 }
 
-main.content {
-  margin-top: 80px;
-  transition: margin-top 0.3s ease-in-out;
-}
-
-/* Navbar */
 .navbar-toggler {
   position: relative;
   width: 55px;
@@ -169,9 +173,13 @@ main.content {
 }
 
 .navbar-collapse.show {
-  box-shadow: rgba(103, 80, 249, 0.25) 0px 0px 4px 1px;
+  box-shadow: rgba(103, 80, 249, 0.25) 0 0 4px 1px;
   border-radius: 4px;
   padding: 8px;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* End Nav */
