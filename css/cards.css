@@ -81,11 +81,13 @@
   transition: transform 0.1s linear;
 }
 
-.list-item:hover .list-item-title-text i {
+.list-item:hover .list-item-title-text i,
+.list-item:focus .list-item-title-text i {
   transform: rotate(90deg) translateY(-5px);
 }
 
-.list-container-bottom .list-item:hover .list-item-title-text i {
+.list-container-bottom .list-item:hover .list-item-title-text i,
+.list-container-bottom .list-item:focus .list-item-title-text i {
   transform: rotate(90deg) translateY(0);
 }
 
