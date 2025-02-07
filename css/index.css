@@ -72,6 +72,10 @@ img {
 }
 
 /* Nav */
+.navbar .container {
+  padding: 0;
+}
+
 .nav-link:focus-visible {
   box-shadow: none;
 }
@@ -106,7 +110,7 @@ header .nav-link:focus::after {
 }
 
 .logo {
-  width: 152px;
+  width: 146px;
 }
 
 @media screen and (max-width: 580px) {
