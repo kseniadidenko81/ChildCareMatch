@@ -403,3 +403,13 @@ dl.match-text {
     margin-left: 0 !important;
   }
 }
+
+.title-cont {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.registered {
+  font-size: 17px;
+  vertical-align: super;
+}
