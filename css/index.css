@@ -170,6 +170,12 @@ main.content {
 }
 
 /* Navbar */
+@media screen and (max-width: 990px) {
+  .nav-mobile {
+    width: 100%;
+  }
+}
+
 .navbar {
   transition: box-shadow 0.3s ease-in-out;
 }
