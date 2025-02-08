@@ -54,6 +54,12 @@ img {
   box-shadow: 0 -2px 5px -3px rgb(103, 80, 249, 0.3) !important;
 }
 
+.form-floating input,
+.form-floating label {
+  font-size: 14px;
+  line-height: 1.8 !important;
+}
+
 .border-primary {
   border-color: rgb(103, 80, 249, 0.3) !important;
 }
@@ -535,11 +541,6 @@ li:first-of-type .dropdown-item:hover {
   }
 
   .section-profile form a {
-    font-size: 14px;
-  }
-
-  .section-profile input,
-  .section-profile label {
     font-size: 14px;
   }
 }
