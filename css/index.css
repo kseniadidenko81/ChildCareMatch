@@ -110,6 +110,12 @@ img {
   background-color: transparent;
 }
 
+@media screen and (max-width: 480px) {
+  .dropdown-menu-end[data-bs-popper] {
+    transform: translateX(28%);
+  }
+}
+
 .bg-primary {
   background-color: #6750f9 !important;
 }
