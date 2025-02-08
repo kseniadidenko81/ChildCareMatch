@@ -542,6 +542,10 @@ li:first-of-type .dropdown-item:hover {
   padding: 0;
 }
 
+.section-profile form a {
+  font-size: 15px;
+}
+
 @media screen and (max-width: 480px) {
   .section-profile .form-floating {
     min-width: 68%;
