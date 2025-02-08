@@ -150,3 +150,32 @@ document
       searchDayCare();
     }
   });
+
+// CHANGE EMAIL/PASSWORD
+function changeEmail() {
+  var emailInput = document.getElementById("email");
+  emailInput.value = "";
+  emailInput.focus();
+}
+
+// Enable/Disable Email Notification
+function toggleEmailNotifications() {
+  var checkbox = document.getElementById("emailNotifications");
+  if (checkbox.checked) {
+    console.log("Email notifications enabled");
+  } else {
+    console.log("Email notifications disabled");
+  }
+}
+
+// DELETE PROFILE
+function deleteProfile() {
+  console.log("Profile has been deleted.");
+
+  var deleteModal = bootstrap.Modal.getInstance(
+    document.getElementById("deleteProfileModal")
+  );
+  deleteModal.hide();
+
+  alert("Your profile has been successfully deleted.");
+}
