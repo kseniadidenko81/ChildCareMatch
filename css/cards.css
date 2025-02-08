@@ -36,13 +36,11 @@
   }
 }
 
-.list-container-bottom .list-item-content-name p {
-  color: #232323;
-}
-
+.list-container-bottom .list-item-content-name p,
 .list-container-bottom .list-item:hover .list-item-content-name p,
 .list-container-bottom .list-item:focus .list-item-content-name p {
   color: #232323;
+  font-size: 14px;
 }
 
 .list-item {
@@ -97,7 +95,6 @@
   padding-top: 0;
   transition: padding-top 0.2s linear, margin-left 0.2s linear;
   text-transform: uppercase;
-  font-size: 14px;
 }
 
 .list-item-content-name p {
