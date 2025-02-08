@@ -103,6 +103,7 @@
 .list-item-content-name p {
   margin-bottom: 0;
   padding-left: 30px;
+  padding-right: 16px;
   position: relative;
   z-index: 2;
   color: #6750f9;
