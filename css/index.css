@@ -50,6 +50,10 @@ img {
   border-color: rgb(103, 80, 249, 0.3) !important;
 }
 
+.form-floating > .form-control:focus ~ label::after {
+  box-shadow: 0 -2px 5px -3px rgb(103, 80, 249, 0.3) !important;
+}
+
 .border-primary {
   border-color: rgb(103, 80, 249, 0.3) !important;
 }
@@ -466,7 +470,7 @@ dl.match-text {
   vertical-align: super;
 }
 
-/* Notification */
+/* Notification / Section Profile */
 .notifications {
   position: relative;
   cursor: pointer;
@@ -523,4 +527,19 @@ li:first-of-type .dropdown-item:hover {
   width: 10px;
   height: 10px;
   padding: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .section-profile .form-floating {
+    min-width: 68%;
+  }
+
+  .section-profile form a {
+    font-size: 14px;
+  }
+
+  .section-profile input,
+  .section-profile label {
+    font-size: 14px;
+  }
 }
