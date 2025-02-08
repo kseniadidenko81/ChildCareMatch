@@ -37,6 +37,23 @@ img {
   color: #6750f9 !important;
 }
 
+.form-check-input:checked {
+  background-color: #6750f9 !important;
+  border-color: #6750f9 !important;
+}
+
+.form-check-input:focus {
+  box-shadow: none !important;
+}
+
+.form-check-input {
+  border-color: rgb(103, 80, 249, 0.3) !important;
+}
+
+.border-primary {
+  border-color: rgb(103, 80, 249, 0.3) !important;
+}
+
 .btn:hover,
 .btn:focus {
   color: #fff !important;
@@ -69,6 +86,15 @@ img {
 
 .border-top {
   border-top-color: rgb(103, 80, 249, 0.3) !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent;
+}
+
+.bg-primary {
+  background-color: #6750f9 !important;
 }
 
 /* Nav */
@@ -438,4 +464,63 @@ dl.match-text {
 .registered {
   font-size: 17px;
   vertical-align: super;
+}
+
+/* Notification */
+.notifications {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.notifications .count {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  height: 17px;
+  width: 17px;
+  overflow: hidden;
+  background: #6750f9;
+  color: #fff;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 17px;
+}
+
+.notifications .fa {
+  color: #6750f9;
+  font-size: 24px;
+}
+
+.read:hover,
+.unread:hover,
+.read:focus,
+.unread:focus,
+.btn-notif {
+  background-color: hsl(240, 20%, 90%);
+}
+
+.read {
+  background-color: #fff;
+}
+
+.dropdown-notif {
+  background: rgb(248, 248, 252);
+}
+
+li:first-of-type .dropdown-item:hover {
+  border-radius: 5px 5px 0 0;
+}
+
+.dropdown-notif .btn {
+  border-radius: 0 0 5px 5px;
+  border-color: rgb(103, 80, 249, 0.3) !important;
+}
+
+.dropdown-notif .badge {
+  width: 10px;
+  height: 10px;
+  padding: 0;
 }
