@@ -50,7 +50,7 @@
                   aria-expanded="false"
                   class="position-relative"
                 >
-                  <span class="count">20</span>
+                  <span class="count text-bg-danger">20</span>
                   <span class="fa fa-bell-o"></span>
                 </a>
 
@@ -198,85 +198,185 @@
       </header>
       <main class="content">
         <div class="container py-4 py-md-5 my-md-4 section-profile">
-          <div class="search-container">
-            <h1 class="h2">Profile settings</h1>
-            <p>
-              In this section you can find all your saved searches and use them
-              again
-            </p>
-            <form action="#">
-              <div class="row gy-3 overflow-hidden">
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="form-floating flex-grow-1">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="name@example.com"
-                      required=""
-                      data-has-listeners="true"
-                    />
-                    <label for="email" class="form-label">Email</label>
-                  </div>
-                  <a
-                    href="#"
-                    class="change-email ms-2"
-                    style="cursor: pointer"
-                    onclick="changeEmail()"
-                  >
-                    Change email
-                  </a>
-                </div>
-
-                <!-- Password field -->
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="form-floating flex-grow-1 position-relative">
-                    <input
-                      type="password"
-                      class="form-control"
-                      name="password"
-                      id="password"
-                      placeholder="Password"
-                      required=""
-                      data-has-listeners="true"
-                    />
-                    <label for="password" class="form-label">Password</label>
-                    <span
-                      class="fa fa-fw fa-eye field-icon toggle-password position-absolute"
-                    ></span>
-                    <!-- Error message -->
-                    <div id="passwordError" class="text-danger mt-2 d-none">
-                      Incorrect password. Try again.
+          <div class="col-lg-10 m-auto">
+            <div class="search-container">
+              <h1 class="h2">Profile settings</h1>
+              <p>
+                In this section you can find all your saved searches and use
+                them again
+              </p>
+              <form action="#">
+                <div class="row gy-3 overflow-hidden">
+                  <div class="col-lg-6 d-flex align-items-center">
+                    <div class="form-floating flex-grow-1">
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        id="email"
+                        placeholder="name@example.com"
+                        required=""
+                        data-has-listeners="true"
+                      />
+                      <label for="email" class="form-label">Email</label>
                     </div>
-                  </div>
-
-                  <!-- Link "Forgot Password??" -->
-                  <div class="ms-2">
                     <a
                       href="#"
-                      id="forgotPassword"
-                      class="text-decoration-none"
+                      class="change-email ms-2"
+                      style="cursor: pointer"
+                      onclick="changeEmail()"
                     >
-                      Forgot Password?
+                      Change email
                     </a>
                   </div>
-                </div>
-              </div>
 
-              <!-- Modal window for entering email -->
+                  <!-- Password field -->
+                  <div class="col-lg-6 d-flex align-items-center">
+                    <div class="form-floating flex-grow-1 position-relative">
+                      <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                        required=""
+                        data-has-listeners="true"
+                      />
+                      <label for="password" class="form-label">Password</label>
+                      <span
+                        class="fa fa-fw fa-eye field-icon toggle-password position-absolute"
+                      ></span>
+                      <!-- Error message -->
+                      <div id="passwordError" class="text-danger mt-2 d-none">
+                        Incorrect password. Try again.
+                      </div>
+                    </div>
+
+                    <!-- Link "Forgot Password??" -->
+                    <div class="ms-2">
+                      <a
+                        href="#"
+                        id="forgotPassword"
+                        class="text-decoration-none"
+                      >
+                        Forgot Password?
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal window for entering email -->
+                <div
+                  class="modal fade"
+                  id="forgotPasswordModal"
+                  tabindex="-1"
+                  aria-labelledby="forgotPasswordModalLabel"
+                  aria-hidden="true"
+                  style="display: none"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="forgotPasswordModalLabel">
+                          Password Recovery
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          Enter your email, and we will send you instructions to
+                          reset your password.
+                        </p>
+                        <input
+                          type="email"
+                          id="resetEmail"
+                          class="form-control"
+                          placeholder="Enter your email"
+                          required=""
+                          data-has-listeners="true"
+                        />
+                        <div id="emailError" class="text-danger mt-2 d-none">
+                          Please enter a valid email
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          id="sendResetEmail loginButton"
+                        >
+                          Send
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="search-container mt-4">
+              <h2>Email Notification</h2>
+              <p>
+                In this section you can accept or desist from email
+                notifications
+              </p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="emailNotifications"
+                  onclick="toggleEmailNotifications()"
+                  data-has-listeners="true"
+                />
+                <label class="form-check-label" for="emailNotifications">
+                  Enable/Disable email notifications
+                </label>
+              </div>
+            </div>
+
+            <div class="search-container mt-4">
+              <h1 class="h2">Delete profile</h1>
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="mb-0 me-2">
+                  If you delete your profile, you will lose the data associated
+                  with it.
+                </p>
+                <!-- Button delete Profile -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteProfileModal"
+                >
+                  Delete Profile
+                </button>
+              </div>
+              <!-- Modal delete Profile -->
               <div
                 class="modal fade"
-                id="forgotPasswordModal"
+                id="deleteProfileModal"
                 tabindex="-1"
-                aria-labelledby="forgotPasswordModalLabel"
+                aria-labelledby="deleteProfileModalLabel"
                 aria-hidden="true"
+                style="display: none"
               >
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="forgotPasswordModalLabel">
-                        Password Recovery
+                      <h5 class="modal-title" id="deleteProfileModalLabel">
+                        Confirm Profile Deletion
                       </h5>
                       <button
                         type="button"
@@ -285,23 +385,12 @@
                         aria-label="Close"
                       ></button>
                     </div>
+
                     <div class="modal-body">
-                      <p>
-                        Enter your email, and we will send you instructions to
-                        reset your password.
-                      </p>
-                      <input
-                        type="email"
-                        id="resetEmail"
-                        class="form-control"
-                        placeholder="Enter your email"
-                        required=""
-                        data-has-listeners="true"
-                      />
-                      <div id="emailError" class="text-danger mt-2 d-none">
-                        Please enter a valid email
-                      </div>
+                      Are you sure you want to delete your profile? This action
+                      cannot be undone.
                     </div>
+
                     <div class="modal-footer">
                       <button
                         type="button"
@@ -313,94 +402,11 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        id="sendResetEmail loginButton"
+                        onclick="deleteProfile()"
                       >
-                        Send
+                        Delete
                       </button>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <div class="search-container mt-4">
-            <h2>Email Notification</h2>
-            <p>
-              In this section you can accept or desist from email notifications
-            </p>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="emailNotifications"
-                onclick="toggleEmailNotifications()"
-              />
-              <label class="form-check-label" for="emailNotifications">
-                Enable/Disable email notifications
-              </label>
-            </div>
-          </div>
-
-          <div class="search-container mt-4">
-            <h1 class="h2">Delete profile</h1>
-            <div class="d-flex align-items-center justify-content-between">
-              <p class="mb-0">
-                If you delete your profile, you will lose the data associated
-                with it.
-              </p>
-              <!-- Button delete Profile -->
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#deleteProfileModal"
-              >
-                Delete Profile
-              </button>
-            </div>
-            <!-- Modal delete Profile -->
-            <div
-              class="modal fade"
-              id="deleteProfileModal"
-              tabindex="-1"
-              aria-labelledby="deleteProfileModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteProfileModalLabel">
-                      Confirm Profile Deletion
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-
-                  <div class="modal-body">
-                    Are you sure you want to delete your profile? This action
-                    cannot be undone.
-                  </div>
-
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary"
-                      data-bs-dismiss="modal"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      onclick="deleteProfile()"
-                    >
-                      Delete
-                    </button>
                   </div>
                 </div>
               </div>
