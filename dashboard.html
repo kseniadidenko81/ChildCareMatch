@@ -40,42 +40,164 @@
           class="navbar navbar-expand-lg fixed-top"
           id="navbar"
           aria-label=""
+          style=""
         >
           <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#"
-              ><img class="logo" src="img/logo.png" alt="Logo" />
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img class="logo" src="img/logo.png" alt="Logo" />
             </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarsExample07"
-              aria-controls="navbarsExample07"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
 
-            <div
-              class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
-              id="navbarsExample07"
-            >
-              <ul class="nav nav-pills d-flex justify-content-center">
-                <li class="nav-item">
-                  <a href="#" class="nav-link" aria-current="page"
-                    >For Providers</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">For Parents</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link"> B2B Solutions</a>
-                </li>
-              </ul>
+            <div class="d-flex align-items-center ms-auto">
+              <div class="notifications dropdown me-3">
+                <a
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  class="position-relative"
+                >
+                  <span class="count">20</span>
+                  <span class="fa fa-bell-o"></span>
+                </a>
+
+                <ul
+                  class="dropdown-notif dropdown-menu dropdown-menu-end border-primary p-0 mt-2"
+                >
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <p class="text-secondary text-notif mb-1 pe-2">
+                            You have a new notification
+                          </p>
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <p class="text-secondary text-notif mb-1 pe-2">
+                            You have a new notification
+                          </p>
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <p class="text-secondary text-notif mb-1 pe-2">
+                            You have a new notification
+                          </p>
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item read">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <p class="text-secondary text-notif mb-1 pe-2">
+                            You have read this notification
+                          </p>
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-secondary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+
+                  <li>
+                    <button
+                      class="btn btn-outline-primary w-100 fw-semibold btn-notif"
+                      type="submit"
+                    >
+                      View More
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                class="navbar-toggler collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample07"
+                aria-controls="navbarsExample07"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+
+            <div class="nav-mobile">
+              <div
+                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
+                id="navbarsExample07"
+                style=""
+              >
+                <ul class="nav nav-pills d-flex justify-content-center">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" aria-current="page"
+                      >For Providers</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">For Parents</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">B2B Solutions</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>
