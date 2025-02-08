@@ -150,6 +150,8 @@
 .list-item:hover .list-item-content-name .circle i,
 .list-item:focus .list-item-content-name .circle i {
   transform: scale(1.4);
+  padding-top: 12px;
+  padding-right: 12px;
 }
 
 .list-item.active {
