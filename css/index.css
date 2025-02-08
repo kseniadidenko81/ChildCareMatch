@@ -546,6 +546,10 @@ li:first-of-type .dropdown-item:hover {
   font-size: 15px;
 }
 
+#forgotPassword {
+  font-size: 15px;
+}
+
 @media screen and (max-width: 480px) {
   .section-profile .form-floating {
     min-width: 68%;
