@@ -17,6 +17,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
       4
@@ -32,7 +36,11 @@
   <body>
     <div class="wrapper">
       <header class="container">
-        <nav class="navbar navbar-expand-lg fixed-top" id="navbar" aria-label="">
+        <nav
+          class="navbar navbar-expand-lg fixed-top"
+          id="navbar"
+          aria-label=""
+        >
           <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#"
               ><img class="logo" src="img/logo.png" alt="Logo" />
@@ -75,14 +83,19 @@
       <main class="content">
         <div class="container py-4 py-md-5 my-md-4">
           <div class="row">
-            <div class="col-lg-8 list-container">
-              <a href="#" class="list-item">
+            <div class="col list-container">
+              <a href="#" class="list-item" style="position: relative">
                 <div class="list-item-title">
                   <div class="list-item-title-text">
                     <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My Profile</div>
+                <div class="list-item-content-name">
+                  <p>My Profile</p>
+                  <div class="circle">
+                    <i class="bi bi-person-bounding-box"></i>
+                  </div>
+                </div>
               </a>
               <a href="#" class="list-item">
                 <div class="list-item-title">
@@ -90,7 +103,12 @@
                     <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My Kids</div>
+                <div class="list-item-content-name">
+                  <p>My Kids</p>
+                  <div class="circle">
+                    <i class="bi bi-people"></i>
+                  </div>
+                </div>
               </a>
               <a href="#" class="list-item">
                 <div class="list-item-title">
@@ -98,7 +116,12 @@
                     <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My Activities</div>
+                <div class="list-item-content-name">
+                  <p>My Schedule</p>
+                  <div class="circle">
+                    <i class="bi bi-card-list"></i>
+                  </div>
+                </div>
               </a>
               <a href="#" class="list-item">
                 <div class="list-item-title">
@@ -106,21 +129,41 @@
                     <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My Schedule</div>
+                <div class="list-item-content-name">
+                  <p>My applications</p>
+                  <div class="circle">
+                    <i class="bi bi-grid"></i>
+                  </div>
+                </div>
               </a>
-            </div>
-            <div class="col-lg-4 board mt-3 mt-lg-0">
               <a href="#" class="list-item">
                 <div class="list-item-title">
                   <div class="list-item-title-text">
                     <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My Searches</div>
+                <div class="list-item-content-name">
+                  <p>My reviews</p>
+                  <div class="circle">
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="list-item">
+                <div class="list-item-title">
+                  <div class="list-item-title-text">
+                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="list-item-content-name">
+                  <p>My Searches</p>
+                  <div class="circle">
+                    <i class="bi bi-search"></i>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
-          <!--  -->
           <div class="mt-5 pt-5">
             <div class="list-container-bottom">
               <div class="list-item">
@@ -129,7 +172,9 @@
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My applications</div>
+                <div class="list-item-content-name">
+                  <p>New section in development</p>
+                </div>
               </div>
               <div class="list-item">
                 <div class="list-item-title">
@@ -137,7 +182,9 @@
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My reviews</div>
+                <div class="list-item-content-name">
+                  <p>New section in development</p>
+                </div>
               </div>
               <div class="list-item">
                 <div class="list-item-title">
@@ -145,7 +192,9 @@
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </div>
-                <div class="list-item-content-name">My notifications</div>
+                <div class="list-item-content-name">
+                  <p>New section in development</p>
+                </div>
               </div>
             </div>
           </div>
