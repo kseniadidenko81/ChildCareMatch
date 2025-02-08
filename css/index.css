@@ -54,6 +54,11 @@ img {
   box-shadow: 0 -2px 5px -3px rgb(103, 80, 249, 0.3) !important;
 }
 
+.form-floating label {
+  font-size: 15px;
+  line-height: 1.8 !important;
+}
+
 @media screen and (max-width: 480px) {
   .form-floating input,
   .form-floating label {
