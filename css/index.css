@@ -588,7 +588,7 @@ li:first-of-type .dropdown-item:hover {
 
 /* SECTION FILTER + NOTIFICATION */
 .section-filter .btn {
-  min-width: 120px;
+  min-width: 112px;
 }
 
 .notification-box .notification {
