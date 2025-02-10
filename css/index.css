@@ -603,6 +603,8 @@ li:first-of-type .dropdown-item:hover {
 }
 
 .notification-box {
+  margin-bottom: 3px !important;
+  padding: 8px !important;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
