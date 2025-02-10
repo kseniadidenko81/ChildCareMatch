@@ -72,7 +72,8 @@ img {
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn:active {
   color: #fff !important;
   background-color: rgb(103, 80, 249, 0.9) !important;
   border-color: rgb(103, 80, 249, 0.9) !important;
@@ -80,6 +81,15 @@ img {
 
 .btn:focus-visible {
   box-shadow: none;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: #6750f9 !important;
+  color: #fff !important;
 }
 
 .btn-primary {
@@ -97,7 +107,8 @@ img {
 }
 
 .link-primary:focus,
-.link-primary:hover {
+.link-primary:hover,
+.link-primary:active {
   color: rgb(103, 80, 249, 0.8) !important;
 }
 
@@ -495,7 +506,7 @@ dl.match-text {
   vertical-align: super;
 }
 
-/* Notification / Section Profile */
+/* SECTION PROFILE */
 .notifications {
   position: relative;
   cursor: pointer;
@@ -527,8 +538,11 @@ dl.match-text {
 .unread:hover,
 .read:focus,
 .unread:focus,
+.read:active,
+.unread:active,
 .btn-notif {
   background-color: hsl(240, 20%, 90%);
+  background-color: hsl(250deg 70% 85% / 10%);
 }
 
 .read {
@@ -570,4 +584,89 @@ li:first-of-type .dropdown-item:hover {
   .section-profile form a {
     font-size: 14px;
   }
+}
+
+/* SECTION FILTER + NOTIFICATION */
+.section-filter .btn {
+  min-width: 120px;
+}
+
+.notification-box .notification {
+  overflow: hidden;
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  pointer-events: auto;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification-box {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification-box.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.notification-box .notification-inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.notification-box .notification-icon {
+  flex-shrink: 0;
+}
+
+.notification-box .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #34d399;
+}
+
+.notification-box .notification-text {
+  padding-top: 0.125rem;
+  margin-left: 0.75rem;
+  flex: 1 1 0%;
+  width: 0;
+}
+
+.notification-box .title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.notification-box .subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}
+
+.notification-box .notification-action {
+  display: flex;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+.notification-box button {
+  display: inline-flex;
+  border-radius: 0.375rem;
+  color: #9ca3af;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.notification-box .notification-box button:hover {
+  color: #6b7280;
+}
+
+.notification-box .x-icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
