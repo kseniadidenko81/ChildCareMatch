@@ -659,7 +659,7 @@ li:first-of-type .dropdown-item:hover {
 .notification-box button {
   display: inline-flex;
   border-radius: 0.375rem;
-  color: #9ca3af;
+  color: #505358;
   border: none;
   background-color: #ffffff;
   cursor: pointer;
@@ -671,4 +671,14 @@ li:first-of-type .dropdown-item:hover {
 .notification-box .x-icon {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.dismiss-btn i {
+  font-size: 20px;
+  opacity: 0.5;
+  transition: all 500ms ease;
+}
+.notification-action:hover i {
+  opacity: 1;
+  transform: scale(1.2);
 }
