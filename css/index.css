@@ -621,6 +621,8 @@ li:first-of-type .dropdown-item:hover {
 
 .notification-box .notification-icon {
   flex-shrink: 0;
+  row-gap: 10px;
+  margin-top: 2px;
 }
 
 .notification-box .icon {
@@ -654,6 +656,9 @@ li:first-of-type .dropdown-item:hover {
   display: flex;
   margin-left: 1rem;
   flex-shrink: 0;
+  position: relative;
+  top: -5px;
+  right: -5px;
 }
 
 .notification-box button {
