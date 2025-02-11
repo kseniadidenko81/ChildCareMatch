@@ -29,10 +29,6 @@ img {
   flex: 1;
 }
 
-.btn {
-  min-width: 160px;
-}
-
 .text-primary {
   color: #6750f9 !important;
 }
@@ -69,6 +65,23 @@ img {
 
 .border-primary {
   border-color: rgb(103, 80, 249, 0.3) !important;
+}
+
+.btn {
+  min-width: 160px;
+}
+
+.btn.delete-btn {
+  color: #bb2d3b !important;
+  background-color: transparent;
+  border-color: #bb2d3b !important;
+}
+.btn.delete-btn:hover,
+.btn.delete-btn:focus,
+.btn.delete-btn:active {
+  color: #fff !important;
+  background-color: #b02a37 !important;
+  border-color: #b02a37 !important;
 }
 
 .btn:hover,
@@ -733,10 +746,7 @@ li:first-of-type .dropdown-item:hover {
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 576px) {
-  .btn-type-filter,
-  .btn-group > :not(.btn-check:first-child) + .btn,
-  btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
-    border-radius: 0 !important;
-  }
+/* REVIEW */
+#reviews-container .fa {
+  color: #f9eb13;
 }
