@@ -551,6 +551,12 @@ dl.match-text {
 
 .dropdown-notif {
   background: rgb(248, 248, 252);
+  width: 290px;
+}
+
+.dropdown-box-text {
+  width: 240px;
+  font-size: 15px;
 }
 
 li:first-of-type .dropdown-item:hover {
@@ -560,6 +566,7 @@ li:first-of-type .dropdown-item:hover {
 .dropdown-notif .btn {
   border-radius: 0 0 5px 5px;
   border-color: rgb(103, 80, 249, 0.3) !important;
+  background-color: #ece7f3;
 }
 
 .dropdown-notif .badge {
