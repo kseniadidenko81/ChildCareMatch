@@ -88,7 +88,7 @@ if (searchIcon && searchIcon.parentElement) {
     }
   });
 }
-
+// Временно. Пока не появится функционал на иконку в углу - отправить
 // Remove all event listeners on the dismiss-btn button
 document.querySelectorAll(".dismiss-btn").forEach((button) => {
   button.addEventListener("click", (event) => {
