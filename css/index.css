@@ -687,3 +687,11 @@ li:first-of-type .dropdown-item:hover {
   opacity: 1;
   transform: scale(1.2);
 }
+
+@media screen and (max-width: 575px) {
+  .btn-type-filter,
+  .btn-group > :not(.btn-check:first-child) + .btn,
+  btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0 !important;
+  }
+}
