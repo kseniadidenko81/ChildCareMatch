@@ -515,6 +515,7 @@ dl.match-text {
 
 .notifications .count {
   position: absolute;
+  z-index: 4;
   top: -10px;
   right: -5px;
   height: 17px;
@@ -532,6 +533,32 @@ dl.match-text {
 .notifications .fa {
   color: #6750f9;
   font-size: 24px;
+}
+
+.fa-bell-o {
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes bellRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+a:hover .fa-bell-o {
+  animation: bellRing 0.6s ease-in-out;
 }
 
 .read:hover,
