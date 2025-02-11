@@ -570,6 +570,7 @@ a:hover .fa-bell-o {
 .btn-notif {
   background-color: hsl(240, 20%, 90%);
   background-color: hsl(250deg 70% 85% / 10%);
+  cursor: pointer;
 }
 
 .read {
