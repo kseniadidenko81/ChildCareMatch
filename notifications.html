@@ -204,6 +204,7 @@
       <main class="content">
         <div class="section-filter container py-4 py-md-5 my-md-4">
           <div class="row">
+            <!-- Search -->
             <div class="col-md-6">
               <div class="input-group mb-4">
                 <input
@@ -217,7 +218,7 @@
                 ></span>
               </div>
             </div>
-
+            <!--Status Read/Unread-->
             <div class="col-md-6">
               <div
                 class="btn-group mb-3 w-100"
@@ -245,7 +246,7 @@
               </div>
             </div>
           </div>
-
+          <!-- Status by type -->
           <div class="row text-center">
             <div class="col">
               <div
@@ -259,48 +260,63 @@
                 >
                   <i class="bi bi-bell"></i> All Types
                 </button>
-                <button
-                  class="btn-type-filter btn btn-outline-secondary"
-                  data-type="sent"
-                >
-                  <i class="bi bi-calendar-check pe-1"></i>New Availability
-                </button>
-                <button
-                  class="btn-type-filter btn btn-outline-secondary"
-                  data-type="message"
-                >
-                  <i class="bi bi-send-check pe-1"></i>Application Sent
-                </button>
-                <button
-                  class="btn-type-filter btn btn-outline-secondary"
-                  data-type="change"
-                >
-                  <i class="bi bi-arrow-clockwise pe-1"></i>Status Change
-                </button>
+                <!--  -->
                 <button
                   class="btn-type-filter btn btn-outline-secondary"
                   data-type="waiting"
                 >
-                  <i class="bi bi-hourglass-split pe-1"></i>Waiting List
+                  <i class="bi bi-calendar-check pe-1"></i>New Availability
                 </button>
+                <!--  -->
+                <button
+                  class="btn-type-filter btn btn-outline-secondary"
+                  data-type="message"
+                >
+                  <i class="bi bi-file-earmark-text pe-1"></i>Application Status
+                </button>
+                <!-- <button
+                  class="btn-type-filter btn btn-outline-secondary"
+                  data-type="message"
+                >
+                  <i class="bi bi-send-check pe-1"></i>Application Status
+                </button> -->
+                <!-- <button
+                  class="btn-type-filter btn btn-outline-secondary"
+                  data-type="change"
+                >
+                  <i class="bi bi-arrow-clockwise pe-1"></i>Status Change
+                </button> -->
+                <!-- <button
+                  class="btn-type-filter btn btn-outline-secondary"
+                  data-type="waiting"
+                >
+                  <i class="bi bi-hourglass-split pe-1"></i>Waiting List
+                </button> -->
               </div>
             </div>
           </div>
-
+          <!-- Notifications Text -->
           <div class="row" id="notificationList">
-            <div class="col-md-6 notification-box read sent p-1 m-0 rounded-2">
+            <div
+              class="col-md-6 notification-box read message p-1 m-0 rounded-2"
+            >
               <div class="notification h-100" id="notification-1">
                 <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope-open" style="color: #18d17c"></i>
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope-open" style="color: #00bcd4"></i
+                    ><i class="bi bi-send-check" style="color: #1976d2"></i>
                   </div>
                   <div class="notification-text">
-                    <p class="title">Kindergarten new availability</p>
-                    <p class="small">
-                      New place availability in the Super Star program you are
-                      waiting for.
+                    <p class="title">
+                      Application Sent to
+                      <strong>Little Explorers Preschool</strong>
                     </p>
-                    <p class="subtitle text-end">February 10, 2025</p>
+                    <p class="small">
+                      Your application has been successfully sent to Little
+                      Explorers Preschool. You will be notified once the status
+                      changes.
+                    </p>
+                    <p class="subtitle text-end">February 1, 2025</p>
                   </div>
                   <div class="notification-action">
                     <button
@@ -316,19 +332,25 @@
             </div>
             <!--  -->
             <div
-              class="col-md-6 notification-box unread message p-1 m-0 rounded-2"
+              class="col-md-6 notification-box unread waiting p-1 m-0 rounded-2"
             >
               <div class="notification h-100" id="notification-2">
                 <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope" style="color: #a956e8"></i>
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope" style="color: #39363b"></i>
+                    <i class="bi bi-hourglass-split" style="color: #6750f9"></i>
                   </div>
                   <div class="notification-text">
-                    <p class="title">Kindergarten application send</p>
-                    <p class="small">
-                      Your application has been successfully sent to Super Star.
+                    <p class="title">
+                      New Spot Available at
+                      <strong>Super Star Kindergarten</strong>
                     </p>
-                    <p class="subtitle text-end">February 10, 2025</p>
+                    <p class="small">
+                      A spot has opened up for your child from the waiting list
+                      at Super Star Kindergarten. Please respond promptly to
+                      secure your place.
+                    </p>
+                    <p class="subtitle text-end">February 3, 2025</p>
                   </div>
                   <div class="notification-action">
                     <button
@@ -344,114 +366,24 @@
             </div>
             <!--  -->
             <div
-              class="col-md-6 notification-box unread sent p-1 m-0 rounded-22"
+              class="col-md-6 notification-box unread message p-1 m-0 rounded-22"
             >
-              <div class="notification h-100">
+              <div class="notification h-100" id="notification-3">
                 <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope" style="color: #a956e8"></i>
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope" style="color: #39363b"></i
+                    ><i class="bi bi-send-check" style="color: #1976d2"></i>
                   </div>
                   <div class="notification-text">
-                    <p class="title">Kindergarten new availability</p>
-                    <p class="small">
-                      New place availability in the Super Star program you are
-                      waiting for.
+                    <p class="title">
+                      Application Sent to <strong>Bright Future Academy</strong>
                     </p>
-                    <p class="subtitle text-end">February 10, 2025</p>
-                  </div>
-                  <div class="notification-action">
-                    <button type="button" class="dismiss-btn">
-                      <i class="bi bi-x"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-md-6 notification-box read change p-1 m-0 rounded-2"
-            >
-              <div class="notification h-100">
-                <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope-open" style="color: #18d17c"></i>
-                  </div>
-                  <div class="notification-text">
-                    <p class="title">Kindergarten application status change</p>
-                    <p class="small">Your application has been approved.</p>
-                    <p class="subtitle text-end">February 10, 2025</p>
-                  </div>
-                  <div class="notification-action">
-                    <button type="button" class="dismiss-btn">
-                      <i class="bi bi-x"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-
-            <div
-              class="col-md-6 notification-box read message p-1 m-0 rounded-2"
-            >
-              <div class="notification h-100">
-                <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope-open" style="color: #18d17c"></i>
-                  </div>
-                  <div class="notification-text">
-                    <p class="title">Kindergarten application send</p>
                     <p class="small">
-                      Your application has been successfully sent to Super Star.
+                      Your application has been successfully sent to Little
+                      Explorers Preschool. You will be notified once the status
+                      changes.
                     </p>
-                    <p class="subtitle text-end">February 10, 2025</p>
-                  </div>
-                  <div class="notification-action">
-                    <button type="button" class="dismiss-btn">
-                      <i class="bi bi-x"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-md-6 notification-box unread change p-1 m-0 rounded-2"
-            >
-              <div class="notification h-100">
-                <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope" style="color: #a956e8"></i>
-                  </div>
-                  <div class="notification-text">
-                    <p class="title">Kindergarten application status change</p>
-                    <p class="small">Your application has been approved.</p>
-                    <p class="subtitle text-end">February 10, 2025</p>
-                  </div>
-                  <div class="notification-action">
-                    <button type="button" class="dismiss-btn">
-                      <i class="bi bi-x"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-md-6 notification-box unread waiting p-1 m-0 rounded-2"
-            >
-              <div class="notification h-100">
-                <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope" style="color: #a956e8"></i>
-                  </div>
-                  <div class="notification-text">
-                    <p class="title">Kindergarten new availability</p>
-                    <p class="small">
-                      New place availability in the Super Star program you are
-                      waiting for.
-                    </p>
-                    <p class="subtitle text-end">February 10, 2025</p>
+                    <p class="subtitle text-end">February 3, 2025</p>
                   </div>
                   <div class="notification-action">
                     <button type="button" class="dismiss-btn">
@@ -465,18 +397,143 @@
             <div
               class="col-md-6 notification-box read waiting p-1 m-0 rounded-2"
             >
-              <div class="notification h-100">
+              <div class="notification h-100" id="notification-4">
                 <div class="notification-inner">
-                  <div class="notification-icon">
-                    <i class="bi bi-envelope-open" style="color: #18d17c"></i>
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope-open" style="color: #00bcd4"></i>
+                    <i class="bi bi-hourglass-split" style="color: #6750f9"></i>
                   </div>
                   <div class="notification-text">
-                    <p class="title">Kindergarten new availability</p>
-                    <p class="small">
-                      New place availability in the Super Star program you are
-                      waiting for.
+                    <p class="title">
+                      New Spot Available at
+                      <strong>Bright Future Academy</strong>
                     </p>
-                    <p class="subtitle text-end">February 10, 2025</p>
+                    <p class="small">
+                      A spot has opened up for your child from the waiting list
+                      at Bright Future Academy. Please respond promptly to
+                      secure your place.
+                    </p>
+                    <p class="subtitle text-end">February 3, 2025</p>
+                  </div>
+                  <div class="notification-action">
+                    <button type="button" class="dismiss-btn">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-md-6 notification-box read message p-1 m-0 rounded-2"
+            >
+              <div class="notification h-100" id="notification-5">
+                <div class="notification-inner">
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope-open" style="color: #00bcd4"></i>
+                    <i class="bi bi-x-circle" style="color: #dc3545"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="title">
+                      Application Rejected by
+                      <strong>Sunny Days Kindergarten</strong>
+                    </p>
+                    <p class="small">
+                      We regret to inform you that your application to Sunny
+                      Days Kindergarten has been declined. Thank you for your
+                      interest. &lt;/p&gt;
+                    </p>
+                    <p class="subtitle text-end">February 5, 2025</p>
+                  </div>
+                  <div class="notification-action">
+                    <button type="button" class="dismiss-btn">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-md-6 notification-box unread message p-1 m-0 rounded-2"
+            >
+              <div class="notification h-100" id="notification-6">
+                <div class="notification-inner">
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope" style="color: #39363b"></i>
+                    <i class="bi bi-x-circle" style="color: #dc3545"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="title">
+                      Application Rejected by
+                      <strong>Bright Futures Academy</strong>
+                    </p>
+                    <p class="small">
+                      We regret to inform you that your application to Bright
+                      Futures Academy has been declined. Thank you for your
+                      interest.
+                    </p>
+                    <p class="subtitle text-end">February 6, 2025</p>
+                  </div>
+                  <div class="notification-action">
+                    <button type="button" class="dismiss-btn">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-md-6 notification-box unread message p-1 m-0 rounded-2"
+            >
+              <div class="notification h-100" id="notification-7">
+                <div class="notification-inner">
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope" style="color: #39363b"></i>
+                    <i class="bi bi-check-circle" style="color: #28a745"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="title">
+                      Application Approved by
+                      <strong>Little Explorers Preschool</strong>
+                    </p>
+                    <p class="small">
+                      Congratulations! Your child's application to Little
+                      Explorers Preschool has been approved. We look forward to
+                      welcoming you.
+                    </p>
+                    <p class="subtitle text-end">February 7, 2025</p>
+                  </div>
+                  <div class="notification-action">
+                    <button type="button" class="dismiss-btn">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-md-6 notification-box read message p-1 m-0 rounded-2"
+            >
+              <div class="notification h-100" id="notification-8">
+                <div class="notification-inner">
+                  <div class="notification-icon d-flex flex-column">
+                    <i class="bi bi-envelope-open" style="color: #00bcd4"></i>
+                    <i class="bi bi-check-circle" style="color: #28a745"></i>
+                  </div>
+                  <div class="notification-text">
+                    <p class="title">
+                      Application Approved by
+                      <strong>Sunny Meadows Kindergarten</strong>
+                    </p>
+                    <p class="small">
+                      Congratulations! Your child's application to Sunny Meadows
+                      Kindergarten has been approved. We look forward to
+                      welcoming you.
+                    </p>
+                    <p class="subtitle text-end">February 8, 2025</p>
                   </div>
                   <div class="notification-action">
                     <button type="button" class="dismiss-btn">
