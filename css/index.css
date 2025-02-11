@@ -559,6 +559,16 @@ dl.match-text {
   font-size: 15px;
 }
 
+@media screen and (min-width: 768px) {
+  .dropdown-notif {
+    width: 330px;
+  }
+
+  .dropdown-box-text {
+    width: 280px;
+  }
+}
+
 li:first-of-type .dropdown-item:hover {
   border-radius: 5px 5px 0 0;
 }
