@@ -550,7 +550,7 @@ dl.match-text {
 }
 
 .dropdown-notif {
-  background: rgb(251 251 251);
+  background: rgb(251, 251, 251, 1);
   width: 290px;
 }
 
