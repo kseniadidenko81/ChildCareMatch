@@ -72,7 +72,7 @@ img {
 }
 
 button:focus:not(:focus-visible) {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .btn.delete-btn {
@@ -811,6 +811,9 @@ li:first-of-type .dropdown-item:hover {
 }
 .rating .fa-star-o {
   color: #ccc;
+}
+#rating-modal span.fa {
+  color: #ffbf00;
 }
 .card-avatar {
   width: 44px;
