@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="card-text">${reviewData.text}</p>
       </div>
       <div class="card-footer d-flex align-items-center justify-content-between flex-wrap py-0">
-        <a href="#" class="py-2">Show More</a>
+        <a href="#" class="pb-3 py-sm-0">Show More</a>
         <div class="btn-review-wrap d-flex flex-wrap">
           <button class="btn btn-outline-primary me-2 edit-btn" data-id="${
             reviewData.id
