@@ -84,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const newTitle = document.getElementById("reviewTitle").value;
+      const newTitle = document.getElementById("reviewTitle").value.trim();
+      const newTitleMessage =
+        document.getElementById("reviewTitleMessage").value;
       const newText = document.getElementById("reviewText").value;
       const newRating = currentRating;
 
@@ -95,23 +97,36 @@ document.addEventListener("DOMContentLoaded", () => {
       const newDate = getFormattedDate();
 
       const reviewData = {
-        id: Date.now(),
-        title: newTitle,
+        id: currentReviewId || Date.now(),
+        title: newTitle || "No Title",
+        titleMessage: newTitleMessage || "",
         text: newText,
         rating: currentRating,
         date: newDate,
       };
 
       const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-      reviews.push(reviewData);
-      localStorage.setItem("reviews", JSON.stringify(reviews));
 
-      renderReviewCard(reviewData);
+      if (currentReviewId) {
+        const updatedReviews = reviews.map((review) =>
+          review.id === currentReviewId ? reviewData : review
+        );
+        localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+      } else {
+        reviews.push(reviewData);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+      }
+
+      document.getElementById("reviewsContainer").innerHTML = "";
+      reviews.forEach((review) => renderReviewCard(review));
 
       bootstrap.Modal.getInstance(
         document.getElementById("reviewModal")
       ).hide();
+
       this.reset();
+
+      currentReviewId = null;
     });
 
   function renderReviewCard(reviewData) {
@@ -147,7 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <small class="text-muted pt-2">${reviewData.date}</small>
       </div>
       <div class="card-body d-flex align-items-start flex-grow-1">
-        <p class="card-text">${reviewData.text}</p>
+        <p class="card-text">
+          <span class="fw-bold d-block pb-2"> ${
+            reviewData.titleMessage || ""
+          }</span>
+          ${reviewData.text}
+        </p>
       </div>
       <div class="card-footer d-flex align-items-center justify-content-between flex-wrap py-0">
         <a href="#" class="pb-3 py-sm-0">Show More</a>
@@ -172,25 +192,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const editBtn = reviewCard.querySelector(".edit-btn");
     editBtn.addEventListener("click", () => {
-      currentReviewId = reviewData.id;
-      document.getElementById("reviewTitle").value = reviewData.title;
-      document.getElementById("reviewText").value = reviewData.text;
-      currentRating = reviewData.rating;
+      currentReviewId = null;
+      document.getElementById("reviewTitle").value = "";
+      document.getElementById("reviewTitleMessage").value = "";
+      document.getElementById("reviewText").value = "";
+      currentRating = 0;
       renderStars(currentRating, "rating-modal", true);
     });
 
     reviewsContainer.appendChild(reviewCard);
-    renderStars(reviewData.rating, "rating-modal", true);
   }
 
   function generateStarHTML(rating) {
     let starsHTML = "";
     for (let i = 1; i <= 5; i++) {
-      if (rating >= i) {
-        starsHTML += '<span class="fa fa-star"></span>';
-      } else {
-        starsHTML += '<span class="fa fa-star-o"></span>';
-      }
+      starsHTML += `<span class="fa ${
+        rating >= i ? "fa-star" : "fa-star-o"
+      }"></span>`;
     }
     return starsHTML;
   }
@@ -202,4 +220,48 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadReviewsFromLocalStorage();
+});
+
+// Show More/Show Less
+
+document.addEventListener("DOMContentLoaded", () => {
+  const showMoreButtons = document.querySelectorAll(".show-more");
+
+  showMoreButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const extraText = button.closest(".card").querySelector(".extra-text");
+      if (extraText) {
+        extraText.classList.toggle("d-none");
+        button.textContent = extraText.classList.contains("d-none")
+          ? "Show More"
+          : "Show Less";
+      }
+    });
+  });
+
+  const replyCountElements = document.querySelectorAll(".reply-count");
+
+  replyCountElements.forEach((replyCountElement) => {
+    const replies = parseInt(replyCountElement.dataset.replies);
+    updateReplyCount(replyCountElement, replies);
+  });
+
+  function updateReplyCount(element, count) {
+    if (element) {
+      const replyText = getReplyText(count);
+      element.textContent = replyText;
+    }
+  }
+
+  function getReplyText(count) {
+    if (count === 1) {
+      return "1 Reply";
+    } else if (count > 1 && count < 5) {
+      return `${count} Replies`;
+    } else {
+      return `${count} Replies`;
+    }
+  }
 });
