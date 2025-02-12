@@ -663,7 +663,7 @@ li:first-of-type .dropdown-item:hover {
   width: 100%;
   padding: 12px;
   pointer-events: auto;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease, transform 0.3s ease;
   border: 1px solid #dddddd;
 }
