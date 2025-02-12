@@ -1,3 +1,5 @@
+// REVIEW
+
 document.addEventListener("DOMContentLoaded", () => {
   let currentRating = 0;
   let currentReviewId = null;
@@ -23,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!starsContainer) {
       console.error(`Container with ID "${containerId}" not found.`);
       return;
+    }
+
+    if (isNaN(rating) || rating < 0 || rating > 5) {
+      rating = 0;
     }
 
     starsContainer.innerHTML = "";
@@ -74,13 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const newTitle = document.getElementById("reviewTitle").value;
       const newText = document.getElementById("reviewText").value;
       const newRating = currentRating;
+
+      if (isNaN(newRating) || newRating < 0 || newRating > 5) {
+        currentRating = 0;
+      }
+
       const newDate = getFormattedDate();
 
       const reviewData = {
         id: Date.now(),
         title: newTitle,
         text: newText,
-        rating: newRating,
+        rating: currentRating,
         date: newDate,
       };
 
@@ -101,6 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!reviewsContainer) {
       console.error("Reviews container not found!");
       return;
+    }
+
+    if (
+      isNaN(reviewData.rating) ||
+      reviewData.rating < 0 ||
+      reviewData.rating > 5
+    ) {
+      reviewData.rating = 0;
     }
 
     const reviewCard = document.createElement("div");
@@ -154,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     reviewsContainer.appendChild(reviewCard);
-
     renderStars(reviewData.rating, "rating-modal", true);
   }
 
