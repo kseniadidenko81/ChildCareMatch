@@ -775,7 +775,7 @@ li:first-of-type .dropdown-item:hover {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-  border: 0;
+  border: 1px solid #dddddd;
   background-color: rgb(251 251 251);
 }
 .card-review .card-header,
