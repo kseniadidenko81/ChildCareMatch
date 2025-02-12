@@ -71,6 +71,10 @@ img {
   min-width: 160px;
 }
 
+button:focus:not(:focus-visible) {
+    box-shadow: none;
+}
+
 .btn.delete-btn {
   color: #bb2d3b !important;
   background-color: transparent;
