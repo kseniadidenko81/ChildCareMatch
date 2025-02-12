@@ -170,7 +170,10 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
       </div>
       <div class="card-footer d-flex align-items-center justify-content-between flex-wrap py-0">
-        <a href="#" class="pb-3 py-sm-0">Show More</a>
+        <div class="d-flex flex-column">
+          <a href="#" class="py-sm-0 show-more mb-1">Show More</a>
+          <span class="pb-3 text-secondary text-decoration-underline reply-count" data-replies="0">0 Replies</span>
+        </div>
         <div class="btn-review-wrap d-flex flex-wrap justify-content-end ms-auto">
           <button class="btn btn-outline-primary edit-btn" data-id="${
             reviewData.id
