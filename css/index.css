@@ -816,6 +816,10 @@ li:first-of-type .dropdown-item:hover {
   color: #ffbf00;
 }
 
+#rating-modal span.fa-star-o {
+  color: #ccc;
+}
+
 span.rating-text {
   color: #000 !important;
   font-weight: 400 !important;
