@@ -1,5 +1,3 @@
-// REVIEW
-
 document.addEventListener("DOMContentLoaded", () => {
   let currentRating = 0;
   let currentReviewId = null;
@@ -56,6 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       ratingText.textContent = `${rating.toFixed(0)}`;
     }
+  }
+
+  const reviewModal = document.getElementById("reviewModal");
+  if (reviewModal) {
+    reviewModal.addEventListener("show.bs.modal", () => {
+      renderStars(5, "rating-modal", true);
+    });
   }
 
   document.getElementById("rating-modal").addEventListener("mousemove", (e) => {
