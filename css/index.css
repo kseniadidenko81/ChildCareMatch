@@ -772,7 +772,7 @@ li:first-of-type .dropdown-item:hover {
   padding: 2px;
 }
 .card-review .rating {
-  color: #ffc107;
+  color: #000;
 }
 .card-review {
   height: 100%;
@@ -812,8 +812,13 @@ li:first-of-type .dropdown-item:hover {
 .rating .fa-star-o {
   color: #ccc;
 }
-#rating-modal span.fa {
+#rating-modal span {
   color: #ffbf00;
+}
+
+span.rating-text {
+  color: #000 !important;
+  font-weight: 400 !important;
 }
 .card-avatar {
   width: 44px;
