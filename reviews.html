@@ -231,7 +231,7 @@
                       class="card-avatar me-2"
                     />
                     <div>
-                      <h5 class="mb-0">Night Days Kindergarten</h5>
+                      <h5 class="mb-0 review-title">Night Days Kindergarten</h5>
                       <small class="rating" data-rating="2.5">
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
@@ -300,7 +300,9 @@
                       class="card-avatar me-2"
                     />
                     <div>
-                      <h5 class="mb-0">Bright Futures Preschool</h5>
+                      <h5 class="mb-0 review-title">
+                        Bright Futures Preschool
+                      </h5>
                       <small class="rating" data-rating="2.5">
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
@@ -385,7 +387,7 @@
                       class="card-avatar me-2"
                     />
                     <div>
-                      <h5 class="mb-0">Bright Future Academy</h5>
+                      <h5 class="mb-0 review-title">Bright Future Academy</h5>
                       <small class="rating" data-rating="2.5">
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
@@ -492,13 +494,13 @@
                   <form id="reviewForm">
                     <div class="mb-3">
                       <label for="reviewTitle" class="form-label"
-                        >Name Kindergarten</label
+                        >Review Title</label
                       >
                       <input
                         type="text"
                         class="form-control"
                         id="reviewTitle"
-                        placeholder="Enter name Kindergarten"
+                        name="reviewTitle"
                       />
                     </div>
                     <div class="mb-3">
@@ -642,6 +644,25 @@
     <!-- SCRIPT -->
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      document.querySelectorAll(".edit-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".card");
+
+          const reviewTitle = card.querySelector(".review-title").textContent;
+
+          const reviewTitleField = document.getElementById("reviewTitle");
+          reviewTitleField.value = reviewTitle;
+
+          const stars = document.querySelectorAll("#reviewModal .rating span");
+          stars.forEach((star) => {
+            star.classList.remove("fa-star");
+            star.classList.add("fa-star-o");
+          });
+        });
+      });
     </script>
   </body>
 </html>
