@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentRating = 0;
   let currentReviewId = null;
   let currentAvatarSrc = "";
+  let currentReplies = 0;
 
   function getFormattedDate() {
     const options = {
@@ -65,6 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const validRating = isNaN(currentRating) ? 0 : currentRating;
 
+      const replies =
+        parseInt(document.getElementById("currentRepliesField").value) || 0;
+
       const reviewData = {
         id: currentReviewId || Date.now(),
         title: newTitle || "No Title",
@@ -73,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rating: validRating,
         date: getFormattedDate(),
         avatarSrc: currentAvatarSrc || "img/default-avatar.svg",
+        replies: replies,
       };
 
       console.log("Review data to be saved:", reviewData);
@@ -96,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       currentReviewId = null;
       currentAvatarSrc = "";
+      currentReplies = 0;
     });
 
   function renderReviewCard(reviewData) {
@@ -105,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const reviewCard = document.createElement("div");
     reviewCard.className = "card card-review mt-4 w-100 p-3 p-md-4";
     reviewCard.id = `review-${reviewData.id}`;
-    reviewCard.innerHTML = `
+    reviewCard.innerHTML = `  
       <div class="card-header d-flex align-items-center justify-content-between flex-wrap">
         <div class="d-flex align-items-center flex-wrap">
           <img src="${
@@ -129,7 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card-footer d-flex align-items-center justify-content-between flex-wrap py-0">
         <div class="d-flex flex-column">
           <a href="#" class="py-sm-0 show-more mb-1">Show More</a>
-          <span class="pb-3 text-secondary text-decoration-underline reply-count" data-replies="0">0 Replies</span>
+          <span class="pb-3 text-secondary text-decoration-underline reply-count" data-replies="${
+            reviewData.replies
+          }">${reviewData.replies} Replies</span>
         </div>
         <div class="btn-review-wrap d-flex flex-wrap justify-content-end ms-auto">
           <button class="btn btn-outline-primary edit-btn" data-id="${
@@ -151,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reviewCard.querySelector(".edit-btn").addEventListener("click", () => {
       currentReviewId = reviewData.id;
       currentAvatarSrc = reviewData.avatarSrc;
+      currentReplies = reviewData.replies;
 
       console.log("Editing review, current avatar src:", currentAvatarSrc);
 
@@ -163,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       currentRating = reviewData.rating;
       renderStars(currentRating, "rating-modal", true);
+
+      document.getElementById("currentRepliesField").value = currentReplies;
     });
 
     reviewsContainer.appendChild(reviewCard);
@@ -187,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadReviewsFromLocalStorage() {
     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    savedReviews.forEach(renderReviewCard); // Render all saved review cards
+    savedReviews.forEach(renderReviewCard);
   }
 
   loadReviewsFromLocalStorage();
