@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderStars(rating, containerId, showRatingText = false) {
     const starsContainer = document.getElementById(containerId);
     if (!starsContainer) return;
+
+    rating = isNaN(rating) ? 0 : rating;
+
     starsContainer.innerHTML = "";
     for (let i = 1; i <= 5; i++) {
       const star = document.createElement("span");
@@ -26,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       star.dataset.value = i;
       starsContainer.appendChild(star);
     }
+
     if (showRatingText) {
       let ratingText =
         starsContainer.querySelector(".rating-text") ||
@@ -59,14 +63,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.log("Current Avatar Src before saving:", currentAvatarSrc);
 
+      const validRating = isNaN(currentRating) ? 0 : currentRating;
+
       const reviewData = {
         id: currentReviewId || Date.now(),
         title: newTitle || "No Title",
         titleMessage: newTitleMessage || "",
         text: newText,
-        rating: currentRating,
+        rating: validRating,
         date: getFormattedDate(),
-        avatarSrc: currentAvatarSrc || "img/default-avatar.svg", // передаем правильный аватар
+        avatarSrc: currentAvatarSrc || "img/default-avatar.svg",
       };
 
       console.log("Review data to be saved:", reviewData);
@@ -83,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderReviewCard(reviewData);
 
-      // Закрываем модалку и сбрасываем форму
       bootstrap.Modal.getInstance(
         document.getElementById("reviewModal")
       ).hide();
@@ -145,14 +150,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reviewCard.querySelector(".edit-btn").addEventListener("click", () => {
       currentReviewId = reviewData.id;
-      currentAvatarSrc = reviewData.avatarSrc; // Аватар сохраняется правильно
+      currentAvatarSrc = reviewData.avatarSrc;
 
       console.log("Editing review, current avatar src:", currentAvatarSrc);
 
       document.getElementById("reviewTitle").value = reviewData.title;
-      document.getElementById("reviewTitleMessage").value =
-        reviewData.titleMessage;
-      document.getElementById("reviewText").value = reviewData.text;
+      document.getElementById("reviewTitleMessage").value = "";
+      document.getElementById("reviewText").value = "";
 
       const avatarPreview = document.getElementById("avatarPreview");
       avatarPreview.src = currentAvatarSrc || "img/default-avatar.svg";
@@ -165,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function generateStarHTML(rating) {
+    rating = isNaN(rating) ? 0 : rating;
     return Array.from(
       { length: 5 },
       (_, i) =>
@@ -182,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadReviewsFromLocalStorage() {
     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    savedReviews.forEach(renderReviewCard); // Прорисовываем все сохраненные карточки
+    savedReviews.forEach(renderReviewCard); // Render all saved review cards
   }
 
   loadReviewsFromLocalStorage();
