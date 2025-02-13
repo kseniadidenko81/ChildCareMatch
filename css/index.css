@@ -817,6 +817,7 @@ li:first-of-type .dropdown-item:hover {
 #rating-modal span {
   color: #ffbf00;
   font-size: 16px;
+  letter-spacing: 4px;
 }
 
 #rating-modal span.fa-star-o {
