@@ -128,6 +128,12 @@ button:focus:not(:focus-visible) {
   border-color: rgb(103, 80, 249, 0.3) !important;
 }
 
+.btn-group .btn-outline-primary.active {
+  background-color: #6750f9 !important;
+  border-color: #6750f9 !important;
+  color: #fff !important;
+}
+
 .link-primary:focus,
 .link-primary:hover,
 .link-primary:active {
