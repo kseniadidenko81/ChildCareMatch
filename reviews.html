@@ -275,102 +275,21 @@
                       class="btn btn-outline-primary edit-btn"
                       data-bs-toggle="modal"
                       data-bs-target="#reviewModal"
-                      data-id="1"
+                      data-id="2"
                     >
                       <i class="bi bi-pencil"></i> Edit
                     </button>
-                    <button type="button" class="ms-2 btn delete-btn">
+                    <button
+                      type="button"
+                      class="ms-2 btn delete-btn"
+                      data-id="2"
+                    >
                       <i class="bi bi-eye-slash"></i> Unpublish
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- <div id="review-2">
-              <div class="card card-review mb-3 w-100 p-3 p-md-4">
-                <div
-                  class="card-header d-flex align-items-center justify-content-between flex-wrap"
-                >
-                  <div class="d-flex align-items-center flex-wrap">
-                    <img
-                      src="img/avatar-3.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <h5 class="mb-1 review-title">
-                        Bright Futures Preschool
-                      </h5>
-                      <small class="rating" data-rating="4">
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star-o"></span> (4)</small
-                      >
-                    </div>
-                  </div>
-                  <small class="text-muted pt-2">February 10 at 8:20 PM</small>
-                </div>
-                <div
-                  class="card-body d-flex flex-column align-items-start flex-grow-1"
-                >
-                  <p class="card-text">
-                    <span class="fw-bold d-block pb-2"
-                      >Great Start to My Child’s Education!</span
-                    >
-                    <span
-                      >Bright Futures Preschool has been an excellent choice for
-                      my son.</span
-                    >
-                  </p>
-                  <div
-                    class="extra-text mt-2 d-none border-top border-1 border-primary pt-2"
-                  >
-                    <p class="ms-4">
-                      <span class="fw-bold d-block pb-2"
-                        >Great Start to My Child’s Education!</span
-                      >
-                      <span
-                        >The school also emphasizes creativity, with arts and
-                        crafts sessions that my son looks forward to every week.
-                        I’m so grateful for everything they do and highly
-                        recommend it to other parents!</span
-                      >
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="card-footer d-flex align-items-center justify-content-between flex-wrap py-0"
-                >
-                  <div class="d-flex flex-column">
-                    <a href="#" class="py-sm-0 show-more mb-1">Show More</a>
-                    <span
-                      class="pb-3 text-secondary text-decoration-underline reply-count"
-                      data-replies="1"
-                      >1 Replies</span
-                    >
-                  </div>
-                  <div
-                    class="btn-review-wrap d-flex flex-wrap justify-content-end ms-auto"
-                  >
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#reviewModal"
-                      data-id="1"
-                    >
-                      <i class="bi bi-pencil"></i> Edit
-                    </button>
-                    <button type="button" class="ms-2 btn delete-btn">
-                      <i class="bi bi-eye-slash"></i> Unpublish
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
             <div id="review-3">
               <div class="card card-review mb-3 p-3 p-md-4">
@@ -455,7 +374,11 @@
                     >
                       <i class="bi bi-pencil"></i> Edit
                     </button>
-                    <button type="button" class="ms-2 btn delete-btn">
+                    <button
+                      type="button"
+                      class="ms-2 btn delete-btn"
+                      data-id="1"
+                    >
                       <i class="bi bi-eye-slash"></i> Unpublish
                     </button>
                   </div>
@@ -528,6 +451,14 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star-o"></span>
                       </small>
+                    </div>
+                    <div class="avatar-preview" style="display: none">
+                      <img
+                        id="avatarPreview"
+                        src="img/default-avatar.svg"
+                        alt="Avatar"
+                        class="avatar-img"
+                      />
                     </div>
                     <button type="submit" class="btn btn-primary" id="saveBtn">
                       Send Review
