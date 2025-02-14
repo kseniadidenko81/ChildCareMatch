@@ -854,6 +854,10 @@ span.rating-text {
   row-gap: 12px;
 }
 
+#reviewForm .form-control {
+  font-weight: 500 !important;
+}
+
 /* APPLICATION */
 
 .search-application .form-control {
