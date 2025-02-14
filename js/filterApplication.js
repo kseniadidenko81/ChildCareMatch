@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // MOVE CARD TO TAB
+
 document.addEventListener("DOMContentLoaded", function () {
   let selectedCard = null;
   const modalTabsSend = new bootstrap.Modal(
@@ -56,18 +57,58 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const sendApplicationBtn = document.getElementById("sendApplicationBtn");
+
   sendApplicationBtn.addEventListener("click", function () {
     if (selectedCard && selectedCard.classList.contains("send")) {
-      const targetStatus = "approved";
+      let targetStatus = null;
 
-      selectedCard.classList.remove("send");
-      selectedCard.classList.add(targetStatus);
+      if (selectedCard.classList.contains("send-approved")) {
+        targetStatus = "approved";
+      }
+      if (selectedCard.classList.contains("send-waiting")) {
+        targetStatus = "waiting";
+      }
+      if (selectedCard.classList.contains("send-rejected")) {
+        targetStatus = "rejected";
+      }
 
-      updateTabVisibility();
+      if (targetStatus) {
+        moveCardToNewStatus(targetStatus);
+      }
 
       modalTabsSend.hide();
     }
   });
+
+  function moveCardToNewStatus(targetStatus) {
+    if (selectedCard) {
+      const currentTab = selectedCard.closest(".status-container");
+      if (currentTab && currentTab.classList.contains("send-tab")) {
+        currentTab.removeChild(selectedCard);
+      }
+
+      const targetTab = document.querySelector(
+        `.status-container.${targetStatus}-tab`
+      );
+      if (targetTab) {
+        selectedCard.classList.remove(
+          "send",
+          "approved",
+          "waiting",
+          "rejected",
+          "send-approved",
+          "send-waiting",
+          "send-rejected"
+        );
+        selectedCard.classList.add(targetStatus);
+
+        targetTab.appendChild(selectedCard);
+        selectedCard.style.display = "block";
+      }
+
+      updateTabVisibility();
+    }
+  }
 
   function updateTabVisibility() {
     const activeTab = document.querySelector(".btn-filter-tab.active");
@@ -88,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       tabButtons.forEach((btn) => btn.classList.remove("active"));
       this.classList.add("active");
-
       updateTabVisibility();
     });
   });
