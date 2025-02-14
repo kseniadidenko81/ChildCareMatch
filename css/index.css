@@ -854,11 +854,11 @@ span.rating-text {
   row-gap: 12px;
 }
 
-#reviewForm .form-control::placeholder {
+.modal-review .form-control::placeholder {
   font-weight: 400;
 }
 
-#reviewForm .form-control {
+.modal-review .form-control {
   font-weight: 500 !important;
 }
 
