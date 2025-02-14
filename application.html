@@ -239,7 +239,7 @@
 
             <div class="col-12">
               <div
-                class="btn-group mb-3 w-100 d-flex flex-wrap"
+                class="btn-group mb-3 w-100 d-flex flex-wrap tabs"
                 role="group"
                 aria-label="Filter by status"
               >
@@ -271,11 +271,11 @@
             </div>
           </div>
 
-          <div class="row" id="notificationList">
+          <div class="row tab-content" id="notificationList">
             <!-- SEND -->
-            <div class="status-container send">
+            <div class="status-container send send-tab">
               <div
-                class="col-12 notification-box send m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-approved m-0 rounded-2 position-relative"
               >
                 <div
                   class="notification unread d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
@@ -312,7 +312,7 @@
               </div>
               <!--  -->
               <div
-                class="col-12 notification-box send m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-waiting m-0 rounded-2 position-relative"
               >
                 <div
                   class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
@@ -349,7 +349,7 @@
               </div>
               <!--  -->
               <div
-                class="col-12 notification-box send m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-rejected m-0 rounded-2 position-relative"
               >
                 <div
                   class="notification unread d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
@@ -386,7 +386,7 @@
               </div>
               <!--  -->
               <div
-                class="col-12 notification-box send m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-rejected m-0 rounded-2 position-relative"
               >
                 <div
                   class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
@@ -422,8 +422,9 @@
                 </div>
               </div>
             </div>
+
             <!-- Approved -->
-            <div class="status-container approved">
+            <div class="status-container approved approved-tab">
               <div
                 class="col-12 notification-box approved m-0 rounded-2 position-relative"
               >
@@ -462,7 +463,7 @@
               </div>
             </div>
             <!-- waiting -->
-            <div class="status-container waiting">
+            <div class="status-container waiting waiting-tab">
               <div
                 class="col-12 notification-box waiting m-0 rounded-2 position-relative"
               >
@@ -501,7 +502,7 @@
               </div>
             </div>
             <!-- Rejected -->
-            <div class="status-container rejected">
+            <div class="status-container rejected rejected-tab">
               <div
                 class="col-12 notification-box rejected m-0 rounded-2 position-relative"
               >
