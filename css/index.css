@@ -1009,3 +1009,33 @@ span.rating-text {
 .selected-option {
   font-weight: bold;
 }
+
+.toast {
+  background: #fff;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
+  border-left-color: #329f5d;
+  border-left-width: 4px;
+}
+
+.toast .btn-close {
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1055;
+}
+
+#toastMessage {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+#toastMessage.show {
+  opacity: 1;
+}
