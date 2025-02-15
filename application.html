@@ -237,35 +237,55 @@
               </div>
             </div> -->
 
-            <div class="col-12">
+            <div class="col-12 px-4">
               <div
                 class="btn-group mb-3 w-100 d-flex flex-wrap tabs"
                 role="group"
                 aria-label="Filter by status"
               >
                 <button
-                  class="btn-filter-tab btn btn-outline-primary active"
+                  class="btn-filter-tab btn btn-outline-primary position-relative active"
                   data-status="send"
                 >
-                  <i class="bi bi-send"></i> Send
+                  <i class="bi bi-send"></i
+                  ><span
+                    class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
+                    >4</span
+                  >
+                  Send
                 </button>
                 <button
-                  class="btn-filter-tab btn btn-outline-primary"
+                  class="btn-filter-tab btn btn-outline-primary position-relative"
                   data-status="approved"
                 >
-                  <i class="bi bi-check-circle"></i> Approved
+                  <i class="bi bi-check-circle"></i
+                  ><span
+                    class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
+                    >1</span
+                  >
+                  Approved
                 </button>
                 <button
-                  class="btn-filter-tab btn btn-outline-primary"
+                  class="btn-filter-tab btn btn-outline-primary position-relative"
                   data-status="waiting"
                 >
-                  <i class="bi bi-hourglass-split"></i> Waiting List
+                  <i class="bi bi-hourglass-split"></i
+                  ><span
+                    class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
+                    >1</span
+                  >
+                  Waiting List
                 </button>
                 <button
-                  class="btn-filter-tab btn btn-outline-primary"
+                  class="btn-filter-tab btn btn-outline-primary position-relative"
                   data-status="rejected"
                 >
-                  <i class="bi-exclamation-triangle"></i> Rejected
+                  <i class="bi-exclamation-triangle"></i
+                  ><span
+                    class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
+                    >1</span
+                  >
+                  Rejected
                 </button>
               </div>
             </div>
