@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // MOVE CARD TO TAB
-
 document.addEventListener("DOMContentLoaded", function () {
   let selectedCard = null;
   const modalTabsSend = new bootstrap.Modal(
@@ -87,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (targetStatus) {
+        // Уменьшаем счетчик для Send перед перемещением
+        decreaseCount("send");
         moveCardToNewStatus(targetStatus);
       }
 
@@ -99,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selectedCard) {
       const currentTab = selectedCard.closest(".status-container");
       if (currentTab && currentTab.classList.contains("send-tab")) {
-        currentTab.removeChild(selectedCard);
+        currentTab.removeChild(selectedCard); // Удаляем карточку из текущей вкладки
       }
 
       const targetTab = document.querySelector(
@@ -122,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       updateTabVisibility();
+      updateCount(targetStatus); // Увеличиваем счетчик для новой вкладки
     }
 
     hideModal(modalTabsSend);
@@ -152,6 +154,36 @@ document.addEventListener("DOMContentLoaded", function () {
         box.style.display = "none";
       }
     });
+  }
+
+  function updateCount(status) {
+    const statusButton = document.querySelector(
+      `.btn-filter-tab[data-status="${status}"]`
+    );
+    const countElement = statusButton.querySelector(".count");
+
+    if (countElement) {
+      let currentCount = parseInt(countElement.innerText);
+      countElement.innerText = currentCount + 1;
+    }
+  }
+
+  function decreaseCount(status) {
+    const statusButton = document.querySelector(
+      `.btn-filter-tab[data-status="${status}"]`
+    );
+    const countElement = statusButton.querySelector(".count");
+
+    if (countElement) {
+      let currentCount = parseInt(countElement.innerText);
+      if (currentCount > 0) {
+        countElement.innerText = currentCount - 1;
+      }
+
+      if (currentCount === 1) {
+        countElement.innerText = 0;
+      }
+    }
   }
 
   function showToast() {
@@ -217,6 +249,25 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       hideModal(modalTabsSend);
       hasOpenedSendModal = false;
+    });
+  });
+
+  const deleteButtons = document.querySelectorAll(".delete-btn");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const cardToDelete = this.closest(".notification-box");
+      const status = cardToDelete.classList.contains("approved")
+        ? "approved"
+        : cardToDelete.classList.contains("waiting")
+        ? "waiting"
+        : cardToDelete.classList.contains("rejected")
+        ? "rejected"
+        : "send";
+
+      cardToDelete.remove();
+
+      decreaseCount(status);
+      updateTabVisibility();
     });
   });
 });
