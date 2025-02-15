@@ -48,13 +48,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalTabsSend = new bootstrap.Modal(
     document.getElementById("modalTabSend")
   );
+  const modalTabApproved = new bootstrap.Modal(
+    document.getElementById("modalTabApproved")
+  );
+  const modalTabWaiting = new bootstrap.Modal(
+    document.getElementById("modalTabWaiting")
+  );
+  const modalTabRejected = new bootstrap.Modal(
+    document.getElementById("modalTabRejected")
+  );
   const toastElement = document.getElementById("toastMessage");
   const toast = new bootstrap.Toast(toastElement);
+
+  let hasOpenedSendModal = false;
 
   const viewDetailsButtons = document.querySelectorAll(".edit-btn");
   viewDetailsButtons.forEach((button) => {
     button.addEventListener("click", function () {
       selectedCard = this.closest(".notification-box");
+      showCorrectModal(selectedCard);
     });
   });
 
@@ -78,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         moveCardToNewStatus(targetStatus);
       }
 
-      modalTabsSend.hide();
+      hideModal(modalTabsSend);
       showToast();
     }
   });
@@ -111,6 +123,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       updateTabVisibility();
     }
+
+    hideModal(modalTabsSend);
+    hideModal(modalTabApproved);
+    hideModal(modalTabWaiting);
+    hideModal(modalTabRejected);
+  }
+
+  function hideModal(modal) {
+    const modalElement = modal._element;
+    modal.hide();
+    modalElement.classList.remove("show");
+    modalElement.style.display = "none";
+    modalElement.setAttribute("aria-hidden", "true");
+    modalElement.setAttribute("aria-modal", "false");
+    modalElement.removeAttribute("style");
   }
 
   function updateTabVisibility() {
@@ -139,6 +166,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 4000);
   }
 
+  function showCorrectModal(card) {
+    hideModal(modalTabsSend);
+    hideModal(modalTabApproved);
+    hideModal(modalTabWaiting);
+    hideModal(modalTabRejected);
+
+    let targetStatus = null;
+
+    if (card.classList.contains("approved")) {
+      targetStatus = "approved";
+    }
+    if (card.classList.contains("waiting")) {
+      targetStatus = "waiting";
+    }
+    if (card.classList.contains("rejected")) {
+      targetStatus = "rejected";
+    }
+
+    if (targetStatus === "approved") {
+      modalTabApproved.show();
+    } else if (targetStatus === "waiting") {
+      modalTabWaiting.show();
+    } else if (targetStatus === "rejected") {
+      modalTabRejected.show();
+    }
+
+    if (
+      !hasOpenedSendModal &&
+      card.closest(".status-container").classList.contains("send-tab")
+    ) {
+      modalTabsSend.show();
+      hasOpenedSendModal = true;
+    }
+  }
+
   const tabButtons = document.querySelectorAll(".btn-filter-tab");
   tabButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -149,4 +211,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateTabVisibility();
+
+  const closeButtons = document.querySelectorAll(".btn-close");
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      hideModal(modalTabsSend);
+      hasOpenedSendModal = false;
+    });
+  });
 });
