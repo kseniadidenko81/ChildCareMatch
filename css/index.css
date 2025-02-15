@@ -866,6 +866,11 @@ span.rating-text {
 .modal-review .form-control {
   font-weight: 500 !important;
 }
+
+.show-more {
+  cursor: pointer;
+}
+
 /* APPLICATION */
 .section-application .btn {
   min-width: auto;
