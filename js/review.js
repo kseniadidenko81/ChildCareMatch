@@ -62,8 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("reviewTitleMessage").value;
       const newText = document.getElementById("reviewText").value;
 
-      console.log("Current Avatar Src before saving:", currentAvatarSrc);
-
       const validRating = isNaN(currentRating) ? 0 : currentRating;
 
       const replies =
@@ -79,8 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         avatarSrc: currentAvatarSrc || "img/default-avatar.svg",
         replies: replies,
       };
-
-      console.log("Review data to be saved:", reviewData);
 
       let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
       if (currentReviewId) {
@@ -105,8 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   function renderReviewCard(reviewData) {
-    console.log("Rendering review card for:", reviewData);
-
     const reviewsContainer = document.getElementById("reviewsContainer");
     const reviewCard = document.createElement("div");
     reviewCard.className = "card card-review mt-4 w-100 p-3 p-md-4";
@@ -151,17 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>`;
 
-    reviewCard.querySelector(".delete-btn").addEventListener("click", () => {
-      reviewCard.remove();
-      deleteReviewFromLocalStorage(reviewData.id);
-    });
-
     reviewCard.querySelector(".edit-btn").addEventListener("click", () => {
       currentReviewId = reviewData.id;
       currentAvatarSrc = reviewData.avatarSrc;
       currentReplies = reviewData.replies;
-
-      console.log("Editing review, current avatar src:", currentAvatarSrc);
 
       document.getElementById("reviewTitle").value = reviewData.title;
       document.getElementById("reviewTitleMessage").value = "";
@@ -188,20 +175,52 @@ document.addEventListener("DOMContentLoaded", () => {
     ).join("");
   }
 
-  function deleteReviewFromLocalStorage(id) {
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    localStorage.setItem(
-      "reviews",
-      JSON.stringify(reviews.filter((r) => r.id !== id))
-    );
-  }
-
   function loadReviewsFromLocalStorage() {
     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
     savedReviews.forEach(renderReviewCard);
   }
 
   loadReviewsFromLocalStorage();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  let currentDeleteCardId = null;
+
+  // Открытие модалки удаления при нажатии на .delete-btn
+  document.getElementById("reviewsContainer").addEventListener("click", (e) => {
+    const deleteBtn = e.target.closest(".delete-btn");
+    if (deleteBtn) {
+      currentDeleteCardId = deleteBtn.getAttribute("data-id");
+      const deleteModal = new bootstrap.Modal(
+        document.getElementById("deleteConfirmModal")
+      );
+      deleteModal.show();
+    }
+  });
+
+  // Подтверждение удаления при нажатии на кнопку с классом .confirm-delete
+  document.querySelector(".confirm-delete").addEventListener("click", () => {
+    if (currentDeleteCardId) {
+      const reviewCard = document.getElementById(
+        `review-${currentDeleteCardId}`
+      );
+      if (reviewCard) {
+        reviewCard.remove();
+        deleteReviewFromLocalStorage(currentDeleteCardId);
+      }
+      currentDeleteCardId = null;
+      bootstrap.Modal.getInstance(
+        document.getElementById("deleteConfirmModal")
+      ).hide();
+    }
+  });
+
+  // Удаляем карточку из localStorage
+  function deleteReviewFromLocalStorage(id) {
+    const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    const updatedReviews = reviews.filter((review) => review.id !== Number(id));
+    localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+  }
 });
 
 // SHOW / HIDE
