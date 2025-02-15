@@ -985,13 +985,13 @@ span.rating-text {
 
 .section-application .count {
   top: -11px;
-  left: 10px;
+  left: 6px;
   height: 20px;
   width: 20px;
   font-size: 11px;
 }
 
-@media screen and (max-width: 486px) {
+@media screen and (max-width: 510px) {
   .btn-filter-tab {
     border-radius: 6px !important;
   }
