@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalTabsSend = new bootstrap.Modal(
     document.getElementById("modalTabSend")
   );
+  const toastElement = document.getElementById("toastMessage");
+  const toast = new bootstrap.Toast(toastElement);
 
   const viewDetailsButtons = document.querySelectorAll(".edit-btn");
   viewDetailsButtons.forEach((button) => {
@@ -77,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       modalTabsSend.hide();
+      showToast();
     }
   });
 
@@ -122,6 +125,18 @@ document.addEventListener("DOMContentLoaded", function () {
         box.style.display = "none";
       }
     });
+  }
+
+  function showToast() {
+    toastElement.classList.remove("show");
+
+    setTimeout(() => {
+      toastElement.classList.add("show");
+    }, 600);
+
+    setTimeout(() => {
+      toastElement.classList.remove("show");
+    }, 4000);
   }
 
   const tabButtons = document.querySelectorAll(".btn-filter-tab");
