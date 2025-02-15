@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="card-footer d-flex align-items-center justify-content-between flex-wrap py-0">
         <div class="d-flex flex-column">
-          <a href="#" class="py-sm-0 show-more mb-1">Show More</a>
+          <div class="py-sm-0 show-more text-primary mb-1">Show More</div>
           <span class="pb-3 text-secondary text-decoration-underline reply-count" data-replies="${
             reviewData.replies
           }">${reviewData.replies} Replies</span>
