@@ -1052,6 +1052,26 @@
           © <span id="year">2025</span>. All rights reserved.
         </p>
       </footer>
+      <!-- Toast for showing "Application Sent" message -->
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div
+          id="toastMessage"
+          class="toast position-relative"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-body d-flex flex-column m-2">
+            <button
+              type="button"
+              class="btn-close ms-auto position-absolute"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button
+            ><span>Your application has been sent.</span>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- SCRIPT -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
