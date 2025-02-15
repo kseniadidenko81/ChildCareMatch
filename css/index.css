@@ -1002,6 +1002,32 @@ span.rating-text {
   }
 }
 
+#deleteConfirmModal .btn-close {
+  font-size: 12px;
+  top: 14px;
+  right: 14px;
+}
+
+#deleteConfirmModal .confirm-delete {
+  color: #fff !important;
+  background-color: transparent !important;
+  border-color: #b02a37 !important;
+  color: #b02a37 !important;
+}
+#deleteConfirmModal .confirm-delete:active,
+#deleteConfirmModal .confirm-delete:hover,
+#deleteConfirmModal .confirm-delete:focus {
+  color: #fff !important;
+  background-color: #b02a37 !important;
+  border-color: #b02a37 !important;
+}
+
+.card-review .delete-btn:active {
+  color: #fff !important;
+  background-color: #b02a37 !important;
+  border-color: #b02a37 !important;
+}
+
 /* Dropdown */
 .custom-dropdown {
   position: relative;
