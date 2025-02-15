@@ -950,6 +950,9 @@ span.rating-text {
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
   border-left-color: #329f5d;
   border-left-width: 4px;
+  border-top-color: #ade7c4;
+  border-right-color: #ade7c4;
+  border-bottom-color: #ade7c4;
 }
 
 .toast .btn-close {
