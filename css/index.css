@@ -994,6 +994,7 @@ span.rating-text {
 @media screen and (max-width: 510px) {
   .btn-filter-tab {
     border-radius: 6px !important;
+    min-width: 140px !important;
   }
 
   .btn-group {
