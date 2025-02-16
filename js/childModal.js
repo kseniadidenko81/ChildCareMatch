@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function addChildCard(name, dob, genderIcon) {
     const card = document.createElement("div");
-    card.classList.add("card", "bg-light", "border-primary", "mt-3");
+    card.classList.add("card");
 
     card.innerHTML = `
       <div class="card-body d-flex flex-column flex-sm-row align-sm-items-center rounded">
