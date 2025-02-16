@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span><small class="text-muted">Date of Birth:</small> <input type="date" class="form-control dob" value="${dob}" disabled /></span>
         <div class="icon-box d-flex justify-content-end gap-2">
           <i class="bi bi-pencil text-primary edit-icon" style="cursor: pointer;" title="Edit"></i>
-          <i class="bi bi-check-lg text-success confirm-edit-icon" style="cursor: pointer; display:none;" title="Confirm Edit"></i>
+          <i class="bi bi-save2 text-primary confirm-edit-icon" style="cursor: pointer; display:none;" title="Confirm Edit"></i>
           <i class="bi bi-trash text-danger delete-icon" style="cursor: pointer;" title="Delete"></i>
         </div>
       </div>
