@@ -1177,7 +1177,3 @@ span.rating-text {
 #childInfo .form-control:disabled {
   background-color: rgb(237 237 237) !important;
 }
-
-.modal-child .show-text {
-  display: none !important;
-}
