@@ -129,6 +129,13 @@ button:focus:not(:focus-visible) {
   color: #6750f9 !important;
 }
 
+.btn-close {
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+  right: -2px;
+}
+
 .border-primary-subtle {
   border-color: rgb(103, 80, 249, 0.3) !important;
 }
