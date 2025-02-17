@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (targetStatus) {
-        // Уменьшаем счетчик для Send перед перемещением
         decreaseCount("send");
         moveCardToNewStatus(targetStatus);
       }
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selectedCard) {
       const currentTab = selectedCard.closest(".status-container");
       if (currentTab && currentTab.classList.contains("send-tab")) {
-        currentTab.removeChild(selectedCard); // Удаляем карточку из текущей вкладки
+        currentTab.removeChild(selectedCard);
       }
 
       const targetTab = document.querySelector(
@@ -123,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       updateTabVisibility();
-      updateCount(targetStatus); // Увеличиваем счетчик для новой вкладки
+      updateCount(targetStatus);
     }
 
     hideModal(modalTabsSend);
