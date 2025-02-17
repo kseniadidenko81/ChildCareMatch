@@ -97,8 +97,10 @@ span.rating-text {
   cursor: pointer;
 }
 
+.modal-review :not(.btn-check) + .btn:active,
 :not(.btn-check) + .btn:active {
   color: #fff !important;
+  border-color: #b02a37 !important;
   background-color: #b02a37 !important;
 }
 
