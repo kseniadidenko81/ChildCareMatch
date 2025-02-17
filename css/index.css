@@ -1184,3 +1184,7 @@ span.rating-text {
 #childInfo .form-control:disabled {
   background-color: rgb(237 237 237) !important;
 }
+
+#childInfo .form-check {
+  top: -28px;
+}
