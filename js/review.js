@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="d-flex align-items-center flex-wrap">
           <img src="${
             reviewData.avatarSrc
-          }" alt="Avatar" class="card-avatar me-2">
+          }" alt="Avatar" class="card-avatar mb-2 me-2">
           <div>
             <h5 class="mb-0">${reviewData.title}</h5>
             <small class="rating" data-rating="${reviewData.rating}">
