@@ -478,7 +478,7 @@
 
           <!-- Modal for Delete Confirmation -->
           <div
-            class="modal fade"
+            class="modalConfirmDelete modal fade"
             id="deleteConfirmModal"
             tabindex="-1"
             aria-labelledby="deleteConfirmLabel"
@@ -517,6 +517,8 @@
           <!-- Review Cards -->
           <div id="reviewsContainer"></div>
 
+          <!-- toastMessageUnpublish -->
+
           <div class="toast-container position-fixed top-0 end-0 p-3">
             <div
               id="toastMessage"
@@ -528,6 +530,23 @@
               <div class="toast-body d-flex m-2">
                 <i class="bi bi-check-circle text-success pe-2"></i>
                 <span>Review was unpublish.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- toastMessageUpdated -->
+
+          <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div
+              id="toastMessageUpdated"
+              class="toast position-relative"
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+            >
+              <div class="toast-body d-flex m-2">
+                <i class="bi bi-check-circle text-success pe-2"></i>
+                <span>Your review has been successfully updated.</span>
               </div>
             </div>
           </div>
