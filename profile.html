@@ -222,8 +222,10 @@
               </p>
               <form action="#">
                 <div class="row gy-3 overflow-hidden">
-                  <div class="col-lg-6 d-flex align-items-center">
-                    <div class="form-floating flex-grow-1">
+                  <div
+                    class="col-lg-6 d-flex flex-column flex-sm-row align-items-sm-center"
+                  >
+                    <div class="form-floating flex-grow-1 order-2">
                       <input
                         type="email"
                         class="form-control"
@@ -237,7 +239,7 @@
                     </div>
                     <a
                       href="#"
-                      class="change-email ms-2"
+                      class="change-email mb-2 mb-sm-0 ms-sm-2 order-sm-2"
                       style="cursor: pointer"
                       onclick="changeEmail()"
                     >
@@ -246,8 +248,12 @@
                   </div>
 
                   <!-- Password field -->
-                  <div class="col-lg-6 d-flex align-items-center">
-                    <div class="form-floating flex-grow-1 position-relative">
+                  <div
+                    class="col-lg-6 d-flex flex-column flex-sm-row align-items-sm-center"
+                  >
+                    <div
+                      class="form-floating flex-grow-1 order-2 position-relative"
+                    >
                       <input
                         type="password"
                         class="form-control"
@@ -268,7 +274,7 @@
                     </div>
 
                     <!-- Link "Forgot Password??" -->
-                    <div class="ms-2">
+                    <div class="mb-2 mb-sm-0 ms-sm-2 order-sm-2">
                       <a
                         href="#"
                         id="forgotPassword"
@@ -363,7 +369,9 @@
 
             <div class="search-container mt-4">
               <h1 class="h2">Delete profile</h1>
-              <div class="d-flex align-items-center justify-content-between">
+              <div
+                class="d-flex flex-column flex-sm-row align-items-center justify-content-between"
+              >
                 <p class="mb-0 me-2">
                   If you delete your profile, you will lose the data associated
                   with it.
@@ -371,7 +379,7 @@
                 <!-- Button delete Profile -->
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary mt-3 mt-sm-0 ms-auto"
                   data-bs-toggle="modal"
                   data-bs-target="#deleteProfileModal"
                 >
