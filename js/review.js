@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentReviewId = null;
   let currentAvatarSrc = "";
   let currentReplies = 0;
+  let currentDeleteCardId = null;
 
   function getFormattedDate() {
     const options = {
@@ -90,14 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderReviewCard(reviewData);
 
+      // Закрытие модального окна
       bootstrap.Modal.getInstance(
         document.getElementById("reviewModal")
       ).hide();
+
+      // Сброс формы
       this.reset();
 
+      // Обновляем переменные
       currentReviewId = null;
       currentAvatarSrc = "";
       currentReplies = 0;
+
+      // Показываем всплывающее сообщение "Отзыв обновлен"
+      showToastUpdated();
     });
 
   function renderReviewCard(reviewData) {
@@ -165,6 +173,15 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("currentRepliesField").value = currentReplies;
     });
 
+    // Логика для Unpublish
+    reviewCard.querySelector(".delete-btn").addEventListener("click", () => {
+      currentDeleteCardId = reviewData.id;
+      const deleteModal = new bootstrap.Modal(
+        document.getElementById("deleteConfirmModal")
+      );
+      deleteModal.show();
+    });
+
     reviewsContainer.appendChild(reviewCard);
   }
 
@@ -183,22 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadReviewsFromLocalStorage();
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  let currentDeleteCardId = null;
-
-  document.getElementById("reviewsContainer").addEventListener("click", (e) => {
-    const deleteBtn = e.target.closest(".delete-btn");
-    if (deleteBtn) {
-      currentDeleteCardId = deleteBtn.getAttribute("data-id");
-      const deleteModal = new bootstrap.Modal(
-        document.getElementById("deleteConfirmModal")
-      );
-      deleteModal.show();
-    }
-  });
-
+  // Обработчик для удаления отзыва (Unpublish)
   document.querySelector(".confirm-delete").addEventListener("click", () => {
     if (currentDeleteCardId) {
       const reviewCard = document.getElementById(
@@ -208,7 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
         reviewCard.remove();
         deleteReviewFromLocalStorage(currentDeleteCardId);
 
-        showToast();
+        // Показываем всплывающее сообщение "Отзыв был скрыт"
+        showToastUnpublish();
       }
       currentDeleteCardId = null;
       bootstrap.Modal.getInstance(
@@ -223,8 +227,24 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("reviews", JSON.stringify(updatedReviews));
   }
 
-  function showToast() {
+  // Функция для отображения всплывающего сообщения "Отзыв был скрыт"
+  function showToastUnpublish() {
     const toastElement = document.getElementById("toastMessage");
+
+    toastElement.classList.remove("show");
+
+    setTimeout(() => {
+      toastElement.classList.add("show");
+    }, 600);
+
+    setTimeout(() => {
+      toastElement.classList.remove("show");
+    }, 4000);
+  }
+
+  // Функция для отображения второго всплывающего сообщения "Отзыв обновлен"
+  function showToastUpdated() {
+    const toastElement = document.getElementById("toastMessageUpdated");
 
     toastElement.classList.remove("show");
 
@@ -280,4 +300,4 @@ document.addEventListener("DOMContentLoaded", () => {
       return `${count} Replies`;
     }
   }
-});
+})
