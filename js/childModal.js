@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.innerHTML = `
       <div class="card-body d-flex flex-column flex-sm-row align-sm-items-center rounded">
-        <div class="icon-box position-relative">
+        <div class="icon-box position-relative d-flex align-items-center">
           <div class="form-check form-switch position-absolute" style="display:none;">
             <input class="form-check-input gender-switch" type="checkbox" ${
               genderIcon.includes("female") ? "checked" : ""
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="text-start"><small class="text-muted">Name:</small> <input type="text" class="form-control name" value="${name}" disabled /></span>
         <span class="text-start"><small class="text-muted">Date of Birth:</small> <input type="date" class="form-control dob" value="${dob}" disabled /></span>
 
-        <div class="icon-box d-flex justify-content-end gap-2">
+        <div class="icon-box d-flex align-items-center justify-content-end gap-2">
           <i class="bi bi-pencil text-primary edit-icon" style="cursor: pointer;"></i>
           <i class="bi bi-save2 text-success confirm-edit-icon" style="cursor: pointer; display:none;"></i>
           <i class="bi bi-trash text-danger delete-icon" style="cursor: pointer;"></i>
