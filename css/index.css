@@ -1186,5 +1186,12 @@ span.rating-text {
 }
 
 #childInfo .form-check {
-  top: -23px;
+  left: 34px;
+}
+
+@media screen and (min-width: 576px) {
+  #childInfo .form-check {
+    top: -23px;
+    left: auto;
+  }
 }
