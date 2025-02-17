@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const reviewCard = document.createElement("div");
     reviewCard.className = "card card-review mt-4 w-100 p-3 p-md-4";
     reviewCard.id = `review-${reviewData.id}`;
-    reviewCard.innerHTML = `  
+    reviewCard.innerHTML = `
       <div class="card-header d-flex align-items-center justify-content-between flex-wrap">
         <div class="d-flex align-items-center flex-wrap">
           <img src="${
@@ -113,9 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }" alt="Avatar" class="card-avatar mb-2 me-2">
           <div>
             <h5 class="mb-0">${reviewData.title}</h5>
-            <small class="rating" data-rating="${reviewData.rating}">
-              ${generateStarHTML(reviewData.rating)} (${reviewData.rating})
-            </small>
+            <small class="rating" data-rating="${
+              reviewData.rating
+            }">${generateStarHTML(reviewData.rating)} (${
+      reviewData.rating
+    })</small>
           </div>
         </div>
         <small class="text-muted pt-2">${reviewData.date}</small>
@@ -186,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   let currentDeleteCardId = null;
 
-  // Открытие модалки удаления при нажатии на .delete-btn
   document.getElementById("reviewsContainer").addEventListener("click", (e) => {
     const deleteBtn = e.target.closest(".delete-btn");
     if (deleteBtn) {
@@ -198,7 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Подтверждение удаления при нажатии на кнопку с классом .confirm-delete
   document.querySelector(".confirm-delete").addEventListener("click", () => {
     if (currentDeleteCardId) {
       const reviewCard = document.getElementById(
@@ -207,6 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (reviewCard) {
         reviewCard.remove();
         deleteReviewFromLocalStorage(currentDeleteCardId);
+
+        showToast();
       }
       currentDeleteCardId = null;
       bootstrap.Modal.getInstance(
@@ -215,11 +217,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Удаляем карточку из localStorage
   function deleteReviewFromLocalStorage(id) {
     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
     const updatedReviews = reviews.filter((review) => review.id !== Number(id));
     localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+  }
+
+  function showToast() {
+    const toastElement = document.getElementById("toastMessage");
+
+    toastElement.classList.remove("show");
+
+    setTimeout(() => {
+      toastElement.classList.add("show");
+    }, 600);
+
+    setTimeout(() => {
+      toastElement.classList.remove("show");
+    }, 4000);
   }
 });
 
