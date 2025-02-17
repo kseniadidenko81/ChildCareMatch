@@ -97,6 +97,19 @@ span.rating-text {
   cursor: pointer;
 }
 
+:not(.btn-check) + .btn:active {
+  color: #fff !important;
+  background-color: #b02a37 !important;
+}
+
+.modalConfirmDelete .btn:hover,
+.modalConfirmDelete .btn:focus,
+.modalConfirmDelete .btn:active {
+  color: #fff !important;
+  background-color: #b02a37 !important;
+  border-color: #b02a37 !important;
+}
+
 /* POP-UP MESSAGE */
 .toast {
   background: #fff;
@@ -130,4 +143,3 @@ span.rating-text {
 #toastMessage.show {
   opacity: 1;
 }
-
