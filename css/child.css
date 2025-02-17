@@ -1,0 +1,97 @@
+/* CHILD SECTION */
+
+.modal-child {
+  --bs-modal-width: 540px;
+}
+
+.modal-child .icon-box {
+  margin-top: 4px;
+}
+
+.modal-child .icon-checkbox {
+  font-size: 19px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s;
+  border: 1px solid rgb(103, 80, 249, 0.2);
+  width: 30px;
+  height: 30px;
+}
+
+.modal-child .checked-male {
+  color: #6750f9;
+  border: 1px solid #6750f9;
+}
+
+.modal-child .checked-female {
+  color: #d63384;
+  border: 1px solid #d63384;
+}
+
+.modal-child .tooltip-text {
+  display: none;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.modal-child .show-text {
+  display: block !important;
+}
+
+#childInfo .card {
+  width: fit-content;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd !important;
+}
+
+#childInfo .icon-box {
+  margin-top: 23px;
+}
+
+@media screen and (max-width: 575px) {
+  #childInfo .icon-box {
+    margin-top: 0px;
+  }
+}
+
+#childInfo .gender .fa {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#childInfo .gender .fa-male {
+  color: #6750f9;
+  border: 1px solid #6750f9;
+}
+
+#childInfo .gender .fa-female {
+  color: #d63384;
+  border: 1px solid #d63384;
+}
+
+#childInfo .card-body {
+  gap: 12px;
+}
+
+#childInfo .form-control:disabled {
+  background-color: rgb(237 237 237) !important;
+}
+
+#childInfo .form-check {
+  left: 34px;
+}
+
+@media screen and (min-width: 576px) {
+  #childInfo .form-check {
+    top: -23px;
+    left: auto;
+  }
+}

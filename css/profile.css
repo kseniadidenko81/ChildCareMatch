@@ -1,0 +1,115 @@
+/* SECTION PROFILE + DROPDOWN HEADER */
+
+.notifications {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.notifications .count {
+  position: absolute;
+  z-index: 4;
+  top: -10px;
+  right: -5px;
+  height: 17px;
+  width: 17px;
+  overflow: hidden;
+  background: #6750f9;
+  color: #fff;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 17px;
+}
+
+.notifications .fa {
+  color: #6750f9;
+  font-size: 24px;
+}
+
+.fa-bell-o {
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes bellRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+a:hover .fa-bell-o {
+  animation: bellRing 0.6s ease-in-out;
+}
+
+.read:hover,
+.unread:hover,
+.read:focus,
+.unread:focus,
+.read:active,
+.unread:active,
+.btn-notif {
+  cursor: pointer;
+}
+
+.read {
+  background-color: #fff;
+}
+
+.dropdown-notif {
+  background-color: #fff;
+  width: 290px;
+}
+
+.dropdown-box-text {
+  width: 240px;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .dropdown-notif {
+    width: 330px;
+  }
+
+  .dropdown-box-text {
+    width: 280px;
+  }
+}
+
+li:first-of-type .dropdown-item:hover {
+  border-radius: 5px 5px 0 0;
+}
+
+.dropdown-notif .btn {
+  border-radius: 0 0 5px 5px;
+  border-color: rgb(103, 80, 249, 0.3) !important;
+  background-color: #ece7f3;
+}
+
+.dropdown-notif .badge {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+}
+
+#forgotPassword {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .section-profile .form-floating {
+    min-width: 68%;
+  }
+}

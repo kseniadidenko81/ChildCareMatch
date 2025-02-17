@@ -1,0 +1,51 @@
+/* Text Video */
+dl.match-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.match-text dd {
+  padding: 8px 0;
+}
+
+.match-text dt {
+  width: 25px;
+  color: #6750f9;
+  font-weight: bold;
+  font-size: 26px;
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.match-text dd {
+  width: calc(100% - 35px);
+  margin: 0;
+}
+
+.title-letter {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-contact {
+    width: auto !important;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .btn-contact {
+    margin-left: 0 !important;
+  }
+}
+
+.title-cont {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.registered {
+  font-size: 17px;
+  vertical-align: super;
+}
