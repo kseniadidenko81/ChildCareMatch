@@ -234,7 +234,7 @@
                     class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
                     >4</span
                   >
-                  Send
+                  Sent
                 </button>
                 <button
                   class="btn-filter-tab btn btn-outline-primary position-relative"
@@ -578,7 +578,7 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header justify-content-center border-bottom-0">
-                <h5 class="modal-title text-center">Send Application</h5>
+                <h5 class="modal-title text-center">Sent Application</h5>
                 <button
                   type="button"
                   class="btn-close m-0 position-absolute"
@@ -603,7 +603,7 @@
                       class="d-flex align-items-end justify-content-start justify-content-sm-center"
                     >
                       <button class="btn btn-success rounded-0">
-                        12 openings
+                        6 openings
                       </button>
                     </div>
                     <div class="d-flex flex-column">
@@ -670,9 +670,9 @@
                   type="button"
                   class="btn btn-primary"
                   data-bs-dismiss="modal"
-                  id="sendApplicationBtn"
+                  id="sendApplicationBtnSent"
                 >
-                  Send Application
+                  Revoke Application
                 </button>
               </div>
             </div>
@@ -711,7 +711,7 @@
                       class="d-flex align-items-end justify-content-start justify-content-sm-center"
                     >
                       <button class="btn btn-success rounded-0">
-                        12 openings
+                        4 openings
                       </button>
                     </div>
                     <div class="d-flex flex-column">
@@ -879,9 +879,14 @@
                 </div>
               </div>
               <div class="modal-footer border-top-0 pt-1">
-                <div class="badge bg-info text-uppercase rounded-0">
-                  <i class="bi bi-hourglass-split pe-2"></i>Waiting List
-                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  id="sendApplicationBtnWaiting"
+                >
+                  Revoke Application
+                </button>
               </div>
             </div>
           </div>
@@ -919,7 +924,7 @@
                       class="d-flex align-items-end justify-content-start justify-content-sm-center"
                     >
                       <button class="btn btn-success rounded-0">
-                        12 openings
+                        2 openings
                       </button>
                     </div>
                     <div class="d-flex flex-column">
@@ -1084,8 +1089,8 @@
           aria-atomic="true"
         >
           <div class="toast-body d-flex m-2">
-            <i class="bi bi-check-circle text-success pe-2"></i
-            ><span>Your application has been sent.</span>
+            <i class="bi bi-info-circle text-success pe-2"></i
+            ><span>Functionality is not available</span>
           </div>
         </div>
       </div>
