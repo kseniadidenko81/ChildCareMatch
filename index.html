@@ -97,14 +97,16 @@
                             Search Day Care in Your Area
                           </div>
 
-                          <div class="position-relative">
+                          <div class="form-floating">
                             <input
                               type="text"
                               id="locationInput"
                               class="form-control pe-0 pe-sm-5"
                               placeholder="Enter your city or ZIP code"
                               data-has-listeners="true"
-                            />
+                            /><label for="text" class="form-label"
+                              >Enter your city or ZIP code</label
+                            >
                             <button
                               class="btn btn-primary search-btn-input position-absolute top-0 end-0 h-100 d-none d-sm-block"
                               type="button"
@@ -126,7 +128,7 @@
                           </div>
 
                           <button
-                            class="btn btn-primary w-100 mt-2 d-block d-sm-none"
+                            class="btn btn-primary btn-lg w-100 mt-2 d-block d-sm-none"
                             type="button"
                             onclick="searchDayCare()"
                           >
