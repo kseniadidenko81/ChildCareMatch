@@ -79,7 +79,7 @@
   text-align: center;
   text-transform: uppercase;
   transition: all 0.2s linear, width 0.1s linear 0.1s, margin 0.1s linear 0.1s;
-  width: 100px;
+  width: 80px;
 }
 
 .list-item-title-text i {
@@ -103,7 +103,7 @@
   align-items: center;
   font-weight: bold;
   height: 140px;
-  margin-left: 100px;
+  margin-left: 80px;
   padding-top: 0;
   transition: padding-top 0.2s linear, margin-left 0.2s linear;
   text-transform: uppercase;
@@ -139,9 +139,24 @@
 
 .list-item:hover .list-item-content-name .circle,
 .list-item:focus .list-item-content-name .circle {
-  width: calc(100% - 100px);
+  width: calc(100% - 80px);
   height: 140px;
   border-radius: 0 5px 5px 0;
+}
+
+@media screen and (min-width: 480px) {
+  .list-item-title {
+    width: 100px;
+  }
+
+  .list-item-content-name {
+    margin-left: 100px;
+  }
+
+  .list-item:hover .list-item-content-name .circle,
+  .list-item:focus .list-item-content-name .circle {
+    width: calc(100% - 100px);
+  }
 }
 
 .list-item-content-name .circle i {
