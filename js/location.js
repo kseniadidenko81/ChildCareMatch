@@ -79,7 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addLocationCard(title, text, save = true) {
     const locationCard = document.createElement("div");
-    locationCard.classList.add("location-card", "card", "mb-3");
+    locationCard.classList.add(
+      "location-card",
+      "card",
+      "mb-3",
+      "col-md-10",
+      "col-lg-8",
+      "m-auto"
+    );
     locationCard.innerHTML = ` 
     <div class="card-body d-flex gap-2 justify-content-between align-items-center">
       <div>
