@@ -182,7 +182,7 @@
   width: 100%;
   margin-top: 5px;
   z-index: 1000;
-  max-height: 150px;
+  max-height: 220px;
   overflow-y: auto;
 }
 
@@ -205,6 +205,14 @@
 
 .dropdown-arrow i.rotate:before {
   transform: rotate(180deg);
+}
+
+#sendReviewForm1 .custom-dropdown {
+  border: 1px solid #6750f9;
+}
+
+#sendReviewForm1 .form-control {
+  border: 1px solid #6750f9 !important;
 }
 
 /* Notification */
