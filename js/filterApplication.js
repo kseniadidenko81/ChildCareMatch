@@ -105,4 +105,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelector(".btn-filter-tab[data-status='send']").click();
+
+  document.querySelectorAll(".custom-dropdown").forEach((dropdown) => {
+    const dropdownOptions = dropdown.nextElementSibling;
+    const arrow = dropdown.querySelector(".dropdown-arrow i");
+
+    dropdown.addEventListener("click", (event) => {
+      event.stopPropagation();
+      dropdownOptions.classList.toggle("show");
+
+      arrow.classList.toggle("rotate");
+
+      document.querySelectorAll(".dropdown-options").forEach((opt) => {
+        if (opt !== dropdownOptions) {
+          opt.classList.remove("show");
+          opt.previousElementSibling
+            .querySelector(".dropdown-arrow i")
+            .classList.remove("rotate");
+        }
+      });
+    });
+
+    dropdownOptions.querySelectorAll(".dropdown-option").forEach((option) => {
+      option.addEventListener("click", (event) => {
+        event.stopPropagation();
+        dropdown.innerHTML = `${option.innerHTML} <span class="dropdown-arrow"><i class="bi bi-chevron-down"></i></span>`;
+        dropdownOptions.classList.remove("show");
+        arrow.classList.remove("rotate");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      dropdownOptions.classList.remove("show");
+      arrow.classList.remove("rotate");
+    });
+  });
 });
