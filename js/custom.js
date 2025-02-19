@@ -1,3 +1,40 @@
+//
+document.addEventListener("DOMContentLoaded", function () {
+  const desktopButton = document.querySelector(".btn-header-desktop");
+  const mobileButton = document.querySelector(".btn-header-mobile");
+
+  const toastMessage = document.getElementById("toastMessageHeader");
+
+  const showToast = () => {
+    toastMessage.style.opacity = 0;
+    toastMessage.style.transform = "translateX(100%)";
+    toastMessage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+    toastMessage.classList.add("show");
+
+    setTimeout(() => {
+      toastMessage.style.opacity = 1;
+      toastMessage.style.transform = "translateX(0)";
+    }, 10);
+
+    setTimeout(() => {
+      toastMessage.style.opacity = 0;
+      toastMessage.style.transform = "translateX(100%)";
+    }, 3000);
+
+    setTimeout(() => {
+      toastMessage.classList.remove("show");
+    }, 3500);
+  };
+
+  desktopButton.addEventListener("click", function () {
+    showToast();
+  });
+
+  mobileButton.addEventListener("click", function () {
+    showToast();
+  });
+});
 // AUTO HEIGHT Navbar fixed menu
 const navbarCollapse = document.getElementById("navbarsExample07");
 const navbar = document.querySelector(".navbar");
