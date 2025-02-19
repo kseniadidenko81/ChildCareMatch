@@ -2,20 +2,18 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   let currentRating = 0;
-  let currentReviewId = null;
   let currentAvatarSrc = "";
   let currentReplies = 0;
   let currentDeleteCardId = null;
 
   function getFormattedDate() {
-    const options = {
+    return new Date().toLocaleDateString("en-US", {
       month: "long",
       day: "numeric",
       hour: "numeric",
       minute: "numeric",
       hour12: true,
-    };
-    return new Date().toLocaleDateString("en-US", options);
+    });
   }
 
   function renderStars(rating, containerId, showRatingText = false) {
@@ -23,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!starsContainer) return;
 
     rating = isNaN(rating) ? 0 : rating;
-
     starsContainer.innerHTML = "";
+
     for (let i = 1; i <= 5; i++) {
       const star = document.createElement("span");
       star.classList.add("fa", rating >= i ? "fa-star" : "fa-star-o");
@@ -33,9 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (showRatingText) {
-      let ratingText =
-        starsContainer.querySelector(".rating-text") ||
-        document.createElement("span");
+      let ratingText = document.createElement("span");
       ratingText.className = "rating-text ms-2 fw-bold";
       ratingText.textContent = `${rating.toFixed(0)}`;
       starsContainer.appendChild(ratingText);
@@ -43,8 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.getElementById("rating-modal").addEventListener("mousemove", (e) => {
-    if (e.target.tagName === "SPAN")
+    if (e.target.tagName === "SPAN") {
       renderStars(parseInt(e.target.dataset.value), "rating-modal", true);
+    }
   });
 
   document.getElementById("rating-modal").addEventListener("click", (e) => {
@@ -58,20 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("reviewForm")
     .addEventListener("submit", function (e) {
       e.preventDefault();
+
       const newTitle = document.getElementById("reviewTitle").value.trim();
-      const newTitleMessage =
-        document.getElementById("reviewTitleMessage").value;
-      const newText = document.getElementById("reviewText").value;
-
+      const newTitleMessage = document
+        .getElementById("reviewTitleMessage")
+        .value.trim();
+      const newText = document.getElementById("reviewText").value.trim();
       const validRating = isNaN(currentRating) ? 0 : currentRating;
-
       const replies =
         parseInt(document.getElementById("currentRepliesField").value) || 0;
 
       const reviewData = {
-        id: currentReviewId || Date.now(),
+        id: Date.now(),
         title: newTitle || "No Title",
-        titleMessage: newTitleMessage || "",
+        titleMessage: newTitleMessage,
         text: newText,
         rating: validRating,
         date: getFormattedDate(),
@@ -80,36 +77,23 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-      if (currentReviewId) {
-        reviews = reviews.map((r) =>
-          r.id === currentReviewId ? reviewData : r
-        );
-      } else {
-        reviews.push(reviewData);
-      }
+      reviews.push(reviewData);
       localStorage.setItem("reviews", JSON.stringify(reviews));
 
       renderReviewCard(reviewData);
 
-      // Закрытие модального окна
       bootstrap.Modal.getInstance(
         document.getElementById("reviewModal")
       ).hide();
-
-      // Сброс формы
       this.reset();
 
-      // Обновляем переменные
-      currentReviewId = null;
       currentAvatarSrc = "";
       currentReplies = 0;
 
-      // Показываем всплывающее сообщение "Отзыв обновлен"
       showToastUpdated();
     });
 
   function renderReviewCard(reviewData) {
-    const reviewsContainer = document.getElementById("reviewsContainer");
     const reviewCard = document.createElement("div");
     reviewCard.className = "card card-review mt-4 w-100 p-3 p-md-4";
     reviewCard.id = `review-${reviewData.id}`;
@@ -156,24 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`;
 
     reviewCard.querySelector(".edit-btn").addEventListener("click", () => {
-      currentReviewId = reviewData.id;
-      currentAvatarSrc = reviewData.avatarSrc;
-      currentReplies = reviewData.replies;
-
       document.getElementById("reviewTitle").value = reviewData.title;
-      document.getElementById("reviewTitleMessage").value = "";
-      document.getElementById("reviewText").value = "";
-
-      const avatarPreview = document.getElementById("avatarPreview");
-      avatarPreview.src = currentAvatarSrc || "img/default-avatar.svg";
-
-      currentRating = reviewData.rating;
-      renderStars(currentRating, "rating-modal", true);
-
-      document.getElementById("currentRepliesField").value = currentReplies;
     });
 
-    // Логика для Unpublish
     reviewCard.querySelector(".delete-btn").addEventListener("click", () => {
       currentDeleteCardId = reviewData.id;
       const deleteModal = new bootstrap.Modal(
@@ -182,11 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteModal.show();
     });
 
-    reviewsContainer.appendChild(reviewCard);
+    document.getElementById("reviewsContainer").appendChild(reviewCard);
   }
 
   function generateStarHTML(rating) {
-    rating = isNaN(rating) ? 0 : rating;
     return Array.from(
       { length: 5 },
       (_, i) =>
@@ -195,29 +163,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function loadReviewsFromLocalStorage() {
+    const reviewsContainer = document.getElementById("reviewsContainer");
+    reviewsContainer.innerHTML = "";
+
     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
     savedReviews.forEach(renderReviewCard);
   }
 
   loadReviewsFromLocalStorage();
 
-  // Обработчик для удаления отзыва (Unpublish)
   document.querySelector(".confirm-delete").addEventListener("click", () => {
     if (currentDeleteCardId) {
-      const reviewCard = document.getElementById(
-        `review-${currentDeleteCardId}`
-      );
-      if (reviewCard) {
-        reviewCard.remove();
-        deleteReviewFromLocalStorage(currentDeleteCardId);
-
-        // Показываем всплывающее сообщение "Отзыв был скрыт"
-        showToastUnpublish();
-      }
+      deleteReviewFromLocalStorage(currentDeleteCardId);
+      loadReviewsFromLocalStorage();
       currentDeleteCardId = null;
       bootstrap.Modal.getInstance(
         document.getElementById("deleteConfirmModal")
       ).hide();
+      showToastUnpublish();
     }
   });
 
@@ -227,34 +190,36 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("reviews", JSON.stringify(updatedReviews));
   }
 
-  // Функция для отображения всплывающего сообщения "Отзыв был скрыт"
-  function showToastUnpublish() {
-    const toastElement = document.getElementById("toastMessage");
+  function showToast(toastElement) {
+    toastElement.style.opacity = 0;
+    toastElement.style.transform = "translateX(100%)";
+    toastElement.style.transition = "opacity 0.5s ease, transform 0.5s ease";
 
-    toastElement.classList.remove("show");
+    toastElement.classList.add("show");
 
     setTimeout(() => {
-      toastElement.classList.add("show");
-    }, 600);
+      toastElement.style.opacity = 1;
+      toastElement.style.transform = "translateX(0)";
+    }, 10);
+
+    setTimeout(() => {
+      toastElement.style.opacity = 0;
+      toastElement.style.transform = "translateX(100%)";
+    }, 3000);
 
     setTimeout(() => {
       toastElement.classList.remove("show");
-    }, 4000);
+    }, 3500);
   }
 
-  // Функция для отображения второго всплывающего сообщения "Отзыв обновлен"
+  function showToastUnpublish() {
+    showToast(document.getElementById("toastMessage"));
+    showToast(toastElement);
+  }
+
   function showToastUpdated() {
-    const toastElement = document.getElementById("toastMessageUpdated");
-
-    toastElement.classList.remove("show");
-
-    setTimeout(() => {
-      toastElement.classList.add("show");
-    }, 600);
-
-    setTimeout(() => {
-      toastElement.classList.remove("show");
-    }, 4000);
+    showToast(document.getElementById("toastMessageUpdated"));
+    showToast(toastElement);
   }
 });
 
@@ -300,4 +265,4 @@ document.addEventListener("DOMContentLoaded", () => {
       return `${count} Replies`;
     }
   }
-})
+});
