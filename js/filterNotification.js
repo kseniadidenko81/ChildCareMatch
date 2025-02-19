@@ -89,16 +89,13 @@ if (searchIcon && searchIcon.parentElement) {
   });
 }
 // Временно. Пока не появится функционал на иконку в углу - отправить
-// Remove all event listeners on the dismiss-btn button
 document.querySelectorAll(".dismiss-btn").forEach((button) => {
   button.addEventListener("click", (event) => {
-    // Block any actions
-    event.stopImmediatePropagation(); // Stop any events in the chain
-    event.preventDefault(); // Prevent default behavior
+    event.stopImmediatePropagation();
+    event.preventDefault();
   });
 });
 
-// Ensure all notifications are visible
 document.querySelectorAll(".notification-box").forEach((notification) => {
-  notification.style.display = "block"; // Make sure notifications are visible
+  notification.style.display = "block";
 });
