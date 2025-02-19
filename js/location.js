@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById(
           "addLocationBtn"
-        ).innerHTML = `<i class="fa fa-save me-1"></i>Save Location`;
+        ).innerHTML = `<i class="fa fa-save me-2"></i>Save Location`;
       });
 
     locationsContainer.appendChild(locationCard);
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById(
       "addLocationBtn"
-    ).innerHTML = `<i class="bi bi-plus-circle me-1"></i>Add Location`;
+    ).innerHTML = `<i class="bi bi-plus-circle me-2"></i>Add Location`;
   });
 
   addLocationBtn.addEventListener("click", function () {
