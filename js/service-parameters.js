@@ -774,25 +774,20 @@ $(document).ready(function () {
       var checkboxId = $(this).attr("id");
       var isChecked = $(this).prop("checked");
 
-      // Сохраняем состояние чекбокса в localStorage
       localStorage.setItem(checkboxId, isChecked);
 
-      // Сохраняем стили (цвет текста, иконки, бордер)
       var label = $(this).closest(".form-check").find("label");
       var icon = $(this).closest(".form-check").find("i");
 
-      // Цвет текста
       localStorage.setItem(checkboxId + "_textColor", label.css("color"));
-      // Цвет иконки
       localStorage.setItem(checkboxId + "_iconColor", icon.css("color"));
-      // Цвет бордера
+
       localStorage.setItem(
         checkboxId + "_borderColor",
         label.closest(".form-check").css("border-color")
       );
     });
 
-    // Сохраняем состояние видимости inputFieldLanguages и inputField
     var inputFieldLanguagesVisible = $("#inputFieldLanguages").is(":visible");
     localStorage.setItem(
       "inputFieldLanguagesVisible",
