@@ -90,6 +90,18 @@ input.form-control,
   transition: 0.2s ease-in-out;
 }
 
+.form-check {
+  border: 1px solid rgb(103, 80, 249, 0.2) !important;
+}
+
+.form-check.border-0 {
+  border: 1px solid transparent !important;
+}
+
+.remove-location {
+  display: block !important;
+}
+
 /* CUSTOM DROPDOWN */
 .custom-dropdown {
   display: flex;
