@@ -1,4 +1,3 @@
-/* Стиль по умолчанию */
 .ampm-display {
   position: absolute;
   left: 69px;
@@ -160,12 +159,12 @@ input.form-control,
 /* TAGS */
 #inputField {
   top: -15px;
-  width: 17%;
+  width: 112px;
 }
 
 #inputFieldLanguages {
   top: -14px;
-  width: 20% !important;
+  width: 132px;
 }
 
 .dropdown-tags .tags-container,
