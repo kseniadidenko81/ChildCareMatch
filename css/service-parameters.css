@@ -279,7 +279,6 @@ input.form-control,
 /* CHILD INFO */
 .gender .fa {
   font-size: 18px;
-  cursor: pointer;
   transition: color 0.3s;
   width: 28px;
   height: 28px;
