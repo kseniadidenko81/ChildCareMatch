@@ -93,14 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const subtotalLink = document.querySelector(".subtotal-btn");
-  if (subtotalLink) {
-    subtotalLink.addEventListener("click", function (e) {
+  document.querySelectorAll(".subtotal-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
       e.preventDefault();
-      const message = subtotalLink.getAttribute("data-message");
+      const message = button.getAttribute("data-message");
       showToast(message);
     });
-  }
+  });
 
   const resetButton = document.getElementById("resetButton");
   if (resetButton) {
