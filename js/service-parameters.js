@@ -513,8 +513,6 @@ $(document).ready(function () {
   }
 
   $("#resetButton").click(function () {
-    localStorage.clear();
-
     $("input[type='checkbox']").prop("checked", false);
     $("#selectedTags .tag").remove();
 
@@ -572,8 +570,6 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#resetButton").click(function () {
-    localStorage.clear();
-
     $(".schedule-block").each(function () {
       resetScheduleBlock($(this));
     });
@@ -648,8 +644,6 @@ $(document).ready(function () {
   });
 
   $("#resetButton").click(function () {
-    localStorage.clear();
-
     $("#placeDropdown span:first").text("Select value");
 
     $("#placeDropdownOptions").hide().css("display", "none");
@@ -683,43 +677,7 @@ $(document).ready(function () {
     });
 
     let selectedPlace = $("#placeDropdown span:first").text().trim();
-
-    localStorage.setItem("selectedTags", JSON.stringify(selectedTags));
-    localStorage.setItem("selectedDays", JSON.stringify(selectedDays));
-    localStorage.setItem(
-      "selectedLanguages",
-      JSON.stringify(selectedLanguages)
-    );
-    localStorage.setItem("selectedPlace", selectedPlace);
   });
-
-  if (localStorage.getItem("selectedTags")) {
-    let selectedTags = JSON.parse(localStorage.getItem("selectedTags"));
-    selectedTags.forEach(function (tag) {
-      addTag(tag);
-    });
-  }
-
-  if (localStorage.getItem("selectedDays")) {
-    let selectedDays = JSON.parse(localStorage.getItem("selectedDays"));
-    selectedDays.forEach(function (day) {
-      addDay(day);
-    });
-  }
-
-  if (localStorage.getItem("selectedLanguages")) {
-    let selectedLanguages = JSON.parse(
-      localStorage.getItem("selectedLanguages")
-    );
-    selectedLanguages.forEach(function (language) {
-      addLanguage(language);
-    });
-  }
-
-  if (localStorage.getItem("selectedPlace")) {
-    let selectedPlace = localStorage.getItem("selectedPlace");
-    $("#placeDropdown span:first").text(selectedPlace);
-  }
 
   function addTag(value) {
     var tagHtml =
@@ -783,70 +741,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  function saveCheckboxState() {
-    $(".form-check-input").each(function () {
-      var checkboxId = $(this).attr("id");
-      var isChecked = $(this).prop("checked");
-
-      localStorage.setItem(checkboxId, isChecked);
-
-      var label = $(this).closest(".form-check").find("label");
-      var icon = $(this).closest(".form-check").find("i");
-
-      localStorage.setItem(checkboxId + "_textColor", label.css("color"));
-      localStorage.setItem(checkboxId + "_iconColor", icon.css("color"));
-
-      localStorage.setItem(
-        checkboxId + "_borderColor",
-        label.closest(".form-check").css("border-color")
-      );
-    });
-
-    var inputFieldLanguagesVisible = $("#inputFieldLanguages").is(":visible");
-    localStorage.setItem(
-      "inputFieldLanguagesVisible",
-      inputFieldLanguagesVisible
-    );
-
-    var inputFieldVisible = $("#inputField").is(":visible");
-    localStorage.setItem("inputFieldVisible", inputFieldVisible);
-  }
-
-  function loadCheckboxState() {
-    $(".form-check-input").each(function () {
-      var checkboxId = $(this).attr("id");
-
-      var isChecked = localStorage.getItem(checkboxId) === "true";
-      $(this).prop("checked", isChecked);
-
-      var label = $(this).closest(".form-check").find("label");
-      var icon = $(this).closest(".form-check").find("i");
-
-      var textColor = localStorage.getItem(checkboxId + "_textColor");
-      if (textColor) label.css("color", textColor);
-
-      var iconColor = localStorage.getItem(checkboxId + "_iconColor");
-      if (iconColor) icon.css("color", iconColor);
-
-      var borderColor = localStorage.getItem(checkboxId + "_borderColor");
-      if (borderColor)
-        label.closest(".form-check").css("border-color", borderColor);
-    });
-
-    var inputFieldLanguagesVisible =
-      localStorage.getItem("inputFieldLanguagesVisible") === "true";
-    var inputFieldVisible =
-      localStorage.getItem("inputFieldVisible") === "true";
-
-    if (!inputFieldLanguagesVisible) {
-      $("#inputFieldLanguages").hide();
-    }
-
-    if (!inputFieldVisible) {
-      $("#inputField").hide();
-    }
-  }
-
   $(".form-check-input").change(function () {
     var label = $(this).closest(".form-check").find("label");
     var icon = $(this).closest(".form-check").find("i");
@@ -860,74 +754,23 @@ $(document).ready(function () {
       icon.css("color", "");
       label.closest(".form-check").css("border-color", "");
     }
-
-    saveCheckboxState();
   });
-
-  loadCheckboxState();
 
   $("#inputFieldLanguages").hide();
   $("#inputField").hide();
 });
 
 $(document).ready(function () {
-  function saveInputState() {
-    $("#minPriceInput, #maxPriceInput").each(function () {
-      var inputId = $(this).attr("id");
-      var inputValue = $(this).val();
-
-      localStorage.setItem(inputId, inputValue);
-    });
-  }
-
-  function loadInputState() {
-    $("#minPriceInput, #maxPriceInput").each(function () {
-      var inputId = $(this).attr("id");
-
-      var savedValue = localStorage.getItem(inputId);
-
-      if (savedValue) {
-        $(this).val(savedValue);
-      }
-    });
-  }
-
-  $("#minPriceInput, #maxPriceInput").on("input", function () {
-    saveInputState();
-  });
-
-  loadInputState();
-
-  $("#saveButton").click(function () {
-    saveInputState();
-  });
+  $("#minPriceInput, #maxPriceInput").on("input", function () {});
+  $("#saveButton").click(function () {});
 });
 
 $(document).ready(function () {
-  function saveSliderState() {
-    var minPriceValue = $("#minPrice").val();
-    var maxPriceValue = $("#maxPrice").val();
-
-    localStorage.setItem("minPrice", minPriceValue);
-    localStorage.setItem("maxPrice", maxPriceValue);
-  }
-
-  function loadSliderState() {
-    var savedMinPrice = localStorage.getItem("minPrice");
-    var savedMaxPrice = localStorage.getItem("maxPrice");
-
-    if (savedMinPrice) {
-      $("#minPrice").val(savedMinPrice);
-      updatePriceTooltip($("#minPrice"), $(".price-tooltip:first"));
-      updateProgressBar();
-    }
-
-    if (savedMaxPrice) {
-      $("#maxPrice").val(savedMaxPrice);
-      updatePriceTooltip($("#maxPrice"), $(".price-tooltip:last"));
-      updateProgressBar();
-    }
-  }
+  $("#minPrice, #maxPrice").on("input", function () {
+    updatePriceTooltip($("#minPrice"), $(".price-tooltip:first"));
+    updatePriceTooltip($("#maxPrice"), $(".price-tooltip:last"));
+    updateProgressBar();
+  });
 
   function updatePriceTooltip(slider, tooltip) {
     var value = slider.val();
@@ -955,70 +798,13 @@ $(document).ready(function () {
     $(".progress-bar").css("right", 100 - maxPercentage + "%");
   }
 
-  $("#minPrice, #maxPrice").on("input", function () {
-    updatePriceTooltip($("#minPrice"), $(".price-tooltip:first"));
-    updatePriceTooltip($("#maxPrice"), $(".price-tooltip:last"));
-    updateProgressBar();
-    saveSliderState();
-  });
-
   loadSliderState();
 });
 
 $(document).ready(function () {
-  function saveScheduleData() {
-    var schedules = [];
-    $(".schedule-block").each(function () {
-      var day = $(this).find(".dropdownMenuButton").text().trim();
-      var fromTime = $(this).find("input[type='time']:first").val();
-      var toTime = $(this).find("input[type='time']:last").val();
-      var iconClass = $(this).find(".dropdownMenuButton i").attr("class");
-
-      schedules.push({
-        day: day,
-        fromTime: fromTime,
-        toTime: toTime,
-        iconClass: iconClass,
-      });
-    });
-    localStorage.setItem("schedules", JSON.stringify(schedules));
-  }
-
-  function loadScheduleData() {
-    var savedSchedules = localStorage.getItem("schedules");
-    if (savedSchedules) {
-      savedSchedules = JSON.parse(savedSchedules);
-      savedSchedules.forEach(function (schedule, index) {
-        var scheduleBlock = $(".schedule-block").eq(index);
-        if (scheduleBlock.length) {
-          scheduleBlock.find(".dropdownMenuButton").text(schedule.day);
-          scheduleBlock.find("input[type='time']:first").val(schedule.fromTime);
-          scheduleBlock.find("input[type='time']:last").val(schedule.toTime);
-
-          scheduleBlock
-            .find(".dropdownMenuButton i")
-            .attr("class", schedule.iconClass);
-        }
-      });
-    }
-  }
-
-  $(document).on("click", ".dropdown-header", function () {
-    var selectedDay = $(this).data("value");
-    $(this).closest(".dropdown").find(".dropdownMenuButton").text(selectedDay);
-    saveScheduleData();
-  });
-
-  $(document).on("input", "input[type='time']", function () {
-    saveScheduleData();
-  });
-
-  $(document).on("click", ".remove-location", function () {
+  $(".remove-location").click(function () {
     $(this).closest(".schedule-block").remove();
-    saveScheduleData();
   });
-
-  loadScheduleData();
 });
 
 //RESET TOAST DATA
