@@ -3,29 +3,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let selectedGender = "";
 
-  function saveData() {
-    const cards = document.querySelectorAll(".card");
-    const cardData = [];
-
-    cards.forEach((card) => {
-      const name = card.querySelector(".name").value;
-      const dob = card.querySelector(".dob").value;
-      const gender = card.querySelector(".gender").innerHTML;
-      cardData.push({ name, dob, gender });
-    });
-
-    localStorage.setItem("childrenData", JSON.stringify(cardData));
-  }
-
-  function loadData() {
-    const storedData = JSON.parse(localStorage.getItem("childrenData"));
-    if (storedData) {
-      storedData.forEach((data) =>
-        addChildCard(data.name, data.dob, data.gender)
-      );
-    }
-  }
-
   function addChildCard(name, dob, genderIcon) {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -70,20 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     genderSwitch.addEventListener("change", () => {
-      if (genderSwitch.checked) {
-        genderSpan.innerHTML = '<i class="fa fa-female"></i>';
-      } else {
-        genderSpan.innerHTML = '<i class="fa fa-male"></i>';
-      }
+      genderSpan.innerHTML = genderSwitch.checked
+        ? '<i class="fa fa-female"></i>'
+        : '<i class="fa fa-male"></i>';
     });
 
     deleteIcon.addEventListener("click", () => {
       card.remove();
-      saveData();
     });
   }
-
-  loadData();
 
   document.getElementById("maleIcon").addEventListener("click", () => {
     selectedGender = "Male";
@@ -122,7 +94,5 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("childModal")
     );
     modal.hide();
-
-    saveData();
   });
 });
