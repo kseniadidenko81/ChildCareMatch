@@ -1,3 +1,4 @@
+// LOCATION
 document.addEventListener("DOMContentLoaded", function () {
   const placeDropdown = document.getElementById("placeDropdown");
   const placeDropdownOptions = document.getElementById("placeDropdownOptions");
@@ -59,25 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function saveLocationsToLocalStorage() {
-    const locations = [];
-    document.querySelectorAll(".location-card").forEach((card) => {
-      locations.push({
-        title: card.querySelector(".card-title").innerHTML,
-        text: card.querySelector(".card-text").textContent,
-      });
-    });
-    localStorage.setItem("locations", JSON.stringify(locations));
-  }
-
-  function loadLocationsFromLocalStorage() {
-    const savedLocations = JSON.parse(localStorage.getItem("locations")) || [];
-    savedLocations.forEach((loc) =>
-      addLocationCard(loc.title, loc.text, false)
-    );
-  }
-
-  function addLocationCard(title, text, save = true) {
+  function addLocationCard(title, text) {
     const locationCard = document.createElement("div");
     locationCard.classList.add(
       "location-card",
@@ -103,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector(".remove-location")
       .addEventListener("click", function () {
         locationCard.remove();
-        saveLocationsToLocalStorage();
       });
 
     locationCard
@@ -136,10 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
     locationsContainer.appendChild(locationCard);
-
-    if (save) {
-      saveLocationsToLocalStorage();
-    }
   }
 
   function fillModalFields(data) {
@@ -217,7 +195,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentCard) {
         currentCard.querySelector(".card-title").innerHTML = iconAndText;
         currentCard.querySelector(".card-text").textContent = locationText;
-        saveLocationsToLocalStorage();
         $("#modalAddLocation").modal("hide");
         currentCard = null;
       } else {
@@ -236,6 +213,4 @@ document.addEventListener("DOMContentLoaded", function () {
   styleSheet.type = "text/css";
   styleSheet.innerText = css;
   document.head.appendChild(styleSheet);
-
-  loadLocationsFromLocalStorage();
 });
