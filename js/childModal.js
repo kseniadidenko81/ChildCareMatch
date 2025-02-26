@@ -44,8 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="text-start"><small class="text-muted">Date of Birth:</small> <input type="date" class="form-control dob" value="${dob}" disabled /></span>
 
         <div class="icon-box d-flex align-items-center justify-content-end gap-2">
-          <i class="bi bi-pencil text-primary edit-icon" style="cursor: pointer;"></i>
-          <i class="bi bi-save2 text-success confirm-edit-icon" style="cursor: pointer; display:none;"></i>
+          <a href="#" class="edit-link text-primary">Edit Profile</a>
           <i class="bi bi-trash text-danger delete-icon" style="cursor: pointer;"></i>
         </div>
       </div>
@@ -53,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("childInfo").appendChild(card);
 
-    const editIcon = card.querySelector(".edit-icon");
-    const confirmIcon = card.querySelector(".confirm-edit-icon");
+    const editLink = card.querySelector(".edit-link");
     const deleteIcon = card.querySelector(".delete-icon");
     const nameField = card.querySelector(".name");
     const dobField = card.querySelector(".dob");
@@ -62,13 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const genderSpan = card.querySelector(".gender");
     const genderSwitchContainer = genderSwitch.closest(".form-check");
 
-    editIcon.addEventListener("click", () => {
-      nameField.disabled = false;
-      dobField.disabled = false;
-      genderSwitch.disabled = false;
-      genderSwitchContainer.style.display = "block";
-      editIcon.style.display = "none";
-      confirmIcon.style.display = "inline-block";
+    nameField.disabled = true;
+    dobField.disabled = true;
+    genderSwitch.disabled = true;
+    genderSwitchContainer.style.display = "none";
+
+    editLink.addEventListener("click", (e) => {
+      e.preventDefault();
     });
 
     genderSwitch.addEventListener("change", () => {
@@ -77,16 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         genderSpan.innerHTML = '<i class="fa fa-male"></i>';
       }
-    });
-
-    confirmIcon.addEventListener("click", () => {
-      nameField.disabled = true;
-      dobField.disabled = true;
-      genderSwitch.disabled = true;
-      genderSwitchContainer.style.display = "none";
-      confirmIcon.style.display = "none";
-      editIcon.style.display = "inline-block";
-      saveData();
     });
 
     deleteIcon.addEventListener("click", () => {
