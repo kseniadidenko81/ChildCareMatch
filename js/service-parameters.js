@@ -103,27 +103,41 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="dropdown">
           <button class="btn btn-outline-primary dropdown-toggle w-100 dropdownMenuButton" type="button">
             Select Days
-          </button><i
-                      class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
-                    ></i>
-          <ul class="dropdown-menu w-100 d-none dropdownMenu mt-2 p-2 border-primary">
-            <li class="d-flex flex-column flex-grow-1">
+          </button><i class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"></i>
+          <ul class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary d-flex flex-column d-none">
+            <li class="d-flex justify-content-between flex-row w-100 border-bottom">
               <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon-Fri">Mon-Fri</label>
-              <div class="d-flex flex-column px-2 text-muted">
-                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span>
-              </div>
-            </li>
-            <li class="d-flex flex-column flex-grow-1">
               <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon-Sun">Mon-Sun</label>
-              <div class="d-flex flex-column px-2 text-muted">
-                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-              </div>
-            </li>
-            <li class="d-flex flex-column flex-grow-1">
               <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sat-Sun">Sat-Sun</label>
-              <div class="d-flex flex-column px-2 text-muted">
-                <span>Sat</span><span>Sun</span>
-              </div>
+            </li>
+            <li class="d-flex flex-wrap w-100">
+              <ul class="d-flex flex-row w-100 ps-0">
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon">Mon</label>
+                </li>
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Tue">Tue</label>
+                </li>
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Wed">Wed</label>
+                </li>
+              </ul>
+              <ul class="d-flex flex-row w-100 ps-0">
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Thu">Thu</label>
+                </li>
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Fri">Fri</label>
+                </li>
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sat">Sat</label>
+                </li>
+              </ul>
+              <ul class="d-flex flex-row w-100 ps-0">
+                <li class="d-flex flex-column flex-grow-1">
+                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sun">Sun</label>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
