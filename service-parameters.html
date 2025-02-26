@@ -379,25 +379,10 @@
               Select the time or set the time range for service working hours
             </p>
 
+            <p class="fw-semibold pt-3">
+              Set custom time that is convenient for you
+            </p>
             <form class="row g-3 pt-2">
-              <div class="col-12 d-flex">
-                <div
-                  class="form-check border-0 px-0 d-flex align-items-center w-100"
-                >
-                  <input
-                    class="form-check-input ms-0 mt-0 me-2"
-                    type="checkbox"
-                    id="check6"
-                    value="option6"
-                    data-has-listeners="true"
-                    onchange="toggleBorderColor(this)"
-                  />
-                  <label class="form-check-label text-wrap" for="check6">
-                    Set custom time that is convenient for you
-                  </label>
-                </div>
-              </div>
-
               <div class="col-sm-3 d-flex">
                 <div
                   class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
@@ -541,28 +526,11 @@
                   </label>
                 </div>
               </div>
-
-              <div class="col-12 d-flex">
-                <div
-                  class="form-check border-0 px-0 d-flex align-items-center w-100"
-                >
-                  <input
-                    class="form-check-input ms-0 mt-0 me-2"
-                    type="checkbox"
-                    id="check15"
-                    value="option15"
-                    data-has-listeners="true"
-                    onchange="toggleBorderColor(this)"
-                  />
-                  <label class="form-check-label text-wrap" for="check15">
-                    Select the day and time service you need
-                  </label>
-                </div>
-              </div>
             </form>
           </div>
           <!--  -->
           <div class="section-days-time mt-4 pt-2">
+            <p class="fw-semibold">Select the day and time service you need</p>
             <div id="scheduleBlocks">
               <div class="row g-3 schedule-block">
                 <div class="col-sm-5">
@@ -577,40 +545,84 @@
                       class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
                     ></i>
                     <ul
-                      class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary d-none"
+                      class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary d-flex flex-column d-none"
                     >
-                      <li class="d-flex flex-column flex-grow-1">
+                      <li
+                        class="d-flex justify-content-between flex-row w-100 border-bottom"
+                      >
                         <label
                           class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
                           data-value="Mon-Fri"
                           >Mon-Fri</label
                         >
-                        <div class="d-flex flex-column px-2 text-muted">
-                          <span>Mon</span><span>Tue</span><span>Wed</span
-                          ><span>Thu</span><span>Fri</span>
-                        </div>
-                      </li>
-                      <li class="d-flex flex-column flex-grow-1">
                         <label
                           class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
                           data-value="Mon-Sun"
                           >Mon-Sun</label
                         >
-                        <div class="d-flex flex-column px-2 text-muted">
-                          <span>Mon</span><span>Tue</span><span>Wed</span
-                          ><span>Thu</span><span>Fri</span><span>Sat</span
-                          ><span>Sun</span>
-                        </div>
-                      </li>
-                      <li class="d-flex flex-column flex-grow-1">
                         <label
                           class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
                           data-value="Sat-Sun"
                           >Sat-Sun</label
                         >
-                        <div class="d-flex flex-column px-2 text-muted">
-                          <span>Sat</span><span>Sun</span>
-                        </div>
+                      </li>
+
+                      <li class="d-flex flex-wrap w-100">
+                        <ul class="d-flex flex-row w-100 ps-0">
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Mon"
+                              >Mon</label
+                            >
+                          </li>
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Tue"
+                              >Tue</label
+                            >
+                          </li>
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Wed"
+                              >Wed</label
+                            >
+                          </li>
+                        </ul>
+                        <ul class="d-flex flex-row w-100 ps-0">
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Thu"
+                              >Thu</label
+                            >
+                          </li>
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Fri"
+                              >Fri</label
+                            >
+                          </li>
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Sat"
+                              >Sat</label
+                            >
+                          </li>
+                        </ul>
+                        <ul class="d-flex flex-row w-100 ps-0">
+                          <li class="d-flex flex-column flex-grow-1">
+                            <label
+                              class="dropdown-header select-day fs-6 text-dark fw-semibold p-2"
+                              data-value="Sun"
+                              >Sun</label
+                            >
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   </div>
