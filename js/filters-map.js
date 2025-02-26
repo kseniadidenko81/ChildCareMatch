@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (resetButton) {
     resetButton.addEventListener("click", function () {
       clearFilters();
-      localStorage.setItem("filtersCleared", "true");
       showToast("Your data has been cleared");
     });
   }
@@ -301,13 +300,8 @@ document.querySelectorAll(".custom-dropdown").forEach((dropdown) => {
 
 // RESET BUTTON
 document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem("filtersCleared") === "true") {
-    clearFilters();
-  }
-
   document.getElementById("resetButton").addEventListener("click", function () {
     clearFilters();
-    localStorage.setItem("filtersCleared", "true");
   });
 });
 
