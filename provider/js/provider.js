@@ -371,3 +371,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3500);
   }
 });
+
+// TAG
+document.addEventListener("DOMContentLoaded", function () {
+  const containers = document.querySelectorAll(".tags-container");
+
+  containers.forEach((container) => {
+    const inputField = container.querySelector(".tag-input");
+    const placeholder = container.querySelector(".placeholder");
+
+    function addTag(text) {
+      text = text.trim();
+      if (text === "") return;
+
+      const tag = document.createElement("span");
+      tag.classList.add("tag-benefits");
+      tag.innerHTML = `${text} <i class="bi bi-x mt-1"></i>`;
+
+      tag.querySelector("i").addEventListener("click", function () {
+        tag.remove();
+        checkPlaceholder();
+      });
+
+      container.insertBefore(tag, inputField);
+      inputField.value = "";
+      checkPlaceholder();
+    }
+
+    function checkPlaceholder() {
+      if (container.querySelectorAll(".tag-benefits").length > 0) {
+        placeholder.style.display = "none";
+      } else {
+        placeholder.style.display = "inline";
+      }
+    }
+
+    inputField.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        addTag(inputField.value);
+      }
+    });
+
+    inputField.addEventListener("focus", () => {
+      placeholder.style.display = "none";
+    });
+
+    inputField.addEventListener("blur", () => {
+      checkPlaceholder();
+    });
+
+    checkPlaceholder();
+  });
+});
+
+// number of children
+document.addEventListener("DOMContentLoaded", function () {
+  const currencyInput = document.getElementById("currencyInputs");
+  const kidsInput = document.getElementById("kidsInput");
+  const discountAmountElement = document.getElementById("discountAmount");
+  const numKidsElement = document.getElementById("numKids");
+
+  function updateDiscountMessage() {
+    const amount = currencyInput.value || 0;
+    const numberOfKids = kidsInput.value || 0;
+
+    discountAmountElement.textContent = amount;
+    numKidsElement.textContent = numberOfKids;
+  }
+
+  currencyInput.addEventListener("input", updateDiscountMessage);
+  kidsInput.addEventListener("input", updateDiscountMessage);
+
+  updateDiscountMessage();
+});
