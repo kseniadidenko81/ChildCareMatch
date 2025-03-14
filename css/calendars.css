@@ -270,14 +270,14 @@
   padding: 2px;
 }
 
+.text-info {
+  color: #03a9f4 !important;
+}
+
 .text-success {
   color: #20c997 !important;
 }
 
 .text-closed {
   color: #198754 !important;
-}
-
-.text-info {
-  color: #03a9f4 !important;
 }
