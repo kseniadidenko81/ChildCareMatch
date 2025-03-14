@@ -343,6 +343,7 @@
                           data-bs-toggle="modal"
                           data-bs-target="#modalTabNew"
                           data-card-id="1"
+                          data-comment="I would like to visit your kindergarten."
                           data-status="Sent"
                         >
                           <i class="bi bi-eye me-1"></i> View details
@@ -404,6 +405,7 @@
                           data-bs-toggle="modal"
                           data-bs-target="#modalTabNew"
                           data-card-id="1"
+                          data-comment="Your request has been reviewed and unfortunately, it has been rejected. If you have any questions, please contact us."
                           data-status="Rejected"
                         >
                           <i class="bi bi-eye me-1"></i> View details
@@ -464,6 +466,7 @@
                           data-bs-toggle="modal"
                           data-bs-target="#modalTabNew"
                           data-card-id="1"
+                          data-comment="Your visit has been successfully scheduled. We look forward to seeing you at the designated date and time."
                           data-status="Scheduled"
                         >
                           <i class="bi bi-eye me-1"></i> View details
@@ -522,6 +525,7 @@
                           data-bs-toggle="modal"
                           data-bs-target="#modalTabNew"
                           data-card-id="1"
+                          data-comment="Your visit has been canceled. If you wish to reschedule, please contact us."
                           data-status="Canceled"
                         >
                           <i class="bi bi-eye me-1"></i> View details
@@ -582,6 +586,7 @@
                           data-bs-toggle="modal"
                           data-bs-target="#modalTabNew"
                           data-card-id="1"
+                          data-comment="The visit request has been closed. If you have any further inquiries, feel free to reach out."
                           data-status="Closed"
                         >
                           <i class="bi bi-eye me-1"></i> View details
@@ -717,9 +722,8 @@
                           class="form-control"
                           id="reviewText"
                           rows="3"
-                          placeholder="Enter your comment here..."
-                          required=""
-                          data-has-listeners="true"
+                          required
+                          readonly
                         ></textarea>
                       </div>
                     </form>
