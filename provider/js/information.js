@@ -67,3 +67,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// PERMIT NUMBER
+document.getElementById("permitNumber").addEventListener("input", function (e) {
+  let value = e.target.value;
+
+  value = value.replace(/[^0-9#]/g, "");
+
+  if (value.charAt(0) === "#") {
+    value = "#" + value.slice(1, 7);
+  } else {
+    value = value.slice(0, 6);
+  }
+
+  e.target.value = value;
+});
+
+// PHONE - FAX
+function formatPhoneOrFax(input) {
+  let value = input.value;
+
+  value = value.replace(/[^\d]/g, "");
+
+  if (value.length > 3 && value.length <= 6) {
+    value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+  } else if (value.length > 6) {
+    value = `(${value.substring(0, 3)}) ${value.substring(
+      3,
+      6
+    )}-${value.substring(6, 10)}`;
+  }
+
+  input.value = value;
+}
+
+document.getElementById("phone").addEventListener("input", function (e) {
+  formatPhoneOrFax(e.target);
+});
+
+document.getElementById("fax").addEventListener("input", function (e) {
+  formatPhoneOrFax(e.target);
+});
