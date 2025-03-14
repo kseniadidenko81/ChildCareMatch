@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (status === "Scheduled") {
         modalStatusElement.classList.add("text-primary");
       } else if (status === "Closed") {
-        modalStatusElement.classList.add("text-primary");
+        modalStatusElement.classList.add("text-closed");
       }
     });
   });
