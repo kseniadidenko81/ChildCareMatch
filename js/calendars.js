@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       select: function (info) {
         var startDate = moment(info.start).format("YYYY-MM-DD HH:mm A");
         var endDate = moment(info.end).format("YYYY-MM-DD HH:mm A");
-
         var modal = new bootstrap.Modal(document.querySelector(".modal"));
         modal.show();
 
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (window.selectedEvent) {
         window.selectedEvent.setStart(startDate);
-        window.selectedEvent.setEnd(endDate);
+        window.selectedEvent.setEnd(moment(endDate).add(1, "days").toDate());
         window.selectedEvent.setProp(
           "title",
           moment(startDate).format("h:mm A") +
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "\n" +
             moment(endDate).format("h:mm A"),
           start: startDate,
-          end: endDate,
+          end: moment(endDate).add(1, "days").toDate(),
         });
       }
 
