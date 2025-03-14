@@ -208,6 +208,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// MODAL COMMENT TEXTAREA
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("modalTabNew");
+
+  modal.addEventListener("show.bs.modal", function (event) {
+    var button = event.relatedTarget;
+    var commentText =
+      button.getAttribute("data-comment") || "No comment available";
+
+    var textarea = modal.querySelector("#reviewText");
+    textarea.value = commentText.trim();
+  });
+});
+
 // STATUS MODAL
 document.addEventListener("DOMContentLoaded", function () {
   const viewButtons = document.querySelectorAll(".edit-btn");
