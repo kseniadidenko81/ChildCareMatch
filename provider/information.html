@@ -265,8 +265,16 @@
                       class="form-control"
                       id="phone"
                       placeholder="Enter contact phone"
+                      pattern="\(\d{3}\) \d{3}-\d{4}"
+                      maxlength="13"
+                      required
+                      data-has-listeners="true"
                     />
+                    <small class="form-text text-muted">
+                      Enter in format: <strong>(XXX) XXX-XXXX</strong>
+                    </small>
                   </div>
+
                   <div class="col-md-6 d-flex flex-column position-relative">
                     <label for="fax" class="form-label small text-muted mb-1"
                       >Fax</label
@@ -276,7 +284,14 @@
                       class="form-control"
                       id="fax"
                       placeholder="Enter fax number"
+                      pattern="\(\d{3}\) \d{3}-\d{4}"
+                      maxlength="13"
+                      required
+                      data-has-listeners="true"
                     />
+                    <small class="form-text text-muted">
+                      Enter in format: <strong>(XXX) XXX-XXXX</strong>
+                    </small>
                   </div>
                 </div>
 
@@ -308,6 +323,9 @@
                       class="form-control"
                       id="permitNumber"
                       placeholder="Enter permit number"
+                      maxlength="7"
+                      required
+                      data-has-listeners="true"
                     />
                   </div>
                   <div class="col-md-6 flex-fill position-relative">
@@ -481,12 +499,11 @@
               </p>
               <div class="input-group">
                 <input
-                  type="number"
+                  type="text"
                   id="currencyInput"
                   class="form-control"
                   value="100"
-                  min="0"
-                  step="1"
+                  pattern="\d+"
                   data-has-listeners="true"
                 />
                 <span class="input-group-text">$</span>
