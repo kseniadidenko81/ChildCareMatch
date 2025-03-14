@@ -536,18 +536,85 @@
                 <div class="card-header border-bottom-0 p-0">
                   <h3 class="h5 mb-3">Discounts</h3>
                   <div class="mb-3">
-                    <p class="fw-semibold mb-1">
+                    <label for="currencyInput" class="mb-2 text-muted">
                       Discount for the number of children
-                    </p>
-                    <span class="small text-muted fw-semibold">$150</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="currencyInput"
+                        class="form-control"
+                        value="0"
+                        pattern="\d+"
+                        placeholder="Enter amount"
+                        required=""
+                        data-has-listeners="true"
+                        oninput="this.value = this.value.replace(/\D/, '')"
+                      />
+                      <span class="input-group-text">$</span>
+                    </div>
                   </div>
+
+                  <div class="mb-3">
+                    <label for="benefitsContainer1" class="mb-2 text-muted">
+                      Benefits for vacations
+                    </label>
+
+                    <div class="tags-container" id="benefitsContainer1">
+                      <span class="placeholder" id="placeholderText1"
+                        >Enter a benefit...</span
+                      >
+                      <input type="text" id="tagInput1" class="tag-input" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="benefitsContainer2" class="mb-2 text-muted">
+                      Benefits in case of sickness
+                    </label>
+
+                    <div class="tags-container" id="benefitsContainer2">
+                      <span class="placeholder" id="placeholderText2"
+                        >Enter a benefit...</span
+                      >
+                      <input type="text" id="tagInput2" class="tag-input" />
+                    </div>
+                  </div>
+
                   <div>
-                    <p class="fw-semibold mb-1">
+                    <label for="currencyInputs" class="mb-2 text-muted">
                       Discount for the number of children
-                    </p>
-                    <span class="small text-muted fw-semibold"
-                      >$100 for 2 kids</span
-                    >
+                    </label>
+                    <div class="row discount-section g-3">
+                      <div class="input-group col-md-6">
+                        <input
+                          type="text"
+                          id="currencyInputs"
+                          class="form-control"
+                          value="0"
+                          pattern="\d+"
+                          placeholder="Enter amount"
+                          required=""
+                          data-has-listeners="true"
+                          oninput="this.value = this.value.replace(/\D/, '')"
+                        />
+                        <span class="input-group-text">$</span>
+                      </div>
+
+                      <div class="input-group col-md-6">
+                        <input
+                          type="number"
+                          id="kidsInput"
+                          class="form-control"
+                          value="2"
+                          pattern="\d+"
+                          placeholder="Number of kids"
+                          required=""
+                          oninput="this.value = this.value.replace(/\D/, '')"
+                        />
+                        <span class="input-group-text">kids</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -575,8 +642,36 @@
                   <p class="text-muted fw-semibold mb-2">
                     Classes and activities
                   </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="tag">Aikido</span>
+                  <div class="program-container card">
+                    <div
+                      class="d-flex flex-column flex-md-row align-items-md-start program-row position-relative p-2"
+                    >
+                      <div class="flex-fill class-col p-2">
+                        <span class="small text-muted">Class/Activity: </span>
+                        <span class="d-block mt-2">Dancing</span>
+                      </div>
+                      <div class="flex-fill program-col p-2">
+                        <span class="small text-muted">Program: </span>
+                        <span class="d-block mt-2"
+                          >Kindergarten(5y/o-6y/o)</span
+                        >
+                      </div>
+                      <div class="flex-fill available-col p-2">
+                        <span class="small text-muted">Available: </span>
+                        <span class="d-block mt-2 available-count">1</span>
+                      </div>
+                      <div class="flex-fill price-col p-2">
+                        <span class="small text-muted">Price: </span>
+                        <span class="d-block mt-2">100 / per hour</span>
+                      </div>
+                      <div
+                        class="flex-fill schedule-col p-2"
+                        style="display: none"
+                      >
+                        <div class="schedule-info">From: 16:00, To: 18:00</div>
+                        <div class="schedule-info">Days: Mon-Fri</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="mb-3">
