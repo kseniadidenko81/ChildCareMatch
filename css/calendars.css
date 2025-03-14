@@ -19,14 +19,14 @@
 .fc .fc-button-primary:not(:disabled).fc-button-active,
 .fc .fc-button-primary:not(:disabled):active {
   color: #fff !important;
-  background-color: #2684f9 !important;
-  border: 1px solid #2684f9 !important;
+  background-color: #6750f9 !important;
+  border: 1px solid #6750f9 !important;
 }
 
 .fc .fc-button-primary {
   background-color: transparent !important;
-  color: #2684f9 !important;
-  border: 1px solid #2684f9 !important;
+  color: #6750f9 !important;
+  border: 1px solid #6750f9 !important;
 }
 
 .fc-h-event {
