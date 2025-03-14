@@ -59,6 +59,7 @@
 .fc-timegrid-event.fc-event-mirror,
 .fc-timegrid-more-link {
   background-color: aliceblue;
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
