@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ${daysTimes}
           </div>
           <div class="flex-fill actions-col p-2">
-            <i class="bi bi-calendar-event text-primary calendar-icon me-2" style="cursor: pointer;" aria-label="Schedule"></i>
+            <span class="text-primary calendar-icon small me-2" style="cursor: pointer;" aria-label="Schedule">Show More</span>
             <i class="bi bi-pencil text-primary edit-icon me-2" style="cursor: pointer;" aria-label="Edit"></i>
             <i class="bi bi-trash delete-icon text-danger" style="cursor: pointer;" aria-label="Delete"></i>
           </div>
