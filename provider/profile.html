@@ -234,12 +234,7 @@
       <main class="content">
         <div class="container py-4 py-md-5 my-md-4">
           <h2 class="mb-4">Profile details</h2>
-          <span class="d-flex flex-column mb-4">
-            <span class="h5">Overview</span>
-            <span class="text-muted">
-              Main contact information that will be displayed on profile page
-            </span></span
-          >
+          <div class="h5 mb-4">Overview</div>
           <form>
             <div class="row pb-md-3">
               <div class="col-md-3 text-center pb-5 mb-4">
@@ -1820,7 +1815,7 @@
                     </p>
 
                     <div class="row g-3 pt-2">
-                      <div class="col-sm-6 d-flex">
+                      <div class="col-sm-6 col-md-3 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_2"
@@ -1838,24 +1833,7 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 d-flex">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_6"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="6"
-                            id="id_daycare_types_6"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Half day</span>
-                        </label>
-                      </div>
-                      <div class="col-sm-6 d-flex">
+                      <div class="col-sm-6 col-md-3 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_3"
@@ -1875,26 +1853,7 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 d-flex">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_7"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="7"
-                            id="id_daycare_types_7"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Flexible days</span
-                          >
-                        </label>
-                      </div>
-                      <div class="col-sm-6 d-flex">
+                      <div class="col-sm-6 col-md-3 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_4"
@@ -1914,24 +1873,7 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 d-flex">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_8"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="8"
-                            id="id_daycare_types_8"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Night care</span>
-                        </label>
-                      </div>
-                      <div class="col-sm-6 d-flex">
+                      <div class="col-sm-6 col-md-3 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_5"
@@ -1951,7 +1893,63 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 d-flex">
+                      <div class="col-sm-6 col-md-3 d-flex">
+                        <label
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                          for="id_daycare_types_6"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                            name="daycare_types"
+                            value="6"
+                            id="id_daycare_types_6"
+                            data-has-listeners="true"
+                            checked=""
+                          />
+                          <span class="flex-grow-1 text-input">Half day</span>
+                        </label>
+                      </div>
+
+                      <div class="col-sm-6 col-md-3 d-flex">
+                        <label
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                          for="id_daycare_types_7"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                            name="daycare_types"
+                            value="7"
+                            id="id_daycare_types_7"
+                            data-has-listeners="true"
+                            checked=""
+                          />
+                          <span class="flex-grow-1 text-input"
+                            >Flexible days</span
+                          >
+                        </label>
+                      </div>
+
+                      <div class="col-sm-6 col-md-3 d-flex">
+                        <label
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                          for="id_daycare_types_8"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                            name="daycare_types"
+                            value="8"
+                            id="id_daycare_types_8"
+                            data-has-listeners="true"
+                            checked=""
+                          />
+                          <span class="flex-grow-1 text-input">Night care</span>
+                        </label>
+                      </div>
+
+                      <div class="col-sm-6 col-md-3 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_9"
