@@ -307,23 +307,20 @@
 .boxInner img,
 .boxInner video {
   object-fit: cover;
-  max-height: 280px;
+  max-height: 210px;
 }
 
-video {
+.boxInner video {
   min-height: 210px;
 }
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 992px) {
   .boxInner img,
   .boxInner video {
-    max-height: 210px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .boxInner img {
     max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
   }
 }
 
