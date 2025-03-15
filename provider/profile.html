@@ -234,8 +234,272 @@
       <main class="content">
         <div class="container py-4 py-md-5 my-md-4">
           <h2 class="mb-4">Profile details</h2>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
+          <span class="d-flex flex-column mb-4">
+            <span class="h5">Overview</span>
+            <span class="text-muted">
+              Main contact information that will be displayed on profile page
+            </span></span
+          >
+          <form>
+            <div class="row pb-md-3">
+              <div class="col-md-3 text-center pb-5 mb-4">
+                <label class="avatar-container">
+                  <img
+                    id="avatarPreview"
+                    src="img/avatar-2.svg"
+                    alt="Avatar"
+                    class="rounded-circle"
+                  />
+                  <div class="btn btn-outline-primary upload-logo">
+                    Upload Logo
+                  </div>
+                  <input
+                    type="file"
+                    id="avatarUpload"
+                    accept="image/*"
+                    class="d-none"
+                    data-has-listeners="true"
+                  />
+                </label>
+              </div>
+              <div class="col-md-9">
+                <div class="mb-3">
+                  <label
+                    for="providerName"
+                    class="form-label small text-muted mb-1"
+                    >Provider Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="providerName"
+                    placeholder="Enter provider name"
+                    value="Mommy Day Care"
+                    data-has-listeners="true"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="description"
+                    class="form-label small text-muted mb-1"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    rows="3"
+                    placeholder="Enter description"
+                    data-has-listeners="true"
+                  ></textarea>
+                </div>
+                <p class="fw-semibold pt-4">Day care Type</p>
+                <p class="text-muted mb-4">
+                  Select one or more provider types you are certified as
+                </p>
+                <div class="row g-3">
+                  <div class="col-sm-6 d-flex">
+                    <div
+                      class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                    >
+                      <label
+                        class="form-check-label text-wrap d-flex align-items-center w-100"
+                        for="id_daycare_types_0"
+                      >
+                        <input
+                          type="checkbox"
+                          class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                          name="daycare_types"
+                          value="1"
+                          id="id_daycare_types_0"
+                          data-has-listeners="true"
+                          checked=""
+                        />
+                        <span class="flex-grow-1 text-input"
+                          >Family Daycare
+                          <span class="d-block">(up to 12 children)</span></span
+                        >
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 d-flex">
+                    <div
+                      class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                    >
+                      <label
+                        class="form-check-label text-wrap d-flex align-items-center w-100"
+                        for="id_daycare_types_1"
+                      >
+                        <input
+                          type="checkbox"
+                          class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                          name="daycare_types"
+                          value="2"
+                          id="id_daycare_types_1"
+                          data-has-listeners="true"
+                          checked=""
+                        />
+                        <span class="flex-grow-1 text-input"
+                          >Daycare Center
+                          <span class="d-block"
+                            >(at least 3 children and more)</span
+                          >
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="fw-semibold pt-4">License info</p>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label
+                      for="permitNumber"
+                      class="form-label small text-muted mb-1"
+                      >Permit Number</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="permitNumber"
+                      placeholder="Enter permit number"
+                      value="#523768"
+                      data-has-listeners="true"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <div class="flex-fill position-relative">
+                      <label
+                        for="dropdownStatus"
+                        class="form-label small text-muted mb-1"
+                      >
+                        Current status
+                      </label>
+                      <div
+                        class="custom-dropdown"
+                        id="dropdownStatus"
+                        aria-expanded="false"
+                      >
+                        <span
+                          id="dropdownStatusText"
+                          class="selected-value"
+                          style="color: rgb(33, 37, 41)"
+                          >Expired</span
+                        >
+                        <span class="dropdown-arrow"
+                          ><i class="bi bi-chevron-down"></i
+                        ></span>
+                      </div>
+                      <div
+                        class="dropdown-options"
+                        id="dropdownStatusOptions"
+                        style="display: none"
+                      >
+                        <div
+                          class="dropdown-option selected"
+                          data-value="expired"
+                        >
+                          Expired
+                        </div>
+                        <div class="dropdown-option" data-value="active">
+                          Active
+                        </div>
+                      </div>
+                      <select
+                        name="status_select"
+                        id="dropdownStatusSelect"
+                        style="display: none"
+                      >
+                        <option value="expired">Expired</option>
+                        <option value="active">Active</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <label
+                      for="issueDate"
+                      class="form-label small text-muted mb-1"
+                    >
+                      Issue Date
+                    </label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="issueDate"
+                      value="2020-10-12"
+                      data-has-listeners="true"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label
+                      for="licenseExpDate"
+                      class="form-label small text-muted mb-1"
+                    >
+                      License Exp Date
+                    </label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="licenseExpDate"
+                      value="2030-01-01"
+                      data-has-listeners="true"
+                    />
+                  </div>
+                </div>
+
+                <p class="fw-semibold pt-4">Children genders</p>
+                <p class="text-muted mb-4">Select children genders</p>
+                <div class="row g-2">
+                  <div class="col-12 col-md-4">
+                    <label class="form-check-label w-100">
+                      <input
+                        type="checkbox"
+                        class="form-check-input me-1"
+                        name="children_genders"
+                        value="1"
+                        id="id_children_genders_1"
+                        data-has-listeners="true"
+                        checked=""
+                      />
+                      <span class="text-input">Both genders</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <label class="form-check-label w-100">
+                      <input
+                        type="checkbox"
+                        class="form-check-input me-1"
+                        name="children_genders"
+                        value="2"
+                        id="id_children_genders_2"
+                        data-has-listeners="true"
+                      />
+                      <span class="text-input">Boys only</span>
+                    </label>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <label class="form-check-label w-100">
+                      <input
+                        type="checkbox"
+                        class="form-check-input me-1"
+                        name="children_genders"
+                        value="3"
+                        id="id_children_genders_3"
+                        data-has-listeners="true"
+                      />
+                      <span class="text-input">Girls only</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="accordion mt-4" id="accordionExample">
+            <!-- <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
                   class="accordion-button"
@@ -244,289 +508,16 @@
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
                   aria-controls="collapseOne"
-                >
-                  <span class="d-flex flex-column">
-                    <span class="h5">Overview</span>
-                    <span class="text-muted">
-                      Main contact information that will be displayed on profile
-                      page
-                    </span></span
-                  >
-                </button>
+                ></button>
               </h2>
               <div
                 id="collapseOne"
                 class="accordion-collapse collapse show"
                 aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body p-3">
-                  <form>
-                    <div class="row pb-md-3">
-                      <div class="col-md-3 text-center pb-5 mb-4">
-                        <label class="avatar-container">
-                          <img
-                            id="avatarPreview"
-                            src="img/avatar-2.svg"
-                            alt="Avatar"
-                            class="rounded-circle"
-                          />
-                          <div class="btn btn-outline-primary upload-logo">
-                            Upload Logo
-                          </div>
-                          <input
-                            type="file"
-                            id="avatarUpload"
-                            accept="image/*"
-                            class="d-none"
-                            data-has-listeners="true"
-                          />
-                        </label>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="mb-3">
-                          <label
-                            for="providerName"
-                            class="form-label small text-muted mb-1"
-                            >Provider Name</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="providerName"
-                            placeholder="Enter provider name"
-                            value="Mommy Day Care"
-                            data-has-listeners="true"
-                          />
-                        </div>
-                        <div>
-                          <label
-                            for="description"
-                            class="form-label small text-muted mb-1"
-                            >Description</label
-                          >
-                          <textarea
-                            class="form-control"
-                            id="description"
-                            rows="3"
-                            placeholder="Enter description"
-                            data-has-listeners="true"
-                          ></textarea>
-                        </div>
-                        <p class="fw-semibold pt-4">Day care Type</p>
-                        <p class="text-muted mb-4">
-                          Select one or more provider types you are certified as
-                        </p>
-                        <div class="row g-3">
-                          <div class="col-sm-6 d-flex">
-                            <div
-                              class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                            >
-                              <label
-                                class="form-check-label text-wrap d-flex align-items-center w-100"
-                                for="id_daycare_types_0"
-                              >
-                                <input
-                                  type="checkbox"
-                                  class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                                  name="daycare_types"
-                                  value="1"
-                                  id="id_daycare_types_0"
-                                  data-has-listeners="true"
-                                  checked=""
-                                />
-                                <span class="flex-grow-1 text-input"
-                                  >Family Daycare
-                                  <span class="d-block"
-                                    >(up to 12 children)</span
-                                  ></span
-                                >
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 d-flex">
-                            <div
-                              class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                            >
-                              <label
-                                class="form-check-label text-wrap d-flex align-items-center w-100"
-                                for="id_daycare_types_1"
-                              >
-                                <input
-                                  type="checkbox"
-                                  class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                                  name="daycare_types"
-                                  value="2"
-                                  id="id_daycare_types_1"
-                                  data-has-listeners="true"
-                                  checked=""
-                                />
-                                <span class="flex-grow-1 text-input"
-                                  >Daycare Center
-                                  <span class="d-block"
-                                    >(at least 3 children and more)</span
-                                  >
-                                </span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-
-                        <p class="fw-semibold pt-4">License info</p>
-
-                        <div class="row g-3 mb-3">
-                          <div class="col-md-6">
-                            <label
-                              for="permitNumber"
-                              class="form-label small text-muted mb-1"
-                              >Permit Number</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="permitNumber"
-                              placeholder="Enter permit number"
-                              value="#523768"
-                              data-has-listeners="true"
-                            />
-                          </div>
-                          <div class="col-md-6">
-                            <div class="flex-fill position-relative">
-                              <label
-                                for="dropdownStatus"
-                                class="form-label small text-muted mb-1"
-                              >
-                                Current status
-                              </label>
-                              <div
-                                class="custom-dropdown"
-                                id="dropdownStatus"
-                                aria-expanded="false"
-                              >
-                                <span
-                                  id="dropdownStatusText"
-                                  class="selected-value"
-                                  style="color: rgb(33, 37, 41)"
-                                  >Expired</span
-                                >
-                                <span class="dropdown-arrow"
-                                  ><i class="bi bi-chevron-down"></i
-                                ></span>
-                              </div>
-                              <div
-                                class="dropdown-options"
-                                id="dropdownStatusOptions"
-                                style="display: none"
-                              >
-                                <div
-                                  class="dropdown-option selected"
-                                  data-value="expired"
-                                >
-                                  Expired
-                                </div>
-                                <div
-                                  class="dropdown-option"
-                                  data-value="active"
-                                >
-                                  Active
-                                </div>
-                              </div>
-                              <select
-                                name="status_select"
-                                id="dropdownStatusSelect"
-                                style="display: none"
-                              >
-                                <option value="expired">Expired</option>
-                                <option value="active">Active</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-6">
-                            <label
-                              for="issueDate"
-                              class="form-label small text-muted mb-1"
-                            >
-                              Issue Date
-                            </label>
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="issueDate"
-                              value="2020-10-12"
-                              data-has-listeners="true"
-                            />
-                          </div>
-
-                          <div class="col-md-6">
-                            <label
-                              for="licenseExpDate"
-                              class="form-label small text-muted mb-1"
-                            >
-                              License Exp Date
-                            </label>
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="licenseExpDate"
-                              value="2030-01-01"
-                              data-has-listeners="true"
-                            />
-                          </div>
-                        </div>
-
-                        <p class="fw-semibold pt-4">Children genders</p>
-                        <p class="text-muted mb-4">Select children genders</p>
-                        <div class="row g-2">
-                          <div class="col-12 col-md-4">
-                            <label class="form-check-label w-100">
-                              <input
-                                type="checkbox"
-                                class="form-check-input me-1"
-                                name="children_genders"
-                                value="1"
-                                id="id_children_genders_1"
-                                data-has-listeners="true"
-                                checked=""
-                              />
-                              <span class="text-input">Both genders</span>
-                            </label>
-                          </div>
-                          <div class="col-12 col-md-4">
-                            <label class="form-check-label w-100">
-                              <input
-                                type="checkbox"
-                                class="form-check-input me-1"
-                                name="children_genders"
-                                value="2"
-                                id="id_children_genders_2"
-                                data-has-listeners="true"
-                              />
-                              <span class="text-input">Boys only</span>
-                            </label>
-                          </div>
-                          <div class="col-12 col-md-4">
-                            <label class="form-check-label w-100">
-                              <input
-                                type="checkbox"
-                                class="form-check-input me-1"
-                                name="children_genders"
-                                value="3"
-                                id="id_children_genders_3"
-                                data-has-listeners="true"
-                              />
-                              <span class="text-input">Girls only</span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+                <div class="accordion-body p-3"></div>
               </div>
-            </div>
+            </div> -->
             <!--  -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
@@ -551,7 +542,6 @@
                 id="collapseTwo"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <form>
@@ -778,7 +768,6 @@
                 id="collapseThree"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <div class="mb-4">
@@ -787,6 +776,7 @@
                       Set child care provider registration fee and program
                       prices
                     </p>
+
                     <div class="input-group">
                       <input
                         type="number"
@@ -805,7 +795,186 @@
                     <p class="text-muted">
                       Set child care provider program prices
                     </p>
-                    <div id="selectedProgramDetails" class="mt-4"></div>
+                    <div id="selectedProgramDetails" class="mt-4">
+                      <div
+                        class="program-container col-lg-12 m-auto mb-3 card border-0"
+                      >
+                        <div
+                          class="d-flex flex-column flex-sm-row align-items-sm-start align-items-md-center program-row p-2"
+                        >
+                          <div class="flex-fill p-2 program-col">
+                            <span class="small text-muted">Program: </span
+                            ><span class="d-block mt-2"
+                              >Infant(up to 18mnth)</span
+                            >
+                          </div>
+                          <div class="flex-fill p-2 available-col">
+                            <span class="small text-muted">Available: </span
+                            ><span class="d-block mt-2 available-count">3</span>
+                          </div>
+                          <div class="flex-fill p-2 price-col">
+                            <span class="small text-muted">Price: </span
+                            ><span class="d-block mt-2">$100 / per hour</span>
+                          </div>
+                          <div class="flex-fill p-2 actions-col">
+                            <i
+                              class="bi bi-pencil text-primary edit-icon me-2"
+                              style="cursor: pointer"
+                              aria-label="Edit"
+                            ></i>
+                            <i
+                              class="bi bi-trash delete-icon text-danger"
+                              style="cursor: pointer"
+                              aria-label="Delete"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div
+                        class="program-container col-lg-12 m-auto mb-3 card border-0"
+                      >
+                        <div
+                          class="d-flex flex-column flex-sm-row align-items-sm-start align-items-md-center program-row p-2"
+                        >
+                          <div class="flex-fill p-2 program-col">
+                            <span class="small text-muted">Program: </span
+                            ><span class="d-block mt-2"
+                              >Toddlers(18mnth-3y/o)</span
+                            >
+                          </div>
+                          <div class="flex-fill p-2 available-col">
+                            <span class="small text-muted">Available: </span
+                            ><span
+                              class="d-block mt-2 available-count"
+                              style="opacity: 1"
+                              >1</span
+                            >
+                          </div>
+                          <div class="flex-fill p-2 price-col">
+                            <span class="small text-muted">Price: </span
+                            ><span class="d-block mt-2">$100 / per day</span>
+                          </div>
+                          <div class="flex-fill p-2 actions-col">
+                            <i
+                              class="bi bi-pencil text-primary edit-icon me-2"
+                              style="cursor: pointer"
+                              aria-label="Edit"
+                            ></i>
+                            <i
+                              class="bi bi-trash delete-icon text-danger"
+                              style="cursor: pointer"
+                              aria-label="Delete"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div
+                        class="program-container col-lg-12 m-auto mb-3 card border-0"
+                      >
+                        <div
+                          class="d-flex flex-column flex-sm-row align-items-sm-start align-items-md-center program-row p-2"
+                        >
+                          <div class="flex-fill p-2 program-col">
+                            <span class="small text-muted">Program: </span
+                            ><span class="d-block mt-2"
+                              >Preschooler(3y/o-4y/o)</span
+                            >
+                          </div>
+                          <div class="flex-fill p-2 available-col">
+                            <span class="small text-muted">Available: </span
+                            ><span class="d-block mt-2 available-count">0</span>
+                          </div>
+                          <div class="flex-fill p-2 price-col">
+                            <span class="small text-muted">Price: </span
+                            ><span class="d-block mt-2">$1500 / per month</span>
+                          </div>
+                          <div class="flex-fill p-2 actions-col">
+                            <i
+                              class="bi bi-pencil text-primary edit-icon me-2"
+                              style="cursor: pointer"
+                              aria-label="Edit"
+                            ></i>
+                            <i
+                              class="bi bi-trash delete-icon text-danger"
+                              style="cursor: pointer"
+                              aria-label="Delete"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div
+                        class="program-container col-lg-12 m-auto mb-3 card border-0"
+                      >
+                        <div
+                          class="d-flex flex-column flex-sm-row align-items-sm-start align-items-md-center program-row p-2"
+                        >
+                          <div class="flex-fill p-2 program-col">
+                            <span class="small text-muted">Program: </span
+                            ><span class="d-block mt-2"
+                              >Pre-K Free(4y/o-5y/o)</span
+                            >
+                          </div>
+                          <div class="flex-fill p-2 available-col">
+                            <span class="small text-muted">Available: </span
+                            ><span class="d-block mt-2 available-count">2</span>
+                          </div>
+                          <div class="flex-fill p-2 price-col">
+                            <span class="small text-muted">Price: </span
+                            ><span class="d-block mt-2">$2000 / per month</span>
+                          </div>
+                          <div class="flex-fill p-2 actions-col">
+                            <i
+                              class="bi bi-pencil text-primary edit-icon me-2"
+                              style="cursor: pointer"
+                              aria-label="Edit"
+                            ></i>
+                            <i
+                              class="bi bi-trash delete-icon text-danger"
+                              style="cursor: pointer"
+                              aria-label="Delete"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div
+                        class="program-container col-lg-12 m-auto mb-3 card border-0"
+                      >
+                        <div
+                          class="d-flex flex-column flex-sm-row align-items-sm-start align-items-md-center program-row p-2"
+                        >
+                          <div class="flex-fill p-2 program-col">
+                            <span class="small text-muted">Program: </span
+                            ><span class="d-block mt-2"
+                              >Kindergarten(5y/o-6y/o)</span
+                            >
+                          </div>
+                          <div class="flex-fill p-2 available-col">
+                            <span class="small text-muted">Available: </span
+                            ><span class="d-block mt-2 available-count">3</span>
+                          </div>
+                          <div class="flex-fill p-2 price-col">
+                            <span class="small text-muted">Price: </span
+                            ><span class="d-block mt-2">$500 / per week</span>
+                          </div>
+                          <div class="flex-fill p-2 actions-col">
+                            <i
+                              class="bi bi-pencil text-primary edit-icon me-2"
+                              style="cursor: pointer"
+                              aria-label="Edit"
+                            ></i>
+                            <i
+                              class="bi bi-trash delete-icon text-danger"
+                              style="cursor: pointer"
+                              aria-label="Delete"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <button
                       type="button"
                       class="btn btn-outline-primary mt-4"
@@ -1020,7 +1189,6 @@
                 id="collapseFour"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingFour"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <form>
@@ -1107,7 +1275,6 @@
                 id="collapseFive"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingFive"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <div class="mb-4">
@@ -1698,7 +1865,7 @@
                     </p>
 
                     <div class="row g-3 pt-2">
-                      <div class="col-sm-4 d-flex">
+                      <div class="col-sm-6 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_2"
@@ -1716,7 +1883,24 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-4 d-flex">
+                      <div class="col-sm-6 d-flex">
+                        <label
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                          for="id_daycare_types_6"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                            name="daycare_types"
+                            value="6"
+                            id="id_daycare_types_6"
+                            data-has-listeners="true"
+                            checked=""
+                          />
+                          <span class="flex-grow-1 text-input">Half day</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-6 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_3"
@@ -1736,7 +1920,26 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-4 d-flex">
+                      <div class="col-sm-6 d-flex">
+                        <label
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                          for="id_daycare_types_7"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                            name="daycare_types"
+                            value="7"
+                            id="id_daycare_types_7"
+                            data-has-listeners="true"
+                            checked=""
+                          />
+                          <span class="flex-grow-1 text-input"
+                            >Flexible days</span
+                          >
+                        </label>
+                      </div>
+                      <div class="col-sm-6 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_4"
@@ -1756,7 +1959,24 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-4 d-flex">
+                      <div class="col-sm-6 d-flex">
+                        <label
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                          for="id_daycare_types_8"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                            name="daycare_types"
+                            value="8"
+                            id="id_daycare_types_8"
+                            data-has-listeners="true"
+                            checked=""
+                          />
+                          <span class="flex-grow-1 text-input">Night care</span>
+                        </label>
+                      </div>
+                      <div class="col-sm-6 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_5"
@@ -1776,63 +1996,7 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-4 d-flex">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_6"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="6"
-                            id="id_daycare_types_6"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Half day</span>
-                        </label>
-                      </div>
-
-                      <div class="col-sm-4 d-flex">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_7"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="7"
-                            id="id_daycare_types_7"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Flexible days</span
-                          >
-                        </label>
-                      </div>
-
-                      <div class="col-sm-4 d-flex">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_8"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="8"
-                            id="id_daycare_types_8"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Night care</span>
-                        </label>
-                      </div>
-
-                      <div class="col-sm-4 d-flex">
+                      <div class="col-sm-6 d-flex">
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_9"
@@ -2520,7 +2684,6 @@
                 id="collapseSix"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingSix"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <div class="mb-4">
@@ -3294,7 +3457,6 @@
                 id="collapseSeven"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingSeven"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <button
@@ -3302,7 +3464,7 @@
                     class="btn btn-outline-primary d-block m-auto"
                     id="addPhotoButton"
                   >
-                    <i class="bi bi-plus-circle me-1"></i> Add Photo
+                    <i class="bi bi-plus-circle me-1"></i> Add Photo/Video
                   </button>
 
                   <input
@@ -3391,7 +3553,6 @@
                 id="collapseEight"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingEight"
-                data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body p-3">
                   <button
