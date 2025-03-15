@@ -1813,9 +1813,11 @@
                     <p class="fw-semibold">
                       Select the time service you provider
                     </p>
-
-                    <div class="row g-3 pt-2">
-                      <div class="col-sm-6 col-md-3 d-flex">
+                    <div class="row d-flex flex-wrap g-3 pt-2">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="1"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_2"
@@ -1833,7 +1835,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="3"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_3"
@@ -1853,7 +1858,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="6"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_4"
@@ -1873,7 +1881,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="8"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_5"
@@ -1893,7 +1904,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="2"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_6"
@@ -1911,7 +1925,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="4"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_7"
@@ -1931,7 +1948,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="5"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_8"
@@ -1949,7 +1969,10 @@
                         </label>
                       </div>
 
-                      <div class="col-sm-6 col-md-3 d-flex">
+                      <div
+                        class="col-sm-6 col-md-3 d-flex flex-column"
+                        data-order="7"
+                      >
                         <label
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                           for="id_daycare_types_9"
@@ -3418,6 +3441,7 @@
                     id="addPhotoButton"
                   >
                     <i class="bi bi-plus-circle me-1"></i> Add Photo/Video
+                    Gallery Gallery
                   </button>
 
                   <input
@@ -3841,6 +3865,16 @@
     <!-- SCRIPT -->
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector(".row.d-flex.flex-wrap");
+        const items = Array.from(container.children);
+
+        items.sort((a, b) => a.dataset.order - b.dataset.order);
+
+        items.forEach((item) => container.appendChild(item));
+      });
     </script>
   </body>
 </html>
