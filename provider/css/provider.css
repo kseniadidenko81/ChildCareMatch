@@ -402,3 +402,91 @@ span.rating-text {
   flex-direction: column;
   flex: 1 1 auto !important;
 }
+
+/* PHOTO */
+.delete-image {
+  right: 4px;
+  top: 4px;
+  background: #fdfdfd;
+  opacity: 0.8;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+/* CARD TEAM*/
+.card-team {
+  box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  background-color: rgb(251 251 251);
+  border-radius: 6px;
+}
+
+.card-team img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 420px) {
+  .card-team img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.show-more {
+  cursor: pointer;
+}
+
+.boxInner img,
+.boxInner video {
+  object-fit: cover;
+  max-height: 210px;
+}
+
+.boxInner video {
+  min-height: 210px;
+}
+
+@media screen and (min-width: 992px) {
+  .boxInner img,
+  .boxInner video {
+    max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+/* SHOW More/Less */
+.text-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.text-content.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
+.show-more:hover {
+  text-decoration: underline;
+}
+
+.excerpt-hidden {
+  height: 4.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.excerpt-visible {
+  height: auto;
+  overflow: auto;
+}
+
+.text-wrap {
+  height: auto;
+}
