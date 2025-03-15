@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ADD PHOTO
+// ADD PHOTO/VIDEO
 document.addEventListener("DOMContentLoaded", function () {
   const addPhotoButton = document.getElementById("addPhotoButton");
   const photoInput = document.getElementById("photoInput");
@@ -712,9 +712,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const boxInner = document.createElement("div");
       boxInner.classList.add("boxInner", "position-relative");
 
-      const img = document.createElement("img");
-      img.classList.add("img-fluid", "rounded", "w-100");
-      img.src = URL.createObjectURL(file);
+      const fileURL = URL.createObjectURL(file);
+
+      if (file.type.startsWith("image/")) {
+        const img = document.createElement("img");
+        img.classList.add("img-fluid", "rounded", "w-100");
+        img.src = fileURL;
+
+        boxInner.appendChild(img);
+      } else if (file.type.startsWith("video/")) {
+        const video = document.createElement("video");
+        video.classList.add("img-fluid", "rounded", "w-100");
+        video.src = fileURL;
+        video.controls = true;
+
+        boxInner.appendChild(video);
+      }
 
       const deleteIcon = document.createElement("i");
       deleteIcon.classList.add(
@@ -732,7 +745,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       boxInner.appendChild(deleteIcon);
-      boxInner.appendChild(img);
       box.appendChild(boxInner);
       col.appendChild(box);
 
