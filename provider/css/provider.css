@@ -395,3 +395,10 @@ span.rating-text {
     width: 50%;
   }
 }
+
+/* CARD */
+.schedule-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto !important;
+}
