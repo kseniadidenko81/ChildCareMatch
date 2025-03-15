@@ -1,180 +1,180 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const scheduleBlocks = document.getElementById("scheduleBlocks3");
-  const addScheduleBlockButton = document.getElementById("addScheduleBlock2");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const scheduleBlocks = document.getElementById("scheduleBlocks3");
+//   const addScheduleBlockButton = document.getElementById("addScheduleBlock2");
 
-  function addDropdownFunctionality(block) {
-    const dropdownButton = block.querySelector(".dropdownMenuButton");
-    const dropdownMenu = block.querySelector(".dropdownMenu");
-    const chevronIcon = block.querySelector(".bi-chevron-down");
-    const options = block.querySelectorAll(".select-day");
+//   function addDropdownFunctionality(block) {
+//     const dropdownButton = block.querySelector(".dropdownMenuButton");
+//     const dropdownMenu = block.querySelector(".dropdownMenu");
+//     const chevronIcon = block.querySelector(".bi-chevron-down");
+//     const options = block.querySelectorAll(".select-day");
 
-    dropdownButton.addEventListener("click", function (event) {
-      event.stopPropagation();
-      dropdownMenu.classList.toggle("opacity-0");
-      dropdownMenu.classList.toggle("opacity-100");
-      dropdownMenu.classList.toggle("flex-row");
+//     dropdownButton.addEventListener("click", function (event) {
+//       event.stopPropagation();
+//       dropdownMenu.classList.toggle("opacity-0");
+//       dropdownMenu.classList.toggle("opacity-100");
+//       dropdownMenu.classList.toggle("flex-row");
 
-      if (dropdownMenu.classList.contains("opacity-100")) {
-        chevronIcon.style.transform = "rotate(180deg)";
-      } else {
-        chevronIcon.style.transform = "rotate(0deg)";
-      }
-    });
+//       if (dropdownMenu.classList.contains("opacity-100")) {
+//         chevronIcon.style.transform = "rotate(180deg)";
+//       } else {
+//         chevronIcon.style.transform = "rotate(0deg)";
+//       }
+//     });
 
-    options.forEach((option) => {
-      option.addEventListener("click", function () {
-        dropdownButton.innerHTML = `${this.dataset.value} <i class="bi bi-chevron-down ms-2"></i>`;
-        dropdownMenu.classList.add("opacity-0");
-        dropdownMenu.classList.remove("opacity-100", "flex-row");
+//     options.forEach((option) => {
+//       option.addEventListener("click", function () {
+//         dropdownButton.innerHTML = `${this.dataset.value} <i class="bi bi-chevron-down ms-2"></i>`;
+//         dropdownMenu.classList.add("opacity-0");
+//         dropdownMenu.classList.remove("opacity-100", "flex-row");
 
-        chevronIcon.style.transform = "rotate(0deg)";
-      });
-    });
+//         chevronIcon.style.transform = "rotate(0deg)";
+//       });
+//     });
 
-    document.addEventListener("click", function (event) {
-      if (
-        !dropdownButton.contains(event.target) &&
-        !dropdownMenu.contains(event.target)
-      ) {
-        dropdownMenu.classList.add("opacity-0");
-        dropdownMenu.classList.remove("opacity-100", "flex-row");
+//     document.addEventListener("click", function (event) {
+//       if (
+//         !dropdownButton.contains(event.target) &&
+//         !dropdownMenu.contains(event.target)
+//       ) {
+//         dropdownMenu.classList.add("opacity-0");
+//         dropdownMenu.classList.remove("opacity-100", "flex-row");
 
-        chevronIcon.style.transform = "rotate(0deg)";
-      }
-    });
-  }
+//         chevronIcon.style.transform = "rotate(0deg)";
+//       }
+//     });
+//   }
 
-  function addTimeFunctionality(block) {
-    const timeInputs = block.querySelectorAll(".timeInput");
+//   function addTimeFunctionality(block) {
+//     const timeInputs = block.querySelectorAll(".timeInput");
 
-    timeInputs.forEach((timeInput) => {
-      const amPmDisplay = timeInput.nextElementSibling;
+//     timeInputs.forEach((timeInput) => {
+//       const amPmDisplay = timeInput.nextElementSibling;
 
-      timeInput.addEventListener("input", function () {
-        if (timeInput.value) {
-          let [hours, minutes] = timeInput.value.split(":");
-          let hoursInt = parseInt(hours, 10);
-          let amPm = hoursInt >= 12 ? "PM" : "AM";
+//       timeInput.addEventListener("input", function () {
+//         if (timeInput.value) {
+//           let [hours, minutes] = timeInput.value.split(":");
+//           let hoursInt = parseInt(hours, 10);
+//           let amPm = hoursInt >= 12 ? "PM" : "AM";
 
-          if (hoursInt > 12) {
-            hoursInt -= 12;
-          } else if (hoursInt === 0) {
-            hoursInt = 12;
-          }
+//           if (hoursInt > 12) {
+//             hoursInt -= 12;
+//           } else if (hoursInt === 0) {
+//             hoursInt = 12;
+//           }
 
-          amPmDisplay.value = amPm;
-          amPmDisplay.classList.remove("opacity-0");
-          amPmDisplay.classList.add("opacity-100");
-        } else {
-          amPmDisplay.classList.add("opacity-0");
-          amPmDisplay.classList.remove("opacity-100");
-        }
-      });
-    });
-  }
+//           amPmDisplay.value = amPm;
+//           amPmDisplay.classList.remove("opacity-0");
+//           amPmDisplay.classList.add("opacity-100");
+//         } else {
+//           amPmDisplay.classList.add("opacity-0");
+//           amPmDisplay.classList.remove("opacity-100");
+//         }
+//       });
+//     });
+//   }
 
-  function createScheduleBlock() {
-    const block = document.createElement("div");
-    block.classList.add("row", "g-3", "mt-2", "schedule-block");
+//   function createScheduleBlock() {
+//     const block = document.createElement("div");
+//     block.classList.add("row", "g-3", "mt-2", "schedule-block");
 
-    block.innerHTML = `
-      <div class="col-md-5">
-        <div class="mb-2">Set day(s)</div>
-        <div class="dropdown">
-          <button class="btn btn-outline-primary dropdown-toggle w-100 dropdownMenuButton" type="button">
-            Select Days
-          </button><i class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"></i>
-          <ul class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary opacity-0">
-            <li class="d-flex justify-content-between flex-row w-100 border-bottom">
-              <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon-Fri">Mon-Fri</label>
-              <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon-Sun">Mon-Sun</label>
-              <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sat-Sun">Sat-Sun</label>
-            </li>
-            <li class="d-flex flex-wrap w-100">
-              <ul class="d-flex flex-row w-100 ps-0">
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon">Mon</label>
-                </li>
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Tue">Tue</label>
-                </li>
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Wed">Wed</label>
-                </li>
-              </ul>
-              <ul class="d-flex flex-row w-100 ps-0">
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Thu">Thu</label>
-                </li>
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Fri">Fri</label>
-                </li>
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sat">Sat</label>
-                </li>
-              </ul>
-              <ul class="d-flex flex-row w-100 ps-0">
-                <li class="d-flex flex-column flex-grow-1">
-                  <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sun">Sun</label>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+//     block.innerHTML = `
+//       <div class="col-md-5">
+//         <div class="mb-2">Set day(s)</div>
+//         <div class="dropdown">
+//           <button class="btn btn-outline-primary dropdown-toggle w-100 dropdownMenuButton" type="button">
+//             Select Days
+//           </button><i class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"></i>
+//           <ul class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary opacity-0">
+//             <li class="d-flex justify-content-between flex-row w-100 border-bottom">
+//               <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon-Fri">Mon-Fri</label>
+//               <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon-Sun">Mon-Sun</label>
+//               <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sat-Sun">Sat-Sun</label>
+//             </li>
+//             <li class="d-flex flex-wrap w-100">
+//               <ul class="d-flex flex-row w-100 ps-0">
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Mon">Mon</label>
+//                 </li>
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Tue">Tue</label>
+//                 </li>
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Wed">Wed</label>
+//                 </li>
+//               </ul>
+//               <ul class="d-flex flex-row w-100 ps-0">
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Thu">Thu</label>
+//                 </li>
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Fri">Fri</label>
+//                 </li>
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sat">Sat</label>
+//                 </li>
+//               </ul>
+//               <ul class="d-flex flex-row w-100 ps-0">
+//                 <li class="d-flex flex-column flex-grow-1">
+//                   <label class="dropdown-header select-day fs-6 text-dark fw-semibold p-2" data-value="Sun">Sun</label>
+//                 </li>
+//               </ul>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
 
-      <div class="col-md-3 position-relative">
-        <label class="form-label">From</label>
-        <input type="time" class="form-control timeInput from">
-        <input type="text" class="form-control ampm-display opacity-0" readonly>
-      </div>
+//       <div class="col-md-3 position-relative">
+//         <label class="form-label">From</label>
+//         <input type="time" class="form-control timeInput from">
+//         <input type="text" class="form-control ampm-display opacity-0" readonly>
+//       </div>
 
-      <div class="col-md-3 position-relative">
-        <label class="form-label">To</label>
-        <input type="time" class="form-control timeInput to">
-        <input type="text" class="form-control ampm-display opacity-0" readonly>
-      </div>
+//       <div class="col-md-3 position-relative">
+//         <label class="form-label">To</label>
+//         <input type="time" class="form-control timeInput to">
+//         <input type="text" class="form-control ampm-display opacity-0" readonly>
+//       </div>
 
-      <div class="col-sm-1 d-flex flex-column justify-content-center align-items-end align-items-sm-center">
-        <div class="mb-2 opacity-0">Text</div>
-        <i class="bi bi-trash text-danger remove-location" style="cursor: pointer"></i>
-      </div>
-    `;
+//       <div class="col-sm-1 d-flex flex-column justify-content-center align-items-end align-items-sm-center">
+//         <div class="mb-2 opacity-0">Text</div>
+//         <i class="bi bi-trash text-danger remove-location" style="cursor: pointer"></i>
+//       </div>
+//     `;
 
-    scheduleBlocks.appendChild(block);
-    block.classList.add("visible");
+//     scheduleBlocks.appendChild(block);
+//     block.classList.add("visible");
 
-    addDropdownFunctionality(block);
-    addTimeFunctionality(block);
-    addRemoveFunctionality(block);
-  }
+//     addDropdownFunctionality(block);
+//     addTimeFunctionality(block);
+//     addRemoveFunctionality(block);
+//   }
 
-  function addRemoveFunctionality(block) {
-    const removeButton = block.querySelector(".remove-location");
+//   function addRemoveFunctionality(block) {
+//     const removeButton = block.querySelector(".remove-location");
 
-    if (removeButton) {
-      removeButton.addEventListener("click", function () {
-        block.classList.remove("visible");
-        block.remove();
-        checkDefaultBlock();
-      });
-    }
-  }
+//     if (removeButton) {
+//       removeButton.addEventListener("click", function () {
+//         block.classList.remove("visible");
+//         block.remove();
+//         checkDefaultBlock();
+//       });
+//     }
+//   }
 
-  function checkDefaultBlock() {
-    if (scheduleBlocks.children.length === 0) {
-      createScheduleBlock();
-    }
-  }
+//   function checkDefaultBlock() {
+//     if (scheduleBlocks.children.length === 0) {
+//       createScheduleBlock();
+//     }
+//   }
 
-  addScheduleBlockButton.addEventListener("click", createScheduleBlock);
+//   addScheduleBlockButton.addEventListener("click", createScheduleBlock);
 
-  document
-    .querySelectorAll(".schedule-block")
-    .forEach(addDropdownFunctionality);
-  document.querySelectorAll(".schedule-block").forEach(addTimeFunctionality);
-  document.querySelectorAll(".schedule-block").forEach(addRemoveFunctionality);
-});
+//   document
+//     .querySelectorAll(".schedule-block")
+//     .forEach(addDropdownFunctionality);
+//   document.querySelectorAll(".schedule-block").forEach(addTimeFunctionality);
+//   document.querySelectorAll(".schedule-block").forEach(addRemoveFunctionality);
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   function setupDropdown(dropdownId, optionsId, textId, selectId) {
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ${daysTimes}
           </div>
           <div class="flex-fill actions-col p-2">
-            <i class="bi bi-calendar-event text-primary calendar-icon me-2" style="cursor: pointer;" aria-label="Schedule"></i>
+            <span class="text-primary calendar-icon small me-2" style="cursor: pointer;" aria-label="Schedule">Show More</span>
             <i class="bi bi-pencil text-primary edit-icon me-2" style="cursor: pointer;" aria-label="Edit"></i>
             <i class="bi bi-trash delete-icon text-danger" style="cursor: pointer;" aria-label="Delete"></i>
           </div>
