@@ -304,13 +304,19 @@
   cursor: pointer;
 }
 
-.boxInner img {
+.boxInner img,
+.boxInner video {
   object-fit: cover;
   max-height: 280px;
 }
 
+video {
+  min-height: 210px;
+}
+
 @media screen and (min-width: 580px) {
-  .boxInner img {
+  .boxInner img,
+  .boxInner video {
     max-height: 210px;
   }
 }
@@ -360,4 +366,14 @@
 
 #scheduleBlocks3 .dropdown-menu.d-flex {
   display: flex !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
