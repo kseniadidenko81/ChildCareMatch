@@ -170,20 +170,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // CUSTOM DROPDOWN
 document.addEventListener("DOMContentLoaded", function () {
-  // Обработчик кликов для всех выпадающих списков
   document.querySelectorAll(".custom-dropdown").forEach((customDropdown) => {
-    const dropdownOptions = customDropdown.nextElementSibling; // Соседний блок с опциями
+    const dropdownOptions = customDropdown.nextElementSibling;
     const dropdownArrow = customDropdown.querySelector(".dropdown-arrow");
 
-    // Открытие/закрытие dropdown при клике
     customDropdown.addEventListener("click", function (event) {
-      event.stopPropagation(); // Останавливаем всплытие, чтобы не закрыть список
+      event.stopPropagation();
       const isOpen = dropdownOptions.classList.contains("open");
-      dropdownOptions.classList.toggle("open", !isOpen); // Переключаем состояние
-      dropdownArrow.classList.toggle("open", !isOpen); // Переключаем поворот стрелки
+      dropdownOptions.classList.toggle("open", !isOpen);
+      dropdownArrow.classList.toggle("open", !isOpen);
     });
 
-    // Обработчик клика по опциям dropdown
     const options = dropdownOptions.querySelectorAll(".dropdown-option");
     options.forEach((option) => {
       option.addEventListener("click", function () {
@@ -195,11 +192,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Закрытие всех dropdown при клике вне
   document.addEventListener("click", function (e) {
-    // Проверяем, если клик был вне всех custom-dropdown
     document.querySelectorAll(".custom-dropdown").forEach((customDropdown) => {
-      const dropdownOptions = customDropdown.nextElementSibling; // Соседний блок с опциями
+      const dropdownOptions = customDropdown.nextElementSibling;
       const dropdownArrow = customDropdown.querySelector(".dropdown-arrow");
       if (!customDropdown.contains(e.target)) {
         dropdownOptions.classList.remove("open");
