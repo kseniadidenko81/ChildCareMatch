@@ -297,48 +297,41 @@
                       class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                     >
                       <label
-                        class="form-check-label text-wrap d-flex align-items-center w-100"
+                        class="form-check-label text-wrap d-flex align-items-center"
                         for="id_daycare_types_0"
                       >
                         <input
                           type="checkbox"
-                          class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                          class="form-check-input ms-0 me-2 mt-0"
                           name="daycare_types"
                           value="1"
                           id="id_daycare_types_0"
                           data-has-listeners="true"
-                          checked=""
+                          checked
                         />
-                        <span class="flex-grow-1 text-input"
-                          >Family Daycare
-                          <span class="d-block">(up to 12 children)</span></span
-                        >
+                        Family Daycare (up to 12 children)
                       </label>
                     </div>
                   </div>
+
                   <div class="col-sm-6 d-flex">
                     <div
                       class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
                     >
                       <label
-                        class="form-check-label text-wrap d-flex align-items-center w-100"
+                        class="form-check-label text-wrap d-flex align-items-center"
                         for="id_daycare_types_1"
                       >
                         <input
                           type="checkbox"
-                          class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
+                          class="form-check-input ms-0 mt-0 me-2"
                           name="daycare_types"
                           value="2"
                           id="id_daycare_types_1"
                           data-has-listeners="true"
-                          checked=""
+                          checked
                         />
-                        <span class="flex-grow-1 text-input"
-                          >Daycare Center
-                          <span class="d-block"
-                            >(at least 3 children and more)</span
-                          >
-                        </span>
+                        Daycare Center (at least 3 children and more)
                       </label>
                     </div>
                   </div>
@@ -450,69 +443,64 @@
                 <p class="text-muted mb-4">Select children genders</p>
                 <div class="row g-2">
                   <div class="col-12 col-md-4">
-                    <label class="form-check-label w-100">
-                      <input
-                        type="checkbox"
-                        class="form-check-input me-1"
-                        name="children_genders"
-                        value="1"
-                        id="id_children_genders_1"
-                        data-has-listeners="true"
-                        checked=""
-                      />
-                      <span class="text-input">Both genders</span>
-                    </label>
+                    <div class="form-check ps-0">
+                      <label
+                        class="form-check-label text-wrap d-flex align-items-center text-start"
+                        for="id_daycare_types_10"
+                      >
+                        <input
+                          type="checkbox"
+                          class="form-check-input ms-0 me-2 mt-0"
+                          name="daycare_types"
+                          value="1"
+                          id="id_daycare_types_10"
+                          checked=""
+                        />
+                        Both genders
+                      </label>
+                    </div>
                   </div>
                   <div class="col-12 col-md-4">
-                    <label class="form-check-label w-100">
-                      <input
-                        type="checkbox"
-                        class="form-check-input me-1"
-                        name="children_genders"
-                        value="2"
-                        id="id_children_genders_2"
-                        data-has-listeners="true"
-                      />
-                      <span class="text-input">Boys only</span>
-                    </label>
+                    <div class="form-check ps-0">
+                      <label
+                        class="form-check-label text-wrap d-flex align-items-center text-start"
+                        for="id_daycare_types_11"
+                      >
+                        <input
+                          type="checkbox"
+                          class="form-check-input ms-0 me-2 mt-0"
+                          name="daycare_types"
+                          value="1"
+                          id="id_daycare_types_11"
+                          checked=""
+                        />
+                        Boys only
+                      </label>
+                    </div>
                   </div>
                   <div class="col-12 col-md-4">
-                    <label class="form-check-label w-100">
-                      <input
-                        type="checkbox"
-                        class="form-check-input me-1"
-                        name="children_genders"
-                        value="3"
-                        id="id_children_genders_3"
-                        data-has-listeners="true"
-                      />
-                      <span class="text-input">Girls only</span>
-                    </label>
+                    <div class="form-check ps-0">
+                      <label
+                        class="form-check-label text-wrap d-flex align-items-center text-start"
+                        for="id_daycare_types_12"
+                      >
+                        <input
+                          type="checkbox"
+                          class="form-check-input ms-0 me-2 mt-0"
+                          name="daycare_types"
+                          value="1"
+                          id="id_daycare_types_12"
+                          checked=""
+                        />
+                        Girls only
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </form>
           <div class="accordion mt-4" id="accordionExample">
-            <!-- <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                ></button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-              >
-                <div class="accordion-body p-3"></div>
-              </div>
-            </div> -->
             <!--  -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
@@ -537,6 +525,7 @@
                 id="collapseTwo"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
+                style=""
               >
                 <div class="accordion-body p-3">
                   <form>
@@ -763,6 +752,7 @@
                 id="collapseThree"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingThree"
+                style=""
               >
                 <div class="accordion-body p-3">
                   <div class="mb-4">
@@ -969,6 +959,60 @@
                           </div>
                         </div>
                       </div>
+                      <div class="col-lg-12 m-auto">
+                        <label class="form-check-label w-100 actions-col"
+                          ><input
+                            type="checkbox"
+                            class="form-check-input me-2"
+                            name="show_available"
+                            value="1"
+                            id="id_show_available"
+                            checked
+                          /><span class="text-input"
+                            >Show available openings to users</span
+                          ></label
+                        >
+                      </div>
+                      <div class="col-lg-12 m-auto">
+                        <label class="form-check-label w-100 actions-col"
+                          ><input
+                            type="checkbox"
+                            class="form-check-input me-2"
+                            name="show_available_13"
+                            value="1"
+                            id="id_show_available_13"
+                            checked
+                          /><span class="text-input"
+                            >Show available openings to users</span
+                          ></label
+                        >
+                      </div>
+                      <div class="col-lg-12 m-auto">
+                        <label class="form-check-label w-100 actions-col"
+                          ><input
+                            type="checkbox"
+                            class="form-check-input me-2"
+                            name="show_available"
+                            value="1"
+                            id="id_show_available"
+                          /><span class="text-input"
+                            >Show available openings to users</span
+                          ></label
+                        >
+                      </div>
+                      <div class="col-lg-12 m-auto">
+                        <label class="form-check-label w-100 actions-col"
+                          ><input
+                            type="checkbox"
+                            class="form-check-input me-2"
+                            name="show_available"
+                            value="1"
+                            id="id_show_available"
+                          /><span class="text-input"
+                            >Show available openings to users</span
+                          ></label
+                        >
+                      </div>
                     </div>
                     <button
                       type="button"
@@ -1013,9 +1057,9 @@
                             >
                               <option
                                 value="Select a program"
-                                disabled
-                                selected
-                                hidden
+                                disabled=""
+                                selected=""
+                                hidden=""
                               >
                                 <span>Select value</span>
                               </option>
@@ -1087,9 +1131,9 @@
                               >
                                 <option
                                   value="Select a period"
-                                  disabled
-                                  selected
-                                  hidden
+                                  disabled=""
+                                  selected=""
+                                  hidden=""
                                 >
                                   Select value
                                 </option>
@@ -1210,7 +1254,7 @@
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseFive"
-                  aria-expanded="false"
+                  aria-expanded="true"
                   aria-controls="collapseFive"
                 >
                   <span class="d-flex flex-column">
@@ -1225,6 +1269,7 @@
                 id="collapseFive"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingFive"
+                style=""
               >
                 <div class="accordion-body p-3">
                   <div class="mb-4">
@@ -1286,7 +1331,7 @@
                             id="cityLocation"
                             value="New York"
                             placeholder="City"
-                            disabled
+                            disabled=""
                             data-has-listeners="true"
                           />
                         </div>
@@ -1302,7 +1347,7 @@
                             id="stateLocation"
                             value="NY"
                             placeholder="State"
-                            disabled
+                            disabled=""
                             data-has-listeners="true"
                           />
                         </div>
@@ -1318,7 +1363,7 @@
                             id="zipLocation"
                             value="10001"
                             placeholder="ZIP"
-                            disabled
+                            disabled=""
                             data-has-listeners="true"
                           />
                         </div>
@@ -1346,7 +1391,10 @@
                                 type="button"
                               >
                                 Mon-Fri
-                                <i class="bi bi-chevron-down ms-2"></i></button
+                                <i
+                                  class="bi bi-chevron-down ms-2"
+                                  style="transform: rotate(0deg)"
+                                ></i></button
                               ><i
                                 class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
                                 style="transform: rotate(0deg)"
@@ -1500,7 +1548,10 @@
                                 type="button"
                               >
                                 Sat
-                                <i class="bi bi-chevron-down ms-2"></i></button
+                                <i
+                                  class="bi bi-chevron-down ms-2"
+                                  style="transform: rotate(0deg)"
+                                ></i></button
                               ><i
                                 class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
                                 style="transform: rotate(0deg)"
@@ -1654,7 +1705,10 @@
                                 type="button"
                               >
                                 Sun
-                                <i class="bi bi-chevron-down ms-2"></i></button
+                                <i
+                                  class="bi bi-chevron-down ms-2"
+                                  style="transform: rotate(0deg)"
+                                ></i></button
                               ><i
                                 class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
                                 style="transform: rotate(0deg)"
@@ -1815,157 +1869,172 @@
                     </p>
                     <div class="row d-flex flex-wrap g-3 pt-2">
                       <div class="col-sm-6 d-flex flex-column" data-order="1">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_2"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="2"
-                            id="id_daycare_types_2"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Full day</span>
-                        </label>
-                      </div>
-
-                      <div class="col-sm-6 d-flex flex-column" data-order="3">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_3"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="3"
-                            id="id_daycare_types_3"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Flexible hours</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_2"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="1"
+                              id="id_daycare_types_2"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Full day
+                          </label>
+                        </div>
                       </div>
-
-                      <div class="col-sm-6 d-flex flex-column" data-order="6">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_4"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="4"
-                            id="id_daycare_types_4"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Evening care</span
-                          >
-                        </label>
-                      </div>
-
-                      <div class="col-sm-6 d-flex flex-column" data-order="8">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_5"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="5"
-                            id="id_daycare_types_5"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Week and care</span
-                          >
-                        </label>
-                      </div>
-
                       <div class="col-sm-6 d-flex flex-column" data-order="2">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_6"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="6"
-                            id="id_daycare_types_6"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Half day</span>
-                        </label>
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_3"
+                          >
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="2"
+                              id="id_daycare_types_3"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Half day
+                          </label>
+                        </div>
                       </div>
-
+                      <div class="col-sm-6 d-flex flex-column" data-order="3">
+                        <div
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                        >
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_4"
+                          >
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="3"
+                              id="id_daycare_types_4"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Flexible hours
+                          </label>
+                        </div>
+                      </div>
                       <div class="col-sm-6 d-flex flex-column" data-order="4">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_7"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="7"
-                            id="id_daycare_types_7"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Flexible days</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_5"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="4"
+                              id="id_daycare_types_5"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Flexible days
+                          </label>
+                        </div>
                       </div>
-
                       <div class="col-sm-6 d-flex flex-column" data-order="5">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_8"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="8"
-                            id="id_daycare_types_8"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Night care</span>
-                        </label>
-                      </div>
-
-                      <div class="col-sm-6 d-flex flex-column" data-order="7">
-                        <label
-                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_9"
-                        >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="9"
-                            id="id_daycare_types_9"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Holiday care</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_6"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="5"
+                              id="id_daycare_types_6"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Night care
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex flex-column" data-order="6">
+                        <div
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                        >
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_7"
+                          >
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="6"
+                              id="id_daycare_types_7"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Evening care
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex flex-column" data-order="7">
+                        <div
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                        >
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_8"
+                          >
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="7"
+                              id="id_daycare_types_8"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Holiday care
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 d-flex flex-column" data-order="8">
+                        <div
+                          class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
+                        >
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_9"
+                          >
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types"
+                              value="8"
+                              id="id_daycare_types_9"
+                              data-has-listeners="true"
+                              checked
+                            />
+                            Week and care
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2148,7 +2217,10 @@
                                 type="button"
                               >
                                 Sat
-                                <i class="bi bi-chevron-down ms-2"></i></button
+                                <i
+                                  class="bi bi-chevron-down ms-2"
+                                  style="transform: rotate(0deg)"
+                                ></i></button
                               ><i
                                 class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
                                 style="transform: rotate(0deg)"
@@ -2302,7 +2374,10 @@
                                 type="button"
                               >
                                 Sun
-                                <i class="bi bi-chevron-down ms-2"></i></button
+                                <i
+                                  class="bi bi-chevron-down ms-2"
+                                  style="transform: rotate(0deg)"
+                                ></i></button
                               ><i
                                 class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
                                 style="transform: rotate(0deg)"
@@ -2464,81 +2539,87 @@
                     </p>
                     <div class="row g-3 pt-2">
                       <div class="col-sm-6 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_10"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="10"
-                            id="id_daycare_types_10"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Summer camp</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_15"
+                              value="1"
+                              id="id_daycare_types_15"
+                              data-has-listeners="true"
+                              checked
+                            />Summer camp</label
+                          >
+                        </div>
                       </div>
 
                       <div class="col-sm-6 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_11"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="11"
-                            id="id_daycare_types_11"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Sleeping cots</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_16"
+                              value="1"
+                              id="id_daycare_types_16"
+                              data-has-listeners="true"
+                              checked
+                            />Sleeping cots</label
+                          >
+                        </div>
                       </div>
 
                       <div class="col-sm-6 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_12"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="12"
-                            id="id_daycare_types_12"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Transportation</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_17"
+                              value="1"
+                              id="id_daycare_types_17"
+                              data-has-listeners="true"
+                              checked
+                            />Transportation</label
+                          >
+                        </div>
                       </div>
 
                       <div class="col-sm-6 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_13"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="13"
-                            id="id_daycare_types_13"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input">Playground</span>
-                        </label>
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
+                          >
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_18"
+                              value="1"
+                              id="id_daycare_types_18"
+                              data-has-listeners="true"
+                              checked
+                            />Playground</label
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2550,63 +2631,66 @@
                     </p>
                     <div class="row g-3 pt-2">
                       <div class="col-sm-4 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_14"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="14"
-                            id="id_daycare_types_14"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Summer camp</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_19"
+                              value="1"
+                              id="id_daycare_types_19"
+                              data-has-listeners="true"
+                              checked
+                            />Summer camp
+                          </label>
+                        </div>
                       </div>
 
                       <div class="col-sm-4 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_15"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="15"
-                            id="id_daycare_types_15"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Children with special needs</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_20"
+                              value="1"
+                              id="id_daycare_types_20"
+                              data-has-listeners="true"
+                              checked
+                            />Children with special needs
+                          </label>
+                        </div>
                       </div>
 
                       <div class="col-sm-4 d-flex">
-                        <label
+                        <div
                           class="form-check border p-3 p-sm-2 p-lg-3 rounded d-flex align-items-center w-100"
-                          for="id_daycare_types_16"
                         >
-                          <input
-                            type="checkbox"
-                            class="form-check-input ms-0 mt-0 me-2 flex-shrink-0"
-                            name="daycare_types"
-                            value="16"
-                            id="id_daycare_types_16"
-                            data-has-listeners="true"
-                            checked=""
-                          />
-                          <span class="flex-grow-1 text-input"
-                            >Financial assistance</span
+                          <label
+                            class="form-check-label text-wrap d-flex align-items-center"
+                            for="id_daycare_types_0"
                           >
-                        </label>
+                            <input
+                              type="checkbox"
+                              class="form-check-input ms-0 me-2 mt-0"
+                              name="daycare_types_21"
+                              value="1"
+                              id="id_daycare_types_21"
+                              data-has-listeners="true"
+                              checked
+                            />Financial assistance</label
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -3129,9 +3213,10 @@
                                         ></button
                                       ><i
                                         class="bi bi-chevron-down ms-2 position-absolute me-2 mt-2 end-0"
+                                        style="transform: rotate(0deg)"
                                       ></i>
                                       <ul
-                                        class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary d-flex flex-column d-none"
+                                        class="dropdown-menu w-100 dropdownMenu mt-1 p-2 border-primary flex-column d-none"
                                       >
                                         <li
                                           class="d-flex justify-content-between flex-row w-100 border-bottom"
@@ -3328,6 +3413,7 @@
                                 <div
                                   class="custom-dropdown"
                                   id="pricingDropdown2"
+                                  aria-expanded="false"
                                 >
                                   <span
                                     id="pricingPeriodText2"
@@ -3415,7 +3501,7 @@
                 <div class="accordion-body p-3">
                   <button
                     type="button"
-                    class="btn btn-outline-primary d-block m-auto mb-4"
+                    class="btn btn-outline-primary d-block m-auto"
                     id="addPhotoButton"
                   >
                     <i class="bi bi-plus-circle me-1"></i> Add Photo/Video
@@ -3430,7 +3516,7 @@
                   />
 
                   <div
-                    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+                    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-3"
                     id="photoGallery"
                   >
                     <div class="col">
@@ -3512,12 +3598,12 @@
                 <div class="accordion-body p-3">
                   <button
                     type="button"
-                    class="btn btn-outline-primary d-block m-auto mb-4"
+                    class="btn btn-outline-primary d-block m-auto"
                     id="addTeamButton"
                   >
                     <i class="bi bi-plus-circle me-1"></i> Add New Member
                   </button>
-                  <div class="overflow-hidden">
+                  <div class="overflow-hidden mt-3">
                     <div class="row g-3" id="teamContainer">
                       <div class="col-md-6">
                         <div class="card card-team h-100">
@@ -3544,6 +3630,7 @@
 
                                 <div
                                   class="py-sm-0 show-more text-primary mb-1"
+                                  style="display: none"
                                 >
                                   Show More
                                 </div>
@@ -3578,6 +3665,7 @@
                                 </p>
                                 <div
                                   class="py-sm-0 show-more text-primary mb-1"
+                                  style="display: none"
                                 >
                                   Show More
                                 </div>
