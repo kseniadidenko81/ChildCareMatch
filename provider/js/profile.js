@@ -205,19 +205,40 @@ document
   });
 
 // CHECKBOX COLOR
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const checkboxes = document.querySelectorAll(".form-check-input");
 
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", function () {
-      const label = this.closest("label");
-      const textSpan = label.querySelector(".text-input");
+  function updateLabelColor(checkbox) {
+    const formCheck = checkbox.closest(".form-check");
 
-      if (this.checked) {
-        textSpan.style.color = "#6750f9";
+    if (!formCheck) {
+      console.log("Form-check not found for checkbox:", checkbox);
+      return;
+    }
+
+    const label = formCheck.querySelector(".form-check-label");
+
+    if (label) {
+      if (checkbox.checked) {
+        label.classList.remove("unchecked");
+        console.log("Checked - Color applied:", label.style.color);
       } else {
-        textSpan.style.color = "";
+        label.classList.add("unchecked");
+        console.log("Unchecked - Color applied:", label.style.color);
       }
+    } else {
+      console.log("Label not found for checkbox:", checkbox);
+    }
+  }
+
+  checkboxes.forEach(function (checkbox) {
+    updateLabelColor(checkbox);
+  });
+
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      console.log("Checkbox state changed:", checkbox.checked);
+      updateLabelColor(this);
     });
   });
 });
