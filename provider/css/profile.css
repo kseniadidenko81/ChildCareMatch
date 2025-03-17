@@ -374,3 +374,11 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.form-check-label {
+  color: rgb(103, 80, 249);
+}
+
+.form-check-label.unchecked {
+  color: #212529;
+}
