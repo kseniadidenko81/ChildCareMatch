@@ -154,8 +154,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function addCheckboxToEnd() {
+    const container = document.getElementById("selectedProgramDetails");
+
+    container
+      .querySelectorAll(".col-lg-12.m-auto label.form-check-label")
+      .forEach((el) => {
+        el.parentElement.remove();
+      });
+
     const checkboxRow = createCheckboxRow();
-    document.getElementById("selectedProgramDetails").appendChild(checkboxRow);
+    container.appendChild(checkboxRow);
   }
 
   document
@@ -552,43 +560,6 @@ $(document).ready(function () {
 });
 
 //RESET TOAST DATA
-// document.addEventListener("DOMContentLoaded", function () {
-// const resetButton = document.getElementById("resetButton");
-// const resetToast = document.getElementById("resetToast");
-
-//   const saveButton = document.getElementById("saveButton");
-//   const saveToast = document.getElementById("saveToast");
-
-//   function showToast(toastElement) {
-//     toastElement.style.opacity = "0";
-//     toastElement.style.transform = "translateX(100%)";
-//     toastElement.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-
-//     toastElement.classList.add("show");
-
-//     setTimeout(() => {
-//       toastElement.style.opacity = "1";
-//       toastElement.style.transform = "translateX(0)";
-//     }, 10);
-
-//     setTimeout(() => {
-//       toastElement.style.opacity = "0";
-//       toastElement.style.transform = "translateX(100%)";
-//     }, 3000);
-
-//     setTimeout(() => {
-//       toastElement.classList.remove("show");
-//     }, 3500);
-//   }
-
-// resetButton.addEventListener("click", function () {
-//   showToast(resetToast);
-// });
-
-//   saveButton.addEventListener("click", function () {
-//     showToast(saveToast);
-//   });
-// });
 document.addEventListener("DOMContentLoaded", function () {
   const saveButton = document.getElementById("saveButton");
   const saveToast = document.getElementById("saveToast");
