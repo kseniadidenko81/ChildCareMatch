@@ -371,7 +371,8 @@
   font-size: 15px;
 }
 
-.icon-geo {
+.icon-geo,
+.fa-users {
   font-size: 22px;
   cursor: pointer;
   width: 42px;
