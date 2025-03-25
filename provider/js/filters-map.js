@@ -262,6 +262,19 @@ window.addEventListener("load", () => {
   }
 });
 
+// LOCATION FILTER ON MAPS
+document
+  .getElementById("toggleChildrenListBtn")
+  .addEventListener("click", function () {
+    document.getElementById("childrenList").classList.toggle("d-none");
+  });
+
+document
+  .getElementById("toggleLocationBtn")
+  .addEventListener("click", function () {
+    document.getElementById("locationOptions").classList.toggle("d-none");
+  });
+
 // MODAL DROPDOWN
 document.querySelectorAll(".custom-dropdown").forEach((dropdown) => {
   const dropdownOptions = dropdown.nextElementSibling;
