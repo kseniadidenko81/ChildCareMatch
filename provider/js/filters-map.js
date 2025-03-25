@@ -262,19 +262,6 @@ window.addEventListener("load", () => {
   }
 });
 
-// LOCATION FILTER ON MAPS
-document
-  .getElementById("toggleChildrenListBtn")
-  .addEventListener("click", function () {
-    document.getElementById("childrenList").classList.toggle("d-none");
-  });
-
-document
-  .getElementById("toggleLocationBtn")
-  .addEventListener("click", function () {
-    document.getElementById("locationOptions").classList.toggle("d-none");
-  });
-
 // MODAL DROPDOWN
 document.querySelectorAll(".custom-dropdown").forEach((dropdown) => {
   const dropdownOptions = dropdown.nextElementSibling;
@@ -479,3 +466,30 @@ function initMap() {
 }
 
 window.onload = initMap;
+
+// LOCATION FILTER ON MAPS
+document
+  .getElementById("toggleLocationBtn")
+  .addEventListener("click", function () {
+    document.getElementById("locationOptions").classList.toggle("d-none");
+  });
+
+document
+  .getElementById("toggleChildrenListBtn")
+  .addEventListener("click", function () {
+    document.getElementById("childrenList").classList.toggle("d-none");
+    updateTotalChildrenCount();
+  });
+
+function updateTotalChildrenCount() {
+  const totalCheckboxes = document.querySelectorAll(".child-checkbox").length;
+  document.getElementById("childrenCount").textContent = totalCheckboxes;
+}
+
+document.querySelectorAll(".child-checkbox").forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    updateTotalChildrenCount();
+  });
+});
+
+updateTotalChildrenCount();
