@@ -75,15 +75,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const detailsContainer = document.getElementById("selectedProgramDetails");
 
   function addCheckbox() {
-    if (!document.getElementById("id_show_available")) {
+    if (!document.getElementById("checkboxRowContainer")) {
       const checkboxRow = createCheckboxRow();
+      checkboxRow.id = "checkboxRowContainer";
       detailsContainer.appendChild(checkboxRow);
     }
   }
 
-  const checkboxRow = createCheckboxRow();
-  checkboxRow.style.display = "none";
-  detailsContainer.appendChild(checkboxRow);
+  function createColumn(className, innerHTML) {
+    const col = document.createElement("div");
+    col.classList.add("flex-fill", className, "p-2");
+    col.innerHTML = innerHTML;
+    return col;
+  }
+
+  function createCheckboxRow() {
+    const checkboxRow = document.createElement("div");
+    checkboxRow.classList.add("col-lg-10", "m-auto");
+
+    const label = document.createElement("label");
+    label.classList.add("form-check-label", "w-100", "actions-col");
+
+    const checkboxInput = document.createElement("input");
+    checkboxInput.type = "checkbox";
+    checkboxInput.classList.add("form-check-input", "me-2");
+    checkboxInput.name = "show_available";
+    checkboxInput.value = "1";
+    checkboxInput.id = "id_show_available";
+    checkboxInput.checked = true;
+
+    const span = document.createElement("span");
+    span.classList.add("text-input");
+    span.textContent = "Show available openings to users";
+
+    const tooltipIcon = document.createElement("i");
+    tooltipIcon.classList.add("bi", "bi-info-circle", "ms-2");
+    tooltipIcon.setAttribute("data-bs-toggle", "tooltip");
+    tooltipIcon.setAttribute(
+      "title",
+      "If you don't want available openings to be visible, hide them."
+    );
+
+    label.appendChild(checkboxInput);
+    label.appendChild(span);
+    label.appendChild(tooltipIcon);
+    checkboxRow.appendChild(label);
+
+    return checkboxRow;
+  }
 
   document
     .getElementById("btnAddProgram")
@@ -148,107 +187,71 @@ document.addEventListener("DOMContentLoaded", function () {
           "price-col",
           `<span class="small text-muted">Price: </span><span class="d-block mt-2">$${priceValue} / ${pricingPeriodText}</span>`
         );
+
         const actionsCol = createColumn(
           "actions-col",
-          `
-        <i class="bi bi-pencil text-primary edit-icon me-2" style="cursor: pointer;" aria-label="Edit"></i>
-        <i class="bi bi-trash delete-icon text-danger" style="cursor: pointer;" aria-label="Delete"></i>
-      `
+          ` 
+          <i class="bi bi-pencil text-primary edit-icon me-2" style="cursor: pointer;" aria-label="Edit" data-bs-toggle="tooltip" title="Edit"></i>
+          <i class="bi bi-trash delete-icon text-danger" style="cursor: pointer;" aria-label="Delete" data-bs-toggle="tooltip" title="Delete"></i>
+        `
         );
 
         programRow.appendChild(programCol);
         programRow.appendChild(availableCol);
         programRow.appendChild(priceCol);
         programRow.appendChild(actionsCol);
-
         programContainer.appendChild(programRow);
 
         detailsContainer.insertBefore(
           programContainer,
-          detailsContainer.lastChild
+          detailsContainer.firstChild
         );
 
-        checkboxRow.style.display = "block";
-        document.getElementById("id_show_available").checked = true;
+        addCheckbox();
       }
+
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      tooltipTriggerList.forEach((el) => new bootstrap.Tooltip(el));
     });
-
-  function createColumn(className, innerHTML) {
-    const col = document.createElement("div");
-    col.classList.add("flex-fill", className, "p-2");
-    col.innerHTML = innerHTML;
-    return col;
-  }
-
-  function createCheckboxRow() {
-    const checkboxRow = document.createElement("div");
-    checkboxRow.classList.add("col-lg-10", "m-auto");
-
-    const label = document.createElement("label");
-    label.classList.add("form-check-label", "w-100", "actions-col");
-
-    const checkboxInput = document.createElement("input");
-    checkboxInput.type = "checkbox";
-    checkboxInput.classList.add("form-check-input", "me-2");
-    checkboxInput.name = "show_available";
-    checkboxInput.value = "1";
-    checkboxInput.id = "id_show_available";
-    checkboxInput.setAttribute("data-has-listeners", "true");
-
-    const span = document.createElement("span");
-    span.classList.add("text-input");
-    span.textContent = "Show available openings to users";
-
-    label.appendChild(checkboxInput);
-    label.appendChild(span);
-    checkboxRow.appendChild(label);
-
-    return checkboxRow;
-  }
 
   document
     .getElementById("selectedProgramDetails")
     .addEventListener("click", function (event) {
-      if (event.target && event.target.classList.contains("delete-icon")) {
+      if (event.target.classList.contains("delete-icon")) {
         const programContainer = event.target.closest(".program-container");
         if (programContainer) {
           programContainer.remove();
+
+          checkIfAllProgramsDeleted();
         }
-        checkIfAllProgramsDeleted();
       }
 
-      if (event.target && event.target.classList.contains("edit-icon")) {
+      if (event.target.classList.contains("edit-icon")) {
         const programContainer = event.target.closest(".program-container");
         if (programContainer) {
-          const programText = programContainer
+          document.getElementById("programText").textContent = programContainer
             .querySelector(".program-col span.d-block")
             .textContent.trim();
-          const availableValue = programContainer
+          document.getElementById("availableSelect").value = programContainer
             .querySelector(".available-col .available-count")
             .textContent.trim();
-          const priceValue = programContainer
+          document.getElementById("currencyInput").value = programContainer
             .querySelector(".price-col span.d-block")
             .textContent.trim()
             .split(" / ")[0]
             .replace("$", "");
-          const pricingPeriodText = programContainer
-            .querySelector(".price-col span.d-block")
-            .textContent.trim()
-            .split(" / ")[1]
-            .trim();
-
-          document.getElementById("programText").textContent = programText;
-          document.getElementById("availableSelect").value = availableValue;
-          document.getElementById("currencyInput").value = priceValue;
-          document.getElementById("pricingPeriodSelect").value =
-            pricingPeriodText;
           document.getElementById("pricingPeriodText").textContent =
-            pricingPeriodText;
+            programContainer
+              .querySelector(".price-col span.d-block")
+              .textContent.trim()
+              .split(" / ")[1]
+              .trim();
 
           const modalElement = document.getElementById("programModal");
           if (modalElement) {
-            const modal = new bootstrap.Modal(modalElement);
-            modal.show();
+            new bootstrap.Modal(modalElement).show();
           }
 
           currentRow = programContainer;
@@ -257,24 +260,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   function checkIfAllProgramsDeleted() {
-    const detailsContainer = document.getElementById("selectedProgramDetails");
-    if (detailsContainer.querySelectorAll(".program-container").length === 0) {
-      const checkboxRow = document.getElementById("id_show_available");
+    if (document.querySelectorAll(".program-container").length === 0) {
+      const checkboxRow = document.getElementById("checkboxRowContainer");
       if (checkboxRow) {
-        checkboxRow.closest(".col-lg-10").remove();
+        checkboxRow.remove();
       }
     }
   }
-
-  // document
-  //   .getElementById("selectedProgramDetails")
-  //   .addEventListener("change", function (event) {
-  //     if (event.target && event.target.id === "id_show_available") {
-  //       document.querySelectorAll(".available-count").forEach((el) => {
-  //         el.style.opacity = event.target.checked ? "1" : "0";
-  //       });
-  //     }
-  //   });
 
   document
     .querySelector('[data-bs-target="#programModal"]')
@@ -283,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.getElementById("programText").textContent = "Select value";
       document.getElementById("availableSelect").value = "0";
-      document.getElementById("currencyInput").value = "100";
+      document.getElementById("currencyInput").value = "0";
       document.getElementById("pricingPeriodText").textContent = "Select value";
     });
 });
