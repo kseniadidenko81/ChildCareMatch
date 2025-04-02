@@ -112,9 +112,12 @@
 }
 
 .boxInner:hover .zoom-icon {
-  display: block;
-  color: #fff;
-  font-size: 30px;
+    display: block;
+    color: #66cfda;
+    background: #00000052;
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 4px;
 }
 
 .enlarged-container {
