@@ -1,0 +1,206 @@
+/* CARD Blocks */
+
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .list-container {
+    gap: 52px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .list-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.list-container-bottom {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .list-container-bottom {
+    gap: 52px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list-container-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .list-container-bottom {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.list-container-bottom .list-item-content-name p,
+.list-container-bottom .list-item:hover .list-item-content-name p,
+.list-container-bottom .list-item:focus .list-item-content-name p {
+  color: #232323;
+  font-size: 14px;
+}
+
+.list-item {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgb(235, 235, 235), -2px -2px 4px rgb(237, 237, 237);
+  display: inline-block;
+  max-height: 140px;
+  overflow: hidden;
+  transition: max-height 0.2s linear;
+  width: 100%;
+  position: relative;
+}
+
+.list-item-title {
+  color: #fff;
+  background-color: rgb(103, 80, 249, 0.8);
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0px 0px 5px 1px #ccc;
+  height: 140px;
+  line-height: 140px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s linear, width 0.1s linear 0.1s, margin 0.1s linear 0.1s;
+  width: 80px;
+}
+
+.list-item-title-text i {
+  font-size: 24px;
+  transform: rotate(90deg);
+  transition: all 0.3s;
+}
+
+.list-item:hover .list-item-title-text i,
+.list-item:focus .list-item-title-text i {
+  transform: rotate(90deg) translateY(-5px);
+}
+
+.list-container-bottom .list-item:hover .list-item-title-text i,
+.list-container-bottom .list-item:focus .list-item-title-text i {
+  transform: rotate(90deg) translateY(0);
+}
+
+.list-item-content-name {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  height: 140px;
+  margin-left: 80px;
+  padding-top: 0;
+  transition: padding-top 0.2s linear, margin-left 0.2s linear;
+  text-transform: uppercase;
+}
+
+.list-item-content-name p {
+  margin-bottom: 0;
+  padding-left: 30px;
+  padding-right: 16px;
+  position: relative;
+  z-index: 2;
+  color: #6750f9;
+}
+
+.list-item:hover .list-item-content-name p,
+.list-item:focus .list-item-content-name p {
+  color: #fff;
+}
+
+.list-item-content-name .circle {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+  margin-right: 0px;
+  width: 50px;
+  height: 50px;
+  background: rgb(103, 80, 249, 0.8);
+  border-radius: 0px 4px 0px 50px;
+  transition: all 0.5s;
+}
+
+.list-item:hover .list-item-content-name .circle,
+.list-item:focus .list-item-content-name .circle {
+  width: calc(100% - 80px);
+  height: 140px;
+  border-radius: 0 5px 5px 0;
+}
+
+@media screen and (min-width: 480px) {
+  .list-item-title {
+    width: 100px;
+  }
+
+  .list-item-content-name {
+    margin-left: 100px;
+  }
+
+  .list-item:hover .list-item-content-name .circle,
+  .list-item:focus .list-item-content-name .circle {
+    width: calc(100% - 100px);
+  }
+}
+
+.list-item-content-name .circle i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 8px;
+  padding-right: 8px;
+  font-size: x-large;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.list-item:hover .list-item-content-name .circle i,
+.list-item:focus .list-item-content-name .circle i {
+  transform: scale(1.4);
+  padding-top: 12px;
+  padding-right: 12px;
+}
+
+.list-item.active {
+  max-height: 400px;
+  transition: max-height 0.2s linear 0.1s;
+}
+
+.list-item.active .list-item-title {
+  border-radius: 50%;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: 20px;
+  position: absolute;
+  transition: all 0.2s linear 0.1s, width 0.1s linear, margin 0.1s linear;
+  width: 50px;
+}
+
+.list-item.active .list-item-title-text {
+  font-size: 10px;
+  line-height: 50px;
+}
+
+.list-item.active .list-item-content-name {
+  margin-left: 30px;
+  padding-top: 10px;
+  transition: margin-left 0.2s linear, width 0.1s linear;
+}
