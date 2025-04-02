@@ -400,13 +400,13 @@ var markers = [];
 
 var locations = [
   [
-    "<h6>Bright Future Academy</h6><p>Bismarck, ND 58501</p><span><strong>Phone:</strong> 701-555-1234</span><span class='d-block pt-2'> 0.6 miles </span><span class='d-block pt-2'><strong>Estimate: </strong><span><i class='bi bi-person-walking me-1'></i>13 min, </span><span><i class='bi bi-car-front me-1'></i>5 min</span></span><span class='d-block pt-2'>",
+    "<h6>Bright Future Academy</h6><p>Bismarck, ND 58501</p><span><strong>Phone:</strong> 701-555-1234</span><span class='d-block pt-2'> 0.6 miles </span><span class='d-block pt-2'><strong>Estimated: </strong><span><i class='bi bi-person-walking me-1'></i>13 min, </span><span><i class='bi bi-car-front me-1'></i>5 min</span></span><span class='d-block pt-2'>",
     46.8133,
     -100.779,
     4,
   ],
   [
-    "<h6>Sunny Days Kindergarten</h6><p>Fargo, ND 58103</p><span><strong>Phone:</strong> 701-555-4321</span><span class='d-block pt-2'> 0.6 miles </span><span class='d-block pt-2'><strong>Estimate: </strong><span><i class='bi bi-person-walking me-1'></i>13 min, </span><span><i class='bi bi-car-front me-1'></i>5 min</span></span><span class='d-block pt-2'>",
+    "<h6>Sunny Days Kindergarten</h6><p>Fargo, ND 58103</p><span><strong>Phone:</strong> 701-555-4321</span><span class='d-block pt-2'> 0.6 miles </span><span class='d-block pt-2'><strong>Estimated: </strong><span><i class='bi bi-person-walking me-1'></i>13 min, </span><span><i class='bi bi-car-front me-1'></i>5 min</span></span><span class='d-block pt-2'>",
     46.8772,
     -96.7894,
     5,
