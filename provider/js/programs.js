@@ -71,6 +71,21 @@ document.addEventListener("DOMContentLoaded", function () {
     "pricingPeriodSelect"
   );
 
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+
+  tooltipTriggerList.forEach((el) => {
+    const tooltip = new bootstrap.Tooltip(el);
+
+    el.addEventListener("shown.bs.tooltip", function () {
+      const tooltipElement = document.querySelector(".tooltip-inner");
+      if (tooltipElement) {
+        tooltipElement.classList.add("custom-tooltip");
+      }
+    });
+  });
+
   let currentRow = null;
   const detailsContainer = document.getElementById("selectedProgramDetails");
 
