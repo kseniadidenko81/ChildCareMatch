@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
       col.classList.add("col");
 
       const box = document.createElement("div");
-      box.classList.add("box", "w-100");
+      box.classList.add("box", "position-relative", "w-100");
 
       const boxInner = document.createElement("div");
-      boxInner.classList.add("boxInner", "position-relative");
+      boxInner.classList.add("boxInner");
 
       const fileURL = URL.createObjectURL(file);
 
@@ -60,7 +60,24 @@ document.addEventListener("DOMContentLoaded", function () {
         img.classList.add("img-fluid", "rounded", "w-100");
         img.src = fileURL;
 
+        const zoomIcon = document.createElement("i");
+        zoomIcon.classList.add(
+          "bi",
+          "bi-arrows-fullscreen",
+          "zoom-icon",
+          "position-absolute"
+        );
+        zoomIcon.style.cursor = "pointer";
+        zoomIcon.style.top = "50%";
+        zoomIcon.style.left = "50%";
+        zoomIcon.style.transform = "translate(-50%, -50%)";
+
+        zoomIcon.addEventListener("click", () => {
+          enlargeImage(img);
+        });
+
         boxInner.appendChild(img);
+        boxInner.appendChild(zoomIcon);
       } else if (file.type.startsWith("video/")) {
         const video = document.createElement("video");
         video.classList.add("img-fluid", "rounded", "w-100");
@@ -100,5 +117,59 @@ document.addEventListener("DOMContentLoaded", function () {
         photoGallery.removeChild(col);
       }
     }
+  });
+
+  function enlargeImage(img) {
+    const enlargedContainer = document.createElement("div");
+    enlargedContainer.classList.add("enlarged-container");
+
+    const imageWrapper = document.createElement("div");
+    imageWrapper.classList.add("enlarged-wrapper");
+
+    const clonedImage = img.cloneNode(true);
+    clonedImage.classList.add("enlarged-image");
+
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "✖";
+    closeButton.classList.add("close-button");
+
+    closeButton.addEventListener("click", function () {
+      enlargedContainer.remove();
+    });
+
+    imageWrapper.appendChild(clonedImage);
+    imageWrapper.appendChild(closeButton);
+
+    enlargedContainer.appendChild(imageWrapper);
+
+    document.body.appendChild(enlargedContainer);
+  }
+
+  const allImages = document.querySelectorAll("#photoGallery img");
+  allImages.forEach((img) => {
+    const zoomIcon = document.createElement("i");
+    zoomIcon.classList.add(
+      "bi",
+      "bi-arrows-fullscreen",
+      "zoom-icon",
+      "position-absolute"
+    );
+    zoomIcon.style.cursor = "pointer";
+    zoomIcon.style.top = "50%";
+    zoomIcon.style.left = "50%";
+    zoomIcon.style.transform = "translate(-50%, -50%)";
+
+    zoomIcon.addEventListener("click", () => {
+      enlargeImage(img);
+    });
+
+    const boxInner = img.closest(".boxInner");
+    if (boxInner) {
+      boxInner.appendChild(zoomIcon);
+    }
+
+    img.addEventListener("click", () => {
+      enlargeImage(img);
+    });
   });
 });
