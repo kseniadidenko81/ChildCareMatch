@@ -214,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (programContainer) {
           programContainer.remove();
         }
+        checkIfAllProgramsDeleted();
       }
 
       if (event.target && event.target.classList.contains("edit-icon")) {
@@ -255,15 +256,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  document
-    .getElementById("selectedProgramDetails")
-    .addEventListener("change", function (event) {
-      if (event.target && event.target.id === "id_show_available") {
-        document.querySelectorAll(".available-count").forEach((el) => {
-          el.style.opacity = event.target.checked ? "1" : "0";
-        });
+  function checkIfAllProgramsDeleted() {
+    const detailsContainer = document.getElementById("selectedProgramDetails");
+    if (detailsContainer.querySelectorAll(".program-container").length === 0) {
+      const checkboxRow = document.getElementById("id_show_available");
+      if (checkboxRow) {
+        checkboxRow.closest(".col-lg-10").remove();
       }
-    });
+    }
+  }
+
+  // document
+  //   .getElementById("selectedProgramDetails")
+  //   .addEventListener("change", function (event) {
+  //     if (event.target && event.target.id === "id_show_available") {
+  //       document.querySelectorAll(".available-count").forEach((el) => {
+  //         el.style.opacity = event.target.checked ? "1" : "0";
+  //       });
+  //     }
+  //   });
 
   document
     .querySelector('[data-bs-target="#programModal"]')
