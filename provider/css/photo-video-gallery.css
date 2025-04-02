@@ -72,8 +72,10 @@
   min-height: 210px;
   display: flex;
   align-items: center;
-  background-color: rgb(241 240 240);
+  background-color: rgb(248 246 246);
+  border: 1px solid rgb(203 203 203);
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .boxInner {
@@ -103,4 +105,62 @@
   .boxInner img {
     object-fit: cover;
   }
+}
+
+.zoom-icon {
+  display: none;
+}
+
+.boxInner:hover .zoom-icon {
+  display: block;
+  color: #fff;
+  font-size: 30px;
+}
+
+.enlarged-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1150;
+}
+
+.enlarged-wrapper {
+  position: relative; /* Новый класс вместо position-relative */
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enlarged-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 1150;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
 }
