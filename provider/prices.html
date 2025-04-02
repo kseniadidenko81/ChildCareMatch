@@ -334,7 +334,7 @@
                 </div>
               </div>
               <!--  -->
-              <div class="col-lg-12 m-auto">
+              <!-- <div class="col-lg-12 m-auto">
                 <label class="form-check-label w-100 actions-col"
                   ><input
                     type="checkbox"
@@ -347,6 +347,26 @@
                     >Show available openings to users</span
                   ></label
                 >
+              </div> -->
+              <div class="col-lg-12 m-auto">
+                <label class="form-check-label w-100 actions-col">
+                  <input
+                    type="checkbox"
+                    class="form-check-input me-2"
+                    name="show_available"
+                    value="1"
+                    id="id_show_available"
+                    data-has-listeners="true"
+                  />
+                  <span class="text-input"
+                    >Show available openings to users</span
+                  >
+                  <i
+                    class="bi bi-info-circle ms-2 text-primary"
+                    data-bs-toggle="tooltip"
+                    title="If you don’t want Available to be visible, hide them."
+                  ></i>
+                </label>
               </div>
             </div>
             <button
@@ -685,6 +705,14 @@
         .addEventListener("click", function () {
           window.location.href = "dashboard-provider.html";
         });
+    </script>
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
     </script>
   </body>
 </html>
