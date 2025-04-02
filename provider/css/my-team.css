@@ -1,0 +1,84 @@
+/* CARD TEAM*/
+.card-team {
+  box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  background-color: rgb(251 251 251);
+  border-radius: 6px;
+  min-height: 210px;
+}
+
+.card-team img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 420px) {
+  .card-team img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.show-more {
+  cursor: pointer;
+}
+
+/* SHOW More/Less */
+.text-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.text-content.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
+.show-more:hover {
+  text-decoration: underline;
+}
+
+.excerpt-hidden {
+  height: 4.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.excerpt-visible {
+  height: auto;
+  overflow: auto;
+}
+
+.text-wrap {
+  height: auto;
+}
+
+#scheduleBlocks3 .dropdown-menu {
+  display: none;
+}
+
+#scheduleBlocks3 .dropdown-menu.d-flex {
+  display: flex !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-check-label {
+  color: rgb(103, 80, 249);
+}
+
+.form-check-label.unchecked {
+  color: #212529;
+}

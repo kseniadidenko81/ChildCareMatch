@@ -1,0 +1,106 @@
+/* Toast */
+.toast {
+  background: #fff;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
+  border-left-color: #329f5d;
+  border-left-width: 4px;
+  border-top-color: #ade7c4;
+  border-right-color: #ade7c4;
+  border-bottom-color: #ade7c4;
+}
+
+.toast .btn-close {
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1055;
+}
+
+.btn-danger:focus,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus-within,
+:not(.btn-check) + .btn-danger:active {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
+}
+
+.class-col,
+.program-col,
+.available-col,
+.price-col {
+  flex: 1 !important;
+}
+
+.actions-col {
+  flex: 0 0 auto !important;
+  width: auto;
+  display: flex;
+  align-self: end;
+}
+
+@media screen and (min-width: 768px) {
+  .actions-col {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #saveButton,
+  #resetButton {
+    width: 100%;
+  }
+}
+
+/* PHOTO */
+.delete-image {
+  right: 4px;
+  top: 4px;
+  background: #fdfdfd;
+  opacity: 0.8;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.box {
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(241 240 240);
+  border-radius: 8px;
+}
+
+.boxInner {
+  width: 100%;
+}
+
+.boxInner img {
+  object-fit: cover;
+  max-height: 210px;
+}
+
+.boxInner video {
+  object-fit: contain;
+  max-height: 210px;
+}
+
+@media screen and (min-width: 992px) {
+  .box {
+    min-height: 280px;
+  }
+
+  .boxInner img,
+  .boxInner video {
+    max-height: 280px;
+  }
+
+  .boxInner img {
+    object-fit: cover;
+  }
+}

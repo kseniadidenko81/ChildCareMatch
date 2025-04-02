@@ -1,0 +1,69 @@
+/* Toast */
+.toast {
+  background: #fff;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
+  border-left-color: #329f5d;
+  border-left-width: 4px;
+  border-top-color: #ade7c4;
+  border-right-color: #ade7c4;
+  border-bottom-color: #ade7c4;
+}
+
+.toast .btn-close {
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1055;
+}
+
+.btn-danger:focus,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus-within,
+:not(.btn-check) + .btn-danger:active {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
+}
+
+.class-col,
+.program-col,
+.available-col,
+.price-col {
+  flex: 1 !important;
+}
+
+.actions-col {
+  flex: 0 0 auto !important;
+  width: auto;
+  display: flex;
+  align-self: end;
+}
+
+@media screen and (min-width: 768px) {
+  .actions-col {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #saveButton,
+  #resetButton {
+    width: 100%;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
