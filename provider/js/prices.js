@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   addCheckboxToEnd();
+  initializeTooltips();
 
   programModal.addEventListener("shown.bs.modal", function () {
     if (editingProgramContainer) {
@@ -129,8 +130,17 @@ document.addEventListener("DOMContentLoaded", function () {
     span.classList.add("text-input");
     span.textContent = "Show available openings to users";
 
+    const infoIcon = document.createElement("i");
+    infoIcon.classList.add("bi", "bi-info-circle", "ms-2", "text-primary");
+    infoIcon.setAttribute("data-bs-toggle", "tooltip");
+    infoIcon.setAttribute(
+      "title",
+      "If you don’t want Available to be visible, hide them."
+    );
+
     label.appendChild(checkboxInput);
     label.appendChild(span);
+    label.appendChild(infoIcon);
     checkboxRow.appendChild(label);
 
     return checkboxRow;
@@ -145,6 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const checkboxRow = createCheckboxRow();
     container.appendChild(checkboxRow);
+  }
+
+  function initializeTooltips() {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
   }
 
   container.addEventListener("click", function (event) {
@@ -184,6 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  initializeTooltips();
 });
 
 //RESET TOAST DATA
