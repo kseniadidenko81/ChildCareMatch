@@ -340,31 +340,6 @@ function clearFilters() {
   document.querySelector(".rating").setAttribute("data-rating", "0");
 }
 
-// SEARCH
-document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.getElementById("searchInput");
-  const allCards = document.querySelectorAll("#list-tab .card");
-
-  searchInput.addEventListener("input", function () {
-    const query = searchInput.value.toLowerCase();
-
-    allCards.forEach((card) => {
-      const cardText = card.textContent.toLowerCase();
-
-      if (cardText.includes(query)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  });
-
-  const searchIcon = document.getElementById("searchIcon");
-  searchIcon.addEventListener("click", function () {
-    searchInput.focus();
-  });
-});
-
 // SCROLL TAB
 function updatePadding(container) {
   if (container.scrollHeight > container.clientHeight) {
@@ -399,7 +374,8 @@ document.querySelectorAll(".tab-links a").forEach(function (tab) {
   });
 });
 
-// MAPS
+// MAPS and SEARCH
+
 var map;
 var infowindow;
 var markers = [];
@@ -417,6 +393,7 @@ var locations = [
     -96.7894,
     5,
   ],
+  // Добавьте сюда другие объекты маркеров
 ];
 
 function initMap() {
@@ -436,7 +413,7 @@ function initMap() {
       title: "Click for more info",
     });
 
-    markers.push(marker);
+    markers.push({ marker: marker, name: locations[i][0] });
 
     google.maps.event.addListener(
       marker,
@@ -451,23 +428,23 @@ function initMap() {
         };
       })(marker, i)
     );
-
-    google.maps.event.addListener(marker, "mouseover", function () {
-      infowindow.setContent("Hovering over marker: " + locations[i][0]);
-      infowindow.open(map, marker);
-    });
-
-    google.maps.event.addListener(marker, "mouseout", function () {
-      //infowindow.close();
-    });
   }
 
-  document.getElementById("geoIcon").addEventListener("click", function () {
-    var selectedMarker = markers[0];
-    infowindow.setContent("Selected location: " + locations[0][0]);
-    infowindow.open(map, selectedMarker);
-    map.setCenter(selectedMarker.getPosition());
-    map.setZoom(10);
+  // Обработчик для поиска
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("input", function () {
+    const query = searchInput.value.toLowerCase();
+
+    markers.forEach(function (markerData) {
+      const marker = markerData.marker;
+      const name = markerData.name.toLowerCase();
+
+      if (name.includes(query)) {
+        marker.setVisible(true); // Показываем маркер
+      } else {
+        marker.setVisible(false); // Скрываем маркер
+      }
+    });
   });
 }
 
