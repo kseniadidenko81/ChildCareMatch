@@ -381,7 +381,6 @@ document.querySelectorAll(".tab-links a").forEach(function (tab) {
 });
 
 // MAPS and SEARCH
-
 var map;
 var infowindow;
 var markers = [];
@@ -399,7 +398,6 @@ var locations = [
     -96.7894,
     5,
   ],
-  // Добавьте сюда другие объекты маркеров
 ];
 
 function initMap() {
@@ -436,7 +434,6 @@ function initMap() {
     );
   }
 
-  // Обработчик для поиска
   const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("input", function () {
     const query = searchInput.value.toLowerCase();
@@ -446,9 +443,9 @@ function initMap() {
       const name = markerData.name.toLowerCase();
 
       if (name.includes(query)) {
-        marker.setVisible(true); // Показываем маркер
+        marker.setVisible(true);
       } else {
-        marker.setVisible(false); // Скрываем маркер
+        marker.setVisible(false);
       }
     });
   });
