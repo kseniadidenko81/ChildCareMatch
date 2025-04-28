@@ -231,28 +231,28 @@
         </nav>
       </header>
       <main class="content">
-        <div class="container py-4 py-md-5 my-md-4">
+        <div class="container pt-4">
           <div class="row">
             <div class="col-md-5 col-lg-4">
-              <div class="tabs mb-4">
+              <div class="tabs mb-4 mb-md-0">
                 <ul class="tab-titles w-100 gap-2">
                   <li
                     class="flex-fill tab-title text-center rounded-1 active"
-                    onclick="switchTab('list')"
+                    onclick="switchTab('filter')"
                   >
-                    List
+                    Filters
                   </li>
                   <li
                     class="flex-fill tab-title text-center rounded-1"
-                    onclick="switchTab('filter')"
+                    onclick="switchTab('list')"
                   >
-                    Filter
+                    List View
                   </li>
                 </ul>
 
                 <div
-                  id="list-tab"
-                  class="tab-content ps-0 active scrollable-content"
+                  id="filter-tab"
+                  class="tab-content ps-0 active scrollable-content pb-0"
                 >
                   <div
                     class="d-flex flex-column align-items-start mb-4 w-100 position-relative"
@@ -261,12 +261,497 @@
                       type="text"
                       id="searchInput"
                       class="form-control ps-5"
-                      placeholder="Search by Da care..."
+                      placeholder="Search by Daу care..."
                     />
                     <i
                       class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"
                     ></i>
                   </div>
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingSeven">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSeven"
+                          aria-expanded="false"
+                          aria-controls="collapseSeven"
+                        >
+                          Child Select
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSeven"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSeven"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <div
+                            class="position-relative"
+                            id="toggleChildrenListBtn"
+                          >
+                            <div class="children-checkboxes" id="childrenList">
+                              <label class="d-flex align-items-center gap-2">
+                                <input
+                                  type="checkbox"
+                                  id="child1"
+                                  onclick="toggleTab()"
+                                  class="child-checkbox filter-checkbox"
+                                  data-has-listeners="true"
+                                />
+                                Alice</label
+                              >
+                              <label
+                                class="d-flex align-items-center gap-2 mt-2"
+                                ><input
+                                  type="checkbox"
+                                  id="child2"
+                                  onclick="toggleTab()"
+                                  class="child-checkbox filter-checkbox"
+                                  data-has-listeners="true"
+                                />
+                                Bob</label
+                              >
+                              <label
+                                class="d-flex align-items-center gap-2 mt-2"
+                                ><input
+                                  type="checkbox"
+                                  id="child3"
+                                  onclick="toggleTab()"
+                                  class="child-checkbox filter-checkbox"
+                                  data-has-listeners="true"
+                                />
+                                Charlie</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingEight">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseEight"
+                          aria-expanded="false"
+                          aria-controls="collapseEight"
+                        >
+                          Location Select
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseEight"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingEight"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <div class="position-relative" id="toggleLocationBtn">
+                            <div class="location-options" id="locationOptions">
+                              <label class="d-flex align-items-center gap-2"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                  id="home"
+                                  onclick="toggleTab()"
+                                  data-has-listeners="true"
+                                />Home</label
+                              >
+
+                              <label
+                                class="d-flex align-items-center gap-2 mt-2"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                  id="office"
+                                  onclick="toggleTab()"
+                                  data-has-listeners="true"
+                                />Office</label
+                              >
+                              <label
+                                class="d-flex align-items-center gap-2 mt-2"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                  id="other"
+                                  onclick="toggleTab()"
+                                  data-has-listeners="true"
+                                />Other</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          Day care Type
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Family Day Care</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Day Care Center</span></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseTwo"
+                        >
+                          Child age
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Infant(up to 18mnth)</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Toddlers(18mnth-3y/o)</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Preschooler(3y/o-4y/o)</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Pre-K Free(4y/o-5y/o)</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Kindergarten(5y/o-6y/o)</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>School-Age(6y/o-12y/o)</span></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                        >
+                          Availability
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>All places</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Available places</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Waiting list only</span></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFour"
+                          aria-expanded="false"
+                          aria-controls="collapseFour"
+                        >
+                          Working hours
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFour"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <div class="d-flex justify-content-beetween gap-3">
+                            <div class="position-relative w-100">
+                              <label class="form-label small text-muted mb-1"
+                                >From</label
+                              >
+                              <input
+                                type="time"
+                                class="form-control timeInput"
+                                data-has-listeners="true"
+                                id="startTime"
+                              />
+                              <input
+                                type="text"
+                                class="form-control ampm-display d-none"
+                                readonly=""
+                                id="startAmpm"
+                              />
+                            </div>
+
+                            <div class="position-relative w-100">
+                              <label class="form-label small text-muted mb-1"
+                                >Till</label
+                              >
+                              <input
+                                type="time"
+                                class="form-control timeInput"
+                                data-has-listeners="true"
+                                id="endTime"
+                              />
+                              <input
+                                type="text"
+                                class="form-control ampm-display d-none"
+                                readonly=""
+                                id="endAmpm"
+                              />
+                            </div>
+                          </div>
+                          <!--  -->
+                          <div
+                            class="weekdays-container fw-medium d-flex justify-content-between align-items-center my-3"
+                          >
+                            <div class="weekday" data-day="S">S</div>
+                            <div class="weekday" data-day="M">M</div>
+                            <div class="weekday" data-day="T">T</div>
+                            <div class="weekday" data-day="W">W</div>
+                            <div class="weekday" data-day="T">T</div>
+                            <div class="weekday" data-day="F">F</div>
+                            <div class="weekday" data-day="S">S</div>
+                          </div>
+                          <!--  -->
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Full day</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Flexible hours</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Evening care</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Week and care</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Half day</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Flexible days</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Night care</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Holiday care</span></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFive">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFive"
+                          aria-expanded="false"
+                          aria-controls="collapseFive"
+                        >
+                          Classes and activities
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFive"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFive"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Aikido</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Art and craft</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Ballet</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Chess</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Computer science</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Decorative arts</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Dancing</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Disco</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Drama acting skills</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>English language arts</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Fencing</span></label
+                          >
+                          <label class="d-flex gap-2 align-items-center lh-lg"
+                            ><input type="checkbox" class="filter-checkbox" />
+                            <span>Football</span></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingSix">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseSix"
+                          aria-expanded="false"
+                          aria-controls="collapseSix"
+                        >
+                          Average review
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseSix"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSix"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body p-3">
+                          <div
+                            class="d-flex align-items-center justify-content-between"
+                          >
+                            <span class="rating-value">0.0</span>
+                            <span>
+                              <small class="rating" data-rating="0">
+                                <span
+                                  class="fa fa-star-o star"
+                                  data-value="1"
+                                ></span>
+                                <span
+                                  class="fa fa-star-o star"
+                                  data-value="2"
+                                ></span>
+                                <span
+                                  class="fa fa-star-o star"
+                                  data-value="3"
+                                ></span>
+                                <span
+                                  class="fa fa-star-o star"
+                                  data-value="4"
+                                ></span>
+                                <span
+                                  class="fa fa-star-o star"
+                                  data-value="5"
+                                ></span>
+                              </small>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="btn-wrapper d-flex gap-2 justify-content-md-between"
+                  >
+                    <button
+                      id="resetButton"
+                      class="btn btn-outline-primary mt-4"
+                    >
+                      <i class="bi bi-trash me-2"></i>Clear Filters
+                    </button>
+                    <button id="saveButton" class="btn btn-primary mt-4">
+                      Show Results
+                    </button>
+                  </div>
+                </div>
+
+                <div id="list-tab" class="tab-content ps-0 scrollable-content">
                   <!-- Tab List -->
                   <div id="child1-tab" class="tab-child" style="display: none">
                     <!-- Alice -->
@@ -666,377 +1151,10 @@
                     </div>
                   </div>
                 </div>
-
-                <div
-                  id="filter-tab"
-                  class="tab-content ps-0 scrollable-content"
-                >
-                  <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          Day care Type
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Family Day Care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Day Care Center</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingTwo">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          Child age
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseTwo"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Infant(up to 18mnth)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Toddlers(18mnth-3y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Preschooler(3y/o-4y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Pre-K Free(4y/o-5y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Kindergarten(5y/o-6y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>School-Age(6y/o-12y/o)</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThree">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseThree"
-                          aria-expanded="false"
-                          aria-controls="collapseThree"
-                        >
-                          Availability
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseThree"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>All places</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Available places</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Waiting list only</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFour">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFour"
-                          aria-expanded="false"
-                          aria-controls="collapseFour"
-                        >
-                          Working hours
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFour"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFour"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <div class="d-flex justify-content-beetween gap-3">
-                            <div class="position-relative w-100">
-                              <label class="form-label small text-muted mb-1"
-                                >From</label
-                              >
-                              <input
-                                type="time"
-                                class="form-control timeInput"
-                                data-has-listeners="true"
-                                id="startTime"
-                              />
-                              <input
-                                type="text"
-                                class="form-control ampm-display d-none"
-                                readonly=""
-                                id="startAmpm"
-                              />
-                            </div>
-
-                            <div class="position-relative w-100">
-                              <label class="form-label small text-muted mb-1"
-                                >Till</label
-                              >
-                              <input
-                                type="time"
-                                class="form-control timeInput"
-                                data-has-listeners="true"
-                                id="endTime"
-                              />
-                              <input
-                                type="text"
-                                class="form-control ampm-display d-none"
-                                readonly=""
-                                id="endAmpm"
-                              />
-                            </div>
-                          </div>
-                          <!--  -->
-                          <div
-                            class="weekdays-container fw-medium d-flex justify-content-between align-items-center my-3"
-                          >
-                            <div class="weekday" data-day="S">S</div>
-                            <div class="weekday" data-day="M">M</div>
-                            <div class="weekday" data-day="T">T</div>
-                            <div class="weekday" data-day="W">W</div>
-                            <div class="weekday" data-day="T">T</div>
-                            <div class="weekday" data-day="F">F</div>
-                            <div class="weekday" data-day="S">S</div>
-                          </div>
-                          <!--  -->
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Full day</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Flexible hours</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Evening care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Week and care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Half day</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Flexible days</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Night care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Holiday care</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFive">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFive"
-                          aria-expanded="false"
-                          aria-controls="collapseFive"
-                        >
-                          Classes and activities
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFive"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFive"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Aikido</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Art and craft</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Ballet</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Chess</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Computer science</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Decorative arts</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Dancing</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Disco</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Drama acting skills</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>English language arts</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Fencing</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Football</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingSix">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSix"
-                          aria-expanded="false"
-                          aria-controls="collapseSix"
-                        >
-                          Average review
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseSix"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingSix"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <div
-                            class="d-flex align-items-center justify-content-between"
-                          >
-                            <span class="rating-value">0.0</span>
-                            <span>
-                              <small class="rating" data-rating="0">
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="1"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="2"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="3"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="4"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="5"
-                                ></span>
-                              </small>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="btn-wrapper d-flex gap-2 justify-content-md-between"
-                  >
-                    <button
-                      id="resetButton"
-                      class="btn btn-outline-primary mt-4"
-                    >
-                      <i class="bi bi-trash me-2"></i>Clear Filters
-                    </button>
-                    <button id="saveButton" class="btn btn-primary mt-4">
-                      Show Results
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
             <div class="col-md-7 col-lg-8 position-relative">
-              <div class="col-6 position-absolute z-3">
+              <!-- <div class="col-6 position-absolute z-3">
                 <div class="d-flex gap-3 mt-2">
                   <div class="position-relative">
                     <i
@@ -1129,14 +1247,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div id="map"></div>
             </div>
           </div>
         </div>
       </main>
-      <footer>
+      <!-- <footer>
         <div
           class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center border-top py-4 gap-3 gap-md-0"
         >
@@ -1219,7 +1337,7 @@
         <p class="m-0 pb-3 text-center">
           © <span id="year">2025</span>. All rights reserved.
         </p>
-      </footer>
+      </footer> -->
       <!-- toastHeaderBtn -->
       <div class="toast-container position-fixed top-0 end-0 p-3">
         <div
