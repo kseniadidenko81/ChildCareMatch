@@ -227,20 +227,35 @@ document.getElementById("saveButton").addEventListener("click", function () {
 
 function toggleTab() {
   const childTabs = document.querySelectorAll(".tab-child");
-  childTabs.forEach((tab) => (tab.style.display = "none"));
-
+  const noSelectionMessage = document.getElementById("noSelectionMessage");
   const selectedChildren = document.querySelectorAll(
     ".children-checkboxes input:checked"
   );
 
-  selectedChildren.forEach((checkbox) => {
-    const childId = checkbox.id;
-    const tab = document.getElementById(childId + "-tab");
-    if (tab) {
-      tab.style.display = "block";
-    }
-  });
+  childTabs.forEach((tab) => (tab.style.display = "none"));
+
+  if (selectedChildren.length === 0) {
+    noSelectionMessage.style.display = "block";
+  } else {
+    noSelectionMessage.style.display = "none";
+
+    selectedChildren.forEach((checkbox) => {
+      const childId = checkbox.id;
+      const tab = document.getElementById(childId + "-tab");
+      if (tab) {
+        tab.style.display = "block";
+      }
+    });
+  }
 }
+
+document.querySelectorAll(".children-checkboxes input").forEach((checkbox) => {
+  checkbox.addEventListener("change", toggleTab);
+});
+
+document.getElementById("saveButton").addEventListener("click", function () {
+  switchTab("list");
+});
 
 document.getElementById("resetButton").addEventListener("click", function () {
   const checkboxes = document.querySelectorAll(
@@ -254,18 +269,9 @@ document.getElementById("resetButton").addEventListener("click", function () {
   childTabs.forEach((tab) => {
     tab.style.display = "none";
   });
-});
 
-document.querySelectorAll(".children-checkboxes input").forEach((checkbox) => {
-  checkbox.addEventListener("change", toggleTab);
-});
-
-window.addEventListener("load", () => {
-  const firstChildCheckbox = document.getElementById("child1");
-  if (firstChildCheckbox) {
-    firstChildCheckbox.checked = true;
-    toggleTab();
-  }
+  const noSelectionMessage = document.getElementById("noSelectionMessage");
+  noSelectionMessage.style.display = "block";
 });
 
 // MODAL DROPDOWN
