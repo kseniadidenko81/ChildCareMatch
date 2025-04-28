@@ -1448,8 +1448,7 @@
                       >
                       <input
                         type="date"
-                        class="form-control"
-                        id="datePicker"
+                        class="form-control datePicker"
                         required=""
                         data-has-listeners="true"
                       />
@@ -1560,8 +1559,7 @@
                       >
                       <input
                         type="date"
-                        class="form-control"
-                        id="datePicker"
+                        class="form-control datePicker"
                         required
                       />
                     </div>
@@ -1614,9 +1612,13 @@
     </script>
     <!-- Default DatePicker -->
     <script>
-      const datePicker = document.getElementById("datePicker");
+      const datePickers = document.querySelectorAll(".datePicker");
+      datePicker;
       const today = new Date().toISOString().split("T")[0];
-      datePicker.value = today;
+
+      datePickers.forEach((datePicker) => {
+        datePicker.value = today;
+      });
     </script>
     <script></script>
   </body>
