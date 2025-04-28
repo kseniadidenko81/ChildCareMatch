@@ -1,5 +1,4 @@
 // Modal Waiting
-
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script Loaded!");
 
@@ -121,8 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Count Child
-
 // FROM/TO
 function addTimeFunctionality(block) {
   const timeInputs = block.querySelectorAll(".timeInput");
@@ -202,23 +199,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // FILTERS MAP
-
-const toggleChildrenList = () => {
-  const childrenList = document.getElementById("childrenList");
-  if (
-    childrenList.style.display === "none" ||
-    childrenList.style.display === ""
-  ) {
-    childrenList.style.display = "block";
-  } else {
-    childrenList.style.display = "none";
-  }
-};
-
-document
-  .getElementById("toggleChildrenListBtn")
-  .addEventListener("click", toggleChildrenList);
-
 function switchTab(tabName) {
   const tabContents = document.querySelectorAll(".tab-content");
   const tabTitles = document.querySelectorAll(".tab-title");
@@ -226,12 +206,24 @@ function switchTab(tabName) {
   tabContents.forEach((tab) => tab.classList.remove("active"));
   tabTitles.forEach((title) => title.classList.remove("active"));
 
-  document.getElementById(tabName + "-tab").classList.add("active");
-  const activeTabTitle = Array.from(tabTitles).find(
-    (title) => title.innerText.toLowerCase() === tabName
-  );
-  if (activeTabTitle) activeTabTitle.classList.add("active");
+  const activeTabContent = document.getElementById(tabName + "-tab");
+  if (activeTabContent) {
+    activeTabContent.classList.add("active");
+  }
+
+  tabTitles.forEach((title) => {
+    if (
+      title.getAttribute("onclick") &&
+      title.getAttribute("onclick").includes(`'${tabName}'`)
+    ) {
+      title.classList.add("active");
+    }
+  });
 }
+
+document.getElementById("saveButton").addEventListener("click", function () {
+  switchTab("list");
+});
 
 function toggleTab() {
   const childTabs = document.querySelectorAll(".tab-child");
@@ -249,6 +241,20 @@ function toggleTab() {
     }
   });
 }
+
+document.getElementById("resetButton").addEventListener("click", function () {
+  const checkboxes = document.querySelectorAll(
+    '.children-checkboxes input[type="checkbox"]'
+  );
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+
+  const childTabs = document.querySelectorAll(".tab-child");
+  childTabs.forEach((tab) => {
+    tab.style.display = "none";
+  });
+});
 
 document.querySelectorAll(".children-checkboxes input").forEach((checkbox) => {
   checkbox.addEventListener("change", toggleTab);
@@ -466,30 +472,3 @@ function initMap() {
 }
 
 window.onload = initMap;
-
-// LOCATION FILTER ON MAPS
-document
-  .getElementById("toggleLocationBtn")
-  .addEventListener("click", function () {
-    document.getElementById("locationOptions").classList.toggle("d-none");
-  });
-
-document
-  .getElementById("toggleChildrenListBtn")
-  .addEventListener("click", function () {
-    document.getElementById("childrenList").classList.toggle("d-none");
-    updateTotalChildrenCount();
-  });
-
-function updateTotalChildrenCount() {
-  const totalCheckboxes = document.querySelectorAll(".child-checkbox").length;
-  document.getElementById("childrenCount").textContent = totalCheckboxes;
-}
-
-document.querySelectorAll(".child-checkbox").forEach(function (checkbox) {
-  checkbox.addEventListener("change", function () {
-    updateTotalChildrenCount();
-  });
-});
-
-updateTotalChildrenCount();
