@@ -1,17 +1,19 @@
 #map {
   height: 100vh;
   max-height: 400px;
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 1280px) {
   #map {
-    max-height: 460px;
+    max-height: 420px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   #map {
     max-height: 600px;
+    margin-bottom: 0;
   }
 }
 
@@ -98,7 +100,7 @@ footer {
 
 @media screen and (min-width: 1280px) {
   .scrollable-content {
-    max-height: 420px;
+    max-height: 380px;
   }
 }
 
