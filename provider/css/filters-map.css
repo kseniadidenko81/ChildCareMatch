@@ -3,6 +3,27 @@
   max-height: 400px;
 }
 
+@media screen and (min-width: 1280px) {
+  #map {
+    max-height: 460px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #map {
+    max-height: 600px;
+  }
+}
+
+footer {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  footer {
+    display: block;
+  }
+}
 /* MAPS */
 
 .gm-style-iw-d div {
@@ -75,8 +96,16 @@
   margin-top: 4px;
 }
 
-.scrollable-content::-webkit-scrollbar {
-  width: 6px;
+@media screen and (min-width: 1280px) {
+  .scrollable-content {
+    max-height: 420px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .scrollable-content {
+    max-height: 600px;
+  }
 }
 
 .scrollable-content::-webkit-scrollbar-thumb {
