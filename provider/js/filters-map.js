@@ -1,3 +1,22 @@
+// Auto height all content
+function updateContainerHeight() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 992) {
+    const headerHeight = 84.9062;
+    document.getElementById(
+      "content-container"
+    ).style.height = `calc(100vh - ${headerHeight}px)`;
+    document.body.style.overflow = "hidden";
+  } else {
+    document.getElementById("content-container").style.height = "auto";
+    document.body.style.overflow = "auto";
+  }
+}
+
+window.addEventListener("load", updateContainerHeight);
+window.addEventListener("resize", updateContainerHeight);
+
 // Modal Waiting
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script Loaded!");
@@ -221,10 +240,6 @@ function switchTab(tabName) {
   });
 }
 
-document.getElementById("saveButton").addEventListener("click", function () {
-  switchTab("list");
-});
-
 function toggleTab() {
   const childTabs = document.querySelectorAll(".tab-child");
   const noSelectionMessage = document.getElementById("noSelectionMessage");
@@ -253,9 +268,47 @@ document.querySelectorAll(".children-checkboxes input").forEach((checkbox) => {
   checkbox.addEventListener("change", toggleTab);
 });
 
+// CHANGE BLOCKS PLACES
+
+let isFilterFirst = true;
+let hasSwitched = false;
+
 document.getElementById("saveButton").addEventListener("click", function () {
-  switchTab("list");
+  if (window.innerWidth > 767) return;
+
+  const filterTab = document.getElementById("filter-tab");
+  const listTab = document.getElementById("list-tab");
+  const parent = filterTab.parentElement;
+
+  if (!hasSwitched) {
+    filterTab.classList.add("hidden");
+    listTab.classList.add("hidden");
+
+    setTimeout(() => {
+      if (isFilterFirst) {
+        parent.insertBefore(listTab, filterTab);
+      } else {
+        parent.insertBefore(filterTab, listTab);
+      }
+
+      requestAnimationFrame(() => {
+        filterTab.classList.remove("hidden");
+        listTab.classList.remove("hidden");
+      });
+
+      isFilterFirst = !isFilterFirst;
+      hasSwitched = true;
+    }, 400);
+  } else {
+    const listTabAnchor = document.getElementById("listTabAnchor");
+
+    if (listTabAnchor) {
+      listTabAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 });
+
+// END CHANGE BLOCKS PLACES
 
 document.getElementById("resetButton").addEventListener("click", function () {
   const checkboxes = document.querySelectorAll(
