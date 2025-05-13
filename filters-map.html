@@ -230,1023 +230,1127 @@
           </div>
         </nav>
       </header>
+      <div id="listTabAnchor"></div>
       <main class="content">
-        <div class="container pt-4">
-          <div class="row">
-            <div class="col-md-5 col-lg-4">
-              <div class="tabs mb-4 mb-md-0">
-                <ul class="tab-titles w-100 gap-2">
-                  <li
-                    class="flex-fill tab-title text-center rounded-1 active"
-                    onclick="switchTab('filter')"
-                  >
-                    Filters
-                  </li>
-                  <li
-                    class="flex-fill tab-title text-center rounded-1"
-                    onclick="switchTab('list')"
-                  >
-                    List View
-                  </li>
-                </ul>
-
+        <div
+          class="container-fluid"
+          id="content-container"
+          style="padding: 1rem"
+        >
+          <div class="row h-100 pe-md-3">
+            <div class="col-lg-7 d-flex flex-column h-100">
+              <div class="flex-grow-1 overflow-hidden d-flex flex-column">
                 <div
-                  id="filter-tab"
-                  class="tab-content ps-0 active scrollable-content pb-0"
+                  class="tabs d-flex flex-column flex-grow-1 overflow-hidden"
                 >
                   <div
-                    class="d-flex flex-column align-items-start mb-4 w-100 position-relative"
+                    class="tab-contents d-flex flex-column flex-md-row flex-grow-1 overflow-hidden border py-2 rounded-1"
                   >
-                    <input
-                      type="text"
-                      id="searchInput"
-                      class="form-control ps-5"
-                      placeholder="Search by Daу care..."
-                    />
-                    <i
-                      class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"
-                    ></i>
-                  </div>
-                  <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingSeven">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSeven"
-                          aria-expanded="false"
-                          aria-controls="collapseSeven"
-                        >
-                          Child Select
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseSeven"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingSeven"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <div
-                            class="position-relative"
-                            id="toggleChildrenListBtn"
-                          >
-                            <div class="children-checkboxes" id="childrenList">
-                              <label class="d-flex align-items-center gap-2">
-                                <input
-                                  type="checkbox"
-                                  id="child1"
-                                  onclick="toggleTab()"
-                                  class="child-checkbox filter-checkbox"
-                                  data-has-listeners="true"
-                                />
-                                Alice</label
-                              >
-                              <label
-                                class="d-flex align-items-center gap-2 mt-2"
-                                ><input
-                                  type="checkbox"
-                                  id="child2"
-                                  onclick="toggleTab()"
-                                  class="child-checkbox filter-checkbox"
-                                  data-has-listeners="true"
-                                />
-                                Bob</label
-                              >
-                              <label
-                                class="d-flex align-items-center gap-2 mt-2"
-                                ><input
-                                  type="checkbox"
-                                  id="child3"
-                                  onclick="toggleTab()"
-                                  class="child-checkbox filter-checkbox"
-                                  data-has-listeners="true"
-                                />
-                                Charlie</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingEight">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseEight"
-                          aria-expanded="false"
-                          aria-controls="collapseEight"
-                        >
-                          Location Select
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseEight"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingEight"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <div class="position-relative" id="toggleLocationBtn">
-                            <div class="location-options" id="locationOptions">
-                              <label class="d-flex align-items-center gap-2"
-                                ><input
-                                  type="checkbox"
-                                  class="filter-checkbox"
-                                  id="home"
-                                  onclick="toggleTab()"
-                                  data-has-listeners="true"
-                                />Home</label
-                              >
-
-                              <label
-                                class="d-flex align-items-center gap-2 mt-2"
-                                ><input
-                                  type="checkbox"
-                                  class="filter-checkbox"
-                                  id="office"
-                                  onclick="toggleTab()"
-                                  data-has-listeners="true"
-                                />Office</label
-                              >
-                              <label
-                                class="d-flex align-items-center gap-2 mt-2"
-                                ><input
-                                  type="checkbox"
-                                  class="filter-checkbox"
-                                  id="other"
-                                  onclick="toggleTab()"
-                                  data-has-listeners="true"
-                                />Other</label
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          Day care Type
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Family Day Care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Day Care Center</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingTwo">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          Child age
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseTwo"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Infant(up to 18mnth)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Toddlers(18mnth-3y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Preschooler(3y/o-4y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Pre-K Free(4y/o-5y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Kindergarten(5y/o-6y/o)</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>School-Age(6y/o-12y/o)</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThree">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseThree"
-                          aria-expanded="false"
-                          aria-controls="collapseThree"
-                        >
-                          Availability
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseThree"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>All places</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Available places</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Waiting list only</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFour">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFour"
-                          aria-expanded="false"
-                          aria-controls="collapseFour"
-                        >
-                          Working hours
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFour"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFour"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <div class="d-flex justify-content-beetween gap-3">
-                            <div class="position-relative w-100">
-                              <label class="form-label small text-muted mb-1"
-                                >From</label
-                              >
-                              <input
-                                type="time"
-                                class="form-control timeInput"
-                                data-has-listeners="true"
-                                id="startTime"
-                              />
-                              <input
-                                type="text"
-                                class="form-control ampm-display d-none"
-                                readonly=""
-                                id="startAmpm"
-                              />
-                            </div>
-
-                            <div class="position-relative w-100">
-                              <label class="form-label small text-muted mb-1"
-                                >Till</label
-                              >
-                              <input
-                                type="time"
-                                class="form-control timeInput"
-                                data-has-listeners="true"
-                                id="endTime"
-                              />
-                              <input
-                                type="text"
-                                class="form-control ampm-display d-none"
-                                readonly=""
-                                id="endAmpm"
-                              />
-                            </div>
-                          </div>
-                          <!--  -->
-                          <div
-                            class="weekdays-container fw-medium d-flex justify-content-between align-items-center my-3"
-                          >
-                            <div class="weekday" data-day="S">S</div>
-                            <div class="weekday" data-day="M">M</div>
-                            <div class="weekday" data-day="T">T</div>
-                            <div class="weekday" data-day="W">W</div>
-                            <div class="weekday" data-day="T">T</div>
-                            <div class="weekday" data-day="F">F</div>
-                            <div class="weekday" data-day="S">S</div>
-                          </div>
-                          <!--  -->
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Full day</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Flexible hours</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Evening care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Week and care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Half day</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Flexible days</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Night care</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Holiday care</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFive">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFive"
-                          aria-expanded="false"
-                          aria-controls="collapseFive"
-                        >
-                          Classes and activities
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFive"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFive"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Aikido</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Art and craft</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Ballet</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Chess</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Computer science</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Decorative arts</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Dancing</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Disco</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Drama acting skills</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>English language arts</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Fencing</span></label
-                          >
-                          <label class="d-flex gap-2 align-items-center lh-lg"
-                            ><input type="checkbox" class="filter-checkbox" />
-                            <span>Football</span></label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingSix">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSix"
-                          aria-expanded="false"
-                          aria-controls="collapseSix"
-                        >
-                          Average review
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseSix"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingSix"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div class="accordion-body p-3">
-                          <div
-                            class="d-flex align-items-center justify-content-between"
-                          >
-                            <span class="rating-value">0.0</span>
-                            <span>
-                              <small class="rating" data-rating="0">
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="1"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="2"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="3"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="4"
-                                ></span>
-                                <span
-                                  class="fa fa-star-o star"
-                                  data-value="5"
-                                ></span>
-                              </small>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="btn-wrapper d-flex gap-2 justify-content-md-between"
-                  >
-                    <button
-                      id="resetButton"
-                      class="btn btn-outline-primary mt-4"
+                    <div
+                      id="filter-tab"
+                      class="tab-content flex-grow-1 overflow-auto pt-0 p-2 rounded-1"
                     >
-                      <i class="bi bi-trash me-2"></i>Clear Filters
-                    </button>
-                    <button id="saveButton" class="btn btn-primary mt-4">
-                      Show Results
-                    </button>
-                  </div>
-                </div>
-
-                <div id="list-tab" class="tab-content ps-0 scrollable-content">
-                  <!--  -->
-                  <div id="noSelectionMessage" class="alert alert-info">
-                    Nothing selected
-                  </div>
-                  <!-- Tab List -->
-                  <div id="child1-tab" class="tab-child" style="display: none">
-                    <!-- Alice -->
-                    <div class="card mb-3 w-100">
-                      <div class="card-body rounded p-2 bg-white">
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/avatar-2.svg"
-                            alt="Avatar"
-                            class="card-avatar me-2"
-                          />
-                          <div class="d-flex flex-column">
-                            <a href="#"
-                              ><small class="fw-bold">
-                                Night Days Day Care
-                              </small></a
+                      <button class="btn btn-outline-primary w-100 mb-3">
+                        Filters
+                      </button>
+                      <div
+                        class="d-flex flex-column align-items-start mb-4 w-100 position-relative"
+                      >
+                        <input
+                          type="text"
+                          id="searchInput"
+                          class="form-control ps-5"
+                          placeholder="Search by Daу care..."
+                        />
+                        <i
+                          class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"
+                        ></i>
+                      </div>
+                      <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingSeven">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseSeven"
+                              aria-expanded="false"
+                              aria-controls="collapseSeven"
                             >
-                            <small class="rating" data-rating="5">
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star-o"></span> (4)</small
-                            >
+                              Child Select
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseSeven"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <div
+                                class="position-relative"
+                                id="toggleChildrenListBtn"
+                              >
+                                <div
+                                  class="children-checkboxes"
+                                  id="childrenList"
+                                >
+                                  <label
+                                    class="d-flex align-items-center gap-2"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      id="child1"
+                                      onclick="toggleTab()"
+                                      class="child-checkbox filter-checkbox"
+                                      data-has-listeners="true"
+                                    />
+                                    Alice</label
+                                  >
+                                  <label
+                                    class="d-flex align-items-center gap-2 mt-2"
+                                    ><input
+                                      type="checkbox"
+                                      id="child2"
+                                      onclick="toggleTab()"
+                                      class="child-checkbox filter-checkbox"
+                                      data-has-listeners="true"
+                                    />
+                                    Bob</label
+                                  >
+                                  <label
+                                    class="d-flex align-items-center gap-2 mt-2"
+                                    ><input
+                                      type="checkbox"
+                                      id="child3"
+                                      onclick="toggleTab()"
+                                      class="child-checkbox filter-checkbox"
+                                      data-has-listeners="true"
+                                    />
+                                    Charlie</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <i class="bi bi-heart d-block ms-auto heart-icon"></i>
                         </div>
-                        <small class="smaller text-muted pt-2"
-                          ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
-                          Avenue Brooklyn New York 11209</small
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingEight">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseEight"
+                              aria-expanded="false"
+                              aria-controls="collapseEight"
+                            >
+                              Location Select
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseEight"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingEight"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <div
+                                class="position-relative"
+                                id="toggleLocationBtn"
+                              >
+                                <div
+                                  class="location-options"
+                                  id="locationOptions"
+                                >
+                                  <label class="d-flex align-items-center gap-2"
+                                    ><input
+                                      type="checkbox"
+                                      class="filter-checkbox"
+                                      id="home"
+                                      onclick="toggleTab()"
+                                      data-has-listeners="true"
+                                    />Home</label
+                                  >
+
+                                  <label
+                                    class="d-flex align-items-center gap-2 mt-2"
+                                    ><input
+                                      type="checkbox"
+                                      class="filter-checkbox"
+                                      id="office"
+                                      onclick="toggleTab()"
+                                      data-has-listeners="true"
+                                    />Office</label
+                                  >
+                                  <label
+                                    class="d-flex align-items-center gap-2 mt-2"
+                                    ><input
+                                      type="checkbox"
+                                      class="filter-checkbox"
+                                      id="other"
+                                      onclick="toggleTab()"
+                                      data-has-listeners="true"
+                                    />Other</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne"
+                              aria-expanded="true"
+                              aria-controls="collapseOne"
+                            >
+                              Day care Type
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Family Day Care</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Day Care Center</span></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo"
+                              aria-expanded="false"
+                              aria-controls="collapseTwo"
+                            >
+                              Child age
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Infant(up to 18mnth)</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Toddlers(18mnth-3y/o)</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Preschooler(3y/o-4y/o)</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Pre-K Free(4y/o-5y/o)</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Kindergarten(5y/o-6y/o)</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>School-Age(6y/o-12y/o)</span></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree"
+                              aria-expanded="false"
+                              aria-controls="collapseThree"
+                            >
+                              Availability
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseThree"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>All places</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Available places</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Waiting list only</span></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingFour">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseFour"
+                              aria-expanded="false"
+                              aria-controls="collapseFour"
+                            >
+                              Working hours
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseFour"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <div
+                                class="d-flex justify-content-beetween gap-3"
+                              >
+                                <div class="position-relative w-100">
+                                  <label
+                                    class="form-label small text-muted mb-1"
+                                    >From</label
+                                  >
+                                  <input
+                                    type="time"
+                                    class="form-control timeInput"
+                                    data-has-listeners="true"
+                                    id="startTime"
+                                  />
+                                  <input
+                                    type="text"
+                                    class="form-control ampm-display d-none"
+                                    readonly=""
+                                    id="startAmpm"
+                                  />
+                                </div>
+
+                                <div class="position-relative w-100">
+                                  <label
+                                    class="form-label small text-muted mb-1"
+                                    >Till</label
+                                  >
+                                  <input
+                                    type="time"
+                                    class="form-control timeInput"
+                                    data-has-listeners="true"
+                                    id="endTime"
+                                  />
+                                  <input
+                                    type="text"
+                                    class="form-control ampm-display d-none"
+                                    readonly=""
+                                    id="endAmpm"
+                                  />
+                                </div>
+                              </div>
+                              <!--  -->
+                              <div
+                                class="weekdays-container fw-medium d-flex justify-content-between align-items-center my-3"
+                              >
+                                <div class="weekday" data-day="S">S</div>
+                                <div class="weekday" data-day="M">M</div>
+                                <div class="weekday" data-day="T">T</div>
+                                <div class="weekday" data-day="W">W</div>
+                                <div class="weekday" data-day="T">T</div>
+                                <div class="weekday" data-day="F">F</div>
+                                <div class="weekday" data-day="S">S</div>
+                              </div>
+                              <!--  -->
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Full day</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Flexible hours</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Evening care</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Week and care</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Half day</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Flexible days</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Night care</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Holiday care</span></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingFive">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseFive"
+                              aria-expanded="false"
+                              aria-controls="collapseFive"
+                            >
+                              Classes and activities
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseFive"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Aikido</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Art and craft</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Ballet</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Chess</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Computer science</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Decorative arts</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Dancing</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Disco</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Drama acting skills</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>English language arts</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Fencing</span></label
+                              >
+                              <label
+                                class="d-flex gap-2 align-items-center lh-lg"
+                                ><input
+                                  type="checkbox"
+                                  class="filter-checkbox"
+                                />
+                                <span>Football</span></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingSix">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseSix"
+                              aria-expanded="false"
+                              aria-controls="collapseSix"
+                            >
+                              Average review
+                            </button>
+                          </h2>
+                          <div
+                            id="collapseSix"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingSix"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body p-3">
+                              <div
+                                class="d-flex align-items-center justify-content-between"
+                              >
+                                <span class="rating-value">0.0</span>
+                                <span>
+                                  <small class="rating" data-rating="0">
+                                    <span
+                                      class="fa fa-star-o star"
+                                      data-value="1"
+                                    ></span>
+                                    <span
+                                      class="fa fa-star-o star"
+                                      data-value="2"
+                                    ></span>
+                                    <span
+                                      class="fa fa-star-o star"
+                                      data-value="3"
+                                    ></span>
+                                    <span
+                                      class="fa fa-star-o star"
+                                      data-value="4"
+                                    ></span>
+                                    <span
+                                      class="fa fa-star-o star"
+                                      data-value="5"
+                                    ></span>
+                                  </small>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="btn-wrapper d-flex gap-2 justify-content-md-between w-100"
+                      >
+                        <button
+                          id="resetButton"
+                          class="btn btn-outline-primary mt-4 p-2 flex-fill"
                         >
-                        <small class="d-block pt-2"> 0.6 miles </small>
-                        <small class="d-block pt-2">
-                          <span class="text-muted">Estimated:</span>
-                          <span
-                            ><i class="bi bi-person-walking me-1"></i>13 min, </span
-                          ><span
-                            ><i class="bi bi-car-front me-1"></i>5 min</span
-                          >
-                        </small>
-                        <small class="d-block text-muted pt-2">
-                          <span class="text-muted">Maps:</span>
-                          <a href="https://maps.google.com" target="_blank"
-                            >View on Google Maps</a
-                          >
-                        </small>
+                          <i class="bi bi-trash me-1"></i>Clear Filters
+                        </button>
+                        <button
+                          id="saveButton"
+                          class="btn btn-primary mt-4 p-2 flex-fill"
+                        >
+                          Show Results
+                        </button>
                       </div>
                     </div>
-                    <!--  -->
-                    <div class="my-4">
-                      <div class="d-flex flex-column align-items-start my-3">
-                        <div
-                          class="d-flex flex-wrap gap-2 align-items-center justify-content-between w-100"
-                        >
-                          <div class="d-flex flex-column">
-                            <small class="smaller fw-semibold pb-1"
-                              >Pre-K Free(4y/o-5y/o)</small
-                            >
-                            <span class="small fw-bold"
-                              >$100
-                              <span class="small text-muted fw-normal"
-                                >per hour</span
-                              ></span
-                            >
-                          </div>
-                          <button
-                            class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modalWaiting"
-                            data-program="Pre-K Free(4y/o-5y/o)"
-                            data-price="$100/per hour"
-                            data-card-id="2"
-                          >
-                            Waiting List<i class="bi bi-arrow-right ms-2"></i>
-                          </button>
-                        </div>
-                        <a
-                          href="#"
-                          class="subtotal-btn small fw-semibold pt-2"
-                          data-message="Functionality is not available."
-                          >Subtotal</a
-                        >
+
+                    <div
+                      id="list-tab"
+                      class="tab-content flex-grow-1 overflow-auto pt-0 p-2 rounded-1"
+                    >
+                      <div class="btn btn-outline-primary w-100 mb-3">
+                        List View
                       </div>
                       <!--  -->
-                      <div class="d-flex flex-column align-items-start my-3">
-                        <div
-                          class="d-flex flex-wrap gap-2 align-items-center justify-content-between w-100"
-                        >
-                          <div class="d-flex flex-column">
-                            <small class="smaller fw-semibold pb-1"
-                              >Preschooler (3y/o-4y/o)</small
+                      <div id="noSelectionMessage" class="alert alert-info">
+                        Nothing selected
+                      </div>
+                      <!-- Tab List -->
+                      <div
+                        id="child1-tab"
+                        class="tab-child"
+                        style="display: none"
+                      >
+                        <!-- Alice -->
+                        <div class="card mb-3 w-100">
+                          <div class="card-body rounded p-2 bg-white">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="img/avatar-2.svg"
+                                alt="Avatar"
+                                class="card-avatar me-2"
+                              />
+                              <div class="d-flex flex-column">
+                                <a href="#"
+                                  ><small class="fw-bold">
+                                    Night Days Day Care
+                                  </small></a
+                                >
+                                <small class="rating" data-rating="5">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star-o"></span> (4)</small
+                                >
+                              </div>
+                              <i
+                                class="bi bi-heart d-block ms-auto heart-icon"
+                              ></i>
+                            </div>
+                            <small class="smaller text-muted pt-2"
+                              ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
+                              Avenue Brooklyn New York 11209</small
                             >
-                            <span class="small fw-bold"
-                              >$500
-                              <span class="small text-muted fw-normal"
-                                >per week</span
-                              ></span
+                            <small class="d-block pt-2"> 0.6 miles </small>
+                            <small class="d-block pt-2">
+                              <span class="text-muted">Estimated:</span>
+                              <span
+                                ><i class="bi bi-person-walking me-1"></i>13
+                                min, </span
+                              ><span
+                                ><i class="bi bi-car-front me-1"></i>5 min</span
+                              >
+                            </small>
+                            <small class="d-block text-muted pt-2">
+                              <span class="text-muted">Maps:</span>
+                              <a href="https://maps.google.com" target="_blank"
+                                >View on Google Maps</a
+                              >
+                            </small>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="my-4">
+                          <div
+                            class="d-flex flex-column align-items-start my-3"
+                          >
+                            <div
+                              class="d-flex flex-wrap gap-2 align-items-center justify-content-between w-100"
+                            >
+                              <div class="d-flex flex-column">
+                                <small class="smaller fw-semibold pb-1"
+                                  >Pre-K Free(4y/o-5y/o)</small
+                                >
+                                <span class="small fw-bold"
+                                  >$100
+                                  <span class="small text-muted fw-normal"
+                                    >per hour</span
+                                  ></span
+                                >
+                              </div>
+                              <button
+                                class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalWaiting"
+                                data-program="Pre-K Free(4y/o-5y/o)"
+                                data-price="$100/per hour"
+                                data-card-id="2"
+                              >
+                                Waiting List<i
+                                  class="bi bi-arrow-right ms-2"
+                                ></i>
+                              </button>
+                            </div>
+                            <a
+                              href="#"
+                              class="subtotal-btn small fw-semibold pt-2"
+                              data-message="Functionality is not available."
+                              >Subtotal</a
                             >
                           </div>
-                          <button
-                            class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modalWaiting"
-                            data-program="Preschooler (3y/o-4y/o)"
-                            data-price="$500/per week"
-                            data-card-id="1"
+                          <!--  -->
+                          <div
+                            class="d-flex flex-column align-items-start my-3"
                           >
-                            Waiting List<i class="bi bi-arrow-right ms-2"></i>
-                          </button>
-                        </div>
-                        <a
-                          href="#"
-                          class="subtotal-btn small fw-semibold pt-2"
-                          data-message="Functionality is not available."
-                          >Subtotal</a
-                        >
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <i class="fa fa-cutlery"></i>
-                        <i class="bi bi-bus-front"></i>
-                        <i class="fa fa-bed me-2"></i>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="card mb-3 w-100">
-                      <div class="card-body rounded p-2 bg-white">
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/avatar-2.svg"
-                            alt="Avatar"
-                            class="card-avatar me-2"
-                          />
-                          <div class="d-flex flex-column">
-                            <a href="#"
-                              ><small class="fw-bold">
-                                Night Days Day Care
-                              </small></a
+                            <div
+                              class="d-flex flex-wrap gap-2 align-items-center justify-content-between w-100"
                             >
-                            <small class="rating" data-rating="5">
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span> (5)</small
+                              <div class="d-flex flex-column">
+                                <small class="smaller fw-semibold pb-1"
+                                  >Preschooler (3y/o-4y/o)</small
+                                >
+                                <span class="small fw-bold"
+                                  >$500
+                                  <span class="small text-muted fw-normal"
+                                    >per week</span
+                                  ></span
+                                >
+                              </div>
+                              <button
+                                class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalWaiting"
+                                data-program="Preschooler (3y/o-4y/o)"
+                                data-price="$500/per week"
+                                data-card-id="1"
+                              >
+                                Waiting List<i
+                                  class="bi bi-arrow-right ms-2"
+                                ></i>
+                              </button>
+                            </div>
+                            <a
+                              href="#"
+                              class="subtotal-btn small fw-semibold pt-2"
+                              data-message="Functionality is not available."
+                              >Subtotal</a
                             >
                           </div>
-                          <i class="bi bi-heart d-block ms-auto heart-icon"></i>
-                        </div>
-                        <small class="text-muted smaller pt-2"
-                          ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
-                          Avenue Brooklyn New York 11209</small
-                        >
-                        <small class="d-block pt-2"> 0.6 miles </small>
-                        <small class="d-block pt-2">
-                          <span class="text-muted">Estimated:</span>
-                          <span
-                            ><i class="bi bi-person-walking me-1"></i>13 min, </span
-                          ><span
-                            ><i class="bi bi-car-front me-1"></i>5 min</span
-                          >
-                        </small>
-                        <small class="d-block text-muted pt-2">
-                          <span class="text-muted">Maps:</span>
-                          <a href="https://maps.google.com" target="_blank"
-                            >View on Google Maps</a
-                          >
-                        </small>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="child2-tab" class="tab-child" style="display: none">
-                    <!-- Bob -->
-                    <div class="card mb-3 w-100">
-                      <div class="card-body rounded p-2 bg-white">
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/avatar-2.svg"
-                            alt="Avatar"
-                            class="card-avatar me-2"
-                          />
-                          <div class="d-flex flex-column">
-                            <a href="#"
-                              ><small class="fw-bold">
-                                Night Days Day Care
-                              </small></a
-                            >
-                            <small class="rating" data-rating="5">
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span> (5)</small
-                            >
+                          <div class="d-flex align-items-center gap-2">
+                            <i class="fa fa-cutlery"></i>
+                            <i class="bi bi-bus-front"></i>
+                            <i class="fa fa-bed me-2"></i>
                           </div>
-                          <i class="bi bi-heart d-block ms-auto heart-icon"></i>
                         </div>
-                        <small class="text-muted smaller pt-2"
-                          ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
-                          Avenue Brooklyn New York 11209</small
-                        >
-                        <small class="d-block pt-2"> 0.6 miles </small>
-                        <small class="d-block pt-2">
-                          <span class="text-muted">Estimated:</span>
-                          <span
-                            ><i class="bi bi-person-walking me-1"></i>13 min, </span
-                          ><span
-                            ><i class="bi bi-car-front me-1"></i>5 min</span
-                          >
-                        </small>
-                        <small class="d-block text-muted pt-2">
-                          <span class="text-muted">Maps:</span>
-                          <a href="https://maps.google.com" target="_blank"
-                            >View on Google Maps</a
-                          >
-                        </small>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="my-4">
-                      <div class="d-flex flex-column align-items-start my-3">
-                        <div
-                          class="d-flex flex-wrap gap-23 align-items-center justify-content-between w-100"
-                        >
-                          <div class="d-flex flex-column">
-                            <small class="smaller fw-semibold pb-1"
-                              >Toddlers(18mnth-3y/o)</small
+                        <!--  -->
+                        <div class="card mb-3 w-100">
+                          <div class="card-body rounded p-2 bg-white">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="img/avatar-2.svg"
+                                alt="Avatar"
+                                class="card-avatar me-2"
+                              />
+                              <div class="d-flex flex-column">
+                                <a href="#"
+                                  ><small class="fw-bold">
+                                    Night Days Day Care
+                                  </small></a
+                                >
+                                <small class="rating" data-rating="5">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span> (5)</small
+                                >
+                              </div>
+                              <i
+                                class="bi bi-heart d-block ms-auto heart-icon"
+                              ></i>
+                            </div>
+                            <small class="text-muted smaller pt-2"
+                              ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
+                              Avenue Brooklyn New York 11209</small
                             >
-                            <span class="small fw-bold"
-                              >$1000
-                              <span class="small text-muted fw-normal"
-                                >per day</span
-                              ></span
-                            >
+                            <small class="d-block pt-2"> 0.6 miles </small>
+                            <small class="d-block pt-2">
+                              <span class="text-muted">Estimated:</span>
+                              <span
+                                ><i class="bi bi-person-walking me-1"></i>13
+                                min, </span
+                              ><span
+                                ><i class="bi bi-car-front me-1"></i>5 min</span
+                              >
+                            </small>
+                            <small class="d-block text-muted pt-2">
+                              <span class="text-muted">Maps:</span>
+                              <a href="https://maps.google.com" target="_blank"
+                                >View on Google Maps</a
+                              >
+                            </small>
                           </div>
-                          <button
-                            class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modalWaiting"
-                            data-program="Toddlers(18mnth-3y/o)"
-                            data-price="$1000/per day"
-                            data-card-id="3"
-                          >
-                            Waiting List<i class="bi bi-arrow-right ms-2"></i>
-                          </button>
-                        </div>
-                        <a
-                          href="#"
-                          class="subtotal-btn small fw-semibold pt-2"
-                          data-message="Functionality is not available."
-                          >Subtotal</a
-                        >
-                        <div class="d-flex align-items-center gap-2 mt-3">
-                          <i class="fa fa-cutlery"></i>
-                          <i class="bi bi-bus-front"></i>
-                          <i class="fa fa-futbol-o"></i>
-                          <i class="fa fa-bed me-2"></i>
                         </div>
                       </div>
-                    </div>
-                    <!--  -->
-                    <div class="card mb-3 w-100">
-                      <div class="card-body rounded p-2 bg-white">
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/avatar-2.svg"
-                            alt="Avatar"
-                            class="card-avatar me-2"
-                          />
-                          <div class="d-flex flex-column">
-                            <a href="#"
-                              ><small class="fw-bold">
-                                Night Days Day Care
-                              </small></a
+                      <div
+                        id="child2-tab"
+                        class="tab-child"
+                        style="display: none"
+                      >
+                        <!-- Bob -->
+                        <div class="card mb-3 w-100">
+                          <div class="card-body rounded p-2 bg-white">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="img/avatar-2.svg"
+                                alt="Avatar"
+                                class="card-avatar me-2"
+                              />
+                              <div class="d-flex flex-column">
+                                <a href="#"
+                                  ><small class="fw-bold">
+                                    Night Days Day Care
+                                  </small></a
+                                >
+                                <small class="rating" data-rating="5">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span> (5)</small
+                                >
+                              </div>
+                              <i
+                                class="bi bi-heart d-block ms-auto heart-icon"
+                              ></i>
+                            </div>
+                            <small class="text-muted smaller pt-2"
+                              ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
+                              Avenue Brooklyn New York 11209</small
                             >
-                            <small class="rating" data-rating="5">
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span> (5)</small
-                            >
+                            <small class="d-block pt-2"> 0.6 miles </small>
+                            <small class="d-block pt-2">
+                              <span class="text-muted">Estimated:</span>
+                              <span
+                                ><i class="bi bi-person-walking me-1"></i>13
+                                min, </span
+                              ><span
+                                ><i class="bi bi-car-front me-1"></i>5 min</span
+                              >
+                            </small>
+                            <small class="d-block text-muted pt-2">
+                              <span class="text-muted">Maps:</span>
+                              <a href="https://maps.google.com" target="_blank"
+                                >View on Google Maps</a
+                              >
+                            </small>
                           </div>
-                          <i class="bi bi-heart d-block ms-auto heart-icon"></i>
                         </div>
-                        <small class="text-muted smaller pt-2"
-                          ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
-                          Avenue Brooklyn New York 11209</small
-                        >
-                        <small class="d-block pt-2"> 0.6 miles </small>
-                        <small class="d-block pt-2">
-                          <span class="text-muted">Estimated:</span>
-                          <span
-                            ><i class="bi bi-person-walking me-1"></i>13 min, </span
-                          ><span
-                            ><i class="bi bi-car-front me-1"></i>5 min</span
+                        <!--  -->
+                        <div class="my-4">
+                          <div
+                            class="d-flex flex-column align-items-start my-3"
                           >
-                        </small>
-                        <small class="d-block text-muted pt-2">
-                          <span class="text-muted">Maps:</span>
-                          <a href="https://maps.google.com" target="_blank"
-                            >View on Google Maps</a
-                          >
-                        </small>
+                            <div
+                              class="d-flex flex-wrap gap-23 align-items-center justify-content-between w-100"
+                            >
+                              <div class="d-flex flex-column">
+                                <small class="smaller fw-semibold pb-1"
+                                  >Toddlers(18mnth-3y/o)</small
+                                >
+                                <span class="small fw-bold"
+                                  >$1000
+                                  <span class="small text-muted fw-normal"
+                                    >per day</span
+                                  ></span
+                                >
+                              </div>
+                              <button
+                                class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalWaiting"
+                                data-program="Toddlers(18mnth-3y/o)"
+                                data-price="$1000/per day"
+                                data-card-id="3"
+                              >
+                                Waiting List<i
+                                  class="bi bi-arrow-right ms-2"
+                                ></i>
+                              </button>
+                            </div>
+                            <a
+                              href="#"
+                              class="subtotal-btn small fw-semibold pt-2"
+                              data-message="Functionality is not available."
+                              >Subtotal</a
+                            >
+                            <div class="d-flex align-items-center gap-2 mt-3">
+                              <i class="fa fa-cutlery"></i>
+                              <i class="bi bi-bus-front"></i>
+                              <i class="fa fa-futbol-o"></i>
+                              <i class="fa fa-bed me-2"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <!--  -->
+                        <div class="card mb-3 w-100">
+                          <div class="card-body rounded p-2 bg-white">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="img/avatar-2.svg"
+                                alt="Avatar"
+                                class="card-avatar me-2"
+                              />
+                              <div class="d-flex flex-column">
+                                <a href="#"
+                                  ><small class="fw-bold">
+                                    Night Days Day Care
+                                  </small></a
+                                >
+                                <small class="rating" data-rating="5">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span> (5)</small
+                                >
+                              </div>
+                              <i
+                                class="bi bi-heart d-block ms-auto heart-icon"
+                              ></i>
+                            </div>
+                            <small class="text-muted smaller pt-2"
+                              ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
+                              Avenue Brooklyn New York 11209</small
+                            >
+                            <small class="d-block pt-2"> 0.6 miles </small>
+                            <small class="d-block pt-2">
+                              <span class="text-muted">Estimated:</span>
+                              <span
+                                ><i class="bi bi-person-walking me-1"></i>13
+                                min, </span
+                              ><span
+                                ><i class="bi bi-car-front me-1"></i>5 min</span
+                              >
+                            </small>
+                            <small class="d-block text-muted pt-2">
+                              <span class="text-muted">Maps:</span>
+                              <a href="https://maps.google.com" target="_blank"
+                                >View on Google Maps</a
+                              >
+                            </small>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div id="child3-tab" class="tab-child" style="display: none">
-                    <!-- Charlie -->
-                    <div class="my-4">
-                      <div class="d-flex flex-column align-items-start">
-                        <div
-                          class="d-flex flex-wrap gap-2 align-items-center justify-content-between w-100"
-                        >
-                          <div class="d-flex flex-column">
-                            <small class="smaller fw-semibold pb-1"
-                              >Toddlers(18mnth-3y/o)</small
+                      <div
+                        id="child3-tab"
+                        class="tab-child"
+                        style="display: none"
+                      >
+                        <!-- Charlie -->
+                        <div class="my-4">
+                          <div class="d-flex flex-column align-items-start">
+                            <div
+                              class="d-flex flex-wrap gap-2 align-items-center justify-content-between w-100"
                             >
-                            <span class="small fw-bold"
-                              >$1000
-                              <span class="small text-muted fw-normal"
-                                >per day</span
-                              ></span
+                              <div class="d-flex flex-column">
+                                <small class="smaller fw-semibold pb-1"
+                                  >Toddlers(18mnth-3y/o)</small
+                                >
+                                <span class="small fw-bold"
+                                  >$1000
+                                  <span class="small text-muted fw-normal"
+                                    >per day</span
+                                  ></span
+                                >
+                              </div>
+                              <button
+                                class="btn btn-success btn-modal-sent text-white px-2 rounded-0"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalTabSend"
+                                data-program="Toddlers(18mnth-3y/o)"
+                                data-price="$100/per day"
+                              >
+                                available<i class="bi bi-arrow-right ms-2"></i>
+                              </button>
+                            </div>
+                            <a
+                              href="#"
+                              class="subtotal-btn small fw-semibold pt-2"
+                              data-message="Functionality is not available."
+                              >Subtotal</a
                             >
+                            <div class="d-flex align-items-center gap-2 mt-3">
+                              <i class="bi bi-bus-front"></i>
+                              <i class="fa fa-cutlery"></i>
+                              <i class="fa fa-bed me-2"></i>
+                            </div>
                           </div>
-                          <button
-                            class="btn btn-success btn-modal-sent text-white px-2 rounded-0"
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modalTabSend"
-                            data-program="Toddlers(18mnth-3y/o)"
-                            data-price="$100/per day"
-                          >
-                            available<i class="bi bi-arrow-right ms-2"></i>
-                          </button>
                         </div>
-                        <a
-                          href="#"
-                          class="subtotal-btn small fw-semibold pt-2"
-                          data-message="Functionality is not available."
-                          >Subtotal</a
-                        >
-                        <div class="d-flex align-items-center gap-2 mt-3">
-                          <i class="bi bi-bus-front"></i>
-                          <i class="fa fa-cutlery"></i>
-                          <i class="fa fa-bed me-2"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <!--  -->
-                    <div class="card mb-3 w-100">
-                      <div class="card-body rounded p-2 bg-white">
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="img/avatar-2.svg"
-                            alt="Avatar"
-                            class="card-avatar me-2"
-                          />
-                          <div class="d-flex flex-column">
-                            <a href="#"
-                              ><small class="fw-bold">
-                                Night Days Day Care
-                              </small></a
+                        <!--  -->
+                        <div class="card mb-3 w-100">
+                          <div class="card-body rounded p-2 bg-white">
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="img/avatar-2.svg"
+                                alt="Avatar"
+                                class="card-avatar me-2"
+                              />
+                              <div class="d-flex flex-column">
+                                <a href="#"
+                                  ><small class="fw-bold">
+                                    Night Days Day Care
+                                  </small></a
+                                >
+                                <small class="rating" data-rating="5">
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span> (5)</small
+                                >
+                              </div>
+                              <i
+                                class="bi bi-heart d-block ms-auto heart-icon"
+                              ></i>
+                            </div>
+                            <small class="text-muted smaller pt-2"
+                              ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
+                              Avenue Brooklyn New York 11209</small
                             >
-                            <small class="rating" data-rating="5">
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span> (5)</small
-                            >
+                            <small class="d-block pt-2"> 0.6 miles </small>
+                            <small class="d-block pt-2">
+                              <span class="text-muted">Estimated:</span>
+                              <span
+                                ><i class="bi bi-person-walking me-1"></i>13
+                                min, </span
+                              ><span
+                                ><i class="bi bi-car-front me-1"></i>5 min</span
+                              >
+                            </small>
+                            <small class="d-block text-muted pt-2">
+                              <span class="text-muted">Maps:</span>
+                              <a href="https://maps.google.com" target="_blank"
+                                >View on Google Maps</a
+                              >
+                            </small>
                           </div>
-                          <i class="bi bi-heart d-block ms-auto heart-icon"></i>
                         </div>
-                        <small class="text-muted smaller pt-2"
-                          ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
-                          Avenue Brooklyn New York 11209</small
-                        >
-                        <small class="d-block pt-2"> 0.6 miles </small>
-                        <small class="d-block pt-2">
-                          <span class="text-muted">Estimated:</span>
-                          <span
-                            ><i class="bi bi-person-walking me-1"></i>13 min, </span
-                          ><span
-                            ><i class="bi bi-car-front me-1"></i>5 min</span
-                          >
-                        </small>
-                        <small class="d-block text-muted pt-2">
-                          <span class="text-muted">Maps:</span>
-                          <a href="https://maps.google.com" target="_blank"
-                            >View on Google Maps</a
-                          >
-                        </small>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-7 col-lg-8 position-relative">
-              <div id="map"></div>
+            <div class="col-lg-5 d-flex flex-column h-100 pt-3 p-lg-0">
+              <div id="map" class="flex-grow-1 w-100 rounded-1"></div>
             </div>
           </div>
         </div>
       </main>
-      <footer>
-        <div
-          class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center border-top py-4 gap-3 gap-md-0"
-        >
-          <ul
-            class="col-md-2 m-0 list-unstyled d-flex align-items-center gap-4"
-          >
-            <li>
-              <a href="#!" class="link-opacity-75-hover link-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  fill="currentColor"
-                  class="bi bi-facebook"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
-                  ></path>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#!" class="link-opacity-75-hover link-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  fill="currentColor"
-                  class="bi bi-youtube"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                  ></path>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#!" class="link-opacity-75-hover link-primary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  fill="currentColor"
-                  class="bi bi-twitter-x"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
-                  ></path>
-                </svg>
-              </a>
-            </li>
-          </ul>
-
-          <ul
-            class="nav col-md-10 justify-content-center justify-content-sm-end"
-          >
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary"
-                >Legal Disclaimer</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary"
-                >Terms of Use</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <p class="m-0 pb-3 text-center">
-          © <span id="year">2025</span>. All rights reserved.
-        </p>
-      </footer>
       <!-- toastHeaderBtn -->
       <div class="toast-container position-fixed top-0 end-0 p-3">
         <div
