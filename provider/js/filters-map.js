@@ -433,6 +433,107 @@ document.querySelectorAll(".tab-links a").forEach(function (tab) {
   });
 });
 
+// SEARCH MODAL RECOMMENDED
+const searchInput = document.getElementById("searchInput");
+const searchIcon = document.getElementById("searchIcon");
+const modalElement = document.getElementById("notFoundModal");
+const modal = new bootstrap.Modal(modalElement);
+const modalBody = document.getElementById("notFoundModalBody");
+
+const notFoundMessages = [
+  "This activity is currently unavailable in the selected daycare. Would you like to see similar options?",
+  "Sorry, we couldn’t find that activity here. How about exploring other exciting clubs?",
+  "This daycare doesn’t offer that type of activity. Check out our recommended alternatives.",
+  "Unfortunately, this program isn’t available. Let us help you find a similar one.",
+  "That option isn’t offered, but we have other interesting choices for your child.",
+];
+
+const fakeUnavailableKeywords = ["karate", "error", "ballet", "boxing"];
+
+function showAllMarkers() {
+  if (typeof markers !== "undefined") {
+    markers.forEach(({ marker }) => {
+      marker.setVisible(true);
+    });
+  }
+}
+
+function filterMarkers(query) {
+  const lowerQuery = query.trim().toLowerCase();
+  if (!lowerQuery || fakeUnavailableKeywords.includes(lowerQuery)) {
+    showAllMarkers();
+    return;
+  }
+
+  if (typeof markers !== "undefined") {
+    markers.forEach(({ marker, name }) => {
+      const match = name.toLowerCase().includes(lowerQuery);
+      marker.setVisible(match);
+    });
+  }
+}
+
+function showModalIfKeyword(query) {
+  const lowerQuery = query.trim().toLowerCase();
+  if (!lowerQuery) return false;
+
+  if (fakeUnavailableKeywords.includes(lowerQuery)) {
+    const randomMessage =
+      notFoundMessages[Math.floor(Math.random() * notFoundMessages.length)];
+    modalBody.innerHTML = `<p>${randomMessage}</p>`;
+    modal.show();
+    return true;
+  }
+
+  return false;
+}
+
+searchInput.addEventListener("input", () => {
+  if (searchInput.value.trim() === "") {
+    searchIcon.classList.remove("bi-x-lg");
+    searchIcon.classList.add("bi-search");
+    showAllMarkers();
+  }
+});
+
+searchIcon.addEventListener("click", () => {
+  const query = searchInput.value.trim();
+
+  if (searchIcon.classList.contains("bi-x-lg")) {
+    searchInput.value = "";
+    searchInput.dispatchEvent(new Event("input"));
+    showAllMarkers();
+  } else {
+    const isModalOpened = showModalIfKeyword(query);
+    if (!isModalOpened && query !== "") {
+      filterMarkers(query);
+      searchIcon.classList.remove("bi-search");
+      searchIcon.classList.add("bi-x-lg");
+    }
+  }
+});
+
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    const query = searchInput.value.trim();
+
+    const isModalOpened = showModalIfKeyword(query);
+    if (!isModalOpened && query !== "") {
+      filterMarkers(query);
+      searchIcon.classList.remove("bi-search");
+      searchIcon.classList.add("bi-x-lg");
+    }
+  }
+});
+
+modalElement.addEventListener("hidden.bs.modal", () => {
+  if (searchInput.value.trim() !== "") {
+    searchIcon.classList.remove("bi-search");
+    searchIcon.classList.add("bi-x-lg");
+  }
+});
+
 // MAPS and SEARCH
 var map;
 var infowindow;
@@ -462,9 +563,8 @@ function initMap() {
 
   infowindow = new google.maps.InfoWindow();
 
-  var marker;
-  for (var i = 0; i < locations.length; i++) {
-    marker = new google.maps.Marker({
+  for (let i = 0; i < locations.length; i++) {
+    const marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
       map: map,
       title: "Click for more info",
@@ -486,22 +586,5 @@ function initMap() {
       })(marker, i)
     );
   }
-
-  const searchInput = document.getElementById("searchInput");
-  searchInput.addEventListener("input", function () {
-    const query = searchInput.value.toLowerCase();
-
-    markers.forEach(function (markerData) {
-      const marker = markerData.marker;
-      const name = markerData.name.toLowerCase();
-
-      if (name.includes(query)) {
-        marker.setVisible(true);
-      } else {
-        marker.setVisible(false);
-      }
-    });
-  });
 }
-
 window.onload = initMap;
