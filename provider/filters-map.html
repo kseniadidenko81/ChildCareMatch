@@ -260,10 +260,13 @@
                           type="text"
                           id="searchInput"
                           class="form-control ps-5"
-                          placeholder="Search by Daу care..."
+                          placeholder="Search by Day care..."
+                          data-has-listeners="true"
                         />
                         <i
+                          id="searchIcon"
                           class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"
+                          style="cursor: pointer"
                         ></i>
                       </div>
                       <div class="accordion" id="accordionExample">
@@ -911,7 +914,26 @@
                       >
                         <!-- Alice -->
                         <div class="card mb-3 w-100">
-                          <div class="card-body rounded p-2 bg-white">
+                          <div
+                            class="card-body rounded p-2 bg-white position-relative"
+                          >
+                            <!-- Badge -->
+                            <div class="d-flex justify-content-end mb-2">
+                              <span
+                                class="bg-light text-primary small px-2 py-1 rounded d-inline-flex align-items-center"
+                                style="font-size: 0.75rem; line-height: 1"
+                              >
+                                <i
+                                  class="bi bi-star-fill me-1"
+                                  style="font-size: 0.85rem"
+                                ></i>
+                                <span style="display: inline-block"
+                                  >Recommended</span
+                                >
+                              </span>
+                            </div>
+
+                            <!-- Main content -->
                             <div class="d-flex align-items-center">
                               <img
                                 src="img/avatar-2.svg"
@@ -920,33 +942,35 @@
                               />
                               <div class="d-flex flex-column">
                                 <a href="#"
-                                  ><small class="fw-bold">
-                                    Night Days Day Care
-                                  </small></a
+                                  ><small class="fw-bold"
+                                    >Night Days Day Care</small
+                                  ></a
                                 >
                                 <small class="rating" data-rating="5">
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
                                   <span class="fa fa-star"></span>
-                                  <span class="fa fa-star-o"></span> (4)</small
-                                >
+                                  <span class="fa fa-star-o"></span> (4)
+                                </small>
                               </div>
                               <i
                                 class="bi bi-heart d-block ms-auto heart-icon"
                               ></i>
                             </div>
-                            <small class="smaller text-muted pt-2"
-                              ><i class="bi bi-geo-alt-fill me-1"></i>7601, 4th
-                              Avenue Brooklyn New York 11209</small
-                            >
-                            <small class="d-block pt-2"> 0.6 miles </small>
+
+                            <small class="smaller text-muted pt-2">
+                              <i class="bi bi-geo-alt-fill me-1"></i>
+                              7601, 4th Avenue Brooklyn New York 11209
+                            </small>
+                            <small class="d-block pt-2">0.6 miles</small>
                             <small class="d-block pt-2">
                               <span class="text-muted">Estimated:</span>
                               <span
                                 ><i class="bi bi-person-walking me-1"></i>13
-                                min, </span
-                              ><span
+                                min,
+                              </span>
+                              <span
                                 ><i class="bi bi-car-front me-1"></i>5 min</span
                               >
                             </small>
@@ -958,6 +982,7 @@
                             </small>
                           </div>
                         </div>
+
                         <!--  -->
                         <div class="my-4">
                           <div
@@ -1345,7 +1370,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-5 col-xl-6 col-xxl-7 d-flex flex-column h-100 pt-3 p-lg-0">
+            <div
+              class="col-lg-5 col-xl-6 col-xxl-7 d-flex flex-column h-100 pt-3 p-lg-0"
+            >
               <div id="map" class="flex-grow-1 w-100 rounded-1"></div>
             </div>
           </div>
@@ -1599,6 +1626,52 @@
                 data-message="You have successfully submitted an application to join the Waiting List."
               >
                 Join a waiting list
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Recommended -->
+      <div
+        class="modal fade"
+        id="notFoundModal"
+        tabindex="-1"
+        aria-labelledby="notFoundModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content position-relative">
+            <span
+              class="custom-badge position-absolute top-0 end-0 m-2 d-flex align-items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                class="bi bi-star-fill me-1"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.32-.158-.888.283-.95l4.898-.696 2.197-4.327c.197-.388.73-.388.927 0l2.197 4.327 4.898.696c.441.062.612.63.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              Recommended by activity
+            </span>
+
+            <div class="modal-header border-bottom-0"></div>
+
+            <div class="modal-body" id="notFoundModalBody">
+              This activity is not available.
+            </div>
+
+            <div class="modal-footer border-top-0">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Close
               </button>
             </div>
           </div>
