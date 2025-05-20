@@ -1642,29 +1642,35 @@
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content position-relative">
-            <div class="modal-header border-bottom-0">
-              <span
-              class="custom-badge position-absolute top-0 end-0 m-2 d-flex align-items-center"
+          <div class="modal-content">
+            <div
+              class="modal-header border-bottom-0 position-relative"
+              style="min-height: 42px"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                fill="currentColor"
-                class="bi bi-star-fill me-1"
-                viewBox="0 0 16 16"
+              <span
+                class="custom-badge position-absolute top-0 end-0 m-2 d-flex align-items-center"
               >
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.32-.158-.888.283-.95l4.898-.696 2.197-4.327c.197-.388.73-.388.927 0l2.197 4.327 4.898.696c.441.062.612.63.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg>
-              Recommended by activity
-            </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="currentColor"
+                  class="bi bi-star-fill me-1"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.32-.158-.888.283-.95l4.898-.696 2.197-4.327c.197-.388.73-.388.927 0l2.197 4.327 4.898.696c.441.062.612.63.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                  ></path>
+                </svg>
+                Recommended by activity
+              </span>
             </div>
 
             <div class="modal-body" id="notFoundModalBody">
-              This activity is not available.
+              <p>
+                This daycare doesn’t offer that type of activity. Check out our
+                recommended alternatives.
+              </p>
             </div>
 
             <div class="modal-footer border-top-0 pt-0">
