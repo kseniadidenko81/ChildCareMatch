@@ -918,9 +918,11 @@
                             class="card-body rounded p-2 bg-white position-relative"
                           >
                             <!-- Badge -->
-                            <div class="d-flex justify-content-end mb-2">
+                            <div
+                              class="custom-badge d-flex justify-content-end mb-2"
+                            >
                               <span
-                                class="custom-badge bg-light text-primary small px-2 py-1 rounded d-inline-flex align-items-center"
+                                class="bg-light text-primary small px-2 py-1 rounded d-inline-flex align-items-center"
                                 style="font-size: 0.75rem; line-height: 1"
                               >
                                 <i
@@ -1641,7 +1643,8 @@
       >
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content position-relative">
-            <span
+            <div class="modal-header border-bottom-0">
+              <span
               class="custom-badge position-absolute top-0 end-0 m-2 d-flex align-items-center"
             >
               <svg
@@ -1658,8 +1661,7 @@
               </svg>
               Recommended by activity
             </span>
-
-            <div class="modal-header border-bottom-0"></div>
+            </div>
 
             <div class="modal-body" id="notFoundModalBody">
               This activity is not available.
