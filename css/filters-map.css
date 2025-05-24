@@ -447,6 +447,10 @@ small span {
   min-width: 122px;
 }
 
+.per {
+  font-size: 0.9em;
+}
+
 /* TOOLTIP */
 .tooltip.custom-tooltip .tooltip-inner {
   background-color: #fff;
