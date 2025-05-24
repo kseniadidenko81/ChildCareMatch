@@ -16,6 +16,10 @@ small {
   font-size: 0.75em;
 }
 
+small span {
+  font-size: 0.95em;
+}
+
 @media (min-width: 1200px) {
   .left-side {
     max-width: 640px;
