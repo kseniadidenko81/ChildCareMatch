@@ -430,7 +430,11 @@ small span {
 }
 
 .fa-star:before {
-  color: #f5de12;
+  color: #fbbc04;
+}
+
+.fa-star-o:before {
+  color: #dadce0;
 }
 
 .bi-person-walking,
