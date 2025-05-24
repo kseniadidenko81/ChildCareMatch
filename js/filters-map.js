@@ -2,7 +2,7 @@
 function updateContainerHeight() {
   const screenWidth = window.innerWidth;
 
-  if (screenWidth >= 992) {
+  if (screenWidth >= 1280) {
     const headerHeight = 84.9062;
     document.getElementById(
       "content-container"
@@ -139,192 +139,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// FROM/TO
-function addTimeFunctionality(block) {
-  const timeInputs = block.querySelectorAll(".timeInput");
-
-  timeInputs.forEach((timeInput) => {
-    const amPmDisplay = timeInput.nextElementSibling;
-
-    timeInput.addEventListener("input", function () {
-      if (timeInput.value) {
-        let [hours, minutes] = timeInput.value.split(":");
-        let hoursInt = parseInt(hours, 10);
-        let amPm = hoursInt >= 12 ? "PM" : "AM";
-
-        if (hoursInt > 12) {
-          hoursInt -= 12;
-        } else if (hoursInt === 0) {
-          hoursInt = 12;
-        }
-
-        amPmDisplay.value = `${hoursInt}:${minutes} ${amPm}`;
-        amPmDisplay.classList.remove("d-none");
-      } else {
-        amPmDisplay.classList.add("d-none");
-      }
-    });
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const blocks = document.querySelectorAll(".d-flex");
-  blocks.forEach((block) => addTimeFunctionality(block));
-});
-
-// WEEKDAYS
-document.addEventListener("DOMContentLoaded", function () {
-  const weekdays = document.querySelectorAll(".weekday");
-
-  weekdays.forEach((weekday) => {
-    weekday.addEventListener("click", function () {
-      weekday.classList.toggle("selected");
-    });
-  });
-});
-
-// STARS FILL
-document.addEventListener("DOMContentLoaded", function () {
-  const stars = document.querySelectorAll(".star");
-  const ratingValue = document.querySelector(".rating-value");
-  let selectedRating = 0;
-
-  stars.forEach((star) => {
-    star.addEventListener("mouseover", function () {
-      if (selectedRating === 0) {
-        highlightStars(this.getAttribute("data-value"));
-      }
-    });
-
-    star.addEventListener("mouseout", function () {
-      if (selectedRating === 0) {
-        highlightStars(0);
-      }
-    });
-
-    star.addEventListener("click", function () {
-      selectedRating = parseInt(this.getAttribute("data-value"), 10);
-      highlightStars(selectedRating);
-    });
-  });
-
-  function highlightStars(value) {
-    stars.forEach((star) => {
-      let starValue = parseInt(star.getAttribute("data-value"), 10);
-      star.classList.toggle("filled", starValue <= value);
-    });
-    ratingValue.textContent = value > 0 ? value.toFixed(1) : "0.0";
-  }
-});
-
-// FILTERS MAP
-function switchTab(tabName) {
-  const tabContents = document.querySelectorAll(".tab-content");
-  const tabTitles = document.querySelectorAll(".tab-title");
-
-  tabContents.forEach((tab) => tab.classList.remove("active"));
-  tabTitles.forEach((title) => title.classList.remove("active"));
-
-  const activeTabContent = document.getElementById(tabName + "-tab");
-  if (activeTabContent) {
-    activeTabContent.classList.add("active");
-  }
-
-  tabTitles.forEach((title) => {
-    if (
-      title.getAttribute("onclick") &&
-      title.getAttribute("onclick").includes(`'${tabName}'`)
-    ) {
-      title.classList.add("active");
-    }
-  });
-}
-
+// SHOW CHILD CHECKBOX
 function toggleTab() {
-  const childTabs = document.querySelectorAll(".tab-child");
+  const checkboxes = document.querySelectorAll(".child-checkbox");
+  const tabChildren = document.querySelectorAll(".tab-child");
   const noSelectionMessage = document.getElementById("noSelectionMessage");
-  const selectedChildren = document.querySelectorAll(
-    ".children-checkboxes input:checked"
-  );
 
-  childTabs.forEach((tab) => (tab.style.display = "none"));
+  let anyChecked = false;
 
-  if (selectedChildren.length === 0) {
-    noSelectionMessage.style.display = "block";
-  } else {
-    noSelectionMessage.style.display = "none";
+  tabChildren.forEach((tab) => (tab.style.display = "none"));
 
-    selectedChildren.forEach((checkbox) => {
-      const childId = checkbox.id;
-      const tab = document.getElementById(childId + "-tab");
-      if (tab) {
-        tab.style.display = "block";
-      }
-    });
-  }
+  checkboxes.forEach((checkbox) => {
+    const tab = document.getElementById(`${checkbox.id}-tab`);
+    if (checkbox.checked) {
+      anyChecked = true;
+      if (tab) tab.style.display = "block";
+    }
+  });
+
+  noSelectionMessage.style.display = anyChecked ? "none" : "block";
 }
 
-document.querySelectorAll(".children-checkboxes input").forEach((checkbox) => {
-  checkbox.addEventListener("change", toggleTab);
-});
+window.addEventListener("DOMContentLoaded", toggleTab);
 
-// CHANGE BLOCKS PLACES
-
-let isFilterFirst = true;
-let hasSwitched = false;
-
-document.getElementById("saveButton").addEventListener("click", function () {
-  if (window.innerWidth > 767) return;
-
-  const filterTab = document.getElementById("filter-tab");
-  const listTab = document.getElementById("list-tab");
-  const parent = filterTab.parentElement;
-
-  if (!hasSwitched) {
-    filterTab.classList.add("hidden");
-    listTab.classList.add("hidden");
-
-    setTimeout(() => {
-      if (isFilterFirst) {
-        parent.insertBefore(listTab, filterTab);
-      } else {
-        parent.insertBefore(filterTab, listTab);
-      }
-
-      requestAnimationFrame(() => {
-        filterTab.classList.remove("hidden");
-        listTab.classList.remove("hidden");
-      });
-
-      isFilterFirst = !isFilterFirst;
-      hasSwitched = true;
-    }, 400);
-  } else {
-    const listTabAnchor = document.getElementById("listTabAnchor");
-
-    if (listTabAnchor) {
-      listTabAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }
-});
-
-// END CHANGE BLOCKS PLACES
-
-document.getElementById("resetButton").addEventListener("click", function () {
-  const checkboxes = document.querySelectorAll(
-    '.children-checkboxes input[type="checkbox"]'
+// BADGE TOOLTIP
+document.addEventListener("DOMContentLoaded", function () {
+  const tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
   );
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = false;
+  tooltipTriggerList.forEach(function (el) {
+    new bootstrap.Tooltip(el, {
+      customClass: "custom-tooltip",
+      animation: true,
+      delay: { show: 100, hide: 100 },
+    });
   });
-
-  const childTabs = document.querySelectorAll(".tab-child");
-  childTabs.forEach((tab) => {
-    tab.style.display = "none";
-  });
-
-  const noSelectionMessage = document.getElementById("noSelectionMessage");
-  noSelectionMessage.style.display = "block";
 });
 
 // MODAL DROPDOWN
@@ -363,42 +212,6 @@ document.querySelectorAll(".custom-dropdown").forEach((dropdown) => {
   });
 });
 
-// RESET BUTTON
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("resetButton").addEventListener("click", function () {
-    clearFilters();
-  });
-});
-
-function clearFilters() {
-  document.querySelectorAll(".filter-checkbox").forEach((checkbox) => {
-    checkbox.checked = false;
-  });
-
-  document.querySelectorAll(".timeInput").forEach((timeInput) => {
-    timeInput.value = "";
-  });
-
-  document.querySelectorAll(".ampm-display").forEach((ampmInput) => {
-    ampmInput.value = "";
-    ampmInput.classList.add("d-none");
-  });
-
-  document.querySelectorAll(".weekday").forEach((day) => {
-    day.classList.remove("selected");
-  });
-
-  document.querySelectorAll(".star").forEach((star) => {
-    star.classList.remove("fa-star", "filled");
-    star.classList.add("fa-star-o");
-    star.style.color = "";
-  });
-
-  document.querySelector(".rating-value").textContent = "0.0";
-
-  document.querySelector(".rating").setAttribute("data-rating", "0");
-}
-
 // SCROLL TAB
 function updatePadding(container) {
   if (container.scrollHeight > container.clientHeight) {
@@ -436,19 +249,6 @@ document.querySelectorAll(".tab-links a").forEach(function (tab) {
 // SEARCH MODAL RECOMMENDED
 const searchInput = document.getElementById("searchInput");
 const searchIcon = document.getElementById("searchIcon");
-const modalElement = document.getElementById("notFoundModal");
-const modal = new bootstrap.Modal(modalElement);
-const modalBody = document.getElementById("notFoundModalBody");
-
-const notFoundMessages = [
-  "This activity is currently unavailable in the selected daycare. Would you like to see similar options?",
-  "Sorry, we couldn’t find that activity here. How about exploring other exciting clubs?",
-  "This daycare doesn’t offer that type of activity. Check out our recommended alternatives.",
-  "Unfortunately, this program isn’t available. Let us help you find a similar one.",
-  "That option isn’t offered, but we have other interesting choices for your child.",
-];
-
-const fakeUnavailableKeywords = ["karate", "error", "ballet", "boxing"];
 
 function showAllMarkers() {
   if (typeof markers !== "undefined") {
@@ -460,7 +260,7 @@ function showAllMarkers() {
 
 function filterMarkers(query) {
   const lowerQuery = query.trim().toLowerCase();
-  if (!lowerQuery || fakeUnavailableKeywords.includes(lowerQuery)) {
+  if (!lowerQuery) {
     showAllMarkers();
     return;
   }
@@ -471,21 +271,6 @@ function filterMarkers(query) {
       marker.setVisible(match);
     });
   }
-}
-
-function showModalIfKeyword(query) {
-  const lowerQuery = query.trim().toLowerCase();
-  if (!lowerQuery) return false;
-
-  if (fakeUnavailableKeywords.includes(lowerQuery)) {
-    const randomMessage =
-      notFoundMessages[Math.floor(Math.random() * notFoundMessages.length)];
-    modalBody.innerHTML = `<p>${randomMessage}</p>`;
-    modal.show();
-    return true;
-  }
-
-  return false;
 }
 
 searchInput.addEventListener("input", () => {
@@ -504,8 +289,7 @@ searchIcon.addEventListener("click", () => {
     searchInput.dispatchEvent(new Event("input"));
     showAllMarkers();
   } else {
-    const isModalOpened = showModalIfKeyword(query);
-    if (!isModalOpened && query !== "") {
+    if (query !== "") {
       filterMarkers(query);
       searchIcon.classList.remove("bi-search");
       searchIcon.classList.add("bi-x-lg");
@@ -518,19 +302,11 @@ searchInput.addEventListener("keydown", (event) => {
     event.preventDefault();
     const query = searchInput.value.trim();
 
-    const isModalOpened = showModalIfKeyword(query);
-    if (!isModalOpened && query !== "") {
+    if (query !== "") {
       filterMarkers(query);
       searchIcon.classList.remove("bi-search");
       searchIcon.classList.add("bi-x-lg");
     }
-  }
-});
-
-modalElement.addEventListener("hidden.bs.modal", () => {
-  if (searchInput.value.trim() !== "") {
-    searchIcon.classList.remove("bi-search");
-    searchIcon.classList.add("bi-x-lg");
   }
 });
 
