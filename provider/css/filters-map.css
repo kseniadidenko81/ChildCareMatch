@@ -433,6 +433,11 @@ small span {
   color: #f5de12;
 }
 
+.bi-person-walking,
+.bi-car-front {
+  margin-right: 2px;
+}
+
 .card-body {
   background-color: #f5f5f5;
 }
