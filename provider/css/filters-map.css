@@ -427,6 +427,11 @@ small span {
   min-width: 122px;
 }
 
+.name-garden {
+  max-width: 138px;
+  line-height: 19px;
+}
+
 @media screen and (min-width: 1200px) and (max-width: 1320px) {
   .name-garden {
     max-width: 138px;
