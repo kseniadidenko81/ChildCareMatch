@@ -1,1360 +1,477 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="description" content="Create account, Log in" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+.container {
+  max-width: 1800px;
+  margin: auto;
+}
 
-    <title>Child Care Match</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-      4
-    />
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+.small,
+small {
+  font-size: 0.75em;
+}
 
-    <link rel="stylesheet" href="css/registration.css" />
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/filters-map.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="container">
-        <nav
-          class="navbar navbar-expand-lg fixed-top"
-          id="navbar"
-          aria-label=""
-        >
-          <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-              <img class="logo" src="img/logo.png" alt="Logo" />
-            </a>
+small span {
+  font-size: 0.95em;
+}
 
-            <div class="d-flex align-items-center ms-auto">
-              <div class="notifications dropdown me-3">
-                <a
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  class="position-relative"
-                >
-                  <span class="count text-bg-danger">20</span>
-                  <span class="fa fa-bell-o"></span>
-                </a>
+@media (min-width: 1200px) {
+  .left-side {
+    max-width: 640px;
+  }
 
-                <ul
-                  class="dropdown-notif dropdown-menu dropdown-menu-end border-primary p-0 mt-1"
-                >
-                  <li class="border-bottom border-primary position-relative">
-                    <div class="dropdown-item unread">
-                      <a
-                        href="#"
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="dropdown-box-text">
-                          <p
-                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
-                          >
-                            <span>New Spot Available at</span>
-                            <span class="fw-bold">Bright Future Academy</span>
-                          </p>
+  .right-side {
+    flex-grow: 1;
+  }
 
-                          <p
-                            class="text-secondary text-notif text-end small mb-0"
-                          >
-                            Jan 15, 10:12 AM
-                          </p>
-                        </div>
-                        <span class="badge rounded-circle bg-primary ms-2"
-                          >&nbsp;</span
-                        >
-                      </a>
-                    </div>
-                  </li>
-                  <li class="border-bottom border-primary position-relative">
-                    <div class="dropdown-item unread">
-                      <a
-                        href="#"
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="dropdown-box-text">
-                          <p
-                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
-                          >
-                            <span>New Spot Available at</span>
-                            <span class="fw-bold">Super Star Kindergarten</span>
-                          </p>
+  .container-width {
+    max-width: 1800px;
+    margin: auto;
+  }
+}
 
-                          <p
-                            class="text-secondary text-notif text-end small mb-0"
-                          >
-                            Jan 15, 10:12 AM
-                          </p>
-                        </div>
-                        <span class="badge rounded-circle bg-primary ms-2"
-                          >&nbsp;</span
-                        >
-                      </a>
-                    </div>
-                  </li>
-                  <li class="border-bottom border-primary position-relative">
-                    <div class="dropdown-item unread">
-                      <a
-                        href="#"
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="dropdown-box-text">
-                          <p
-                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
-                          >
-                            <span>New Spot Available at</span>
-                            <span class="fw-bold">Sunny Days Kindergarten</span>
-                          </p>
+/* FORMS */
+.form-check-input:checked[type="radio"],
+.form-check-input[type="radio"] {
+  font-size: 14px;
+}
 
-                          <p
-                            class="text-secondary text-notif text-end small mb-0"
-                          >
-                            Jan 15, 10:12 AM
-                          </p>
-                        </div>
-                        <span class="badge rounded-circle bg-primary ms-2"
-                          >&nbsp;</span
-                        >
-                      </a>
-                    </div>
-                  </li>
-                  <li class="border-bottom border-primary position-relative">
-                    <div class="dropdown-item unread">
-                      <a
-                        href="#"
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="dropdown-box-text">
-                          <p
-                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
-                          >
-                            <span>New Spot Available at</span>
-                            <span class="fw-bold">Bright Futures Academy</span>
-                          </p>
+.form-control {
+  font-size: 14px;
+}
 
-                          <p
-                            class="text-secondary text-notif text-end small mb-0"
-                          >
-                            Jan 15, 10:12 AM
-                          </p>
-                        </div>
-                        <span class="badge rounded-circle bg-primary ms-2"
-                          >&nbsp;</span
-                        >
-                      </a>
-                    </div>
-                  </li>
+.form-check-input {
+  border-color: #212259 !important;
+}
+/* END FORM */
 
-                  <li>
-                    <button
-                      class="btn btn-outline-primary w-100 fw-semibold btn-notif"
-                      type="submit"
-                    >
-                      View More
-                    </button>
-                  </li>
-                </ul>
-              </div>
+.container-fluid,
+.row,
+.col-md-5,
+.col-lg-4,
+.flex-grow-1,
+.tabs,
+.tab-content {
+  height: 100%;
+}
 
-              <button
-                class="navbar-toggler collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarsExample07"
-                aria-controls="navbarsExample07"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary btn-header-mobile ms-3"
-              >
-                <i class="bi bi-search me-sm-1"></i>
-                <span>Find Day Care</span>
-              </button>
-            </div>
+.flex-grow-1 {
+  min-height: 0;
+}
+.tab-content {
+  min-height: 0;
+}
 
-            <div class="nav-mobile">
-              <div
-                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
-                id="navbarsExample07"
-              >
-                <ul class="nav nav-pills d-flex justify-content-center">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page"
-                      >For Providers</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">For Parents</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">B2B Solutions</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <button
-              type="button"
-              class="btn btn-primary btn-header-desktop ms-2"
-            >
-              <i class="bi bi-search me-1"></i>
-              <span>Find Day Care</span>
-            </button>
-          </div>
-        </nav>
-      </header>
-      <div id="listTabAnchor"></div>
-      <main class="content">
-        <div
-          class="container-fluid"
-          id="content-container"
-          style="padding: 1rem"
-        >
-          <div class="row h-100 container-width">
-            <div class="col-xl-6 d-flex flex-column h-100 left-side">
-              <div class="flex-grow-1 overflow-hidden d-flex flex-column">
-                <div
-                  class="tabs d-flex flex-column flex-grow-1 overflow-hidden"
-                >
-                  <div
-                    class="tab-contents d-flex flex-column flex-sm-row flex-grow-1 overflow-hidden border py-2 rounded-1"
-                  >
-                    <div
-                      id="filter-tab"
-                      class="tab-content flex-grow-1 overflow-auto pt-0 p-2 rounded-1"
-                    >
-                      <button
-                        id="backButton"
-                        class="btn btn-outline-primary mb-3 w-100"
-                      >
-                        <i class="bi bi-arrow-left-circle me-2"></i>Back to
-                        dashboard
-                      </button>
-                      <div
-                        class="d-flex flex-column align-items-start mb-3 w-100 position-relative"
-                      >
-                        <input
-                          type="text"
-                          id="searchInput"
-                          class="form-control ps-5"
-                          placeholder="Search by Day care..."
-                          data-has-listeners="true"
-                        />
-                        <i
-                          id="searchIcon"
-                          class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"
-                          style="cursor: pointer"
-                        ></i>
-                      </div>
-                      <div class="accordion" id="accordionExample">
-                        <!-- Child Select -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingSeven">
-                            <button
-                              class="accordion-button"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseSeven"
-                              aria-expanded="true"
-                              aria-controls="collapseSeven"
-                            >
-                              Child Select
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseSeven"
-                            class="accordion-collapse collapse show"
-                            aria-labelledby="headingSeven"
-                          >
-                            <div class="accordion-body p-3">
-                              <div
-                                class="position-relative"
-                                id="toggleChildrenListBtn"
-                              >
-                                <div
-                                  class="children-checkboxes"
-                                  id="childrenList"
-                                >
-                                  <label
-                                    class="d-flex align-items-center gap-2"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      id="child1"
-                                      onclick="toggleTab()"
-                                      class="child-checkbox filter-checkbox"
-                                    />
-                                    Alice
-                                  </label>
-                                  <label
-                                    class="d-flex align-items-center gap-2 mt-2"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      id="child2"
-                                      onclick="toggleTab()"
-                                      class="child-checkbox filter-checkbox"
-                                    />
-                                    Bob
-                                  </label>
-                                  <label
-                                    class="d-flex align-items-center gap-2 mt-2"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      id="child3"
-                                      onclick="toggleTab()"
-                                      class="child-checkbox filter-checkbox"
-                                    />
-                                    Charlie
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+@media (min-width: 576px) {
+  #filter-tab {
+    max-width: 230px;
+  }
+}
 
-                        <!-- Availability -->
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingThree">
-                            <button
-                              class="accordion-button"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseThree"
-                              aria-expanded="true"
-                              aria-controls="collapseThree"
-                            >
-                              Availability
-                            </button>
-                          </h2>
-                          <div
-                            id="collapseThree"
-                            class="accordion-collapse collapse show"
-                            aria-labelledby="headingThree"
-                          >
-                            <div class="accordion-body p-3">
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="placeOptions"
-                                  id="allPlaces"
-                                  value="all"
-                                />
-                                <label class="form-check-label" for="allPlaces"
-                                  >All places</label
-                                >
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="placeOptions"
-                                  id="availablePlaces"
-                                  value="available"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="availablePlaces"
-                                  >Available places</label
-                                >
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="placeOptions"
-                                  id="waitingList"
-                                  value="waiting"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="waitingList"
-                                  >Waiting list only</label
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+@media (max-width: 992px) {
+  #content-container {
+    overflow: auto;
+  }
+}
 
-                      <button
-                        id="saveButton"
-                        class="btn btn-outline-primary mt-3 p-2 flex-fill w-100"
-                      >
-                        Show Results
-                      </button>
-                      <div
-                        class="btn-wrapper d-flex gap-2 justify-content-md-between w-100"
-                      >
-                        <i id="resetButton"></i>
-                      </div>
-                    </div>
+@media (min-width: 992px) {
+  #filter-tab {
+    flex: 0 0 230px;
+  }
+}
 
-                    <div
-                      id="list-tab"
-                      class="tab-content flex-grow-1 overflow-auto pt-2 pt-sm-0 p-2 rounded-1"
-                    >
-                      <!--  -->
-                      <div
-                        id="noSelectionMessage"
-                        class="alert alert-info"
-                        style="display: none"
-                      >
-                        Nothing selected
-                      </div>
-                      <!-- Tab List -->
-                      <div
-                        id="child1-tab"
-                        class="tab-child"
-                        style="display: block"
-                      >
-                        <!-- Alice -->
-                        <div class="card mb-3 w-100">
-                          <div class="card-body rounded p-2 position-relative">
-                            <div class="row">
-                              <div class="col-7">
-                                <div class="d-flex align-items-start">
-                                  <img
-                                    src="img/avatar-2.svg"
-                                    alt="Avatar"
-                                    class="card-avatar me-2"
-                                  />
-                                  <div class="d-flex flex-column name-garden">
-                                    <a href="#"
-                                      ><small class="fw-bold"
-                                        >Night Days Day Care</small
-                                      ></a
-                                    >
-                                    <small class="rating" data-rating="5">
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star-o"></span> (4)
-                                    </small>
-                                  </div>
-                                </div>
-                                <div
-                                  class="d-flex align-items-center justify-content-between"
-                                >
-                                  <small class="smaller text-muted pt-2">
-                                    <i class="bi bi-geo-alt-fill me-1"></i>
-                                    7601, 4th Avenue Brooklyn New York 11209
-                                  </small>
-                                </div>
-                                <small class="d-block pt-2">0.6 miles</small
-                                ><small class="d-block pt-2">
-                                  <span class="text-muted">Estimated:</span>
-                                  <span
-                                    ><i class="bi bi-person-walking"></i>13 min,
-                                  </span>
-                                  <span
-                                    ><i class="bi bi-car-front"></i>5 min</span
-                                  > </small
-                                ><small class="d-block text-muted pt-2">
-                                  <span class="text-muted">Maps:</span>
-                                  <a
-                                    href="https://maps.google.com"
-                                    target="_blank"
-                                    >View on Google Maps</a
-                                  >
-                                </small>
-                              </div>
-                              <div class="col-5">
-                                <div
-                                  class="d-flex flex-column ms-2 gap-2 recommended"
-                                  style="align-items: end"
-                                >
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="This daycare is recommended by our team."
-                                  >
-                                    <i
-                                      class="bi bi-star-fill me-1"
-                                      style="font-size: 0.8rem"
-                                    ></i>
-                                    <span>Recommended</span>
-                                  </div>
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="Our AI algorithm recommends this daycare based on your preferences."
-                                  >
-                                    <i class="me-1" style="font-size: 0.8rem"
-                                      >✨</i
-                                    >
-                                    <span>AI recommends</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+@media (max-width: 1279px) {
+  .col-md-5 {
+    order: 2;
+  }
 
-                            <div
-                              class="d-flex flex-column align-items-start mt-3"
-                            >
-                              <div
-                                class="d-flex flex-wrap gap-2 align-items-end justify-content-between w-100"
-                              >
-                                <div class="d-flex flex-column">
-                                  <small class="smaller fw-semibold pb-1"
-                                    >Pre-K Free(4y/o-5y/o)</small
-                                  >
-                                  <span class="small fw-bold"
-                                    >$100
-                                    <span class="small text-muted fw-normal per"
-                                      >per hour</span
-                                    ></span
-                                  >
-                                  <a
-                                    href="#"
-                                    class="subtotal-btn small fw-semibold pt-2"
-                                    data-message="Functionality is not available."
-                                    >Subtotal</a
-                                  >
-                                </div>
-                                <button
-                                  class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
-                                  type="button"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#modalWaiting"
-                                  data-program="Pre-K Free(4y/o-5y/o)"
-                                  data-price="$100/per hour"
-                                  data-card-id="2"
-                                >
-                                  Waiting List<i
-                                    class="bi bi-arrow-right ms-2"
-                                  ></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--  -->
-                        <div class="card mb-3 w-100">
-                          <div class="card-body rounded p-2 position-relative">
-                            <div class="row">
-                              <div class="col-7">
-                                <div class="d-flex align-items-start">
-                                  <img
-                                    src="img/avatar-2.svg"
-                                    alt="Avatar"
-                                    class="card-avatar me-2"
-                                  />
-                                  <div class="d-flex flex-column name-garden">
-                                    <a href="#"
-                                      ><small class="fw-bold"
-                                        >Sunny Days Kindergarten</small
-                                      ></a
-                                    >
-                                    <small class="rating" data-rating="5">
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star-o"></span> (4)
-                                    </small>
-                                  </div>
-                                </div>
-                                <div
-                                  class="d-flex align-items-center justify-content-between"
-                                >
-                                  <small class="smaller text-muted pt-2">
-                                    <i class="bi bi-geo-alt-fill me-1"></i>
-                                    7601, 4th Avenue Brooklyn New York 11209
-                                  </small>
-                                </div>
-                                <small class="d-block pt-2">0.6 miles</small
-                                ><small class="d-block pt-2">
-                                  <span class="text-muted">Estimated:</span>
-                                  <span
-                                    ><i class="bi bi-person-walking"></i>13 min,
-                                  </span>
-                                  <span
-                                    ><i class="bi bi-car-front"></i>5 min</span
-                                  > </small
-                                ><small class="d-block text-muted pt-2">
-                                  <span class="text-muted">Maps:</span>
-                                  <a
-                                    href="https://maps.google.com"
-                                    target="_blank"
-                                    >View on Google Maps</a
-                                  >
-                                </small>
-                              </div>
-                              <div class="col-5">
-                                <div
-                                  class="d-flex flex-column ms-2 gap-2 recommended"
-                                  style="align-items: end"
-                                >
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="Our AI algorithm recommends this daycare based on your preferences."
-                                    style="max-width: 122px; min-width: 122px"
-                                  >
-                                    <i class="me-1" style="font-size: 0.8rem"
-                                      >✨</i
-                                    >
-                                    <span>AI recommends</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+  #map {
+    height: 500px;
+  }
+}
 
-                            <div
-                              class="d-flex flex-column align-items-start mt-3"
-                            >
-                              <div
-                                class="d-flex flex-wrap gap-2 align-items-end justify-content-between w-100"
-                              >
-                                <div class="d-flex flex-column">
-                                  <small class="smaller fw-semibold pb-1"
-                                    >Preschooler (3y/o-4y/o)</small
-                                  >
-                                  <span class="small fw-bold"
-                                    >$500
-                                    <span class="small text-muted fw-normal per"
-                                      >per week</span
-                                    ></span
-                                  >
-                                  <a
-                                    href="#"
-                                    class="subtotal-btn small fw-semibold pt-2"
-                                    data-message="Functionality is not available."
-                                    >Subtotal</a
-                                  >
-                                </div>
-                                <button
-                                  class="btn btn-success btn-modal-sent text-white px-2 rounded-0"
-                                  type="button"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#modalTabSend"
-                                  data-program="Toddlers(18mnth-3y/o)"
-                                  data-price="$100/per day"
-                                >
-                                  available<i
-                                    class="bi bi-arrow-right ms-2"
-                                  ></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--  -->
-                        <div class="card mb-3 w-100">
-                          <div class="card-body rounded p-2 position-relative">
-                            <div class="row">
-                              <div class="col-7">
-                                <div class="d-flex align-items-start">
-                                  <img
-                                    src="img/avatar-2.svg"
-                                    alt="Avatar"
-                                    class="card-avatar me-2"
-                                  />
-                                  <div class="d-flex flex-column name-garden">
-                                    <a href="#"
-                                      ><small class="fw-bold"
-                                        >Night Days Day Care</small
-                                      ></a
-                                    >
-                                    <small class="rating" data-rating="5">
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star-o"></span> (4)
-                                    </small>
-                                  </div>
-                                </div>
-                                <div
-                                  class="d-flex align-items-center justify-content-between"
-                                >
-                                  <small class="smaller text-muted pt-2">
-                                    <i class="bi bi-geo-alt-fill me-1"></i>
-                                    7601, 4th Avenue Brooklyn New York 11209
-                                  </small>
-                                </div>
-                                <small class="d-block pt-2">0.6 miles</small
-                                ><small class="d-block pt-2">
-                                  <span class="text-muted">Estimated:</span>
-                                  <span
-                                    ><i class="bi bi-person-walking"></i>13 min,
-                                  </span>
-                                  <span
-                                    ><i class="bi bi-car-front"></i>5 min</span
-                                  > </small
-                                ><small class="d-block text-muted pt-2">
-                                  <span class="text-muted">Maps:</span>
-                                  <a
-                                    href="https://maps.google.com"
-                                    target="_blank"
-                                    >View on Google Maps</a
-                                  >
-                                </small>
-                              </div>
-                              <div class="col-5">
-                                <div
-                                  class="d-flex flex-column ms-2 gap-2 recommended"
-                                  style="align-items: end"
-                                >
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="This daycare is recommended by our team."
-                                  >
-                                    <i
-                                      class="bi bi-star-fill me-1"
-                                      style="font-size: 0.8rem"
-                                    ></i>
-                                    <span>Recommended</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+.btn:hover,
+.btn:focus,
+.btn:active {
+  color: rgb(103, 80, 249, 0.9) !important;
+  background-color: transparent !important;
+  border-color: rgb(103, 80, 249, 0.9) !important;
+}
 
-                            <div
-                              class="d-flex flex-column align-items-start mt-3"
-                            >
-                              <div class="d-flex align-items-center gap-2">
-                                <i class="fa fa-cutlery"></i>
-                                <i class="bi bi-bus-front"></i>
-                                <i class="fa fa-bed me-2"></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--  -->
-                        <div class="card w-100">
-                          <div class="card-body rounded p-2 position-relative">
-                            <div class="row">
-                              <div class="col-12">
-                                <div class="d-flex align-items-start">
-                                  <img
-                                    src="img/avatar-2.svg"
-                                    alt="Avatar"
-                                    class="card-avatar me-2"
-                                  />
-                                  <div class="d-flex flex-column name-garden">
-                                    <a href="#"
-                                      ><small class="fw-bold"
-                                        >Night Days Day Care</small
-                                      ></a
-                                    >
-                                    <small class="rating" data-rating="5">
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star-o"></span> (4)
-                                    </small>
-                                  </div>
-                                </div>
-                                <div
-                                  class="d-flex align-items-center justify-content-between"
-                                >
-                                  <small class="smaller text-muted pt-2">
-                                    <i class="bi bi-geo-alt-fill me-1"></i>
-                                    7601, 4th Avenue Brooklyn New York 11209
-                                  </small>
-                                </div>
-                                <small class="d-block pt-2">0.6 miles</small
-                                ><small class="d-block pt-2">
-                                  <span class="text-muted">Estimated:</span>
-                                  <span
-                                    ><i class="bi bi-person-walking"></i>13 min,
-                                  </span>
-                                  <span
-                                    ><i class="bi bi-car-front"></i>5 min</span
-                                  > </small
-                                ><small class="d-block text-muted pt-2">
-                                  <span class="text-muted">Maps:</span>
-                                  <a
-                                    href="https://maps.google.com"
-                                    target="_blank"
-                                    >View on Google Maps</a
-                                  >
-                                </small>
-                              </div>
-                            </div>
+/* MAPS */
 
-                            <div
-                              class="d-flex flex-column align-items-start mt-3"
-                            >
-                              <div class="d-flex align-items-center gap-2">
-                                <i class="fa fa-cutlery"></i>
-                                <i class="bi bi-bus-front"></i>
-                                <i class="fa fa-bed me-2"></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        id="child2-tab"
-                        class="tab-child"
-                        style="display: none"
-                      >
-                        <!-- Bob -->
-                        <div class="card mb-3 w-100">
-                          <div class="card-body rounded p-2 position-relative">
-                            <div class="row">
-                              <div class="col-7">
-                                <div class="d-flex align-items-start">
-                                  <img
-                                    src="img/avatar-2.svg"
-                                    alt="Avatar"
-                                    class="card-avatar me-2"
-                                  />
-                                  <div class="d-flex flex-column name-garden">
-                                    <a href="#"
-                                      ><small class="fw-bold"
-                                        >Sunny Days Kindergarten</small
-                                      ></a
-                                    >
-                                    <small class="rating" data-rating="5">
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star-o"></span> (4)
-                                    </small>
-                                  </div>
-                                </div>
-                                <div
-                                  class="d-flex align-items-center justify-content-between"
-                                >
-                                  <small class="smaller text-muted pt-2">
-                                    <i class="bi bi-geo-alt-fill me-1"></i>
-                                    7601, 4th Avenue Brooklyn New York 11209
-                                  </small>
-                                </div>
-                                <small class="d-block pt-2">0.6 miles</small
-                                ><small class="d-block pt-2">
-                                  <span class="text-muted">Estimated:</span>
-                                  <span
-                                    ><i class="bi bi-person-walking"></i>13 min,
-                                  </span>
-                                  <span
-                                    ><i class="bi bi-car-front"></i>5 min</span
-                                  > </small
-                                ><small class="d-block text-muted pt-2">
-                                  <span class="text-muted">Maps:</span>
-                                  <a
-                                    href="https://maps.google.com"
-                                    target="_blank"
-                                    >View on Google Maps</a
-                                  >
-                                </small>
-                              </div>
-                              <div class="col-5">
-                                <div
-                                  class="d-flex flex-column ms-2 gap-2 recommended"
-                                  style="align-items: end"
-                                >
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="Our AI algorithm recommends this daycare based on your preferences."
-                                    style="max-width: 122px; min-width: 122px"
-                                  >
-                                    <i class="me-1" style="font-size: 0.8rem"
-                                      >✨</i
-                                    >
-                                    <span>AI recommends</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+.gm-style-iw-d div {
+  margin: 20px 8px 8px;
+}
 
-                            <div
-                              class="d-flex flex-column align-items-start mt-3"
-                            >
-                              <div
-                                class="d-flex flex-wrap gap-2 align-items-end justify-content-between w-100"
-                              >
-                                <div class="d-flex flex-column">
-                                  <small class="smaller fw-semibold pb-1"
-                                    >Preschooler (3y/o-4y/o)</small
-                                  >
-                                  <span class="small fw-bold"
-                                    >$500
-                                    <span class="small text-muted fw-normal per"
-                                      >per week</span
-                                    ></span
-                                  >
-                                  <a
-                                    href="#"
-                                    class="subtotal-btn small fw-semibold pt-2"
-                                    data-message="Functionality is not available."
-                                    >Subtotal</a
-                                  >
-                                </div>
-                                <button
-                                  class="btn btn-success btn-modal-sent text-white px-2 rounded-0"
-                                  type="button"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#modalTabSend"
-                                  data-program="Toddlers(18mnth-3y/o)"
-                                  data-price="$100/per day"
-                                >
-                                  available<i
-                                    class="bi bi-arrow-right ms-2"
-                                  ></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--  -->
-                      <div
-                        id="child3-tab"
-                        class="tab-child"
-                        style="display: none"
-                      >
-                        <!-- Charlie -->
-                        <div class="card mb-3 w-100">
-                          <div class="card-body rounded p-2 position-relative">
-                            <div class="row">
-                              <div class="col-7">
-                                <div class="d-flex align-items-start">
-                                  <img
-                                    src="img/avatar-2.svg"
-                                    alt="Avatar"
-                                    class="card-avatar me-2"
-                                  />
-                                  <div class="d-flex flex-column name-garden">
-                                    <a href="#"
-                                      ><small class="fw-bold"
-                                        >Night Days Day Care</small
-                                      ></a
-                                    >
-                                    <small class="rating" data-rating="5">
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star"></span>
-                                      <span class="fa fa-star-o"></span> (4)
-                                    </small>
-                                  </div>
-                                </div>
-                                <div
-                                  class="d-flex align-items-center justify-content-between"
-                                >
-                                  <small class="smaller text-muted pt-2">
-                                    <i class="bi bi-geo-alt-fill me-1"></i>
-                                    7601, 4th Avenue Brooklyn New York 11209
-                                  </small>
-                                </div>
-                                <small class="d-block pt-2">0.6 miles</small
-                                ><small class="d-block pt-2">
-                                  <span class="text-muted">Estimated:</span>
-                                  <span
-                                    ><i class="bi bi-person-walking"></i>13 min,
-                                  </span>
-                                  <span
-                                    ><i class="bi bi-car-front"></i>5 min</span
-                                  > </small
-                                ><small class="d-block text-muted pt-2">
-                                  <span class="text-muted">Maps:</span>
-                                  <a
-                                    href="https://maps.google.com"
-                                    target="_blank"
-                                    >View on Google Maps</a
-                                  >
-                                </small>
-                              </div>
-                              <div class="col-5">
-                                <div
-                                  class="d-flex flex-column ms-2 gap-2 recommended"
-                                  style="align-items: end"
-                                >
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="This daycare is recommended by our team."
-                                  >
-                                    <i
-                                      class="bi bi-star-fill me-1"
-                                      style="font-size: 0.8rem"
-                                    ></i>
-                                    <span>Recommended</span>
-                                  </div>
-                                  <div
-                                    class="custom-badge d-inline-flex justify-content-center align-items-center"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-original-title="Our AI algorithm recommends this daycare based on your preferences."
-                                  >
-                                    <i class="me-1" style="font-size: 0.8rem"
-                                      >✨</i
-                                    >
-                                    <span>AI recommends</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+.gm-style-iw-chr {
+  position: absolute;
+  right: -16px;
+  top: -8px;
+}
 
-                            <div
-                              class="d-flex flex-column align-items-start mt-3"
-                            >
-                              <div
-                                class="d-flex flex-wrap gap-2 align-items-end justify-content-between w-100"
-                              >
-                                <div class="d-flex flex-column">
-                                  <small class="smaller fw-semibold pb-1"
-                                    >Pre-K Free(4y/o-5y/o)</small
-                                  >
-                                  <span class="small fw-bold"
-                                    >$100
-                                    <span class="small text-muted fw-normal per"
-                                      >per hour</span
-                                    ></span
-                                  >
-                                  <a
-                                    href="#"
-                                    class="subtotal-btn small fw-semibold pt-2"
-                                    data-message="Functionality is not available."
-                                    >Subtotal</a
-                                  >
-                                </div>
-                                <button
-                                  class="btn btn-info btn-modal-waiting text-white px-2 rounded-0"
-                                  type="button"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#modalWaiting"
-                                  data-program="Pre-K Free(4y/o-5y/o)"
-                                  data-price="$100/per hour"
-                                  data-card-id="2"
-                                >
-                                  Waiting List<i
-                                    class="bi bi-arrow-right ms-2"
-                                  ></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-xl-6 d-flex flex-column h-100 pt-3 p-lg-0 right-side"
-            >
-              <div id="map" class="flex-grow-1 w-100 rounded-1"></div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <!-- toastHeaderBtn -->
-      <div class="toast-container position-fixed top-0 end-0 p-3">
-        <div
-          id="toastMessageHeader"
-          class="toast position-relative"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-body d-flex m-2">
-            <i class="bi bi-info-circle text-success pe-2"></i>
-            <span>Functionality is not available</span>
-          </div>
-        </div>
-      </div>
-      <!-- Toast for showing "Application Sent" message -->
-      <div class="toast-container position-fixed top-0 end-0 p-3">
-        <div
-          id="toastMessage"
-          class="toast position-relative"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-body d-flex m-2">
-            <i class="bi bi-check-circle text-success pe-2"> </i>
-            <span id="toastMessageText"
-              >You have successfully submitted an application to join the
-              Waiting List.</span
-            >
-          </div>
-        </div>
-      </div>
-      <!-- Modal Send -->
-      <div
-        class="modal-waiting modal fade"
-        id="modalTabSend"
-        tabindex="-1"
-        aria-labelledby="modalTabSendLabel"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header justify-content-center border-bottom-0">
-              <h5 class="modal-title text-center">Sent Application</h5>
-              <button
-                type="button"
-                class="btn-close m-0 position-absolute"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body pt-0">
-              <div class="bg-secondary p-3 rounded mb-4 mt-1">
-                <h6 class="fw-semibold pb-2" id="modalTabSendLabel">
-                  Selected program
-                </h6>
+.gm-ui-hover-effect span {
+  width: 17px !important;
+  height: 17px !important;
+}
 
-                <div
-                  class="d-grid d-sm-flex flex-wrap gap-3 justify-content-between"
-                >
-                  <div class="d-flex flex-column">
-                    <small class="text-muted pb-1">Program</small>
-                    <small class="fw-semibold" id="modalProgramSend">---</small>
-                  </div>
-                  <div
-                    class="d-flex align-items-end justify-content-start justify-content-sm-center"
-                  >
-                    <button class="btn btn-success btn-modal-sent rounded-0">
-                      6 openings
-                    </button>
-                  </div>
-                  <div class="d-flex flex-column">
-                    <small class="text-muted pb-1">Price</small>
-                    <small class="fw-semibold" id="modalPriceSend">---</small>
-                  </div>
-                </div>
-              </div>
-              <div class="form-container">
-                <h6 class="fw-semibold pb-2">Child details</h6>
-                <form id="sendReviewForm">
-                  <div class="d-flex flex-wrap gap-3 mb-3">
-                    <div class="flex-fill position-relative">
-                      <label for="dropdownSelect1" class="form-label small"
-                        >Child Name 1</label
-                      >
-                      <div class="custom-dropdown" id="customDropdown1">
-                        ♂ Jordan
-                        <span class="dropdown-arrow" id="dropdownArrow1"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptions1">
-                        <div class="dropdown-option" data-value="male">
-                          ♂ Jordan
-                        </div>
-                        <div class="dropdown-option" data-value="female">
-                          ♀ Angelica
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex-fill">
-                      <label for="datePicker" class="form-label small"
-                        >Date of Birth</label
-                      >
-                      <input
-                        type="date"
-                        class="form-control datePicker"
-                        required=""
-                        data-has-listeners="true"
-                      />
-                    </div>
-                  </div>
+/* SEARCH */
+.hidden {
+  display: none;
+}
+/* TABs */
+.tab-titles {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-                  <div>
-                    <label for="reviewText" class="form-label small"
-                      >Comment</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="reviewText"
-                      rows="3"
-                      placeholder="Enter your comment here..."
-                      required=""
-                      data-has-listeners="true"
-                    ></textarea>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="modal-footer border-top-0">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-dismiss="modal"
-                id="sendApplicationBtnSent"
-                data-message="Application sent successfully."
-              >
-                Send Application
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+.tab-title {
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #6750f9;
+  color: #6750f9;
+}
 
-      <!-- Modal Waiting List -->
-      <div
-        class="modal modal-waiting fade"
-        id="modalWaiting"
-        tabindex="-1"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header justify-content-center border-bottom-0">
-              <h5 class="modal-title text-center">Join a waiting list</h5>
-              <button
-                type="button"
-                class="btn-close m-0 position-absolute"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
+.tab-title.active {
+  background-color: #6750f9;
+  color: #fff;
+}
 
-            <div class="modal-body pt-0">
-              <div class="bg-secondary p-3 rounded mb-4 mt-1">
-                <h6 class="fw-semibold pb-2">Selected program</h6>
+.tab-content {
+  padding: 20px 0;
+}
 
-                <div
-                  class="d-grid d-sm-flex flex-wrap gap-3 justify-content-between"
-                >
-                  <div class="d-flex flex-column">
-                    <small class="text-muted pb-1">Program</small>
-                    <small class="fw-semibold" id="modalProgram">---</small>
-                  </div>
-                  <div
-                    class="d-flex align-items-end justify-content-start justify-content-sm-center"
-                  >
-                    <button class="btn btn-success rounded-0">
-                      Waiting List
-                    </button>
-                  </div>
-                  <div class="d-flex flex-column">
-                    <small class="text-muted pb-1">Price</small>
-                    <small class="fw-semibold" id="modalPrice">---</small>
-                  </div>
-                </div>
-              </div>
+.accordion-button {
+  border: none;
+  width: 100%;
+  text-align: left;
+}
 
-              <div class="form-container">
-                <h6 class="fw-semibold pb-2">Child details</h6>
-                <form id="waitingReviewForm">
-                  <div class="d-flex flex-wrap gap-3 mb-3">
-                    <div class="flex-fill position-relative">
-                      <label for="dropdownSelect1" class="form-label small"
-                        >Child Name 1</label
-                      >
-                      <div class="custom-dropdown" id="customDropdown3">
-                        ♂ Jordan
-                        <span class="dropdown-arrow" id="dropdownArrow3"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptions3">
-                        <div class="dropdown-option" data-value="male">
-                          ♂ Jordan
-                        </div>
-                        <div class="dropdown-option" data-value="female">
-                          ♀ Angelica
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex-fill">
-                      <label for="datePicker" class="form-label small"
-                        >Date of Birth</label
-                      >
-                      <input
-                        type="date"
-                        class="form-control datePicker"
-                        required
-                      />
-                    </div>
-                  </div>
+.accordion-content {
+  display: none;
+}
 
-                  <div>
-                    <label for="reviewText2" class="form-label small"
-                      >Comment</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="reviewText2"
-                      rows="3"
-                      placeholder="Enter your comment here..."
-                      required
-                    ></textarea>
-                  </div>
-                </form>
-              </div>
-            </div>
+.tab-child .card {
+  border-color: #817c7c;
+}
 
-            <div class="modal-footer border-top-0 pt-1">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-dismiss="modal"
-                id="sendApplicationBtnWaiting"
-                data-message="You have successfully submitted an application to join the Waiting List."
-              >
-                Join a waiting list
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- SCRIPT -->
-    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/custom.js"></script>
-    <script src="js/filters-map.js"></script>
-    <!-- SCRIPT -->
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <!-- Default DatePicker -->
-    <script>
-      const datePickers = document.querySelectorAll(".datePicker");
-      datePicker;
-      const today = new Date().toISOString().split("T")[0];
+.tab-child p {
+  font-size: 16px;
+  font-weight: bold;
+}
 
-      datePickers.forEach((datePicker) => {
-        datePicker.value = today;
-      });
-    </script>
-  </body>
-</html>
+.scrollable-content {
+  overflow-y: auto;
+  padding-right: 0;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 1280px) {
+  .scrollable-content {
+    max-height: 380px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .scrollable-content {
+    max-height: 600px;
+  }
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background-color: #e6dfdf;
+  border-radius: 2px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a2a2;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 2px;
+}
+
+.children-checkboxes label {
+  cursor: pointer;
+}
+
+.btn-modal-waiting,
+.btn-modal-sent {
+  font-size: 14px;
+  min-width: auto;
+  margin-left: auto;
+}
+
+.card-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+/* Modal Dropdown */
+.custom-dropdown {
+  background: #fff;
+  padding: 0.375rem 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgb(103, 80, 249, 0.2);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 150px;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid rgb(103, 80, 249, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5px;
+  z-index: 1000;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.dropdown-options.show {
+  display: block;
+}
+
+.dropdown-option {
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+}
+
+.dropdown-option:hover {
+  background: rgb(243 243 243);
+}
+
+.dropdown-arrow i {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow i.rotate:before {
+  transform: rotate(180deg);
+}
+
+/* Modal Waiting */
+.modal-waiting .modal-dialog .btn-close {
+  right: 8px;
+  top: 8px;
+}
+
+.modal-waiting .bg-secondary {
+  background-color: rgb(243 243 243) !important;
+}
+
+.modal-waiting .btn-success {
+  min-width: 126px;
+  max-width: 126px;
+  background-color: #0dcaf0 !important;
+  border-color: #0dcaf0 !important;
+  color: #fff !important;
+}
+
+.modal-waiting .btn-success:hover,
+.modal-waiting .btn-success:focus,
+.modal-waiting .btn-success:active {
+  background-color: #31d2f2 !important;
+  border-color: #31d2f2 !important;
+}
+
+.modal-waiting .badge {
+  font-size: 14px;
+  padding: 12px;
+}
+
+.modal-waiting .badge i {
+  font-size: 15px;
+}
+
+.section-waiting .unread {
+  background-color: rgb(243 243 243);
+}
+
+.modal-waiting .flex-fill {
+  min-width: 215px;
+}
+
+/* Toast */
+#toastMessage {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#toastMessage.show {
+  opacity: 1;
+}
+
+.btn-modal-sent .btn-close {
+  font-size: 12px;
+  top: 14px;
+  right: 14px;
+}
+
+.btn-modal-sent,
+:not(.btn-check) + .btn-modal-sent:active {
+  color: #fff !important;
+  background-color: rgb(11 203 114) !important;
+  border-color: rgb(11 203 114) !important;
+}
+.btn-modal-sent:active,
+.btn-modal-sent:hover,
+.btn-modal-sent:focus {
+  color: #fff !important;
+  background-color: rgba(11, 203, 114, 0.8) !important;
+  border-color: rgba(11, 203, 114, 0.8) !important;
+}
+
+.btn-modal-waiting .btn-close {
+  font-size: 12px;
+  top: 14px;
+  right: 14px;
+}
+
+.btn-modal-waiting,
+:not(.btn-check) + .btn-modal-waiting:active {
+  color: #fff !important;
+  background-color: #0dcaf0 !important;
+  border-color: #0dcaf0 !important;
+}
+.btn-modal-waiting:active,
+.btn-modal-waiting:hover,
+.btn-modal-waiting:focus {
+  color: #fff !important;
+  background-color: #31d2f2 !important;
+  border-color: #31d2f2 !important;
+}
+
+/* Icon heart */
+.bi-heart {
+  color: #0d6efd;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.bi-heart.active {
+  color: #e74c3c;
+}
+
+/* Checkbox */
+.filter-checkbox:checked + span {
+  color: #6750f9;
+}
+
+.filter-checkbox:checked {
+  accent-color: #6750f9;
+}
+
+/* ACCORDION */
+.accordion-button:not(.collapsed) {
+  background: rgb(103, 80, 249, 0.8);
+  border-color: rgb(103, 80, 249, 0.8);
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+.accordion-button {
+  background: #f8f9f9;
+}
+
+.star {
+  font-size: 16px !important;
+  cursor: pointer;
+  color: gray;
+  transition: color 0.2s;
+}
+
+.star.filled {
+  color: #ffbf00;
+}
+
+/* BTN */
+.btn-wrapper .btn {
+  min-width: auto;
+  font-size: 15px;
+}
+
+/* Recommended badge */
+.custom-badge {
+  background-color: #f0f4ff;
+  color: #0d6efd;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.125rem 0.4rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  max-width: 122px;
+  min-width: 122px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1320px) {
+  .name-garden {
+    max-width: 138px;
+  }
+}
+
+.fa-star:before {
+  color: #fbbc04;
+}
+
+.fa-star-o:before {
+  color: #dadce0;
+}
+
+.bi-person-walking,
+.bi-car-front {
+  margin-right: 2px;
+}
+
+.card-body {
+  background-color: #f5f5f5;
+}
+
+.btn-success,
+.btn-info {
+  min-width: 122px;
+}
+
+.per {
+  font-size: 0.9em;
+}
+
+/* TOOLTIP */
+.tooltip.custom-tooltip .tooltip-inner {
+  background-color: #fff;
+  border: 1px solid #0d6efd;
+  color: #212529;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.tooltip.custom-tooltip .tooltip-arrow::before {
+  border-top-color: #0d6efd;
+}
+
+.tooltip.custom-tooltip.show {
+  opacity: 1 !important;
+  transform: translateY(-5px);
+}
