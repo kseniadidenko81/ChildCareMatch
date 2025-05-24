@@ -415,12 +415,27 @@ small {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  max-width: 122px;
+  min-width: 122px;
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1320px) {
   .name-garden {
     max-width: 138px;
   }
+}
+
+.fa-star:before {
+  color: #f5de12;
+}
+
+.card-body {
+  background-color: #f5f5f5;
+}
+
+.btn-success,
+.btn-info {
+  min-width: 122px;
 }
 
 /* TOOLTIP */
