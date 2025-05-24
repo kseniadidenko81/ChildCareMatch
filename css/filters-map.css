@@ -20,6 +20,10 @@ small span {
   font-size: 0.95em;
 }
 
+#searchInput.ps-5 {
+  padding-left: 2.5rem !important;
+}
+
 @media (min-width: 1200px) {
   .left-side {
     max-width: 640px;
