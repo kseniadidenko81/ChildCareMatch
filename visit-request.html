@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Calendar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      4
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.4/build/jquery.datetimepicker.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/visit-request.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="container">
+        <nav
+          class="navbar navbar-expand-lg fixed-top"
+          id="navbar"
+          aria-label=""
+        >
+          <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img class="logo" src="img/logo.png" alt="Logo" />
+            </a>
+
+            <div class="d-flex align-items-center ms-auto">
+              <div class="notifications dropdown me-3">
+                <a
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  class="position-relative"
+                >
+                  <span class="count text-bg-danger">20</span>
+                  <span class="fa fa-bell-o"></span>
+                </a>
+
+                <ul
+                  class="dropdown-notif dropdown-menu dropdown-menu-end border-primary p-0 mt-2"
+                >
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="dropdown-box-text">
+                          <p
+                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
+                          >
+                            <span>New Spot Available at</span>
+                            <span class="fw-bold">Bright Future Academy</span>
+                          </p>
+
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="dropdown-box-text">
+                          <p
+                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
+                          >
+                            <span>New Spot Available at</span>
+                            <span class="fw-bold">Super Star Kindergarten</span>
+                          </p>
+
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="dropdown-box-text">
+                          <p
+                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
+                          >
+                            <span>New Spot Available at</span>
+                            <span class="fw-bold">Sunny Days Kindergarten</span>
+                          </p>
+
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="border-bottom border-primary position-relative">
+                    <div class="dropdown-item unread">
+                      <a
+                        href="#"
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div class="dropdown-box-text">
+                          <p
+                            class="text-secondary text-notif mb-1 pe-2 d-flex flex-wrap"
+                          >
+                            <span>New Spot Available at</span>
+                            <span class="fw-bold">Bright Futures Academy</span>
+                          </p>
+
+                          <p
+                            class="text-secondary text-notif text-end small mb-0"
+                          >
+                            Jan 15, 10:12 AM
+                          </p>
+                        </div>
+                        <span class="badge rounded-circle bg-primary ms-2"
+                          >&nbsp;</span
+                        >
+                      </a>
+                    </div>
+                  </li>
+
+                  <li>
+                    <button
+                      class="btn btn-outline-primary w-100 fw-semibold btn-notif"
+                      type="submit"
+                    >
+                      View More
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                class="navbar-toggler collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample07"
+                aria-controls="navbarsExample07"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-header-mobile ms-3"
+              >
+                <i class="bi bi-search me-sm-1"></i>
+                <span>Find Day Care</span>
+              </button>
+            </div>
+
+            <div class="nav-mobile">
+              <div
+                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
+                id="navbarsExample07"
+              >
+                <ul class="nav nav-pills d-flex justify-content-center">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" aria-current="page"
+                      >For Providers</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">For Parents</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">B2B Solutions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary btn-header-desktop ms-2"
+            >
+              <i class="bi bi-search me-1"></i>
+              <span>Find Day Care</span>
+            </button>
+          </div>
+        </nav>
+      </header>
+      <main class="content">
+        <div class="container col-xxl-10 m-auto py-4 py-md-5 my-md-4">
+          <h2 class="h5 mb-3">Visit request</h2>
+          <form id="newReviewForm1">
+            <div class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3">
+              <div class="position-relative col-md-6">
+                <label for="dropdownSelect1" class="form-label small text-muted"
+                  >Filter by Status</label
+                >
+                <div class="custom-dropdown" id="customDropdownReguest">
+                  All
+                  <span class="dropdown-arrow"
+                    ><i class="bi bi-chevron-down"></i
+                  ></span>
+                </div>
+                <div class="dropdown-options" id="dropdownOptionsReguest">
+                  <div class="dropdown-option" data-value="today">Today</div>
+                  <div class="dropdown-option" data-value="tomorrow">
+                    Tomorrow
+                  </div>
+                  <div class="dropdown-option" data-value="this-week">
+                    On this week
+                  </div>
+                  <div class="dropdown-option" data-value="later">Later</div>
+                  <div class="dropdown-option" data-value="all">All</div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="d-flex flex-column gap-3 mt-4">
+            <div
+              class="col-12 notification-box m-0 rounded-2 position-relative"
+            >
+              <div
+                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+              >
+                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
+                  <span class="text-muted"
+                    ><i class="bi bi-calendar-check me-2"></i
+                    ><span class="notification-date">June 21, 2025</span></span
+                  >
+                  <span class="text-muted"
+                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
+                  >
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
+                  <div class="d-flex flex-column flex-md-row gap-4">
+                    <div
+                      class="d-flex align-items-start flex-column flex-md-row"
+                    >
+                      <div class="avatar-wrapper mb-2 mb-md-0">
+                        <input
+                          type="file"
+                          class="avatar-upload"
+                          accept="image/*"
+                          style="display: none"
+                        />
+                        <img
+                          src="img/avatar-people.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2 avatar-preview"
+                          style="cursor: pointer"
+                        />
+                      </div>
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Good Luck</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">School-Age</span>
+                          (6y/o-12y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $100/per
+                          day</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
+                    >
+                      <span class="notification-title d-block fw-semibold">
+                        Angela</span
+                      >
+                      <span
+                        class="notification-title d-block small age-display"
+                        data-birthdate="2015-04-24"
+                        >♀</span
+                      >
+                      <span class="notification-title d-block small age-display"
+                        >(788) 882-2344</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
+                    <form class="comment">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Type your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
+                >
+                  <div class="d-flex justify-content-end flex-wrap gap-3">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-check-circle me-2"></i>Accept</button
+                    ><button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-x-circle me-2"></i> Reject
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-12 notification-box m-0 rounded-2 position-relative"
+              style="display: block"
+            >
+              <div
+                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+              >
+                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
+                  <span class="text-muted"
+                    ><i class="bi bi-calendar-check me-2"></i
+                    ><span class="notification-date">June 22, 2025</span></span
+                  >
+                  <span class="text-muted"
+                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
+                  >
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
+                  <div class="d-flex flex-column flex-md-row gap-4">
+                    <div
+                      class="d-flex align-items-start flex-column flex-md-row"
+                    >
+                      <div class="avatar-wrapper mb-2 mb-md-0">
+                        <input
+                          type="file"
+                          class="avatar-upload"
+                          accept="image/*"
+                          style="display: none"
+                        />
+                        <img
+                          src="img/avatar-people.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2 avatar-preview"
+                          style="cursor: pointer"
+                        />
+                      </div>
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >UserProv</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
+                          5y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $800/per
+                          month</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
+                    >
+                      <span class="notification-title d-block fw-semibold"
+                        >Tom</span
+                      >
+                      <span
+                        class="notification-title d-block small age-display"
+                        data-birthdate="2021-03-12"
+                        >♂ 2021-03-12 (4yrs 3mo)</span
+                      >
+                      <span class="notification-title d-block small age-display"
+                        >(788) 882-2344</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
+                    <form class="comment">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Type your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
+                >
+                  <div class="d-flex justify-content-end flex-wrap gap-3">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-check-circle me-2"></i>Accept</button
+                    ><button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-x-circle me-2"></i> Reject
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-12 notification-box m-0 rounded-2 position-relative"
+            >
+              <div
+                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+              >
+                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
+                  <span class="text-muted"
+                    ><i class="bi bi-calendar-check me-2"></i
+                    ><span class="notification-date">June 23, 2025</span></span
+                  >
+                  <span class="text-muted"
+                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
+                  >
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
+                  <div class="d-flex flex-column flex-md-row gap-4">
+                    <div
+                      class="d-flex align-items-start flex-column flex-md-row"
+                    >
+                      <div class="avatar-wrapper mb-2 mb-md-0">
+                        <input
+                          type="file"
+                          class="avatar-upload"
+                          accept="image/*"
+                          style="display: none"
+                        />
+                        <img
+                          src="img/avatar-people.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2 avatar-preview"
+                          style="cursor: pointer"
+                        />
+                      </div>
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Baby Daycare</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
+                          5y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $1000/per
+                          month</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
+                    >
+                      <span class="notification-title d-block fw-semibold"
+                        >Nicole</span
+                      >
+                      <span
+                        class="notification-title d-block small age-display"
+                        data-birthdate="2020-07-10"
+                        >♀</span
+                      >
+                      <span class="notification-title d-block small age-display"
+                        >(788) 882-2344</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
+                    <form class="comment">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Type your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
+                >
+                  <div class="d-flex justify-content-end flex-wrap gap-3">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-check-circle me-2"></i>Accept</button
+                    ><button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-x-circle me-2"></i> Reject
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-12 notification-box m-0 rounded-2 position-relative"
+            >
+              <div
+                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+              >
+                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
+                  <span class="text-muted"
+                    ><i class="bi bi-calendar-check me-2"></i
+                    ><span class="notification-date">June 26, 2025</span></span
+                  >
+                  <span class="text-muted"
+                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
+                  >
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
+                  <div class="d-flex flex-column flex-md-row gap-4">
+                    <div
+                      class="d-flex align-items-start flex-column flex-md-row"
+                    >
+                      <div class="avatar-wrapper mb-2 mb-md-0">
+                        <input
+                          type="file"
+                          class="avatar-upload"
+                          accept="image/*"
+                          style="display: none"
+                        />
+                        <img
+                          src="img/avatar-people.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2 avatar-preview"
+                          style="cursor: pointer"
+                        />
+                      </div>
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >UserProv</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Toddlers</span>
+                          (18mnth-3y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $100/per
+                          day</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
+                    >
+                      <span class="notification-title d-block fw-semibold"
+                        >Samuel</span
+                      >
+                      <span
+                        class="notification-title d-block small age-display"
+                        data-birthdate="2023-04-24"
+                        >♂</span
+                      >
+                      <span class="notification-title d-block small age-display"
+                        >(788) 882-2344</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
+                    <form class="comment">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Type your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
+                >
+                  <div class="d-flex justify-content-end flex-wrap gap-3">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-check-circle me-2"></i>Accept</button
+                    ><button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-x-circle me-2"></i> Reject
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div
+              class="col-12 notification-box m-0 rounded-2 position-relative"
+            >
+              <div
+                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+              >
+                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
+                  <span class="text-muted"
+                    ><i class="bi bi-calendar-check me-2"></i
+                    ><span class="notification-date"
+                      >September 16, 2025</span
+                    ></span
+                  >
+                  <span class="text-muted"
+                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
+                  >
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
+                  <div class="d-flex flex-column flex-md-row gap-4">
+                    <div
+                      class="d-flex align-items-start flex-column flex-md-row"
+                    >
+                      <div class="avatar-wrapper mb-2 mb-md-0">
+                        <input
+                          type="file"
+                          class="avatar-upload"
+                          accept="image/*"
+                          style="display: none"
+                        />
+                        <img
+                          src="img/avatar-people.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2 avatar-preview"
+                          style="cursor: pointer"
+                        />
+                      </div>
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >UserProv</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Toddlers</span>
+                          (18mnth-3y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $150/per
+                          day</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
+                    >
+                      <span class="notification-title d-block fw-semibold"
+                        >Jack</span
+                      >
+                      <span
+                        class="notification-title d-block small age-display"
+                        data-birthdate="2023-06-13"
+                        >♂</span
+                      >
+                      <span class="notification-title d-block small age-display"
+                        >(788) 882-2344</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
+                    <form class="comment">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Type your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
+                >
+                  <div class="d-flex justify-content-end flex-wrap gap-3">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-check-circle me-2"></i>Accept</button
+                    ><button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2"
+                    >
+                      <i class="bi bi-x-circle me-2"></i> Reject
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div
+          class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center border-top py-4 gap-3 gap-md-0"
+        >
+          <ul
+            class="col-md-2 m-0 list-unstyled d-flex align-items-center gap-4"
+          >
+            <li>
+              <a href="#!" class="link-opacity-75-hover link-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  fill="currentColor"
+                  class="bi bi-facebook"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="link-opacity-75-hover link-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  fill="currentColor"
+                  class="bi bi-youtube"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="link-opacity-75-hover link-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  fill="currentColor"
+                  class="bi bi-twitter-x"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+          <ul
+            class="nav col-md-10 justify-content-center justify-content-sm-end"
+          >
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-body-secondary"
+                >Legal Disclaimer</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-body-secondary"
+                >Terms of Use</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-body-secondary">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-body-secondary"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <p class="m-0 pb-3 text-center">
+          © <span id="year">2025</span>. All rights reserved.
+        </p>
+      </footer>
+      <!-- toastHeaderBtn -->
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div
+          id="toastMessageHeader"
+          class="toast position-relative"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-body d-flex m-2">
+            <i class="bi bi-info-circle text-success pe-2"></i>
+            <span>Functionality is not available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-datetimepicker@2.5.4/build/jquery.datetimepicker.full.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="js/visit-request.js"></script>
+    <!-- SCRIPT -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
