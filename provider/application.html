@@ -231,7 +231,9 @@
         </nav>
       </header>
       <main class="content">
-        <div class="section-application container py-4 py-md-5 my-md-4">
+        <div
+          class="section-application col-xxl-10 m-auto container py-4 py-md-5 my-md-4"
+        >
           <div class="row">
             <div class="col-12 px-4">
               <div
@@ -241,14 +243,14 @@
               >
                 <button
                   class="btn-filter-tab btn btn-outline-primary position-relative active"
-                  data-status="new"
+                  data-status="send"
                 >
                   <i class="bi bi-send"></i
                   ><span
                     class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
                     >4</span
                   >
-                  New
+                  Sent
                 </button>
                 <button
                   class="btn-filter-tab btn btn-outline-primary position-relative"
@@ -276,7 +278,7 @@
                   class="btn-filter-tab btn btn-outline-primary position-relative"
                   data-status="rejected"
                 >
-                  <i class="bi bi-exclamation-triangle"></i
+                  <i class="bi-exclamation-triangle"></i
                   ><span
                     class="count text-bg-danger position-absolute d-flex align-items-center justify-content-center fw-semibold text-center rounded"
                     >1</span
@@ -288,10 +290,9 @@
           </div>
 
           <div class="row tab-content" id="notificationList">
-            <!-- NEW -->
-            <div class="status-container new new-tab" style="display: block">
-              <h2 class="h5 mb-3">New Application</h2>
-              <form id="newReviewForm1">
+            <!-- SEND -->
+            <div class="status-container send send-tab">
+              <form id="sendReviewForm1">
                 <div
                   class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3"
                 >
@@ -301,13 +302,13 @@
                       class="form-label small text-muted"
                       >Filter by Program</label
                     >
-                    <div class="custom-dropdown" id="customDropdownNew1">
+                    <div class="custom-dropdown" id="customDropdownSend1">
                       <span class="text-muted">Select value</span>
                       <span class="dropdown-arrow"
                         ><i class="bi bi-chevron-down"></i
                       ></span>
                     </div>
-                    <div class="dropdown-options" id="dropdownOptionsNew1">
+                    <div class="dropdown-options" id="dropdownOptionsSend1">
                       <div class="dropdown-option" data-value="male">
                         Infant (up to 18mnth)
                       </div>
@@ -330,7 +331,7 @@
                   </div>
 
                   <div class="flex-fill">
-                    <label for="datePicker1" class="form-label small text-muted"
+                    <label for="datePicker" class="form-label small text-muted"
                       >Filter by Date</label
                     >
                     <input
@@ -345,1158 +346,617 @@
               </form>
 
               <div
-                class="col-12 notification-box new new-approved m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-approved m-0 rounded-2 position-relative"
               >
                 <div
-                  class="notification unread d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                  class="notification unread d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
                 >
                   <div class="circle">
                     <i class="bi bi-envelope"></i>
                   </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >Good Luck</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
+                  <div
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
+                  >
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Angela</span
+                        >
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2015-04-24"
+                          >♀ 2015-04-24 (10yrs 1mo)</span
+                        >
+                      </div>
                     </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Good Luck</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">School-Age</span>
+                          (6y/o-12y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $100/per
+                          day</span
+                        >
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
                   </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
                   >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >June 25, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
                     <button
                       type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabNew"
-                      data-card-id="1"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
                     >
-                      <i class="bi bi-eye me-1"></i> View details
+                      <i class="bi bi-x-circle me-2"></i> Revoke
                     </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn btn-primary"
-                        id="customDropdownNew01"
-                      >
-                        <span
-                          ><i class="bi bi-send me-2"></i><span>New</span></span
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div
+                class="col-12 notification-box send send-waiting m-0 rounded-2 position-relative"
+              >
+                <div
+                  class="notification read d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
+                >
+                  <div class="circle">
+                    <i class="bi bi-envelope-open"></i>
+                  </div>
+                  <div
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
+                  >
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Tom</span
                         >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew01">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2021-03-12"
+                          >♂ 2021-03-12 (4yrs 3mo)</span
+                        >
                       </div>
                     </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-2.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >UserProv</span
+                        ><span class="notification-title d-block small"
+                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
+                          5y/o)</span
+                        ><span class="notification-title d-block"
+                          ><span class="notification-title d-block small"
+                            ><span class="fw-semibold">Price:</span> $800/per
+                            month</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
                   </div>
 
-                  <button
-                    type="button"
-                    class="btn"
-                    style="display: none"
-                  ></button>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
-                  >
-                </div>
-              </div>
-              <!--  -->
-              <div
-                class="col-12 notification-box new new-waiting m-0 rounded-2 position-relative"
-              >
-                <div
-                  class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
-                >
-                  <div class="circle">
-                    <i class="bi bi-envelope-open"></i>
-                  </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar-2.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >UserProv</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
-                    </div>
-                  </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
                   >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >June 28, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
                     <button
                       type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabNew"
-                      data-card-id="2"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
                     >
-                      <i class="bi bi-eye me-1"></i> View details
+                      <i class="bi bi-x-circle me-2"></i> Revoke
                     </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn btn-primary"
-                        id="customDropdownNew001"
-                      >
-                        <span
-                          ><i class="bi bi-send me-2"></i><span>New</span></span
-                        >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew001">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <button
-                    type="button"
-                    class="btn"
-                    style="display: none"
-                  ></button>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
-                  >
                 </div>
               </div>
               <!--  -->
               <div
-                class="col-12 notification-box new new-rejected m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-rejected m-0 rounded-2 position-relative"
               >
                 <div
-                  class="notification unread d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                  class="notification unread d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
                 >
                   <div class="circle">
                     <i class="bi bi-envelope"></i>
                   </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar-3.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >Good Luck</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
-                    </div>
-                  </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
                   >
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Nicole</span
+                        >
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2020-05-10"
+                          >♀ 2020-05-10 (5yrs 1mo)</span
+                        >
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-3.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Baby Daycare</span
+                        ><span class="notification-title d-block small"
+                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
+                          5y/o)</span
+                        ><span class="notification-title d-block"
+                          ><span class="notification-title d-block small"
+                            ><span class="fw-semibold">Price:</span> $1,000/per
+                            month</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
+                  >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >July 3, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
                     <button
                       type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabNew"
-                      data-card-id="3"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
                     >
-                      <i class="bi bi-eye me-1"></i> View details
+                      <i class="bi bi-x-circle me-2"></i> Revoke
                     </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn btn-primary"
-                        id="customDropdownNew002"
-                      >
-                        <span
-                          ><i class="bi bi-send me-2"></i><span>New</span></span
-                        >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew002">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <button
-                    type="button"
-                    class="btn"
-                    style="display: none"
-                  ></button>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
-                  >
                 </div>
               </div>
               <!--  -->
               <div
-                class="col-12 notification-box new new-rejected m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-rejected m-0 rounded-2 position-relative"
               >
                 <div
-                  class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                  class="notification unread d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
                 >
                   <div class="circle">
-                    <i class="bi bi-envelope-open"></i>
-                  </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar-2.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >UserProv</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
-                    </div>
+                    <i class="bi bi-envelope"></i>
                   </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
                   >
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabNew"
-                      data-card-id="3"
-                    >
-                      <i class="bi bi-eye me-1"></i> View details
-                    </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn btn-primary"
-                        id="customDropdownNew003"
-                      >
-                        <span
-                          ><i class="bi bi-send me-2"></i><span>New</span></span
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Liam</span
                         >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew003">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2023-04-24"
+                          >♂ 2023-04-24 (2yrs 1mo)</span
+                        >
                       </div>
                     </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/default-avatar.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >UserProv</span
+                        ><span class="notification-title d-block small"
+                          ><span class="fw-semibold">Toddlers</span>
+                          (18mnth-3y/o)</span
+                        ><span class="notification-title d-block"
+                          ><span class="notification-title d-block small"
+                            ><span class="fw-semibold">Price:</span> $100/per
+                            day</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
                   </div>
-                  <button
-                    type="button"
-                    class="btn"
-                    style="display: none"
-                  ></button>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
+
+                  <div
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
                   >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >July 13, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
+                    >
+                      <i class="bi bi-x-circle me-2"></i> Revoke
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
+
             <!-- Approved -->
-            <div
-              class="status-container approved approved-tab"
-              style="display: none"
-            >
-              <h2 class="h5 mb-3">Approved Application</h2>
-              <form id="newReviewForm2">
-                <div
-                  class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3"
-                >
-                  <div class="flex-fill position-relative">
-                    <label
-                      for="dropdownSelect2"
-                      class="form-label small text-muted"
-                      >Filter by Program</label
-                    >
-                    <div class="custom-dropdown" id="customDropdownNew2">
-                      <span class="text-muted">Select value</span>
-                      <span class="dropdown-arrow"
-                        ><i class="bi bi-chevron-down"></i
-                      ></span>
-                    </div>
-                    <div class="dropdown-options" id="dropdownOptionsNew2">
-                      <div class="dropdown-option" data-value="male">
-                        Infant (up to 18mnth)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Toddlers (18mnth-3y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Preschooler (3y/o-4y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Pre-K free (4y/o-5y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Kindergarten (5y/o-6y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        School-Age (6y/o-12y/o)
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="flex-fill">
-                    <label for="datePicker2" class="form-label small text-muted"
-                      >Filter by Date</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="datePicker2"
-                      required=""
-                      data-has-listeners="true"
-                    />
-                  </div>
-                </div>
-              </form>
+            <div class="status-container approved approved-tab">
               <div
-                class="col-12 notification-box approved m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-waiting m-0 rounded-2 position-relative"
               >
                 <div
-                  class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                  class="notification read d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
                 >
                   <div class="circle">
                     <i class="bi bi-envelope-open"></i>
                   </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar-2.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >UserProv</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
-                    </div>
-                  </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
                   >
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Tom</span
+                        >
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2021-03-12"
+                          >♂ 2021-03-12 (4yrs 3mo)</span
+                        >
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-2.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >UserProv</span
+                        ><span class="notification-title d-block small"
+                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
+                          5y/o)</span
+                        ><span class="notification-title d-block"
+                          ><span class="notification-title d-block small"
+                            ><span class="fw-semibold">Price:</span> $800/per
+                            month</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
+                  >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >July 28, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
                     <button
                       type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabApproved"
-                      data-card-id="4"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
                     >
-                      <i class="bi bi-eye me-1"></i> View details
+                      <i class="bi bi-x-circle me-2"></i> Revoke
                     </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn approved-btn"
-                        id="customDropdownNew03"
-                      >
-                        <span
-                          ><i class="bi bi-check-circle me-2"></i
-                          ><span>Approved</span></span
-                        >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew03">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
-                  >
                 </div>
               </div>
             </div>
-            <!-- Waiting -->
-            <div
-              class="status-container waiting waiting-tab"
-              style="display: none"
-            >
-              <h2 class="h5 mb-3">Waiting List Application</h2>
-              <form id="newReviewForm3">
-                <div
-                  class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3"
-                >
-                  <div class="flex-fill position-relative">
-                    <label
-                      for="dropdownSelect3"
-                      class="form-label small text-muted"
-                      >Filter by Program</label
-                    >
-                    <div class="custom-dropdown" id="customDropdownNew3">
-                      <span class="text-muted">Select value</span>
-                      <span class="dropdown-arrow"
-                        ><i class="bi bi-chevron-down"></i
-                      ></span>
-                    </div>
-                    <div class="dropdown-options" id="dropdownOptionsNew3">
-                      <div class="dropdown-option" data-value="male">
-                        Infant (up to 18mnth)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Toddlers (18mnth-3y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Preschooler (3y/o-4y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Pre-K free (4y/o-5y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Kindergarten (5y/o-6y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        School-Age (6y/o-12y/o)
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="flex-fill">
-                    <label for="datePicker3" class="form-label small text-muted"
-                      >Filter by Date</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="datePicker3"
-                      required=""
-                      data-has-listeners="true"
-                    />
-                  </div>
-                </div>
-              </form>
+            <!-- waiting -->
+            <div class="status-container waiting waiting-tab">
               <div
-                class="col-12 notification-box waiting m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-approved m-0 rounded-2 position-relative"
               >
                 <div
-                  class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                  class="notification read d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
                 >
                   <div class="circle">
                     <i class="bi bi-envelope-open"></i>
                   </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar-3.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >Good Luck</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
-                    </div>
-                  </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
                   >
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Angela</span
+                        >
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2015-04-24"
+                          >♀ 2015-04-24 (10yrs 1mo)</span
+                        >
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Good Luck</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">School-Age</span>
+                          (6y/o-12y/o)</span
+                        >
+                        <span class="notification-title d-block small"
+                          ><span class="fw-semibold">Price:</span> $100/per
+                          day</span
+                        >
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
+                  >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >September 13, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
                     <button
                       type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabWaiting"
-                      data-card-id="3"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
                     >
-                      <i class="bi bi-eye me-1"></i> View details
+                      <i class="bi bi-x-circle me-2"></i> Revoke
                     </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn btn-waiting"
-                        id="customDropdownNew02"
-                      >
-                        <span
-                          ><i class="bi bi-hourglass-split me-2"></i
-                          ><span>Waiting List</span></span
-                        >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew02">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
-                  >
                 </div>
               </div>
             </div>
             <!-- Rejected -->
-            <div
-              class="status-container rejected rejected-tab"
-              style="display: none"
-            >
-              <h2 class="h5 mb-3">Rejected Application</h2>
-              <form id="newReviewForm4">
-                <div
-                  class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3"
-                >
-                  <div class="flex-fill position-relative">
-                    <label
-                      for="dropdownSelect3"
-                      class="form-label small text-muted"
-                      >Filter by Program</label
-                    >
-                    <div class="custom-dropdown" id="customDropdownNew4">
-                      <span class="text-muted">Select value</span>
-                      <span class="dropdown-arrow"
-                        ><i class="bi bi-chevron-down"></i
-                      ></span>
-                    </div>
-                    <div class="dropdown-options" id="dropdownOptionsNew4">
-                      <div class="dropdown-option" data-value="male">
-                        Infant (up to 18mnth)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Toddlers (18mnth-3y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Preschooler (3y/o-4y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Pre-K free (4y/o-5y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        Kindergarten (5y/o-6y/o)
-                      </div>
-                      <div class="dropdown-option" data-value="female">
-                        School-Age (6y/o-12y/o)
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="flex-fill">
-                    <label for="datePicker4" class="form-label small text-muted"
-                      >Filter by Date</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="datePicker4"
-                      required=""
-                      data-has-listeners="true"
-                    />
-                  </div>
-                </div>
-              </form>
+            <div class="status-container rejected rejected-tab">
               <div
-                class="col-12 notification-box rejected m-0 rounded-2 position-relative"
+                class="col-12 notification-box send send-rejected m-0 rounded-2 position-relative"
               >
                 <div
-                  class="notification read d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                  class="notification read d-flex align-items-end justify-content-between flex-wrap p-3 p-md-4"
                 >
                   <div class="circle">
                     <i class="bi bi-envelope-open"></i>
                   </div>
-                  <div class="d-flex align-items-center flex-wrap mt-3">
-                    <img
-                      src="img/avatar-2.svg"
-                      alt="Avatar"
-                      class="card-avatar me-2"
-                    />
-                    <div>
-                      <span class="notification-title d-block fw-semibold"
-                        >UserProv</span
-                      >
-                      <span>Pre-K free (4y/o - 5y/o)</span>
-                    </div>
-                  </div>
                   <div
-                    class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
+                    class="d-flex flex-column flex-lg-row gap-4 flex-grow-1 w-100 mt-3"
                   >
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-people.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Nicole</span
+                        >
+                        <span
+                          class="notification-title d-block small age-display"
+                          data-birthdate="2020-05-10"
+                          >♀ 2020-05-10 (5yrs 1mo)</span
+                        >
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start flex-wrap">
+                      <img
+                        src="img/avatar-3.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div class="d-flex flex-column gap-1">
+                        <span class="notification-title d-block fw-semibold"
+                          >Baby Daycare</span
+                        ><span class="notification-title d-block small"
+                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
+                          5y/o)</span
+                        ><span class="notification-title d-block"
+                          ><span class="notification-title d-block small"
+                            ><span class="fw-semibold">Price:</span> $1,000/per
+                            month</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                    <form class="comment flex-fill">
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Enter your comment here..."
+                        required=""
+                        name="comment"
+                      ></textarea>
+                    </form>
+                  </div>
+
+                  <div
+                    class="d-flex flex-column flex-sm-row ms-auto gap-3 align-items-center mt-3"
+                  >
+                    <div
+                      class="d-flex flex-wrap justify-content-end gap-3 small"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span class="notification-date"
+                          >September 23, 2025</span
+                        ></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                    </div>
                     <button
                       type="button"
-                      class="btn btn-outline-primary edit-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalTabRejected"
-                      data-card-id="2"
+                      class="btn btn-outline-primary edit-btn ps-2 ms-auto"
                     >
-                      <i class="bi bi-eye me-1"></i> View details
+                      <i class="bi bi-x-circle me-2"></i> Revoke
                     </button>
-                    <div class="position-relative ms-2">
-                      <div
-                        class="custom-dropdown btn rejected-btn"
-                        id="customDropdownNew04"
-                      >
-                        <span
-                          ><i class="bi bi-exclamation-triangle me-2"></i
-                          ><span>Rejected</span></span
-                        >
-                        <span class="dropdown-arrow"
-                          ><i class="bi bi-chevron-down"></i
-                        ></span>
-                      </div>
-                      <div class="dropdown-options" id="dropdownOptionsNew04">
-                        <div class="dropdown-option" data-value="new">
-                          <span><i class="bi bi-send me-2"></i>New</span>
-                        </div>
-                        <div class="dropdown-option" data-value="approved">
-                          <span
-                            ><i class="bi bi-check-circle me-2"></i
-                            >Approved</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="waiting">
-                          <span
-                            ><i class="bi bi-hourglass-split me-2"></i>Waiting
-                            List</span
-                          >
-                        </div>
-                        <div class="dropdown-option" data-value="rejected">
-                          <span
-                            ><i class="bi bi-exclamation-triangle me-2"></i
-                            >Rejected</span
-                          >
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <small class="text-muted text-end w-100"
-                    >February 10 at 8:20 PM</small
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- MODALS -->
-
-        <!-- Modal for Tab 1 -->
-        <div
-          class="modal-application modal fade"
-          id="modalTabNew"
-          tabindex="-1"
-          aria-labelledby="modalTabNewLabel"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header justify-content-center border-bottom-0">
-                <h5 class="modal-title text-center">New Application</h5>
-                <button
-                  type="button"
-                  class="btn-close m-0 position-absolute"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body pt-0">
-                <div class="bg-secondary p-3 rounded mb-4 mt-1">
-                  <h6 class="fw-semibold pb-2" id="modalTabNewLabel">
-                    Selected program
-                  </h6>
-
-                  <div
-                    class="d-grid d-sm-flex flex-wrap gap-3 justify-content-between"
-                  >
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Program</small
-                      ><small class="fw-semibold">Toddlers(18mnth-3y/o)</small>
-                    </div>
-                    <div
-                      class="d-flex align-items-end justify-content-start justify-content-sm-center"
-                    >
-                      <button class="btn btn-success rounded-0">
-                        6 openings
-                      </button>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Price</small
-                      ><small class="fw-semibold">$100/per day</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-container">
-                  <h6 class="fw-semibold pb-2">Child details</h6>
-                  <form id="newReviewForm">
-                    <div class="d-flex flex-wrap gap-3 mb-3">
-                      <div class="flex-fill position-relative">
-                        <label for="dropdownSelect1" class="form-label small"
-                          >Child Name 1</label
-                        >
-                        <div class="custom-dropdown" id="customDropdown1">
-                          ♂ Jordan
-                          <span class="dropdown-arrow" id="dropdownArrow1"
-                            ><i class="bi bi-chevron-down"></i
-                          ></span>
-                        </div>
-                        <div class="dropdown-options" id="dropdownOptions1">
-                          <div class="dropdown-option" data-value="male">
-                            ♂ Jordan
-                          </div>
-                          <div class="dropdown-option" data-value="female">
-                            ♀ Angelica
-                          </div>
-                        </div>
-                      </div>
-                      <div class="flex-fill">
-                        <label for="datePicker" class="form-label small"
-                          >Date of Birth</label
-                        >
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="datePicker"
-                          required=""
-                          data-has-listeners="true"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label for="reviewText" class="form-label small"
-                        >Comment</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="reviewText"
-                        rows="3"
-                        placeholder="Enter your comment here..."
-                        required=""
-                        data-has-listeners="true"
-                      ></textarea>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="modal-footer border-top-0">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                  id="newApplicationBtnNew"
-                >
-                  Revoke Application
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Tab 2 -->
-        <div
-          class="modal-application modal fade"
-          id="modalTabApproved"
-          tabindex="-1"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header justify-content-center border-bottom-0">
-                <h5 class="modal-title text-center">Approved Application</h5>
-                <button
-                  type="button"
-                  class="btn-close m-0 position-absolute"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body pt-0 pb-4">
-                <div class="bg-secondary p-3 rounded mb-4 mt-1">
-                  <h6 class="fw-semibold pb-2">Selected program</h6>
-
-                  <div
-                    class="d-grid d-sm-flex flex-wrap gap-3 justify-content-between"
-                  >
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Program</small
-                      ><small class="fw-semibold">Toddlers(18mnth-3y/o)</small>
-                    </div>
-                    <div
-                      class="d-flex align-items-end justify-content-start justify-content-sm-center"
-                    >
-                      <button class="btn btn-success rounded-0">
-                        4 openings
-                      </button>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Price</small
-                      ><small class="fw-semibold">$100/per day</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-container">
-                  <h6 class="fw-semibold pb-2">Child details</h6>
-                  <form id="approvedReviewForm">
-                    <div class="d-flex flex-wrap gap-3 mb-3">
-                      <div class="flex-fill position-relative">
-                        <label for="dropdownSelect1" class="form-label small"
-                          >Child Name 1</label
-                        >
-                        <div class="custom-dropdown" id="customDropdown2">
-                          ♂ Jordan
-                          <span class="dropdown-arrow" id="dropdownArrow2"
-                            ><i class="bi bi-chevron-down"></i
-                          ></span>
-                        </div>
-                        <div class="dropdown-options" id="dropdownOptions2">
-                          <div class="dropdown-option" data-value="male">
-                            ♂ Jordan
-                          </div>
-                          <div class="dropdown-option" data-value="female">
-                            ♀ Angelica
-                          </div>
-                        </div>
-                      </div>
-                      <div class="flex-fill">
-                        <label for="datePicker5" class="form-label small"
-                          >Date of Birth</label
-                        >
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="datePicker5"
-                          required=""
-                          data-has-listeners="true"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label for="reviewText2" class="form-label small"
-                        >Comment</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="reviewText2"
-                        rows="3"
-                        placeholder="Enter your comment here..."
-                        required=""
-                        data-has-listeners="true"
-                      ></textarea>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Tab 3 -->
-        <div
-          class="modal-application modal fade"
-          id="modalTabWaiting"
-          tabindex="-1"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header justify-content-center border-bottom-0">
-                <h5 class="modal-title text-center">
-                  Waiting List Application
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close m-0 position-absolute"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body pt-0">
-                <div class="bg-secondary p-3 rounded mb-4 mt-1">
-                  <h6 class="fw-semibold pb-2">Selected program</h6>
-
-                  <div
-                    class="d-grid d-sm-flex flex-wrap gap-3 justify-content-between"
-                  >
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Program</small
-                      ><small class="fw-semibold">Toddlers(18mnth-3y/o)</small>
-                    </div>
-                    <div
-                      class="d-flex align-items-end justify-content-start justify-content-sm-center"
-                    >
-                      <button class="btn btn-success rounded-0">
-                        1 openings
-                      </button>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Price</small
-                      ><small class="fw-semibold">$100/per day</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-container">
-                  <h6 class="fw-semibold pb-2">Child details</h6>
-                  <form id="waitingReviewForm">
-                    <div class="d-flex flex-wrap gap-3 mb-3">
-                      <div class="flex-fill position-relative">
-                        <label for="dropdownSelect1" class="form-label small"
-                          >Child Name 1</label
-                        >
-                        <div class="custom-dropdown" id="customDropdown3">
-                          ♂ Jordan
-                          <span class="dropdown-arrow" id="dropdownArrow3"
-                            ><i class="bi bi-chevron-down"></i
-                          ></span>
-                        </div>
-                        <div class="dropdown-options" id="dropdownOptions3">
-                          <div class="dropdown-option" data-value="male">
-                            ♂ Jordan
-                          </div>
-                          <div class="dropdown-option" data-value="female">
-                            ♀ Angelica
-                          </div>
-                        </div>
-                      </div>
-                      <div class="flex-fill">
-                        <label for="datePicker6" class="form-label small"
-                          >Date of Birth</label
-                        >
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="datePicker6"
-                          required=""
-                          data-has-listeners="true"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label for="reviewText3" class="form-label small"
-                        >Comment</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="reviewText3"
-                        rows="3"
-                        placeholder="Enter your comment here..."
-                        required=""
-                        data-has-listeners="true"
-                      ></textarea>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="modal-footer border-top-0 pt-1">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                  id="newApplicationBtnWaiting"
-                >
-                  New/Revoke Application
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Tab 4 -->
-        <div
-          class="modal-application modal fade"
-          id="modalTabRejected"
-          tabindex="-1"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header justify-content-center border-bottom-0">
-                <h5 class="modal-title text-center">Rejected Application</h5>
-                <button
-                  type="button"
-                  class="btn-close m-0 position-absolute"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body pt-0 pb-4">
-                <div class="bg-secondary p-3 rounded mb-4 mt-1">
-                  <h6 class="fw-semibold pb-2">Selected program</h6>
-
-                  <div
-                    class="d-grid d-sm-flex flex-wrap gap-3 justify-content-between"
-                  >
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Program</small
-                      ><small class="fw-semibold">Toddlers(18mnth-3y/o)</small>
-                    </div>
-                    <div
-                      class="d-flex align-items-end justify-content-start justify-content-sm-center"
-                    >
-                      <button class="btn btn-success rounded-0">
-                        2 openings
-                      </button>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <small class="text-muted pb-1">Price</small
-                      ><small class="fw-semibold">$100/per day</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-container">
-                  <h6 class="fw-semibold pb-2">Child details</h6>
-                  <form id="rejectedReviewForm">
-                    <div class="d-flex flex-wrap gap-3 mb-3">
-                      <div class="flex-fill position-relative">
-                        <label for="dropdownSelect1" class="form-label small"
-                          >Child Name 1</label
-                        >
-                        <div class="custom-dropdown" id="customDropdown4">
-                          ♂ Jordan
-                          <span class="dropdown-arrow" id="dropdownArrow4"
-                            ><i class="bi bi-chevron-down"></i
-                          ></span>
-                        </div>
-                        <div class="dropdown-options" id="dropdownOptions4">
-                          <div class="dropdown-option" data-value="male">
-                            ♂ Jordan
-                          </div>
-                          <div class="dropdown-option" data-value="female">
-                            ♀ Angelica
-                          </div>
-                        </div>
-                      </div>
-                      <div class="flex-fill">
-                        <label for="datePicker7" class="form-label small"
-                          >Date of Birth</label
-                        >
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="datePicker7"
-                          required=""
-                          data-has-listeners="true"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label for="reviewText4" class="form-label small"
-                        >Comment</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="reviewText4"
-                        rows="3"
-                        placeholder="Enter your comment here..."
-                        required=""
-                        data-has-listeners="true"
-                      ></textarea>
-                    </div>
-                  </form>
                 </div>
               </div>
             </div>
@@ -1602,7 +1062,7 @@
           </div>
         </div>
       </div>
-      <!-- Toast for showing "Application New" message -->
+      <!-- Toast for showing "Application Sent" message -->
       <div class="toast-container position-fixed top-0 end-0 p-3">
         <div
           id="toastMessage"
@@ -1625,7 +1085,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/application.js"></script>
+    <script src="js/filterApplication.js"></script>
     <script src="js/custom.js"></script>
     <!-- SCRIPT -->
     <script>
