@@ -139,3 +139,27 @@ document.addEventListener("DOMContentLoaded", () => {
     el.textContent = `${genderSymbol} ${birthdate} (${ageText})`;
   });
 });
+
+// Add avatar
+document.querySelectorAll(".avatar-preview").forEach((img) => {
+  img.addEventListener("click", () => {
+    const wrapper = img.closest(".avatar-wrapper");
+    const input = wrapper.querySelector(".avatar-upload");
+    input.click();
+  });
+});
+
+document.querySelectorAll(".avatar-upload").forEach((input) => {
+  input.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const wrapper = input.closest(".avatar-wrapper");
+      const preview = wrapper.querySelector(".avatar-preview");
+      preview.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+});
