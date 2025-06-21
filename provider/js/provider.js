@@ -670,3 +670,25 @@ function initShowMoreFeature() {
     });
   });
 }
+
+// PHONE - FAX
+function formatPhoneOrFax(input) {
+  let value = input.value;
+
+  value = value.replace(/[^\d]/g, "");
+
+  if (value.length > 3 && value.length <= 6) {
+    value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+  } else if (value.length > 6) {
+    value = `(${value.substring(0, 3)}) ${value.substring(
+      3,
+      6
+    )}-${value.substring(6, 10)}`;
+  }
+
+  input.value = value;
+}
+
+document.getElementById("phoneInput").addEventListener("input", function (e) {
+  formatPhoneOrFax(e.target);
+});
