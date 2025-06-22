@@ -232,525 +232,512 @@
         </nav>
       </header>
       <main class="content">
-        <div class="container col-xxl-10 m-auto py-4 py-md-5 my-md-4">
-          <h2 class="h5 mb-3">Visit request</h2>
-          <form id="newReviewForm1">
-            <div class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3">
-              <div class="position-relative col-md-6">
-                <label for="dropdownSelect1" class="form-label small text-muted"
-                  >Filter by Status</label
-                >
-                <div class="custom-dropdown" id="customDropdownReguest">
-                  All
-                  <span class="dropdown-arrow"
-                    ><i class="bi bi-chevron-down"></i
-                  ></span>
-                </div>
-                <div class="dropdown-options" id="dropdownOptionsReguest">
-                  <div class="dropdown-option" data-value="today">Today</div>
-                  <div class="dropdown-option" data-value="tomorrow">
-                    Tomorrow
-                  </div>
-                  <div class="dropdown-option" data-value="this-week">
-                    On this week
-                  </div>
-                  <div class="dropdown-option" data-value="later">Later</div>
-                  <div class="dropdown-option" data-value="all">All</div>
-                </div>
-              </div>
-            </div>
-          </form>
-
-          <div class="d-flex flex-column gap-3 mt-4">
-            <div
-              class="col-12 notification-box m-0 rounded-2 position-relative"
-            >
-              <div
-                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+        <div class="container py-4 py-md-5 my-md-4">
+          <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                data-bs-toggle="tab"
+                href="#calendarTab"
+                ><i class="bi bi-calendar3 me-2"></i>Calendar</a
               >
-                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
-                  <span class="text-muted"
-                    ><i class="bi bi-calendar-check me-2"></i
-                    ><span class="notification-date">June 21, 2025</span></span
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#visitRequestTab"
+                ><i class="bi bi-calendar-check me-2"></i>Visit Request</a
+              >
+            </li>
+          </ul>
+
+          <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="calendarTab">
+              <div id="calendar"></div>
+            </div>
+
+            <div class="tab-pane fade" id="visitRequestTab">
+              <div class="status-container new new-tab" style="display: block">
+                <h2 class="h5 mb-3">Visit request</h2>
+                <form id="newReviewForm1">
+                  <div
+                    class="d-flex flex-wrap flex-column flex-sm-row gap-3 mb-3"
                   >
-                  <span class="text-muted"
-                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
+                    <div class="position-relative col-md-6">
+                      <label
+                        for="dropdownSelect1"
+                        class="form-label small text-muted"
+                        >Filter by Status</label
+                      >
+                      <div class="custom-dropdown" id="customDropdownReguest">
+                        All
+                        <span class="dropdown-arrow"
+                          ><i class="bi bi-chevron-down"></i
+                        ></span>
+                      </div>
+                      <div class="dropdown-options" id="dropdownOptionsReguest">
+                        <div class="dropdown-option" data-value="closed">
+                          Closed
+                        </div>
+                        <div class="dropdown-option" data-value="sent">
+                          Sent
+                        </div>
+                        <div class="dropdown-option" data-value="rejected">
+                          Rejected
+                        </div>
+                        <div class="dropdown-option" data-value="canceled">
+                          Canceled
+                        </div>
+                        <div class="dropdown-option" data-value="scheduled">
+                          Scheduled
+                        </div>
+                        <div class="dropdown-option" data-value="all">All</div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+                <div class="d-flex flex-column gap-3 mt-4">
+                  <div
+                    class="col-12 notification-box m-0 rounded-2 position-relative"
                   >
-                </div>
-                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                  <div class="d-flex flex-column flex-md-row gap-4">
                     <div
-                      class="d-flex align-items-start flex-column flex-md-row"
+                      class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
                     >
-                      <div class="avatar-wrapper mb-2 mb-md-0">
-                        <input
-                          type="file"
-                          class="avatar-upload"
-                          accept="image/*"
-                          style="display: none"
+                      <div class="d-flex align-items-center flex-wrap mt-3">
+                        <img
+                          src="img/avatar.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2"
                         />
+                        <div>
+                          <span class="notification-title d-block fw-semibold"
+                            >Good Luck</span
+                          >
+                          <span>Pre-K free (4y/o - 5y/o)</span>
+                        </div>
+                      </div>
+                      <div
+                        class="btn-container d-flex flex-wrap flex-column justify-content-end align-items-end gap-2 ms-auto my-3"
+                      >
+                        <div
+                          class="d-grid d-sm-flex flex-wrap flex-column gap-3"
+                        >
+                          <div class="d-flex flex-column flex-sm-row gap-2">
+                            <span class="text-muted me-3"
+                              ><i class="bi bi-calendar-check me-2"></i
+                              ><span>December 20, 2024</span></span
+                            ><span class="text-muted"
+                              ><i class="bi bi-clock me-2"></i
+                              ><span>12:00 AM</span></span
+                            >
+                          </div>
+
+                          <ul
+                            class="d-flex justify-content-end text-success ps-3"
+                          >
+                            <li>Sent</li>
+                          </ul>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary edit-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalTabNew"
+                          data-card-id="1"
+                          data-comment="I would like to visit your kindergarten."
+                          data-status="Sent"
+                        >
+                          <i class="bi bi-eye me-1"></i> View details
+                        </button>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="btn"
+                        style="display: none"
+                      ></button>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div
+                    class="col-12 notification-box m-0 rounded-2 position-relative"
+                  >
+                    <div
+                      class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                    >
+                      <div class="d-flex align-items-center flex-wrap mt-3">
+                        <img
+                          src="img/avatar-3.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2"
+                        />
+                        <div>
+                          <span class="notification-title d-block fw-semibold"
+                            >Good Luck</span
+                          >
+                          <span>Pre-K free (4y/o - 5y/o)</span>
+                        </div>
+                      </div>
+                      <div
+                        class="btn-container d-flex flex-wrap flex-column justify-content-end align-items-end gap-2 ms-auto my-3"
+                      >
+                        <div
+                          class="d-grid d-sm-flex flex-wrap flex-column gap-3"
+                        >
+                          <div class="d-flex flex-column flex-sm-row gap-2">
+                            <span class="text-muted me-3"
+                              ><i class="bi bi-calendar-check me-2"></i
+                              ><span>December 20, 2024</span></span
+                            ><span class="text-muted"
+                              ><i class="bi bi-clock me-2"></i
+                              ><span>12:00 AM</span></span
+                            >
+                          </div>
+
+                          <ul
+                            class="d-flex justify-content-end text-danger ps-3"
+                          >
+                            <li>Rejected</li>
+                          </ul>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary edit-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalTabNew"
+                          data-card-id="1"
+                          data-comment="Your request has been reviewed and unfortunately, it has been rejected. If you have any questions, please contact us."
+                          data-status="Rejected"
+                        >
+                          <i class="bi bi-eye me-1"></i> View details
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn"
+                        style="display: none"
+                      ></button>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div
+                    class="col-12 notification-box m-0 rounded-2 position-relative"
+                  >
+                    <div
+                      class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                    >
+                      <div class="d-flex align-items-center flex-wrap mt-3">
+                        <img
+                          src="img/avatar-2.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2"
+                        />
+                        <div>
+                          <span class="notification-title d-block fw-semibold"
+                            >Good Luck</span
+                          >
+                          <span>Pre-K free (4y/o - 5y/o)</span>
+                        </div>
+                      </div>
+                      <div
+                        class="btn-container d-flex flex-wrap flex-column justify-content-end align-items-end gap-2 ms-auto my-3"
+                      >
+                        <div
+                          class="d-grid d-sm-flex flex-wrap flex-column gap-3"
+                        >
+                          <div class="d-flex flex-column flex-sm-row gap-2">
+                            <span class="text-muted me-3"
+                              ><i class="bi bi-calendar-check me-2"></i
+                              ><span>December 20, 2024</span></span
+                            ><span class="text-muted"
+                              ><i class="bi bi-clock me-2"></i
+                              ><span>12:00 AM</span></span
+                            >
+                          </div>
+
+                          <ul
+                            class="d-flex justify-content-end text-primary ps-3"
+                          >
+                            <li>Scheduled</li>
+                          </ul>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary edit-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalTabNew"
+                          data-card-id="1"
+                          data-comment="Your visit has been successfully scheduled. We look forward to seeing you at the designated date and time."
+                          data-status="Scheduled"
+                        >
+                          <i class="bi bi-eye me-1"></i> View details
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn"
+                        style="display: none"
+                      ></button>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div
+                    class="col-12 notification-box m-0 rounded-2 position-relative"
+                  >
+                    <div
+                      class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                    >
+                      <div class="d-flex align-items-center flex-wrap mt-3">
+                        <img
+                          src="img/default-avatar.svg"
+                          alt="Avatar"
+                          class="card-avatar me-2"
+                        />
+                        <div>
+                          <span class="notification-title d-block fw-semibold"
+                            >Good Luck</span
+                          >
+                          <span>Pre-K free (4y/o - 5y/o)</span>
+                        </div>
+                      </div>
+                      <div
+                        class="btn-container d-flex flex-wrap flex-column justify-content-end align-items-end gap-2 ms-auto my-3"
+                      >
+                        <div
+                          class="d-grid d-sm-flex flex-wrap flex-column gap-3"
+                        >
+                          <div class="d-flex flex-column flex-sm-row gap-2">
+                            <span class="text-muted me-3"
+                              ><i class="bi bi-calendar-check me-2"></i
+                              ><span>December 20, 2024</span></span
+                            ><span class="text-muted"
+                              ><i class="bi bi-clock me-2"></i
+                              ><span>12:00 AM</span></span
+                            >
+                          </div>
+
+                          <ul class="d-flex justify-content-end text-info ps-3">
+                            <li>Canceled</li>
+                          </ul>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary edit-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalTabNew"
+                          data-card-id="1"
+                          data-comment="Your visit has been canceled. If you wish to reschedule, please contact us."
+                          data-status="Canceled"
+                        >
+                          <i class="bi bi-eye me-1"></i> View details
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn"
+                        style="display: none"
+                      ></button>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div
+                    class="col-12 notification-box m-0 rounded-2 position-relative"
+                  >
+                    <div
+                      class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
+                    >
+                      <div class="d-flex align-items-center flex-wrap mt-3">
                         <img
                           src="img/avatar-people.svg"
                           alt="Avatar"
-                          class="card-avatar me-2 avatar-preview"
-                          style="cursor: pointer"
+                          class="card-avatar me-2"
                         />
+                        <div>
+                          <span class="notification-title d-block fw-semibold"
+                            >Good Luck</span
+                          >
+                          <span>Pre-K free (4y/o - 5y/o)</span>
+                        </div>
                       </div>
-                      <div class="d-flex flex-column gap-1">
+                      <div
+                        class="btn-container d-flex flex-wrap flex-column justify-content-end align-items-end gap-2 ms-auto my-3"
+                      >
+                        <div
+                          class="d-grid d-sm-flex flex-wrap flex-column gap-3"
+                        >
+                          <div class="d-flex flex-column flex-sm-row gap-2">
+                            <span class="text-muted me-3"
+                              ><i class="bi bi-calendar-check me-2"></i
+                              ><span>December 20, 2024</span></span
+                            ><span class="text-muted"
+                              ><i class="bi bi-clock me-2"></i
+                              ><span>12:00 AM</span></span
+                            >
+                          </div>
+
+                          <ul
+                            class="d-flex justify-content-end text-closed ps-3"
+                          >
+                            <li>Closed</li>
+                          </ul>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary edit-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalTabNew"
+                          data-card-id="1"
+                          data-comment="The visit request has been closed. If you have any further inquiries, feel free to reach out."
+                          data-status="Closed"
+                        >
+                          <i class="bi bi-eye me-1"></i> View details
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn"
+                        style="display: none"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Calendar -->
+          <div
+            class="modal fade"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+            id="eventModal"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Event</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="starts-at">Start</label>
+                    <input type="text" id="starts-at" class="form-control" />
+                  </div>
+
+                  <div>
+                    <label for="ends-at">End</label>
+                    <input type="text" id="ends-at" class="form-control" />
+                  </div>
+                </div>
+                <div class="modal-footer border-top-0">
+                  <button
+                    type="button"
+                    id="delete-event"
+                    class="btn btn-danger"
+                  >
+                    Delete
+                  </button>
+                  <button type="button" id="save-event" class="btn btn-primary">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div
+            class="modal-application modal fade"
+            id="modalTabNew"
+            tabindex="-1"
+            aria-labelledby="modalTabNewLabel"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                  <h5 class="modal-title">Visit details</h5>
+                  <button
+                    type="button"
+                    class="btn-close m-0 position-absolute"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body pt-0">
+                  <div
+                    class="notification d-flex align-items-center justify-content-between flex-wrap mb-4"
+                  >
+                    <div class="d-flex align-items-center flex-wrap mt-3">
+                      <img
+                        src="img/avatar.svg"
+                        alt="Avatar"
+                        class="card-avatar me-2"
+                      />
+                      <div>
                         <span class="notification-title d-block fw-semibold"
                           >Good Luck</span
                         >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">School-Age</span>
-                          (6y/o-12y/o)</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Price:</span> $100/per
-                          day</span
-                        >
+                        <span>Pre-K free (4y/o - 5y/o)</span>
                       </div>
                     </div>
                     <div
-                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
+                      class="btn-container d-flex flex-wrap justify-content-end align-items-center gap-2 ms-auto my-3"
                     >
-                      <span class="notification-title d-block fw-semibold">
-                        Angela</span
-                      >
-                      <span
-                        class="notification-title d-block small age-display"
-                        data-birthdate="2015-04-24"
-                        >♀</span
-                      >
-                      <span class="notification-title d-block small age-display"
-                        >(788) 882-2344</span
+                      <small class="text-muted text-end w-100"
+                        >February 10 at 8:20 PM</small
                       >
                     </div>
                   </div>
+                  <div class="bg-secondary p-3 rounded mb-4 mt-1">
+                    <h6 class="fw-semibold pb-2" id="modalTabNewLabel">
+                      Requested time
+                    </h6>
 
-                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
-                    <form class="comment">
-                      <textarea
-                        class="form-control"
-                        rows="3"
-                        placeholder="Type your comment here..."
-                        required=""
-                        name="comment"
-                      ></textarea>
+                    <div
+                      class="d-grid d-sm-flex flex-wrap justify-content-between gap-3"
+                    >
+                      <span class="text-muted"
+                        ><i class="bi bi-calendar-check me-2"></i
+                        ><span>December 20, 2024</span></span
+                      >
+                      <span class="text-muted"
+                        ><i class="bi bi-clock me-2"></i
+                        ><span>12:00 AM</span></span
+                      >
+                      <ul class="m-0 p-0" id="modalStatus">
+                        <li></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-container">
+                    <form id="newReviewForm">
+                      <div>
+                        <label for="reviewText" class="form-label small"
+                          >Comment</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="reviewText"
+                          rows="3"
+                          required
+                          readonly
+                        ></textarea>
+                      </div>
                     </form>
                   </div>
                 </div>
-
-                <div
-                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
-                >
-                  <div class="d-flex justify-content-end flex-wrap gap-3">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-check-circle me-2"></i>Accept</button
-                    ><button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-x-circle me-2"></i> Reject
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-12 notification-box m-0 rounded-2 position-relative"
-              style="display: block"
-            >
-              <div
-                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
-              >
-                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
-                  <span class="text-muted"
-                    ><i class="bi bi-calendar-check me-2"></i
-                    ><span class="notification-date">June 22, 2025</span></span
+                <div class="modal-footer border-top-0">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                    id="newApplicationBtnNew"
                   >
-                  <span class="text-muted"
-                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
-                  >
-                </div>
-                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                  <div class="d-flex flex-column flex-md-row gap-4">
-                    <div
-                      class="d-flex align-items-start flex-column flex-md-row"
-                    >
-                      <div class="avatar-wrapper mb-2 mb-md-0">
-                        <input
-                          type="file"
-                          class="avatar-upload"
-                          accept="image/*"
-                          style="display: none"
-                        />
-                        <img
-                          src="img/avatar-people.svg"
-                          alt="Avatar"
-                          class="card-avatar me-2 avatar-preview"
-                          style="cursor: pointer"
-                        />
-                      </div>
-                      <div class="d-flex flex-column gap-1">
-                        <span class="notification-title d-block fw-semibold"
-                          >UserProv</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
-                          5y/o)</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Price:</span> $800/per
-                          month</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
-                    >
-                      <span class="notification-title d-block fw-semibold"
-                        >Tom</span
-                      >
-                      <span
-                        class="notification-title d-block small age-display"
-                        data-birthdate="2021-03-12"
-                        >♂ 2021-03-12 (4yrs 3mo)</span
-                      >
-                      <span class="notification-title d-block small age-display"
-                        >(788) 882-2344</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
-                    <form class="comment">
-                      <textarea
-                        class="form-control"
-                        rows="3"
-                        placeholder="Type your comment here..."
-                        required=""
-                        name="comment"
-                      ></textarea>
-                    </form>
-                  </div>
-                </div>
-
-                <div
-                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
-                >
-                  <div class="d-flex justify-content-end flex-wrap gap-3">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-check-circle me-2"></i>Accept</button
-                    ><button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-x-circle me-2"></i> Reject
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-12 notification-box m-0 rounded-2 position-relative"
-            >
-              <div
-                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
-              >
-                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
-                  <span class="text-muted"
-                    ><i class="bi bi-calendar-check me-2"></i
-                    ><span class="notification-date">June 23, 2025</span></span
-                  >
-                  <span class="text-muted"
-                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
-                  >
-                </div>
-                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                  <div class="d-flex flex-column flex-md-row gap-4">
-                    <div
-                      class="d-flex align-items-start flex-column flex-md-row"
-                    >
-                      <div class="avatar-wrapper mb-2 mb-md-0">
-                        <input
-                          type="file"
-                          class="avatar-upload"
-                          accept="image/*"
-                          style="display: none"
-                        />
-                        <img
-                          src="img/avatar-people.svg"
-                          alt="Avatar"
-                          class="card-avatar me-2 avatar-preview"
-                          style="cursor: pointer"
-                        />
-                      </div>
-                      <div class="d-flex flex-column gap-1">
-                        <span class="notification-title d-block fw-semibold"
-                          >Baby Daycare</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Pre-K free</span> (4y/o -
-                          5y/o)</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Price:</span> $1000/per
-                          month</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
-                    >
-                      <span class="notification-title d-block fw-semibold"
-                        >Nicole</span
-                      >
-                      <span
-                        class="notification-title d-block small age-display"
-                        data-birthdate="2020-07-10"
-                        >♀</span
-                      >
-                      <span class="notification-title d-block small age-display"
-                        >(788) 882-2344</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
-                    <form class="comment">
-                      <textarea
-                        class="form-control"
-                        rows="3"
-                        placeholder="Type your comment here..."
-                        required=""
-                        name="comment"
-                      ></textarea>
-                    </form>
-                  </div>
-                </div>
-
-                <div
-                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
-                >
-                  <div class="d-flex justify-content-end flex-wrap gap-3">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-check-circle me-2"></i>Accept</button
-                    ><button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-x-circle me-2"></i> Reject
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-12 notification-box m-0 rounded-2 position-relative"
-            >
-              <div
-                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
-              >
-                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
-                  <span class="text-muted"
-                    ><i class="bi bi-calendar-check me-2"></i
-                    ><span class="notification-date">June 26, 2025</span></span
-                  >
-                  <span class="text-muted"
-                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
-                  >
-                </div>
-                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                  <div class="d-flex flex-column flex-md-row gap-4">
-                    <div
-                      class="d-flex align-items-start flex-column flex-md-row"
-                    >
-                      <div class="avatar-wrapper mb-2 mb-md-0">
-                        <input
-                          type="file"
-                          class="avatar-upload"
-                          accept="image/*"
-                          style="display: none"
-                        />
-                        <img
-                          src="img/avatar-people.svg"
-                          alt="Avatar"
-                          class="card-avatar me-2 avatar-preview"
-                          style="cursor: pointer"
-                        />
-                      </div>
-                      <div class="d-flex flex-column gap-1">
-                        <span class="notification-title d-block fw-semibold"
-                          >UserProv</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Toddlers</span>
-                          (18mnth-3y/o)</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Price:</span> $100/per
-                          day</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
-                    >
-                      <span class="notification-title d-block fw-semibold"
-                        >Samuel</span
-                      >
-                      <span
-                        class="notification-title d-block small age-display"
-                        data-birthdate="2023-04-24"
-                        >♂</span
-                      >
-                      <span class="notification-title d-block small age-display"
-                        >(788) 882-2344</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
-                    <form class="comment">
-                      <textarea
-                        class="form-control"
-                        rows="3"
-                        placeholder="Type your comment here..."
-                        required=""
-                        name="comment"
-                      ></textarea>
-                    </form>
-                  </div>
-                </div>
-
-                <div
-                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
-                >
-                  <div class="d-flex justify-content-end flex-wrap gap-3">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-check-circle me-2"></i>Accept</button
-                    ><button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-x-circle me-2"></i> Reject
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <div
-              class="col-12 notification-box m-0 rounded-2 position-relative"
-            >
-              <div
-                class="notification d-flex align-items-center justify-content-between flex-wrap p-3 p-md-4"
-              >
-                <div class="d-flex flex-wrap ms-auto gap-3 small mb-3">
-                  <span class="text-muted"
-                    ><i class="bi bi-calendar-check me-2"></i
-                    ><span class="notification-date"
-                      >September 16, 2025</span
-                    ></span
-                  >
-                  <span class="text-muted"
-                    ><i class="bi bi-clock me-2"></i><span>12:00 AM</span></span
-                  >
-                </div>
-                <div class="d-flex flex-column flex-lg-row gap-4 w-100">
-                  <div class="d-flex flex-column flex-md-row gap-4">
-                    <div
-                      class="d-flex align-items-start flex-column flex-md-row"
-                    >
-                      <div class="avatar-wrapper mb-2 mb-md-0">
-                        <input
-                          type="file"
-                          class="avatar-upload"
-                          accept="image/*"
-                          style="display: none"
-                        />
-                        <img
-                          src="img/avatar-people.svg"
-                          alt="Avatar"
-                          class="card-avatar me-2 avatar-preview"
-                          style="cursor: pointer"
-                        />
-                      </div>
-                      <div class="d-flex flex-column gap-1">
-                        <span class="notification-title d-block fw-semibold"
-                          >UserProv</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Toddlers</span>
-                          (18mnth-3y/o)</span
-                        >
-                        <span class="notification-title d-block small"
-                          ><span class="fw-semibold">Price:</span> $150/per
-                          day</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex flex-column gap-1 ps-md-4 ms-md-4 border-line"
-                    >
-                      <span class="notification-title d-block fw-semibold"
-                        >Jack</span
-                      >
-                      <span
-                        class="notification-title d-block small age-display"
-                        data-birthdate="2023-06-13"
-                        >♂</span
-                      >
-                      <span class="notification-title d-block small age-display"
-                        >(788) 882-2344</span
-                      >
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-column ms-lg-auto col-lg-5">
-                    <form class="comment">
-                      <textarea
-                        class="form-control"
-                        rows="3"
-                        placeholder="Type your comment here..."
-                        required=""
-                        name="comment"
-                      ></textarea>
-                    </form>
-                  </div>
-                </div>
-
-                <div
-                  class="d-flex flex-column flex-md-row ms-auto gap-3 align-items-end align-items-md-center mt-3"
-                >
-                  <div class="d-flex justify-content-end flex-wrap gap-3">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-check-circle me-2"></i>Accept</button
-                    ><button
-                      type="button"
-                      class="btn btn-outline-primary edit-btn ps-2"
-                    >
-                      <i class="bi bi-x-circle me-2"></i> Reject
-                    </button>
-                  </div>
+                    Cancel visit
+                  </button>
                 </div>
               </div>
             </div>
