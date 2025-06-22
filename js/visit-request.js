@@ -10,16 +10,14 @@ function isSameDay(a, b) {
 
 function getCategory(dateStr) {
   const now = new Date();
-
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
 
-  // Устанавливаем начало и конец текущей недели (понедельник → воскресенье)
+  const dayOfWeek = today.getDay();
+  const offset = (dayOfWeek + 6) % 7;
   const startOfWeek = new Date(today);
-  const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-  const offsetToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
-  startOfWeek.setDate(today.getDate() + offsetToMonday);
+  startOfWeek.setDate(today.getDate() - offset);
 
   const endOfWeek = new Date(startOfWeek);
   endOfWeek.setDate(startOfWeek.getDate() + 6);
@@ -32,7 +30,7 @@ function getCategory(dateStr) {
   if (d < today) return "past";
   if (isSameDay(d, today)) return "today";
   if (isSameDay(d, tomorrow)) return "tomorrow";
-  if (d >= today && d <= endOfWeek) return "this-week";
+  if (d >= startOfWeek && d <= endOfWeek) return "this-week";
   if (d > endOfWeek) return "later";
 
   return "unknown";
