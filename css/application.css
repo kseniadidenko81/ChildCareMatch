@@ -1,6 +1,7 @@
 /* APPLICATION */
 .section-application .btn {
-  min-width: auto;
+  min-width: 148px;
+  display: block;
 }
 
 .section-application .notification {
