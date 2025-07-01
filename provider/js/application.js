@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allButtons = card.querySelectorAll(".edit-btn");
     allButtons.forEach((btn) => {
-      btn.classList.remove("btn-primary");
+      btn.classList.remove("btn-primary", "text-white");
       btn.classList.add("btn-outline-primary");
     });
 
@@ -183,14 +183,53 @@ document.addEventListener("DOMContentLoaded", () => {
       "send-waiting",
       "send"
     );
-
     card.classList.add(`send-${newStatus}`, "send");
 
     const targetContainer = document.querySelector(
       `.status-container.${newStatus}`
     );
+
     if (targetContainer && !targetContainer.contains(card)) {
       targetContainer.appendChild(card);
+
+      if (newStatus === "waiting") {
+        button.remove();
+
+        const infoBlock = card.querySelector(".border-line");
+        if (infoBlock) {
+          const nameContainer = infoBlock.querySelector("span.fw-semibold");
+          let nameText = "";
+          if (nameContainer) {
+            for (const node of nameContainer.childNodes) {
+              if (node.nodeType === Node.TEXT_NODE) {
+                nameText += node.textContent.trim();
+              }
+            }
+          }
+
+          const ageDisplay = infoBlock.querySelector(".age-display");
+          const birthdate = ageDisplay ? ageDisplay.dataset.birthdate : "";
+
+          const birthdateTextNode = ageDisplay
+            ? ageDisplay.childNodes[0].textContent.trim()
+            : "";
+
+          const ageDetailSpan = ageDisplay
+            ? ageDisplay.querySelector(".mt-1")?.outerHTML || ""
+            : "";
+
+          infoBlock.innerHTML = `
+            <span class="notification-title d-block fw-semibold">Waiting List: </span>
+            <span class="notification-title small fw-semibold">
+              ${nameText}<span class="notification-title fw-normal age-display" data-birthdate="${birthdate}">
+                ${birthdateTextNode}
+                ${ageDetailSpan}
+              </span>
+            </span>
+            <span class="notification-title d-block small age-display">Tel: (788) 882-2344</span>
+          `;
+        }
+      }
     }
   });
 });
