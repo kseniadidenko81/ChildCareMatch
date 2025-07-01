@@ -141,3 +141,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Age Display
+function calculateAgeDetailed(dateString) {
+  const birthDate = new Date(dateString);
+  const now = new Date();
+
+  let years = now.getFullYear() - birthDate.getFullYear();
+  let months = now.getMonth() - birthDate.getMonth();
+  let days = now.getDate() - birthDate.getDate();
+
+  if (days < 0) months--;
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ageElements = document.querySelectorAll(".age-display");
+
+  ageElements.forEach((el) => {
+    const birthdate = el.dataset.birthdate;
+    if (!birthdate) return;
+
+    const { years, months } = calculateAgeDetailed(birthdate);
+    const ageText = `${years}yr${years !== 1 ? "s" : ""} ${months}mo`;
+
+    const ageContainer = el.querySelector(".mt-1");
+    if (ageContainer) {
+      ageContainer.textContent = `(${ageText})`;
+    }
+  });
+});
+
+// Add avatar
+document.querySelectorAll(".avatar-preview").forEach((img) => {
+  img.addEventListener("click", () => {
+    const wrapper = img.closest(".avatar-wrapper");
+    const input = wrapper.querySelector(".avatar-upload");
+    input.click();
+  });
+});
+
+document.querySelectorAll(".avatar-upload").forEach((input) => {
+  input.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const wrapper = input.closest(".avatar-wrapper");
+      const preview = wrapper.querySelector(".avatar-preview");
+      preview.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+});
