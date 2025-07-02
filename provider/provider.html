@@ -1279,16 +1279,15 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="userPhone" class="form-label small"
-                      >Please leave your phone number for any schedule
-                      updates</label
-                    >
+                    <label for="phoneInput" class="form-label small">
+                      Please leave your phone number for any schedule updates
+                    </label>
                     <input
                       type="tel"
-                      class="form-control"
-                      id="userPhone"
+                      class="form-control phone-input"
+                      id="phoneInput"
                       placeholder="e.g. (788) 882-2344"
-                      required=""
+                      maxlength="14"
                     />
                   </div>
                 </form>
@@ -1391,16 +1390,15 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="userPhone1" class="form-label small"
-                      >Please leave your phone number for any schedule
-                      updates</label
-                    >
+                    <label for="phoneInput1" class="form-label small">
+                      Please leave your phone number for any schedule updates
+                    </label>
                     <input
                       type="tel"
-                      class="form-control"
-                      id="userPhone1"
-                      placeholder="e.g. (788) 882-2344"
-                      required=""
+                      class="form-control phone-input"
+                      id="phoneInput1"
+                      placeholder="(788) 882-2344"
+                      maxlength="14"
                     />
                   </div>
                 </form>
@@ -1503,13 +1501,16 @@
                   </div>
 
                   <div>
-                    <label for="phoneInput" class="form-label small text-muted">
+                    <label
+                      for="phoneInput2"
+                      class="form-label small text-muted"
+                    >
                       Please leave your phone number for any schedule updates
                     </label>
                     <input
                       type="tel"
                       class="form-control"
-                      id="phoneInput"
+                      id="phoneInput2"
                       name="phone"
                       placeholder="(788) 882-2344"
                       required
