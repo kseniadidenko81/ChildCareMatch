@@ -490,3 +490,10 @@ span.rating-text {
 .text-wrap {
   height: auto;
 }
+
+.phone-error {
+  color: red;
+  font-size: 0.875rem;
+  display: none;
+  margin-top: 0.25rem;
+}
