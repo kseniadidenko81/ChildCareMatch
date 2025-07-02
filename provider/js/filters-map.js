@@ -310,6 +310,89 @@ searchInput.addEventListener("keydown", (event) => {
   }
 });
 
+// PHONE - FAX
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".phone-input").forEach((input) => {
+    let errorMsg = document.createElement("div");
+    errorMsg.className = "phone-error";
+    errorMsg.textContent =
+      "Please enter a valid phone number (e.g. (123) 456-7890)";
+    input.insertAdjacentElement("afterend", errorMsg);
+
+    function validatePhone(value) {
+      const digits = value.replace(/\D/g, "");
+      return digits.length === 10;
+    }
+
+    function showError() {
+      errorMsg.style.display = "block";
+      input.classList.add("is-invalid");
+    }
+
+    function hideError() {
+      errorMsg.style.display = "none";
+      input.classList.remove("is-invalid");
+    }
+
+    function formatAndValidate(e) {
+      let value = e.target.value.replace(/\D/g, "").slice(0, 10);
+      let formatted = "";
+
+      if (value.length > 0) {
+        formatted += "(" + value.substring(0, 3);
+      }
+      if (value.length >= 4) {
+        formatted += ") " + value.substring(3, 6);
+      }
+      if (value.length >= 7) {
+        formatted += "-" + value.substring(6, 10);
+      }
+
+      e.target.value = formatted;
+
+      if (validatePhone(formatted)) {
+        hideError();
+      } else {
+        showError();
+      }
+    }
+
+    input.addEventListener("input", formatAndValidate);
+
+    input.addEventListener("keypress", function (e) {
+      const char = String.fromCharCode(e.which);
+      if (!/\d/.test(char)) {
+        e.preventDefault();
+      }
+    });
+
+    input.addEventListener("paste", function (e) {
+      e.preventDefault();
+      const text = (e.clipboardData || window.clipboardData).getData("text");
+      const digits = text.replace(/\D/g, "").slice(0, 10);
+      let formatted = "";
+
+      if (digits.length > 0) {
+        formatted += "(" + digits.substring(0, 3);
+      }
+      if (digits.length >= 4) {
+        formatted += ") " + digits.substring(3, 6);
+      }
+      if (digits.length >= 7) {
+        formatted += "-" + digits.substring(6, 10);
+      }
+
+      input.value = formatted;
+
+      if (validatePhone(formatted)) {
+        hideError();
+      } else {
+        showError();
+      }
+    });
+  });
+});
+
 // Age Display
 function calculateAgeDetailed(dateString) {
   const birthDate = new Date(dateString);
