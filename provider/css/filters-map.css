@@ -488,3 +488,10 @@ small span {
   opacity: 1 !important;
   transform: translateY(-5px);
 }
+
+.phone-error {
+  color: red;
+  font-size: 0.875rem;
+  display: none;
+  margin-top: 0.25rem;
+}
