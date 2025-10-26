@@ -184,17 +184,16 @@ button:focus:not(:focus-visible) {
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 767px) {
   .nav-panel {
-    top: 10px;
+    position: relative;
+    top: 0;
+    right: auto;
   }
 }
 
 @media screen and (max-width: 480px) {
   .nav-panel {
-    position: relative;
-    top: 0;
-    right: auto;
   }
 }
 
@@ -346,6 +345,13 @@ main.content {
 
 .btn-header-mobile {
   display: block;
+}
+
+.fixed-text {
+  width: 146px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 992px) {
