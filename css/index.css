@@ -247,6 +247,13 @@ main.content {
 }
 
 /* Navbar */
+.fixed-text {
+  width: 146px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 990px) {
   .nav-mobile {
     width: 100%;
@@ -733,4 +740,3 @@ li:first-of-type .dropdown-item:hover {
   right: 20px;
   z-index: 1055;
 }
-
