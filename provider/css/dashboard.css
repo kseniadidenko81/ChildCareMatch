@@ -4,7 +4,7 @@
 .containers {
   position: relative;
   width: 100%;
-  aspect-ratio: 3.5/3;
+  aspect-ratio: 4/3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -325,3 +325,4 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
+
