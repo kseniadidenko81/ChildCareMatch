@@ -221,10 +221,6 @@
     aspect-ratio: auto;
     width: auto;
   }
-
-  .center-btn {
-    margin-bottom: 20px;
-  }
   .item {
     position: relative;
     width: 100%;
@@ -281,6 +277,7 @@
   .center-btn {
     width: 8em;
     height: 8em;
+    margin-bottom: 20px;
     position: sticky;
     transform: translateX(-165%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -310,7 +307,7 @@
     line-height: 20px;
     padding: 0;
     transform: translateX(-155%);
-    opacity: .9;
+    opacity: 0.9;
   }
 
   .center-btn:hover {
@@ -326,6 +323,3 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
-
-
-
