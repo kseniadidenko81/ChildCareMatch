@@ -210,7 +210,15 @@
                       gorv692_22@gmail.com
                     </div>
                   </div>
-                  <div class="user-avatar" aria-hidden="true">D</div>
+                  <div
+                    class="user-avatar"
+                    aria-hidden="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="gorv692_22@gmail.com"
+                  >
+                    D
+                  </div>
                 </div>
 
                 <a
@@ -379,6 +387,14 @@
 
     <script src="js/custom.js"></script>
     <!-- SCRIPT -->
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (el) => new bootstrap.Tooltip(el)
+      );
+    </script>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
