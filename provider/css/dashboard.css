@@ -309,7 +309,7 @@
     font-size: 18px;
     line-height: 20px;
     padding: 0;
-    transform: translateX(-185%);
+    transform: translateX(-155%);
     opacity: .9;
   }
 
@@ -326,5 +326,6 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
+
 
 
