@@ -31,7 +31,8 @@
     <link rel="stylesheet" href="css/registration.css" />
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <!-- <link rel="stylesheet" href="css/cards.css" /> -->
   </head>
   <body>
     <div class="wrapper">
@@ -46,7 +47,30 @@
               <img class="logo" src="img/logo.png" alt="Logo" />
             </a>
 
-            <div class="d-flex align-items-center ms-auto">
+            <div class="nav-mobile ms-auto">
+              <div
+                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
+                id="navbarsExample07"
+              >
+                <ul class="nav nav-pills d-flex justify-content-center">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" aria-current="page"
+                      >For Providers</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">For Parents</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">B2B Solutions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="d-flex align-items-center m-auto ms-md-auto nav-panel mt-3 mt-sm-auto"
+            >
               <div class="notifications dropdown me-3">
                 <a
                   href="#"
@@ -178,8 +202,36 @@
                 </ul>
               </div>
 
+              <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="d-block text-end">
+                    <div class="text-muted small user-email">Welcome</div>
+                    <div
+                      class="d-none d-sm-block text-primary fw-semibold small"
+                    >
+                      gorv692_22@gmail.com
+                    </div>
+                  </div>
+                  <div class="user-avatar" aria-hidden="true">D</div>
+                </div>
+
+                <a
+                  href="/logout"
+                  class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                  role="button"
+                  aria-label="Logout"
+                  style="min-width: auto"
+                >
+                  <i
+                    class="bi bi-box-arrow-right me-md-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="d-none d-md-inline">Logout</span>
+                </a>
+              </div>
+
               <button
-                class="navbar-toggler collapsed"
+                class="navbar-toggler collapsed ms-3"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample07"
@@ -191,48 +243,50 @@
                 <span></span>
                 <span></span>
               </button>
-              <button
-                type="button"
-                class="btn btn-primary btn-header-mobile ms-3"
-              >
-                <i class="bi bi-search me-sm-1"></i>
-                <span>Find Day Care</span>
-              </button>
             </div>
-
-            <div class="nav-mobile">
-              <div
-                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
-                id="navbarsExample07"
-              >
-                <ul class="nav nav-pills d-flex justify-content-center">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page"
-                      >For Providers</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">For Parents</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">B2B Solutions</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <button
+            <!-- <button
               type="button"
               class="btn btn-primary btn-header-desktop ms-2"
             >
               <i class="bi bi-search me-1"></i>
               <span>Find Day Care</span>
-            </button>
+            </button> -->
           </div>
         </nav>
       </header>
       <main class="content">
         <div class="container py-4 py-md-5 my-md-4">
-          <div class="row">
+          <div class="containers">
+            <div class="item">
+              <i class="bi bi-card-list"></i>
+              <span>My Schedule</span>
+            </div>
+            <div class="item">
+              <i class="bi bi-star-half"></i>
+              <span>My reviews</span>
+            </div>
+            <div class="item">
+              <i class="bi bi-search"></i>
+              <span>My Searches</span>
+            </div>
+            <div class="item">
+              <i class="bi bi-person-bounding-box"></i>
+              <span>Profile Settings</span>
+            </div>
+            <div class="item">
+              <i class="bi bi-people"></i>
+              <span>My Kids</span>
+            </div>
+            <div class="item">
+              <i class="bi bi-grid"></i>
+              <span>My applications</span>
+            </div>
+            <div class="center-btn">
+              <span>Find <span>Day Care</span> </span>
+            </div>
+          </div>
+
+          <!-- <div class="row">
             <div class="col list-container">
               <a href="#" class="list-item">
                 <div class="list-item-title">
@@ -347,7 +401,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </main>
       <footer>
@@ -411,26 +465,20 @@
             class="nav col-md-10 justify-content-center justify-content-sm-end"
           >
             <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary"
-                >Legal Disclaimer</a
-              >
+              <a href="#" class="nav-link px-2 text-dark">Legal Disclaimer</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary"
-                >Terms of Use</a
-              >
+              <a href="#" class="nav-link px-2 text-dark">Terms of Use</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary">About Us</a>
+              <a href="#" class="nav-link px-2 text-dark">About Us</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-body-secondary"
-                >Contact Us</a
-              >
+              <a href="#" class="nav-link px-2 text-dark">Contact Us</a>
             </li>
           </ul>
         </div>
-        <p class="m-0 pb-3 text-center">
+        <p class="m-0 pb-3 text-center text-secondary">
           © <span id="year">2025</span>. All rights reserved.
         </p>
       </footer>
