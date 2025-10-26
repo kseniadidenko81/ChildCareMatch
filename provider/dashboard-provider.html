@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/registration.css" />
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -46,7 +46,30 @@
               <img class="logo" src="img/logo.png" alt="Logo" />
             </a>
 
-            <div class="d-flex align-items-center ms-auto">
+            <div class="nav-mobile ms-auto">
+              <div
+                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
+                id="navbarsExample07"
+              >
+                <ul class="nav nav-pills d-flex justify-content-center">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" aria-current="page"
+                      >For Providers</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">For Parents</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">B2B Solutions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="d-flex align-items-center m-auto ms-md-auto nav-panel mt-3 mt-sm-auto"
+            >
               <div class="notifications dropdown me-3">
                 <a
                   href="#"
@@ -178,8 +201,36 @@
                 </ul>
               </div>
 
+              <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="d-block text-end">
+                    <div class="text-muted small user-email">Welcome</div>
+                    <div
+                      class="d-none d-sm-block text-primary fw-semibold small"
+                    >
+                      gorv692_22@gmail.com
+                    </div>
+                  </div>
+                  <div class="user-avatar" aria-hidden="true">D</div>
+                </div>
+
+                <a
+                  href="/logout"
+                  class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                  role="button"
+                  aria-label="Logout"
+                  style="min-width: auto"
+                >
+                  <i
+                    class="bi bi-box-arrow-right me-md-2"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="d-none d-md-inline">Logout</span>
+                </a>
+              </div>
+
               <button
-                class="navbar-toggler collapsed"
+                class="navbar-toggler collapsed ms-3"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample07"
@@ -191,198 +242,52 @@
                 <span></span>
                 <span></span>
               </button>
-              <button
-                type="button"
-                class="btn btn-primary btn-header-mobile ms-3"
-              >
-                <i class="bi bi-search me-sm-1"></i>
-                <span>Find Day Care</span>
-              </button>
             </div>
-
-            <div class="nav-mobile">
-              <div
-                class="navbar-collapse d-flex justify-content-center justify-content-lg-end collapse"
-                id="navbarsExample07"
-              >
-                <ul class="nav nav-pills d-flex justify-content-center">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link" aria-current="page"
-                      >For Providers</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">For Parents</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">B2B Solutions</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <button
-              type="button"
-              class="btn btn-primary btn-header-desktop ms-2"
-            >
-              <i class="bi bi-search me-1"></i>
-              <span>Find Day Care</span>
-            </button>
           </div>
         </nav>
       </header>
       <main class="content">
         <div class="container py-4 py-md-5 my-md-4">
-          <div class="row">
-            <div class="col list-container">
-              <a href="general-information.html" class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>General information</p>
-                  <div class="circle">
-                    <i class="bi bi-geo-alt-fill"></i>
-                  </div>
-                </div>
-              </a>
-              <a href="contact-information.html" class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Contact information</p>
-                  <div class="circle">
-                    <i class="bi bi-telephone-fill"></i>
-                  </div>
-                </div>
-              </a>
-              <a href="prices.html" class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Prices</p>
-                  <div class="circle">
-                    <i class="bi bi-currency-dollar"></i>
-                  </div>
-                </div>
-              </a>
-              <a href="working-visiting-hours.html" class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Working and Visiting hours</p>
-                  <div class="circle">
-                    <i class="bi bi-clock-fill"></i>
-                  </div>
-                </div>
-              </a>
-              <a href="additional-services.html" class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Additional services</p>
-                  <div class="circle">
-                    <i class="bi bi-tools"></i>
-                  </div>
-                </div>
-              </a>
-              <a
-                href="additional-classes-activities.html"
-                class="list-item"
-                style="position: relative"
-              >
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Additional classes and activities</p>
-                  <div class="circle">
-                    <i class="bi bi-activity"></i>
-                  </div>
-                </div>
-              </a>
-              <a
-                href="photo-video-gallery.html"
-                class="list-item"
-                style="position: relative"
-              >
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Photo/video gallery</p>
-                  <div class="circle">
-                    <i class="bi bi-image-fill"></i>
-                  </div>
-                </div>
-              </a>
-              <a
-                href="my-team.html"
-                class="list-item"
-                style="position: relative"
-              >
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>Our team</p>
-                  <div class="circle">
-                    <i class="bi bi-people-fill"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="mt-5 pt-5">
-            <div class="list-container-bottom">
-              <div class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>New section in development</p>
-                </div>
+          <div class="containers">
+            <div class="ring">
+              <div class="center-btn">
+                View<br />
+                my public page
               </div>
-              <div class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>New section in development</p>
-                </div>
+
+              <div class="item">
+                <i class="bi bi-clock-fill"></i
+                ><span>Working and Visiting hours</span>
               </div>
-              <div class="list-item">
-                <div class="list-item-title">
-                  <div class="list-item-title-text">
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="list-item-content-name">
-                  <p>New section in development</p>
-                </div>
+              <div class="item">
+                <i class="bi bi-file-earmark-text"></i><span>Applications</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-tools"></i><span>Additional Services</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-activity"></i
+                ><span>Additional classes and activities</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-calendar-check"></i><span>Visit Request</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-people-fill"></i><span>Our Team</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-image-fill"></i><span>Photo/video gallery</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-geo-alt-fill"></i
+                ><span>General information</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-telephone-fill"></i
+                ><span>Contact Information</span>
+              </div>
+              <div class="item">
+                <i class="bi bi-currency-dollar"></i><span>Prices</span>
               </div>
             </div>
           </div>
