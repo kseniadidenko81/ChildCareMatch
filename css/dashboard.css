@@ -281,3 +281,12 @@
     transform: translateX(-50%) scale(1.1);
   }
 }
+
+footer {
+  background: #abdbeb !important;
+}
+
+footer .border-top {
+  border-top-color: #2a2929 !important;
+  opacity: 0.5 !important;
+}
