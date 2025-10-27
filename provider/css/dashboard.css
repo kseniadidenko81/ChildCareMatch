@@ -77,19 +77,35 @@
   color: currentColor;
   opacity: 0.9;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  transform: none;
+}
+
+.pulse-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  border-radius: inherit;
+}
+
+.pulse-wrapper span {
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .item:hover {
-  box-shadow: 0 0 12px 6px currentColor;
+  box-shadow: 0 0 15px 3px currentColor, 0 0 30px 8px currentColor;
+  animation: pulse-shadow 1.2s infinite ease-in-out;
 }
 
-.item:hover i {
-  transform: scale(1.2);
-  opacity: 1;
+.item:hover .pulse-wrapper span {
+  transform: scale(1.02);
 }
 
-.item:hover span {
-  transform: scale(1.03);
+.item:hover .pulse-wrapper {
+  animation: pulse-card-sync 1.2s infinite ease-in-out;
 }
 
 .ring .item:nth-child(2) {
@@ -212,6 +228,36 @@
   }
 }
 
+@keyframes pulse-card-sync {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+    box-shadow: 0 0 15px 4px currentColor;
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    box-shadow: 0 0 30px 8px currentColor;
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+    box-shadow: 0 0 15px 4px currentColor;
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 15px 3px currentColor, 0 0 30px 8px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px 6px currentColor, 0 0 40px 12px currentColor;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px currentColor, 0 0 30px 8px currentColor;
+  }
+}
+
 @media (max-width: 992px) {
   .containers {
     flex-direction: column;
@@ -241,22 +287,22 @@
     margin-left: 0 !important;
   }
 
-  .item:nth-child(2) {
+  .item:nth-child(7) {
     order: 1;
   }
-  .item:nth-child(11) {
+  .item:nth-child(8) {
     order: 2;
   }
-  .item:nth-child(10) {
+  .item:nth-child(9) {
     order: 3;
   }
-  .item:nth-child(9) {
+  .item:nth-child(10) {
     order: 4;
   }
-  .item:nth-child(8) {
+  .item:nth-child(11) {
     order: 5;
   }
-  .item:nth-child(7) {
+  .item:nth-child(2) {
     order: 6;
   }
   .item:nth-child(6) {
@@ -305,7 +351,7 @@
   .center-btn {
     width: 6em;
     height: 6em;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 20px;
     padding: 0;
     transform: translateX(-155%);
