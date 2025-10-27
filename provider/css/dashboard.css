@@ -358,7 +358,6 @@
     opacity: 0.9;
     margin: 0;
     padding: 0;
-    top: 45%;
   }
 
   .center-btn:hover {
@@ -374,3 +373,4 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
+
