@@ -176,6 +176,22 @@ button:focus:not(:focus-visible) {
 }
 
 /* Nav */
+.nav-panel .btn-primary {
+  background: #00bcd4 !important;
+  border: 1px solid #1d95cc !important;
+}
+
+.nav-panel .btn-check:checked + .btn,
+.nav-panel .btn.active,
+.nav-panel .btn:hover,
+.nav-panel .btn:focus,
+.nav-panel .btn.show,
+.nav-panel .btn:first-child:active,
+.nav-panel :not(.btn-check) + .btn:active {
+  background-color: #1d95cc !important;
+  color: #fff !important;
+}
+
 @media screen and (max-width: 991px) {
   .nav-panel {
     position: absolute;
@@ -189,11 +205,6 @@ button:focus:not(:focus-visible) {
     position: relative;
     top: 0;
     right: auto;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .nav-panel {
   }
 }
 
