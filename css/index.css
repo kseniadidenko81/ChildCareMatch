@@ -184,7 +184,7 @@ button:focus:not(:focus-visible) {
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 610px) {
   .nav-panel {
     top: 10px;
   }
@@ -301,7 +301,7 @@ main.content {
 }
 
 .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 .navbar-toggler:focus {
@@ -364,6 +364,35 @@ main.content {
   color: #fff;
 }
 
+.wrapper-menu .btn-outline-primary {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .wrapper-menu .btn-outline-primary {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    width: 34px;
+    height: 32px;
+    border-color: rgb(18 17 18 / 75%) !important;
+  }
+
+  .navbar-toggler span {
+    background-color: rgb(18 17 18 / 75%) !important;
+  }
+
+  .wrapper-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .btn-header-mobile {
     display: none;
@@ -371,6 +400,11 @@ main.content {
 }
 
 @media screen and (max-width: 480px) {
+  .section-index {
+    display: flex;
+    align-items: center;
+  }
+
   .btn-header-mobile {
     min-width: auto;
     width: 36px;
@@ -619,6 +653,13 @@ input:-moz-autofill {
   font-size: 0.95rem;
 }
 
+@media (max-width: 768px) {
+  .user-avatar {
+    width: 33px;
+    height: 33px;
+  }
+}
+
 .notifications {
   position: relative;
   cursor: pointer;
@@ -651,6 +692,21 @@ input:-moz-autofill {
 
 .fa-bell-o {
   transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 580px) {
+  .notifications {
+    border: none;
+  }
+
+  .notifications .count {
+    top: -10px;
+    right: -5px;
+  }
+
+  .notifications .fa {
+    font-size: 26px;
+  }
 }
 
 @keyframes bellRing {
