@@ -355,6 +355,15 @@ main.content {
   display: block;
 }
 
+.search-container .btn {
+  color: #212529;
+  font-size: 18px;
+}
+
+.search-container .btn-primary {
+  color: #fff;
+}
+
 @media screen and (min-width: 992px) {
   .btn-header-mobile {
     display: none;
@@ -375,7 +384,16 @@ main.content {
   }
 
   .logo {
-    width: 125px;
+    width: 100px;
+  }
+
+  .search-container .h5 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .search-container .btn {
+    font-size: 16px;
   }
 }
 
