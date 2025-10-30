@@ -447,6 +447,17 @@ footer a:hover,
 footer a:focus {
   color: rgb(103, 80, 249, 1) !important;
 }
+
+@media screen and (max-width: 480px) {
+  footer .nav-item,
+  footer p {
+    font-size: 14px;
+  }
+
+  footer .nav-item a {
+    padding: 4px;
+  }
+}
 /* End Footer */
 
 /* Form */
@@ -814,3 +825,4 @@ li:first-of-type .dropdown-item:hover {
   right: 20px;
   z-index: 1055;
 }
+
