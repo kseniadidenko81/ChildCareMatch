@@ -5,10 +5,22 @@
 .containers {
   position: relative;
   width: 100%;
-  aspect-ratio: 6/3;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 610px) {
+  .containers {
+    height: 100vh;
+    max-height: 640px;
+  }
+}
+
+@media (min-width: 992px) {
+  .containers {
+    aspect-ratio: 6 / 3;
+  }
 }
 
 .center-btn {
@@ -31,6 +43,7 @@
   background: #00bcd4;
   font-size: 20px;
   text-align: center;
+  display: none;
 }
 
 .center-btn span span {
@@ -220,7 +233,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 480px) {
+  .center-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 610px) {
   .containers {
     flex-direction: column;
     justify-content: flex-start;
@@ -228,6 +247,9 @@
     padding: 20px;
     width: 100%;
     aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .item {
@@ -242,6 +264,9 @@
     transform: none !important;
     left: auto !important;
     top: auto !important;
+    min-width: 124px;
+    height: 76px;
+    font-size: 14px;
   }
 
   .item:hover {
@@ -268,36 +293,10 @@
     order: 6;
   }
 
-  .center-btn {
-    position: fixed;
-    top: 125px;
-    left: 28%;
-    transform: translateX(-50%);
-    width: 8em;
-    height: 8em;
-    z-index: 10;
-    margin: 0;
-  }
-
-  .center-btn:hover {
-    transform: translateX(-50%) scale(1.05);
-  }
-}
-
-@media (max-width: 580px) {
-  .center-btn {
-    top: 150px;
-    width: 6em;
-    height: 6em;
-    font-size: 17px;
-    line-height: 20px;
-    padding: 0;
-    transform: translateX(-90%);
-    opacity: 0.9;
-  }
-
-  .center-btn:hover {
-    transform: translateX(-50%) scale(1.1);
+  .item i {
+    top: 5px;
+    right: 8px;
+    font-size: 1em;
   }
 }
 
