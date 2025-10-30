@@ -42,9 +42,18 @@
           aria-label=""
         >
           <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-              <img class="logo" src="img/logo.png" alt="Logo" />
-            </a>
+            <div class="wrapper-menu">
+              <a class="navbar-brand d-flex align-items-center" href="#">
+                <img class="logo" src="img/logo.png" alt="Logo" />
+              </a>
+              <button
+                class="btn btn-outline-primary bg-white btn-search"
+                type="submit"
+                style="min-width: auto"
+              >
+                Search
+              </button>
+            </div>
 
             <div class="nav-mobile ms-auto">
               <div
@@ -68,7 +77,7 @@
             </div>
 
             <div
-              class="d-flex align-items-center m-auto ms-md-auto nav-panel mt-3 mt-md-auto"
+              class="d-flex align-items-center m-auto ms-md-auto nav-panel nav-panel-header mt-3 mt-sm-auto"
             >
               <div class="notifications dropdown me-3">
                 <a
@@ -201,14 +210,12 @@
                 </ul>
               </div>
 
-              <div class="d-flex align-items-center gap-2">
+              <div class="d-flex align-items-center gap-3">
                 <div class="d-flex align-items-center gap-2">
                   <div class="d-none d-sm-block text-end">
                     <div class="text-muted small user-email">Welcome</div>
-                    <div
-                      class="d-none d-sm-block text-primary fw-semibold small fixed-text"
-                    >
-                      goddardschoolofmanhattan@gmail.com
+                    <div class="text-primary fw-semibold small fixed-text">
+                      gorv692_22@gmail.com
                     </div>
                   </div>
                   <div
@@ -216,37 +223,43 @@
                     aria-hidden="true"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
-                    title="goddardschoolofmanhattan@gmail.com"
+                    data-bs-original-title="gorv692_22@gmail.com"
                   >
                     D
                   </div>
                 </div>
 
                 <button
-                  type="button"
-                  class="btn btn-outline-primary fw-bold"
-                  style="min-width: 120px"
+                  class="btn btn-outline-primary bg-white d-none d-md-block"
+                  type="submit"
+                  style="min-width: auto"
                 >
-                  <span class="small">Find Day Care</span>
+                  search</button
+                ><button
+                  class="btn btn-outline-primary bg-white d-block d-md-none"
+                  type="submit"
+                  style="min-width: auto"
+                >
+                  view page
                 </button>
 
                 <a
                   href="/logout"
-                  class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                  class="btn btn-outline-secondary btn-sm d-flex align-items-center logout"
                   role="button"
                   aria-label="Logout"
                   style="min-width: auto"
                 >
                   <i
-                    class="bi bi-box-arrow-right me-md-2"
+                    class="bi bi-box-arrow-right me-lg-2"
                     aria-hidden="true"
                   ></i>
-                  <span class="d-none d-md-inline">Logout</span>
+                  <span>Logout</span>
                 </a>
               </div>
 
               <button
-                class="navbar-toggler collapsed ms-2"
+                class="navbar-toggler collapsed ms-3"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample07"
