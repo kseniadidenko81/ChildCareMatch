@@ -266,7 +266,6 @@
     left: auto !important;
     top: auto !important;
     min-width: 124px;
-    height: 76px;
     font-size: 14px;
   }
 
@@ -309,3 +308,4 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
+
