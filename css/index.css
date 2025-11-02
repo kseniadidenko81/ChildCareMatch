@@ -190,7 +190,7 @@ button:focus:not(:focus-visible) {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .nav-panel {
     position: relative;
     top: 0;
@@ -323,24 +323,6 @@ main.content {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* .btn-header-desktop,
-.btn-header-mobile {
-  background-color: #2684f9 !important;
-  border: 1px solid #2684f9 !important;
-}
-
-.btn-header-desktop:hover,
-.btn-header-mobile:hover,
-.btn-header-desktop:focus,
-.btn-header-mobile:focus,
-.btn-header-desktop:active,
-.btn-header-mobile:active,
-:not(.btn-check) + .btn-header-mobile.btn:active,
-:not(.btn-check) + .btn-header-desktop.btn:active {
-  background-color: #0c6de5 !important;
-  border: 1px solid #0c6de5 !important;
-} */
-
 .btn-header-desktop {
   display: none;
 }
@@ -368,7 +350,7 @@ main.content {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .wrapper-menu .btn-outline-primary {
     display: block;
   }
@@ -825,4 +807,3 @@ li:first-of-type .dropdown-item:hover {
   right: 20px;
   z-index: 1055;
 }
-
