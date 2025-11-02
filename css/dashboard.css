@@ -233,7 +233,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 610px) {
   .center-btn {
     display: flex;
   }
@@ -256,6 +256,7 @@
     position: relative;
     width: 100%;
     max-width: 280px;
+    min-height: 92px;
     margin-bottom: 15px;
     border-radius: 20px;
     display: flex;
