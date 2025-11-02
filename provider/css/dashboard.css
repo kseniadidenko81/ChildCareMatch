@@ -301,6 +301,7 @@
     position: relative;
     width: 100%;
     max-width: 280px;
+    min-height: 92px;
     margin-bottom: 15px;
     border-radius: 20px;
     display: flex;
@@ -310,7 +311,6 @@
     left: auto !important;
     top: auto !important;
     min-width: 124px;
-    height: 90px;
     font-size: 14px;
   }
 
@@ -368,4 +368,5 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
+
 
