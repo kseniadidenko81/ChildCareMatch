@@ -188,6 +188,13 @@
   color: #fff;
 }
 
+.item:nth-child(5) i,
+.item:nth-child(4) i,
+.item:nth-child(3) i {
+  left: 10px;
+  right: auto;
+}
+
 @keyframes pulse {
   0% {
     transform: translate(-50%, -50%) scale(1);
@@ -298,6 +305,16 @@
     right: 8px;
     font-size: 1em;
   }
+
+  .item:nth-child(3) i {
+    right: 10px;
+    left: auto;
+  }
+
+  .item:nth-child(2) i {
+    left: 10px;
+    right: auto;
+  }
 }
 
 footer {
@@ -308,4 +325,3 @@ footer .border-top {
   border-top-color: #2a2929 !important;
   opacity: 0.5 !important;
 }
-
