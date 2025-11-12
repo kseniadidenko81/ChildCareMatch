@@ -120,11 +120,11 @@
 }
 
 .item:nth-child(1) {
-  color: #3cec9c;
-  border-color: #55f7ad;
+  color: #00fcff;
+  border-color: #00fcff;
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: #9b8ed4;
+  background-color: #7368a6;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg) translate(190px) rotate(0deg);
@@ -183,8 +183,10 @@
   transform: translate(-50%, -50%) rotate(300deg) translate(190px)
     rotate(-300deg);
 }
+
 .item:nth-child(5) span,
-.item:nth-child(6) span {
+.item:nth-child(6) span,
+.item:nth-child(1) span {
   color: #fff;
 }
 
@@ -294,10 +296,10 @@
     order: 4;
   }
   .item:nth-child(2) {
-    order: 5;
+    order: 4;
   }
   .item:nth-child(1) {
-    order: 6;
+    order: 4;
   }
 
   .item i {
